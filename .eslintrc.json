@@ -16,6 +16,8 @@
     },
     "rules": {
         "react/prop-types": "warn",
+        "react/jsx-space-before-closing": "off",
+        "react/jsx-tag-spacing": "warn",
         "no-console": "warn",
         "indent": [
             "error",
