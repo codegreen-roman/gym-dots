@@ -12,7 +12,8 @@
         "react": "^15.5.4",
         "react-dom": "^15.5.4",
         "react-router": "^4.1.1",
-        "react-router-dom": "^4.1.1"
+        "react-router-dom": "^4.1.1",
+        "express": "^4.15.3"
     },
     "devDependencies": {
         "babel-core": "^6.24.1",
@@ -28,13 +29,15 @@
         "json-loader": "^0.5.4",
         "style-loader": "^0.18.2",
         "webpack": "^2.6.1",
-        "webpack-dev-server": "^2.4.5"
+        "webpack-dev-server": "^2.4.5",
+        "nodemon": "^1.11.0"
     },
     "scripts": {
         "build": "webpack",
         "dev": "webpack-dev-server",
         "lint-fix": "node_modules/.bin/eslint --fix js/**/*.js",
         "lint": "node_modules/.bin/eslint js/**/*.js webpack.config.js",
-        "watch": "npm run build -- --watch"
+        "watch": "npm run build -- --watch",
+        "server": "nodemon --watch server --exec babel-node -- server/index.js"
     }
 }
