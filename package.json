@@ -5,5 +5,14 @@
   "main": "index.js",
   "repository": "git@gitlab.com:neoroma/gym-dots.git",
   "author": "Roman Shestakov <neoroma@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2017": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^3.19.0",
+    "webpack": "^2.6.1"
+  }
 }
