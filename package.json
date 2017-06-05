@@ -1,0 +1,9 @@
+{
+  "name": "gym-dots",
+  "version": "0.0.1",
+  "description": "Gym log app",
+  "main": "index.js",
+  "repository": "git@gitlab.com:neoroma/gym-dots.git",
+  "author": "Roman Shestakov <neoroma@gmail.com>",
+  "license": "MIT"
+}
