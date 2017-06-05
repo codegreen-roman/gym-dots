@@ -7,7 +7,7 @@
   "author": "Roman Shestakov <neoroma@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "server": "babel-node server/index.js"
+    "server": "nodemon --watch server --exec babel-node -- server/index.js"
   },
   "dependencies": {
     "express": "^4.15.3"
@@ -19,6 +19,7 @@
     "babel-preset-es2017": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "eslint": "^3.19.0",
+    "nodemon": "^1.11.0",
     "webpack": "^2.6.1"
   }
 }
