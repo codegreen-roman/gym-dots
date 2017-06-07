@@ -12,16 +12,21 @@
         "lint-fix": "node_modules/.bin/eslint --fix js/**/*.js",
         "lint": "node_modules/.bin/eslint js/**/*.js webpack.config.js",
         "watch": "npm run build -- --watch",
-        "server": "nodemon --watch server --exec babel-node -- server/index.js"
+        "server": "nodemon --watch server --exec babel-node -- server/index.js",
+        "data:mockapi": "json-server data/data.json",
+        "dev:server": "npm-run-all --parallel dev data:mockapi"
     },
     "dependencies": {
+        "express": "^4.15.3",
         "prop-types": "^15.5.10",
         "ramda": "^0.24.1",
         "react": "^15.5.4",
         "react-dom": "^15.5.4",
+        "react-redux": "^5.0.5",
         "react-router": "^4.1.1",
         "react-router-dom": "^4.1.1",
-        "express": "^4.15.3"
+        "redux": "^3.6.0",
+        "redux-thunk": "^2.2.0"
     },
     "devDependencies": {
         "babel-core": "^6.24.1",
@@ -35,9 +40,11 @@
         "eslint-loader": "^1.7.1",
         "eslint-plugin-react": "^7.0.1",
         "json-loader": "^0.5.4",
+        "json-server": "^0.10.1",
+        "nodemon": "^1.11.0",
+        "npm-run-all": "^4.0.2",
         "style-loader": "^0.18.2",
         "webpack": "^2.6.1",
-        "webpack-dev-server": "^2.4.5",
-        "nodemon": "^1.11.0"
+        "webpack-dev-server": "^2.4.5"
     }
 }
