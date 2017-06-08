@@ -1,10 +1,13 @@
 import { createStore, applyMiddleware, compose } from 'redux'
+import thunk from 'redux-thunk'
 import { reducer } from './reducers'
+import { loadTranslations, setLocale, syncTranslationWithStore } from 'react-redux-i18n'
+import translations from '../translations'
 
 export const configureStore = (initialState = {}) => {
 
     const enchancers = [
-        applyMiddleware(),
+        applyMiddleware(thunk),
         window.devToolsExtension ? window.devToolsExtension() : f => f
     ]
 
@@ -13,5 +16,10 @@ export const configureStore = (initialState = {}) => {
         initialState,
         compose(...enchancers)
     )
+
+    syncTranslationWithStore(store)
+    store.dispatch(loadTranslations(translations))
+    store.dispatch(setLocale('en'))
+
     return store
 }
