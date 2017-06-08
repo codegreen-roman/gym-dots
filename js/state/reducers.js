@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux'
+import { i18nReducer } from 'react-redux-i18n'
 
 const DEFAULT_SESSION = {
     day: 'MON',
@@ -18,5 +19,6 @@ export const exerciseSession = (state = DEFAULT_SESSION, action) => {
 }
 
 export const reducer = combineReducers({
-    exerciseSession
+    exerciseSession,
+    i18n: i18nReducer
 })
