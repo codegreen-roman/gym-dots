@@ -8,7 +8,7 @@ module.exports = {
     context: __dirname,
     entry: {
         app: './js/index.js',
-        vendor: ['react', 'react-dom', 'react-router-dom']
+        vendor: ['react', 'react-dom', 'react-router-dom', 'react-redux-i18n']
     },
     devtool: 'eval',
     output: {
