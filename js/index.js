@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import { configureStore } from './state/store'
 
 import { App } from './App'
+import './styles.scss'
 
 const store = configureStore()
 
