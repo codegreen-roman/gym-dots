@@ -1,13 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { shape, func, string } from 'prop-types'
-import { Translate, setLocale } from 'react-redux-i18n'
+import { setLocale } from 'react-redux-i18n'
+import Text from './Text'
 
 const _Header = props => (
     <section>
         <h4>I am a header</h4>
         <a href='#' onClick={() => props.changeLanguage('ru')}>changeLanguage</a>
-        <p><Translate value='greeting' /></p>
+        <p><Text text='greeting' /></p>
         <div>{props.exerciseSession.day}</div>
         <a href='#' onClick={props.pingSession}>ping</a>
     </section>
