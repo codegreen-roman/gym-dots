@@ -3,7 +3,7 @@ const translations = {
         greeting: 'Hello World!'
     },
     ee: {
-        greetings: 'Tere maailm!'
+        greeting: 'Tere maailm!'
     },
     ru: {
         greeting: 'Привет мир!'
