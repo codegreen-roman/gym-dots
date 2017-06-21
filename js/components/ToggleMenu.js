@@ -3,10 +3,10 @@ import { func, object } from 'prop-types'
 import { setLocale } from 'react-redux-i18n'
 import { connect } from 'react-redux'
 
-const _ToggleMenu = props => {
+const _ToggleMenu = ({ changeLanguage, translations }) => {
     return (
-        <select onChange={(e) => props.changeLanguage(e.target.value)}>
-            {Object.keys(props.translations).map(itm => 
+        <select onChange={(e) => changeLanguage(e.target.value)}>
+            {Object.keys(translations).map(itm =>
                 <option key={itm} value={itm}>{itm}</option>
             )}
         </select>
@@ -28,4 +28,4 @@ const mapActionsToProps = dispatch => ({
     }
 })
 
-export default connect(mapStateToProps , mapActionsToProps)(_ToggleMenu)
+export default connect(mapStateToProps, mapActionsToProps)(_ToggleMenu)

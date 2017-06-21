@@ -4,13 +4,13 @@ import { shape, func, string } from 'prop-types'
 import Text from './Text'
 import ToggleMenu from './ToggleMenu'
 
-const _Header = props => (
+const _Header = ({ exerciseSession, pingSession }) => (
     <section>
         <h4>I am a header</h4>
         <ToggleMenu />
         <p><Text text='greeting' /></p>
-        <div>{props.exerciseSession.day}</div>
-        <a href='#' onClick={props.pingSession}>ping</a>
+        <div>{exerciseSession.day}</div>
+        <a href='#' onClick={pingSession}>ping</a>
     </section>
 )
 

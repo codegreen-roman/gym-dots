@@ -2,7 +2,7 @@ import React from 'react'
 import { Translate } from 'react-redux-i18n'
 import { string } from 'prop-types'
 
-const Text = ({ text }) => 
+const Text = ({ text }) =>
     <Translate value={text} />
 
 Text.propTypes = {
