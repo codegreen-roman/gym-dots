@@ -1,0 +1,32 @@
+{
+    "It": {
+        "prefix": "it",
+        "body": "it('', () => {\n\n})",
+        "description": "It block"
+    },
+    "Describe": {
+        "prefix": "desc",
+        "body": "describe('', () => {\n\n})",
+        "description": "Describe block"
+    },
+    "beforeEach": {
+        "prefix": "be",
+        "body": "beforeEach(() => {\n\n})",
+        "description": "beforeEach block"
+    },
+    "Testing Suite with one spec and beforeEach": {
+        "prefix": "ts",
+        "body": "describe('', () => {\n    beforeEach(() => {\n\n    })\n\n    it('', () => {\n\n    })\n})\n",
+        "description": "beforeEach block"
+    },
+    "Connected Functional Component": {
+        "prefix": "cfc",
+        "body": "import React from 'react'\nimport {  } from 'prop-types'\nimport { connect } from 'react-redux'\n\nconst _componentName = () => {\n    return (\n        <div>\n\n        </div>\n    )\n}\n\n_componentName.propTypes = {\n\n}\n\nconst mapStateToProps = state => ({\n\n})\n\nconst mapActionsToProps = dispatch => ({\n\n})\n\nexport default connect(mapStateToProps , mapActionsToProps)(_componentName)\n",
+        "description": "Connected Functional Component"
+    },
+    "Connected Class Component": {
+        "prefix": "ccc",
+        "body": "import React, { Component } from 'react'\nimport {} from 'prop-types'\nimport { connect } from 'react-redux'\n\nclass _componentName extends Component {\n    static propTypes = {}\n\n    render() {\n        return (\n            <div>\n\n            </div>\n        )\n    }\n}\n\nconst mapStateToProps = state => ({\n\n})\n\nconst mapActionsToProps = dispatch => ({\n\n})\n\nexport default connect(mapStateToProps , mapActionsToProps)(_componentName)\n",
+        "description": "Connected Class Component"
+    }
+}
