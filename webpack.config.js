@@ -68,12 +68,13 @@ module.exports = {
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     use: ['css-loader', 'sass-loader']
-                })
+                }),
+                include: path.resolve(__dirname, 'styles'),
             }
         ]
     },
     plugins: [
-        new ExtractTextPlugin('styles.css'),
+        new ExtractTextPlugin('main.css'),
         new webpack.optimize.CommonsChunkPlugin({ name:'vendor', filename: 'vendor.bundle.js'})
     ]
 }

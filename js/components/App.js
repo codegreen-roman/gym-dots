@@ -1,10 +1,20 @@
 import React from 'react'
 import { Header } from './Header'
+import { Footer } from './Footer'
+import { Route } from 'react-router-dom'
 import { Activity } from './Activity'
+import { Status } from './Status'
+import { Exercises } from './Exercises'
 
-export const App = () => (
-    <section className='app-container'>
-        <Header />
-        <Activity />
-    </section>
-)
+export const App = () => {
+
+    return (
+        <section className='app-container'>
+            <Header />
+            <Route exact path='/' component={() => <Activity />} />
+            <Route path='/status' component={() => <Status />} />
+            <Route path='/list' component={() => <Exercises />} />
+            <Footer />
+        </section>
+    )
+}
