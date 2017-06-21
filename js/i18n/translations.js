@@ -1,4 +1,4 @@
-const translations = {
+export const translations = {
     en: {
         greeting: 'Hello World!'
     },
@@ -9,5 +9,3 @@ const translations = {
         greeting: 'Привет мир!'
     },
 }
-
-export default translations

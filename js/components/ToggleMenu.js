@@ -28,4 +28,4 @@ const mapActionsToProps = dispatch => ({
     }
 })
 
-export default connect(mapStateToProps, mapActionsToProps)(_ToggleMenu)
+export const ToggleMenu = connect(mapStateToProps, mapActionsToProps)(_ToggleMenu)

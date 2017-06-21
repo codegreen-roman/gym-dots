@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
 import { reducer } from './reducers'
 import { loadTranslations, setLocale, syncTranslationWithStore } from 'react-redux-i18n'
-import translations from '../translations'
+import { translations } from '../i18n/translations'
 
 export const configureStore = (initialState = {}) => {
 
