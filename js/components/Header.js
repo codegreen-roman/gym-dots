@@ -5,7 +5,7 @@ import { Text } from './Text'
 import { ToggleMenu } from './ToggleMenu'
 
 const _Header = ({ exerciseSession, pingSession }) => (
-    <section>
+    <section style={{ border: '2px solid #32CD32' }}>
         <h4>I am a header</h4>
         <ToggleMenu />
         <p><Text text='greeting' /></p>
