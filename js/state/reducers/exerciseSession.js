@@ -12,7 +12,7 @@ export const exerciseSession = (state = DEFAULT_SESSION, action) => {
     const mergeState = R.merge(state)
     switch (action.type) {
         case PING:
-            return mergeState({
+            return getDay(action) === state.day ? state : mergeState({
                 day: getDay(action)
             })
         default:
