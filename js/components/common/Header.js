@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { shape, func, string } from 'prop-types'
-import { Text } from './Text'
+import { Text } from '../Text'
 import { ToggleMenu } from './ToggleMenu'
 
 const _Header = ({ exerciseSession, pingSession }) => (
