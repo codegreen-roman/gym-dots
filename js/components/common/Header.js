@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { shape, func, string } from 'prop-types'
 import { Text } from '../Text'
 import { ToggleMenu } from './ToggleMenu'
-import { creators } from '../../state/actions'
+import { ping } from '../../state/actions'
 import R from 'ramda'
 
 const _Header = ({ exerciseSession, pingSession }) => (
@@ -27,7 +27,7 @@ const mapStateToProps = ({ exerciseSession }) => ({ exerciseSession })
 
 const mapActionsToProps = dispatch => ({
     pingSession() {
-        const app = R.compose(dispatch, creators.ping)
+        const app = R.compose(dispatch, ping)
         app({})
     }
 })

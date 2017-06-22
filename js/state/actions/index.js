@@ -1,3 +1,3 @@
-import { creators } from './creators'
+import { ping, testMe } from './creators'
 
-export { creators }
+export { ping, testMe }
