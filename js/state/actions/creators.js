@@ -1,9 +1,11 @@
 import { actions } from './enums'
 
+const { TEST_ACTION } = actions
+
 export const creators = {
     testMe(payload) {
         return {
-            type: actions.TEST_ACTION,
+            type: TEST_ACTION,
             payload
         }
     }
