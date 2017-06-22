@@ -6,15 +6,35 @@ import { ToggleMenu } from './ToggleMenu'
 import { ping } from '../../state/actions'
 import R from 'ramda'
 
-const _Header = ({ exerciseSession, pingSession }) => (
-    <section style={{ border: '2px solid #32CD32' }}>
-        <h4>I am a header</h4>
-        <ToggleMenu />
-        <p><Text text='greeting' /></p>
-        <div>{exerciseSession.day}</div>
-        <a href='#' onClick={pingSession}>ping</a>
-    </section>
-)
+const days = ['MONDAY', 'WEDENSDAY', 'FRIDAY']
+
+const _Header = ({ exerciseSession: { day : currentDay }, pingSession }) => {
+
+    const handleDayClick = (day) => {
+        return () => pingSession(day)
+    }
+
+    const renderDayLink = day => {
+
+        const style = {
+            margin: '1rem',
+            background: currentDay === day ? '#FF6347' : 'white'
+        }
+        return (
+            <a key={day} href='#' style={style} onClick={handleDayClick(day)}>{day}</a>
+        )
+    }
+    const renderDays = R.compose(R.map(renderDayLink))
+
+    return (
+        <section style={{ border: '2px solid #32CD32', margin: '2rem' }}>
+            <h4>I am a header</h4>
+            <ToggleMenu />
+            <p><Text text='greeting' /></p>
+            {renderDays(days)}
+        </section>
+    )
+}
 
 _Header.propTypes = {
     exerciseSession: shape({
@@ -26,9 +46,9 @@ _Header.propTypes = {
 const mapStateToProps = ({ exerciseSession }) => ({ exerciseSession })
 
 const mapActionsToProps = dispatch => ({
-    pingSession() {
+    pingSession(day) {
         const app = R.compose(dispatch, ping)
-        app({})
+        app({ day })
     }
 })
 

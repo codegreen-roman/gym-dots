@@ -7,7 +7,6 @@ import { Status } from './Status'
 import { Exercises } from './Exercises'
 
 export const App = () => {
-
     return (
         <section className='app-container'>
             <Header />
