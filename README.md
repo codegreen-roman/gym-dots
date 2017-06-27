@@ -15,3 +15,10 @@ our actions should contain props type and payload
     }
 }
 ```
+## Presentational components
+
+## Container components
+### Helper method names for connected components
+
+- mapStateToProps
+- mapActionsToProps

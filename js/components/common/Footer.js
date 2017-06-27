@@ -1,21 +1,29 @@
 import React from 'react'
-import R from 'ramda'
+import { compose, merge } from 'ramda'
 import { connect } from 'react-redux'
 import { shape, string, func } from 'prop-types'
-import { getLocation } from '../../state/actions/creators'
+import { loadLocationForUsername } from '../../state/actions/creators'
 
 const style = {
     border: '1px solid #FF00FF',
     margin: '2rem'
 }
 
-const _Footer = ({githubLocation, dispatch}) => {
+const blockStyle = status => {
 
-    const fireAction = R.compose(dispatch, getLocation)
+    const mergeStyle = merge(style)
+
+    return mergeStyle({
+        opacity: status === 'ready' ? '0.9' : '0.1'
+    })
+}
+
+const _Footer = ({ githubLocation, fireAction }) => {
+
     const handleClick = () => fireAction(githubLocation.username)
 
     return (
-        <section style={style}>
+        <section style={blockStyle(githubLocation.status)}>
             Hi, I am component Footer
             <button onClick={handleClick}>Request</button>
             <div>{githubLocation.username}</div>
@@ -26,15 +34,22 @@ const _Footer = ({githubLocation, dispatch}) => {
 
 _Footer.propTypes = {
     githubLocation: shape({
-        username: string,
-        location: string
+        username: string.isRequired,
+        location: string.isRequired,
+        status: string
     }),
-    dispatch: func
+    fireAction: func.isRequired
 }
 
-const mapStateToProps = ({githubLocation}) => ({
+const mapStateToProps = ({ githubLocation }) => ({
     githubLocation
 })
 
+const mapActionsToProps = dispatch => {
+    return {
+        fireAction: compose(dispatch, loadLocationForUsername)
+    }
+}
+
 export { _Footer }
-export const Footer = connect(mapStateToProps)(_Footer)
+export const Footer = connect(mapStateToProps, mapActionsToProps)(_Footer)
