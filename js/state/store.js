@@ -4,7 +4,9 @@ import { reducer } from './reducer'
 import { loadTranslations, setLocale, syncTranslationWithStore } from 'react-redux-i18n'
 import { translations } from '../i18n/translations'
 
-export const configureStore = (initialState = {}) => {
+const INITIAL_STATE = {}
+
+export const configureStore = (initialState = INITIAL_STATE) => {
 
     const enchancers = [
         applyMiddleware(thunk),
