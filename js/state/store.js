@@ -3,6 +3,7 @@ import thunk from 'redux-thunk'
 import { reducer } from './reducer'
 import { loadTranslations, setLocale, syncTranslationWithStore } from 'react-redux-i18n'
 import { translations } from '../i18n/translations'
+import { loadSessions } from './actions'
 
 const INITIAL_STATE = {}
 
@@ -20,8 +21,10 @@ export const configureStore = (initialState = INITIAL_STATE) => {
     )
 
     syncTranslationWithStore(store)
+
     store.dispatch(loadTranslations(translations))
     store.dispatch(setLocale('en'))
+    store.dispatch(loadSessions())
 
     return store
 }

@@ -1,3 +1,4 @@
 import { ping, testMe } from './creators'
+import { loadSessions } from './session-actions'
 
-export { ping, testMe }
+export { ping, testMe, loadSessions }
