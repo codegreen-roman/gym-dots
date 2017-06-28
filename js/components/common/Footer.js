@@ -1,7 +1,7 @@
 import React from 'react'
 import { compose, merge } from 'ramda'
 import { connect } from 'react-redux'
-import { shape, string, func } from 'prop-types'
+import { shape, string, func, array } from 'prop-types'
 import { loadLocationForUsername } from '../../state/actions/creators'
 
 const style = {
@@ -18,7 +18,7 @@ const blockStyle = status => {
     })
 }
 
-const _Footer = ({ githubLocation, fireAction }) => {
+const _Footer = ({ githubLocation, fireAction, sessions }) => {
 
     const handleClick = () => fireAction(githubLocation.username)
 
@@ -28,11 +28,13 @@ const _Footer = ({ githubLocation, fireAction }) => {
             <button onClick={handleClick}>Request</button>
             <div>{githubLocation.username}</div>
             <div>{githubLocation.location}</div>
+            <pre>{JSON.stringify(sessions, null, 2)}</pre>
         </section>
     )
 }
 
 _Footer.propTypes = {
+    sessions: array.isRequired,
     githubLocation: shape({
         username: string.isRequired,
         location: string.isRequired,
@@ -41,8 +43,9 @@ _Footer.propTypes = {
     fireAction: func.isRequired
 }
 
-const mapStateToProps = ({ githubLocation }) => ({
-    githubLocation
+const mapStateToProps = ({ githubLocation, sessions }) => ({
+    githubLocation,
+    sessions
 })
 
 const mapActionsToProps = dispatch => {
