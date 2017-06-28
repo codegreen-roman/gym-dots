@@ -1,10 +1,7 @@
 import { LOAD_SESSIONS_SUCCESS } from '../actions/types'
+import { INITIAL_STATE } from './initial-state'
 
-const DEFAULT_STATE = {
-    sessions: []
-}
-
-export const sessions = (state = DEFAULT_STATE, action) => {
+export const sessions = (state = INITIAL_STATE.sessions, action) => {
 
     switch (action.type) {
         case LOAD_SESSIONS_SUCCESS:
