@@ -1,5 +1,3 @@
-//https://www.bodybuilding.com/exercises
-
 {
     "defaults": {
         "restTime": 60,
@@ -10,11 +8,11 @@
             "name": "Monday",
             "exercises": [
                 {
-                    "restTime": 90, // время отдыха между подходами
+                    "restTime": 90,
                     "name": "Push-ups",
-                    "sets": 5, // кол-во подходов
-                    "reps": 20, // кол-во повторений в одном подходе
-                    "weight": 0 // вес 0 = собственный
+                    "sets": 5,
+                    "reps": 20,
+                    "weight": 0
                 },
                 {
                     "restTime": 60,
@@ -73,7 +71,7 @@
                     "name": "Plank",
                     "sets": 5,
                     "reps": 0,
-                    "duration": 60, // длительность выполнения - делать планку в течении 60 сек
+                    "duration": 60,
                     "weight": 0
                 }
             ]
