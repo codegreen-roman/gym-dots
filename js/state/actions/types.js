@@ -2,3 +2,5 @@ export const TEST_ACTION = 'TEST_ACTION'
 export const GET_LOCATION = 'GET_LOCATION'
 export const GET_LOCATION_START = 'GET_LOCATION_START'
 export const PING = 'PING'
+export const LOAD_SESSIONS_SUCCESS = 'LOAD_SESSIONS_SUCCESS'
+

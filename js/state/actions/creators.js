@@ -1,4 +1,4 @@
-import { TEST_ACTION, PING, GET_LOCATION, GET_LOCATION_START } from './enums'
+import { TEST_ACTION, PING, GET_LOCATION, GET_LOCATION_START } from './types'
 import { compose } from 'ramda'
 
 export const testMe = payload => ({

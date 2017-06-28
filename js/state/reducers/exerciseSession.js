@@ -1,4 +1,4 @@
-import { PING } from '../actions/enums'
+import { PING } from '../actions/types'
 import R from 'ramda'
 
 const DEFAULT_SESSION = {

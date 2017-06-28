@@ -1,5 +1,5 @@
 // Beware of heavy ramda usage
-import { GET_LOCATION, GET_LOCATION_START } from '../actions/enums'
+import { GET_LOCATION, GET_LOCATION_START } from '../actions/types'
 import R from 'ramda'
 
 const DEFAULT_GITHUB_DATA = {
