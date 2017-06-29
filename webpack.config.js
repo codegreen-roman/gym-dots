@@ -1,14 +1,19 @@
 /* eslint-env node */
 
 const path = require('path')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const webpack = require('webpack')
 
 module.exports = {
     context: __dirname,
-    entry: './js/index.js',
+    entry: {
+        app: './js/index.js',
+        vendor: ['react', 'react-dom', 'react-router-dom', 'react-redux-i18n', 'ramda']
+    },
     devtool: 'eval',
     output: {
         path: path.join(__dirname, 'public'),
-        filename: 'bundle.js',
+        filename: 'app.bundle.js',
         publicPath: '/public/'
     },
     resolve: {
@@ -57,7 +62,19 @@ module.exports = {
                         }
                     }
                 ]
+            },
+            {
+                test: /\.scss$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: ['css-loader', 'sass-loader']
+                }),
+                include: path.resolve(__dirname, 'styles'),
             }
         ]
-    }
+    },
+    plugins: [
+        new ExtractTextPlugin('main.css'),
+        new webpack.optimize.CommonsChunkPlugin({ name:'vendor', filename: 'vendor.bundle.js'})
+    ]
 }

@@ -17,3 +17,22 @@ install flow and flow-typed globally
 `flow-typed install` to update flow typed deps versions
 
 `yarn flow` for running flow
+
+### Action Structure
+our actions should contain props type and payload
+
+```
+{
+    type: '',
+    payload: {
+        
+    }
+}
+```
+## Presentational components
+
+## Container components
+### Helper method names for connected components
+
+- mapStateToProps
+- mapActionsToProps

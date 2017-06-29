@@ -1,12 +1,14 @@
 {
     "env": {
         "browser": true,
-        "es6": true
+        "es6": true,
+        "jest/globals": true
     },
     "parser": "babel-eslint",
     "plugins": [
         "react",
-        "flowtype"
+        "flowtype",
+        "jest"
     ],
     "extends": [
         "eslint:recommended",
@@ -18,6 +20,9 @@
         "sourceType": "module"
     },
     "rules": {
+        "jest/no-disabled-tests": "warn",
+        "jest/no-identical-title": "error",
+        "jest/valid-expect": "error",
         "react/prop-types": "warn",
         "react/jsx-space-before-closing": "off",
         "react/jsx-tag-spacing": "warn",

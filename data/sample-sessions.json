@@ -1,0 +1,80 @@
+{
+    "defaults": {
+        "restTime": 60,
+        "sets": 5
+    },
+    "sessions": [
+        {
+            "name": "Monday",
+            "exercises": [
+                {
+                    "restTime": 90,
+                    "name": "Push-ups",
+                    "sets": 5,
+                    "reps": 20,
+                    "weight": 0
+                },
+                {
+                    "restTime": 60,
+                    "name": "Pull-up",
+                    "sets": 5,
+                    "reps": 8,
+                    "weight": 0
+                },
+                {
+                    "restTime": 30,
+                    "name": "Australian pull-ups",
+                    "sets": 5,
+                    "reps": 12,
+                    "weight": 0
+                }
+            ]
+        },
+        {
+            "name": "Wednesday",
+            "exercises": [
+                {
+                    "restTime": 90,
+                    "name": "The bench press",
+                    "sets": 5,
+                    "reps": 8,
+                    "weight": 50
+                },
+                {
+                    "restTime": 60,
+                    "name": "Dumbbell flyes",
+                    "sets": 5,
+                    "reps": 8,
+                    "weight": 12
+                },
+                {
+                    "restTime": 60,
+                    "name": "Around The Worlds",
+                    "sets": 5,
+                    "reps": 12,
+                    "weight": 9
+                }
+            ]
+        },
+        {
+            "name": "Friday",
+            "exercises": [
+                {
+                    "restTime": 90,
+                    "name": "Squats",
+                    "sets": 5,
+                    "reps": 8,
+                    "weight": 70
+                },
+                {
+                    "restTime": 90,
+                    "name": "Plank",
+                    "sets": 5,
+                    "reps": 0,
+                    "duration": 60,
+                    "weight": 0
+                }
+            ]
+        }
+    ]
+}
