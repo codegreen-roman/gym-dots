@@ -18,6 +18,9 @@ install flow and flow-typed globally
 
 `yarn flow` for running flow
 
+VSCODE specific, add to seettings, to avoid error
+`"javascript.validate.enable": false`
+
 ### Action Structure
 our actions should contain props type and payload
 
