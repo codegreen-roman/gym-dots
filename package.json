@@ -16,7 +16,6 @@
         "data:mockapi": "json-server data/data.json",
         "dev:server": "npm-run-all --parallel dev data:mockapi",
         "flow": "flow",
-        "dev:server": "npm-run-all --parallel dev data:mockapi",
         "test": "jest",
         "test:watch": "jest --watch",
         "test:coverage": "jest --coverage"
@@ -24,6 +23,7 @@
     "dependencies": {
         "babel-plugin-transform-class-properties": "^6.24.1",
         "express": "^4.15.3",
+        "glamorous": "^3.23.5",
         "prop-types": "^15.5.10",
         "ramda": "^0.24.1",
         "react": "^15.5.4",
@@ -59,8 +59,8 @@
         "eslint-plugin-flowtype": "^2.34.0",
         "eslint-plugin-jest": "^20.0.3",
         "eslint-plugin-react": "^7.0.1",
-        "flow-bin": "^0.47.0",
         "extract-text-webpack-plugin": "^2.1.0",
+        "flow-bin": "^0.47.0",
         "jest": "^20.0.4",
         "json-loader": "^0.5.4",
         "json-server": "^0.10.1",
