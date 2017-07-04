@@ -75,5 +75,19 @@
         "style-loader": "^0.18.2",
         "webpack": "^2.6.1",
         "webpack-dev-server": "^2.4.5"
+    },
+    "jest": {
+        "testEnvironment": "jsdom",
+        "coverageThreshold": {
+            "global": {
+                "branches": 100,
+                "functions": 100,
+                "lines": 100,
+                "statements": 100
+            }
+        },
+        "snapshotSerializers": [
+            "enzyme-to-json/serializer"
+        ]
     }
 }
