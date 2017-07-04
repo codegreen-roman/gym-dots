@@ -23,6 +23,7 @@
     "dependencies": {
         "babel-plugin-transform-class-properties": "^6.24.1",
         "express": "^4.15.3",
+        "glamor": "^3.0.0-2",
         "glamorous": "^3.23.5",
         "prop-types": "^15.5.10",
         "ramda": "^0.24.1",
