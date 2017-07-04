@@ -63,6 +63,7 @@
         "extract-text-webpack-plugin": "^2.1.0",
         "flow-bin": "^0.47.0",
         "jest": "^20.0.4",
+        "jest-glamor-react": "^1.4.0",
         "json-loader": "^0.5.4",
         "json-server": "^0.10.1",
         "node-sass": "^4.5.3",
