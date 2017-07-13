@@ -1,56 +1,44 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { shape, func, string } from 'prop-types'
-import { Text } from '../Text'
-import { ToggleMenu } from '../common/ToggleMenu'
-import { ping } from '../../state/actions/index'
-import R from 'ramda'
+import moment from 'moment'
+import { image } from 'faker'
 
-const days = ['MONDAY', 'WEDENSDAY', 'FRIDAY']
+const _Header = () => {
 
-const _Header = ({ exerciseSession: { day : currentDay }, pingSession }) => {
-
-    const handleDayClick = (day) => {
-        return () => pingSession(day)
+    const userPic = image.avatar()
+    const rootStyle = {
+        padding: '1rem',
+        display: 'flex',
+        justifyContent: 'space-between',
+        borderBottom: '1px solid rgba(0, 0, 0, 0.15)'
     }
 
-    const renderDayLink = day => {
-
-        const style = {
-            margin: '1rem',
-            background: currentDay === day ? '#FF6347' : 'white'
-        }
-        return (
-            <a key={day} href='#' style={style} onClick={handleDayClick(day)}>{day}</a>
-        )
+    const imgStyle = {
+        width: '3rem',
+        borderRadius: '2rem'
     }
-    const renderDays = R.compose(R.map(renderDayLink))
 
     return (
-        <section style={{ border: '2px solid #32CD32', margin: '2rem' }}>
-            <h4>I am a header</h4>
-            <ToggleMenu />
-            <p><Text text='greeting' /></p>
-            {renderDays(days)}
+        <section style={rootStyle}>
+
+            <div className='left-side' style={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between'
+            }}>
+                <a style={{ fontSize: '8vw' }}>&#9776;</a>
+                <div style={{ fontSize: '5vw', marginLeft: '4rem' }}>{moment().format('dddd, MMM Do')}</div>
+                <div style={{ fontSize: '8vw', marginLeft: '3rem' }}>Start Workout</div>
+            </div>
+
+            <div className='right-side'>
+                <img style={imgStyle} src={userPic} />
+            </div>
+
         </section>
     )
 }
 
-_Header.propTypes = {
-    exerciseSession: shape({
-        day: string
-    }),
-    pingSession: func
-}
-
-const mapStateToProps = ({ exerciseSession }) => ({ exerciseSession })
-
-const mapActionsToProps = dispatch => ({
-    pingSession(day) {
-        const app = R.compose(dispatch, ping)
-        app({ day })
-    }
-})
+_Header.propTypes = {}
 
 export { _Header }
-export const Header = connect(mapStateToProps, mapActionsToProps)(_Header)
+export const Header = _Header
