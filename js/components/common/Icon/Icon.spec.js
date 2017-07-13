@@ -1,10 +1,11 @@
+/* global expect*/
+/* eslint-env jest */
+
 // TODO: Move to separate Jest config folder
 import { matcher, serializer } from 'jest-glamor-react'
 
 expect.extend(matcher)
 expect.addSnapshotSerializer(serializer)
-
-//
 
 import React from 'react'
 import { render } from 'enzyme'
