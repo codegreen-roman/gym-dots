@@ -9,7 +9,8 @@ const _Header = () => {
         padding: '1rem',
         display: 'flex',
         justifyContent: 'space-between',
-        borderBottom: '1px solid rgba(0, 0, 0, 0.15)'
+        borderBottom: '1px solid rgba(0, 0, 0, 0.15)',
+        fontFamily: 'sans-serif'
     }
 
     const imgStyle = {

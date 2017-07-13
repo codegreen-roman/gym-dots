@@ -4,55 +4,66 @@ exports[`Details component snapshot test 1`] = `
 <section
   style={
     Object {
-      "border": "2px solid #32CD32",
-      "margin": "2rem",
+      "borderBottom": "1px solid rgba(0, 0, 0, 0.15)",
+      "display": "flex",
+      "fontFamily": "sans-serif",
+      "justifyContent": "space-between",
+      "padding": "1rem",
     }
   }
 >
-  <h4>
-    I am a header
-  </h4>
-  <Connect(_ToggleMenu) />
-  <p>
-    <Text
-      text="greeting"
+  <div
+    className="left-side"
+    style={
+      Object {
+        "display": "flex",
+        "flexDirection": "column",
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <a
+      style={
+        Object {
+          "fontSize": "8vw",
+        }
+      }
+    >
+      ☰
+    </a>
+    <div
+      style={
+        Object {
+          "fontSize": "5vw",
+          "marginLeft": "4rem",
+        }
+      }
+    >
+      Friday, Jul 14th
+    </div>
+    <div
+      style={
+        Object {
+          "fontSize": "8vw",
+          "marginLeft": "3rem",
+        }
+      }
+    >
+      Start Workout
+    </div>
+  </div>
+  <div
+    className="right-side"
+  >
+    <img
+      src="https://s3.amazonaws.com/uifaces/faces/twitter/heykenneth/128.jpg"
+      style={
+        Object {
+          "borderRadius": "2rem",
+          "width": "3rem",
+        }
+      }
     />
-  </p>
-  <a
-    href="#"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "white",
-        "margin": "1rem",
-      }
-    }
-  >
-    MONDAY
-  </a>
-  <a
-    href="#"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "white",
-        "margin": "1rem",
-      }
-    }
-  >
-    WEDENSDAY
-  </a>
-  <a
-    href="#"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "white",
-        "margin": "1rem",
-      }
-    }
-  >
-    FRIDAY
-  </a>
+  </div>
 </section>
 `;
