@@ -23,8 +23,10 @@
     "dependencies": {
         "babel-plugin-transform-class-properties": "^6.24.1",
         "express": "^4.15.3",
+        "faker": "^4.1.0",
         "glamor": "^3.0.0-3",
         "glamorous": "^3.23.5",
+        "moment": "^2.18.1",
         "prop-types": "^15.5.10",
         "ramda": "^0.24.1",
         "react": "^15.6.1",
