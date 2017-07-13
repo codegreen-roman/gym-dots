@@ -2,8 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { shape, func, string } from 'prop-types'
 import { Text } from '../Text'
-import { ToggleMenu } from './ToggleMenu'
-import { ping } from '../../state/actions'
+import { ToggleMenu } from '../common/ToggleMenu'
+import { ping } from '../../state/actions/index'
 import R from 'ramda'
 
 const days = ['MONDAY', 'WEDENSDAY', 'FRIDAY']
@@ -52,4 +52,5 @@ const mapActionsToProps = dispatch => ({
     }
 })
 
+export { _Header }
 export const Header = connect(mapStateToProps, mapActionsToProps)(_Header)

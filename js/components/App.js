@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header } from './common/Header'
+import { Header } from './header/Header'
 import { Footer } from './common/Footer'
 import { Route } from 'react-router-dom'
 import { Activity } from './Activity'
