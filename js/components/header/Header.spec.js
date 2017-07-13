@@ -17,13 +17,13 @@ const setup = () => {
 }
 
 beforeAll(() => {
-    console.log('before all')
+
 })
 
 describe('Header component', () => {
 
     beforeEach(() => {
-        console.log('before')
+
     })
 
     test('shows some static strings', () => {
