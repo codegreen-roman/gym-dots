@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Details component snapshot test 1`] = `
+<section
+  style={
+    Object {
+      "border": "2px solid #32CD32",
+      "margin": "2rem",
+    }
+  }
+>
+  <h4>
+    I am a header
+  </h4>
+  <Connect(_ToggleMenu) />
+  <p>
+    <Text
+      text="greeting"
+    />
+  </p>
+  <a
+    href="#"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "white",
+        "margin": "1rem",
+      }
+    }
+  >
+    MONDAY
+  </a>
+  <a
+    href="#"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "white",
+        "margin": "1rem",
+      }
+    }
+  >
+    WEDENSDAY
+  </a>
+  <a
+    href="#"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "white",
+        "margin": "1rem",
+      }
+    }
+  >
+    FRIDAY
+  </a>
+</section>
+`;
