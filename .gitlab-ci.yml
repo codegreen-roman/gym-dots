@@ -4,8 +4,9 @@ before_script:
   - curl -sL https://deb.nodesource.com/setup_6.x | bash
   - apt-get install nodejs
   - node -v
-  - node install -g jest
-  - node i
+  - npm -v
+  - npm install -g jest
+  - npm i
 
 testall:
   script:
