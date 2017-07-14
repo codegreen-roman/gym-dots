@@ -1,4 +1,4 @@
-/* global expect, describe, beforeAll, beforeEach, fdescribe */
+/* global expect, describe, beforeAll, beforeEach, fdescribe, xtest */
 /* eslint-env jest */
 
 import React from 'react'
@@ -10,7 +10,8 @@ const setup = () => {
         exerciseSession: {
             day: 'Monday'
         },
-        pingSession: () => {}
+        pingSession: () => {
+        }
     }
 
     return shallow(<Header {...props} />)
@@ -26,24 +27,45 @@ describe('Header component', () => {
 
     })
 
-    test('shows some static strings', () => {
+    test('has section type of the root component', () => {
         const wrapper = setup()
-
-        expect(wrapper.find('h4').length).toBe(1)
-        expect(wrapper.find('h4').text()).toBe('I am a header')
+        expect(wrapper.type()).toBe('section')
     })
 
-    test('shows 3 a tags with days (MONDAY, WEDENSDAY, FRIDAY) ', () => {
+    test('has 2 divs as 1st children', () => {
         const wrapper = setup()
+        expect(wrapper.find('section > div').length).toBe(2)
+    })
 
-        expect(wrapper.find('a').length).toBe(3)
+    describe('Left side of the header', () => {
 
-        const [day1, day2, day3] = wrapper.find('a').nodes
+        let root = null
+        let menu = null
+        let dateElement = null
+        let titleElement = null
 
-        expect(day1.key).toBe('MONDAY')
-        expect(day2.key).toBe('WEDENSDAY')
-        expect(day3.key).toBe('FRIDAY')
+        beforeAll(() => {
+            root = setup().find('section > div.left-side')
+            menu = root.find('a')
+            dateElement = root.find('div.h-date')
+            titleElement = root.find('div.h-title')
+        })
 
+        test('has a menu icon wrapped in a tag', () => {
+            expect(menu.length).toBe(1)
+        })
+
+        test('has a menu icon as a value', () => {
+            expect(menu.text()).toBe('☰')
+        })
+
+        test('has dateElement not empty', () => {
+            expect(dateElement.text()).not.toBe('')
+        })
+
+        test('has titleElement with a value Start Workout', () => {
+            expect(titleElement.text()).toBe('Start Workout')
+        })
     })
 
 })

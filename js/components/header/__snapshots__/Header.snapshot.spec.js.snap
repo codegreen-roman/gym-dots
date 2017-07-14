@@ -23,6 +23,7 @@ exports[`Details component snapshot test 1`] = `
     }
   >
     <a
+      className="h-menu"
       style={
         Object {
           "fontSize": "8vw",
@@ -32,6 +33,7 @@ exports[`Details component snapshot test 1`] = `
       ☰
     </a>
     <div
+      className="h-date"
       style={
         Object {
           "fontSize": "5vw",
@@ -42,6 +44,7 @@ exports[`Details component snapshot test 1`] = `
       Friday, Jul 14th
     </div>
     <div
+      className="h-title"
       style={
         Object {
           "fontSize": "8vw",
@@ -56,7 +59,7 @@ exports[`Details component snapshot test 1`] = `
     className="right-side"
   >
     <img
-      src="https://s3.amazonaws.com/uifaces/faces/twitter/heykenneth/128.jpg"
+      src="https://s3.amazonaws.com/uifaces/faces/twitter/angelceballos/128.jpg"
       style={
         Object {
           "borderRadius": "2rem",

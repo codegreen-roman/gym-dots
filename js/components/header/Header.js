@@ -26,9 +26,9 @@ const _Header = () => {
                 flexDirection: 'column',
                 justifyContent: 'space-between'
             }}>
-                <a style={{ fontSize: '8vw' }}>&#9776;</a>
-                <div style={{ fontSize: '5vw', marginLeft: '4rem' }}>{moment().format('dddd, MMM Do')}</div>
-                <div style={{ fontSize: '8vw', marginLeft: '3rem' }}>Start Workout</div>
+                <a className='h-menu' style={{ fontSize: '8vw' }}>&#9776;</a>
+                <div className='h-date' style={{ fontSize: '5vw', marginLeft: '4rem' }}>{moment().format('dddd, MMM Do')}</div>
+                <div className='h-title' style={{ fontSize: '8vw', marginLeft: '3rem' }}>Start Workout</div>
             </div>
 
             <div className='right-side'>
