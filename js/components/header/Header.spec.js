@@ -4,6 +4,7 @@
 import React from 'react'
 import { _Header as Header } from './Header'
 import { shallow } from 'enzyme'
+import moment from 'moment'
 
 const setup = () => {
     const props = {
@@ -40,27 +41,28 @@ describe('Header component', () => {
     describe('Left side of the header', () => {
 
         let root = null
-        let menu = null
+        let menuElement = null
         let dateElement = null
         let titleElement = null
+        const currentDate = moment().format('dddd, MMM Do')
 
         beforeAll(() => {
             root = setup().find('section > div.left-side')
-            menu = root.find('a')
+            menuElement = root.find('a.h-menu')
             dateElement = root.find('div.h-date')
             titleElement = root.find('div.h-title')
         })
 
         test('has a menu icon wrapped in a tag', () => {
-            expect(menu.length).toBe(1)
+            expect(menuElement.length).toBe(1)
         })
 
         test('has a menu icon as a value', () => {
-            expect(menu.text()).toBe('☰')
+            expect(menuElement.text()).toBe('☰')
         })
 
-        test('has dateElement not empty', () => {
-            expect(dateElement.text()).not.toBe('')
+        test('has dateElement with a current date value', () => {
+            expect(dateElement.text()).toBe(currentDate)
         })
 
         test('has titleElement with a value Start Workout', () => {
