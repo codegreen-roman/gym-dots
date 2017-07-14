@@ -1,12 +1,14 @@
 import React from 'react'
 import { image } from 'faker'
+import glamorous from 'glamorous'
 
 const userPic = image.avatar()
-const imgStyle = {
+
+const ImgForUser = glamorous.img({
     width: '3rem',
     borderRadius: '2rem'
-}
+})
 
 export const UserImage = () => (
-    <img style={imgStyle} src={userPic} />
+    <ImgForUser src={userPic} />
 )
