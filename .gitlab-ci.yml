@@ -1,5 +1,4 @@
 before_script:
-  - curl -sL https://deb.nodesource.com/setup_6.x | -E bash -
   - apt-get update -qq && apt-get install -y nodejs
   - node -v
 
