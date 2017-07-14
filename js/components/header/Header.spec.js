@@ -4,15 +4,11 @@
 import React from 'react'
 import { _Header as Header } from './Header'
 import { shallow } from 'enzyme'
-import moment from 'moment'
 
 const setup = () => {
     const props = {
-        exerciseSession: {
-            day: 'Monday'
-        },
-        pingSession: () => {
-        }
+        dateStr: 'Saturday, Jul 15th',
+        subTitle: 'Start Workout'
     }
 
     return shallow(<Header {...props} />)
@@ -44,7 +40,7 @@ describe('Header component', () => {
         let menuElement = null
         let dateElement = null
         let titleElement = null
-        const currentDate = moment().format('dddd, MMM Do')
+        const currentDate = 'Saturday, Jul 15th'
 
         beforeAll(() => {
             root = setup().find('section > div.left-side')
@@ -61,7 +57,7 @@ describe('Header component', () => {
             expect(menuElement.text()).toBe('☰')
         })
 
-        test('has dateElement with a current date value', () => {
+        test('has dateElement with a date value Saturday, Jul 15th', () => {
             expect(dateElement.text()).toBe(currentDate)
         })
 

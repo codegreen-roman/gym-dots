@@ -7,10 +7,8 @@ import { _Header as Header } from './Header'
 
 const setup = () => {
     const props = {
-        exerciseSession: {
-            day: 'Monday'
-        },
-        pingSession: () => {}
+        dateStr: 'Saturday, Jul 15th',
+        subTitle: 'Start Workout'
     }
 
     return shallow(<Header {...props} />)

@@ -1,8 +1,8 @@
 import React from 'react'
-import moment from 'moment'
 import { UserImage } from './UserImage'
+import { string } from 'prop-types'
 
-const _Header = () => {
+const _Header = ({dateStr, subTitle}) => {
 
     const rootStyle = {
         padding: '1rem',
@@ -22,10 +22,10 @@ const _Header = () => {
             }}>
                 <a className='h-menu' style={{ fontSize: '8vw' }}>&#9776;</a>
                 <div className='h-date' style={{ fontSize: '5vw', marginLeft: '4rem' }}>
-                    {moment().format('dddd, MMM Do')}
+                    {dateStr}
                 </div>
                 <div className='h-title' style={{ fontSize: '8vw', marginLeft: '3rem' }}>
-                    Start Workout
+                    {subTitle}
                 </div>
             </div>
 
@@ -37,7 +37,10 @@ const _Header = () => {
     )
 }
 
-_Header.propTypes = {}
+_Header.propTypes = {
+    dateStr: string.isRequired,
+    subTitle: string.isRequired
+}
 
 export { _Header }
 export const Header = _Header

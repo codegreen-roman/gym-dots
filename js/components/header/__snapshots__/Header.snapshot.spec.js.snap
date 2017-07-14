@@ -41,7 +41,7 @@ exports[`Details component snapshot test 1`] = `
         }
       }
     >
-      Friday, Jul 14th
+      Saturday, Jul 15th
     </div>
     <div
       className="h-title"
