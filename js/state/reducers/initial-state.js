@@ -1,3 +1,5 @@
 export const INITIAL_STATE = {
-    sessions: []
+    sessions: [],
+    workoutStatus: 'notStarted',
+    exercises: []
 }
