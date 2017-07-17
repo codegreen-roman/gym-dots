@@ -1,5 +1,5 @@
 import { WORKOUT_STATUS } from '../actions/types'
-import { INITIAL_STATE } from './initialState'
+import { INITIAL_STATE } from '../initialState'
 
 export const workoutStatus = (state = INITIAL_STATE.workoutStatus, action) => {
 

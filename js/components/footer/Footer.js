@@ -2,9 +2,9 @@ import React from 'react'
 import { connect } from 'react-redux'
 import glamorous from 'glamorous'
 import { footerStyle } from './Footer.glamor'
-import { startWorkout } from '../../state/actions'
+import { startWorkoutWithCountdown } from '../../state/actions'
 import { compose } from 'ramda'
-import { func } from 'prop-types'
+import { func, bool } from 'prop-types'
 
 const AButton = glamorous.button({
     flex: 1
@@ -13,25 +13,27 @@ const AButton = glamorous.button({
 export class _Footer extends React.Component {
     render() {
 
-        const { fireStartWorkout } = this.props
-
+        const { fireStartWorkout, blocked } = this.props
         return (
             <footer {...footerStyle}>
-                <AButton onClick={fireStartWorkout}>Start Workout</AButton>
+                <AButton disabled={blocked} onClick={fireStartWorkout}>Start Workout</AButton>
             </footer>
         )
     }
 }
 
 _Footer.propTypes = {
+    blocked: bool.isRequired,
     fireStartWorkout: func.isRequired
 }
 
-const mapStateToProps = () => ({})
+const mapStateToProps = ({ workoutStatus }) => ({
+    blocked: workoutStatus === 'starting'
+})
 
 const mapActionsToProps = dispatch => {
     return {
-        fireStartWorkout: compose(dispatch, startWorkout)
+        fireStartWorkout: compose(dispatch, startWorkoutWithCountdown)
     }
 }
 
