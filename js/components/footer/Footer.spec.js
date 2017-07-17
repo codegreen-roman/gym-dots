@@ -5,7 +5,14 @@ import React from 'react'
 import { _Footer as Footer } from './Footer'
 import { shallow } from 'enzyme'
 
-const setup = () => shallow(<Footer />)
+const setup = () => {
+
+    const props = {
+        fireStartWorkout: () => ({}),
+    }
+
+    return shallow(<Footer {...props}/>)
+}
 
 describe('Footer component', () => {
 

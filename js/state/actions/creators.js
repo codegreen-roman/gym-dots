@@ -1,8 +1,13 @@
-import { TEST_ACTION, PING, GET_LOCATION, GET_LOCATION_START } from './types'
+import { TEST_ACTION, PING, GET_LOCATION, GET_LOCATION_START, START_WORKOUT } from './types'
 import { compose } from 'ramda'
 
 export const testMe = payload => ({
     type: TEST_ACTION,
+    payload
+})
+
+export const startWorkout = payload => ({
+    type: START_WORKOUT,
     payload
 })
 
