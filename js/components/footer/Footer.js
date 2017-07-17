@@ -14,9 +14,11 @@ export class _Footer extends React.Component {
     render() {
 
         const { fireStartWorkout, blocked } = this.props
+        const buttonTitle = blocked ? 'Starting ...' : 'Start Workout'
+
         return (
             <footer {...footerStyle}>
-                <AButton disabled={blocked} onClick={fireStartWorkout}>Start Workout</AButton>
+                <AButton disabled={blocked} onClick={fireStartWorkout}>{buttonTitle}</AButton>
             </footer>
         )
     }
