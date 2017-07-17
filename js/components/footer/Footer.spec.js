@@ -9,6 +9,7 @@ const setup = () => {
 
     const props = {
         fireStartWorkout: () => ({}),
+        blocked: false
     }
 
     return shallow(<Footer {...props}/>)
