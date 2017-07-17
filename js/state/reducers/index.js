@@ -1,5 +1,5 @@
 import { exerciseSession } from './exerciseSession'
-import { githubLocation } from './test-reducer'
-import { sessions } from './sessions-reducer'
+import { githubLocation } from './testReducer'
+import { sessions } from './sessionsReducer'
 
 export { exerciseSession, githubLocation, sessions }
