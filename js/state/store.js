@@ -4,8 +4,7 @@ import { reducer } from './reducer'
 import { loadTranslations, setLocale, syncTranslationWithStore } from 'react-redux-i18n'
 import { translations } from '../i18n/translations'
 import { loadSessions } from './actions'
-
-const INITIAL_STATE = {}
+import { INITIAL_STATE } from './initialState'
 
 export const configureStore = (initialState = INITIAL_STATE) => {
 
