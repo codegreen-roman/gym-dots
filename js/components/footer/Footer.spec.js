@@ -12,7 +12,7 @@ const setup = () => {
         blocked: false
     }
 
-    return shallow(<Footer {...props}/>)
+    return shallow(<Footer {...props} />)
 }
 
 describe('Footer component', () => {
