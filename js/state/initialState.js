@@ -2,6 +2,7 @@ export const INITIAL_STATE = {
     sessions: [],
     workoutName: 'Monday',
     workoutStatus: 'notStarted',
+    currentExercise: {},
     exercises: {
         upcoming: [
             {
