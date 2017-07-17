@@ -7,11 +7,15 @@ const AButton = glamorous.button({
     flex: 1
 })
 
-const _Footer = () => (
-    <footer {...footerStyle}>
-        <AButton>Start Workout</AButton>
-    </footer>
-)
+class _Footer extends React.Component {
+    render() {
+        return (
+            <footer {...footerStyle}>
+                <AButton>Start Workout</AButton>
+            </footer>
+        )
+    }
+}
 
 _Footer.propTypes = {}
 
