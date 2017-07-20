@@ -1,15 +1,18 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
+import createLogger from 'redux-logger'
 import { reducer } from './reducer'
 import { loadTranslations, setLocale, syncTranslationWithStore } from 'react-redux-i18n'
 import { translations } from '../i18n/translations'
 import { loadSessions } from './actions'
 import { INITIAL_STATE } from './initialState'
 
+const logger = createLogger()
+
 export const configureStore = (initialState = INITIAL_STATE) => {
 
     const enchancers = [
-        applyMiddleware(thunk),
+        applyMiddleware(thunk, logger),
         window.devToolsExtension ? window.devToolsExtension() : f => f
     ]
 
