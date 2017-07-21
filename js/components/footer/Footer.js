@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import glamorous from 'glamorous'
 import { footerStyle } from './Footer.glamor'
-import { startWorkoutWithCountdown } from '../../state/actions'
+import { startWorkoutWithCountdown, getAppDefaults } from '../../state/actions'
 import { compose } from 'ramda'
 import { func, bool } from 'prop-types'
 
@@ -11,6 +11,12 @@ const AButton = glamorous.button({
 })
 
 export class _Footer extends React.Component {
+
+    componentDidMount() {
+        const { loadDefaults } = this.props
+        loadDefaults()
+    }
+
     render() {
 
         const { fireStartWorkout, blocked } = this.props
@@ -26,7 +32,8 @@ export class _Footer extends React.Component {
 
 _Footer.propTypes = {
     blocked: bool.isRequired,
-    fireStartWorkout: func.isRequired
+    fireStartWorkout: func.isRequired,
+    loadDefaults: func.isRequired
 }
 
 const mapStateToProps = ({ workoutStatus }) => ({
@@ -35,7 +42,8 @@ const mapStateToProps = ({ workoutStatus }) => ({
 
 const mapActionsToProps = dispatch => {
     return {
-        fireStartWorkout: compose(dispatch, startWorkoutWithCountdown)
+        fireStartWorkout: compose(dispatch, startWorkoutWithCountdown),
+        loadDefaults: compose(dispatch, getAppDefaults)
     }
 }
 
