@@ -1,0 +1,1 @@
+export const GOT_DEFAULTS = 'GOT_DEFAULTS'
