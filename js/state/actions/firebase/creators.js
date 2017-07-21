@@ -1,4 +1,5 @@
-import { GOT_DEFAULTS } from './types'
+import { compose } from 'ramda'
+import { GOT_DEFAULTS, GOT_ERROR_LOADING_DEFAULTS } from './types'
 import { database } from './database'
 
 const gotAppDefaults = defaults => ({
@@ -8,16 +9,21 @@ const gotAppDefaults = defaults => ({
     }
 })
 
+const gotErrorLoadingDefaults = error => ({
+    type: GOT_ERROR_LOADING_DEFAULTS,
+    payload: {
+        error
+    }
+})
+
 export const getAppDefaults = () => {
     return function (dispatch) {
         return database.ref('/defaults')
             .once('value', snap => {
-                console.log(snap)
-                console.log(snap.val())
-                dispatch(gotAppDefaults(snap.val()))
+                const defaults = snap.val()
+                const pass = compose(dispatch, gotAppDefaults)
+                pass(defaults)
             })
-            .catch((error) => {
-                console.log(error)
-            })
+            .catch(gotErrorLoadingDefaults)
     }
 }
