@@ -1,6 +1,6 @@
 import { compose } from 'ramda'
 import { GOT_DEFAULTS, GOT_ERROR_LOADING_DEFAULTS } from './types'
-import { database } from './database'
+import { defaultsRef } from './database'
 
 const gotAppDefaults = defaults => ({
     type: GOT_DEFAULTS,
@@ -21,7 +21,7 @@ const dispatcher = dispatch => compose(dispatch, gotAppDefaults)
 export const loadAppDefaults = () => {
     return function (dispatch) {
         const fireAction = dispatcher(dispatch)
-        return database.ref('/defaults')
+        return defaultsRef
             .once('value', snap => {
                 const defaults = snap.val()
                 fireAction(defaults)
@@ -34,9 +34,12 @@ export const loadAppDefaults = () => {
 // https://firebase.google.com/docs/reference/js/firebase.database.Reference
 export const subscribeToAppDefaultsChanges = dispatch => {
     const fireAction = dispatcher(dispatch)
-    database.ref('/defaults')
-        .on('value', snap => {
-            const defaults = snap.val()
-            fireAction(defaults)
-        })
+    return new Promise(resolve => {
+        defaultsRef
+            .on('value', snap => {
+                const defaults = snap.val()
+                fireAction(defaults)
+                resolve(defaults)
+            })
+    })
 }
