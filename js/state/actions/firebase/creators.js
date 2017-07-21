@@ -16,14 +16,27 @@ const gotErrorLoadingDefaults = error => ({
     }
 })
 
-export const getAppDefaults = () => {
+const dispatcher = dispatch => compose(dispatch, gotAppDefaults)
+
+export const loadAppDefaults = () => {
     return function (dispatch) {
+        const fireAction = dispatcher(dispatch)
         return database.ref('/defaults')
             .once('value', snap => {
                 const defaults = snap.val()
-                const pass = compose(dispatch, gotAppDefaults)
-                pass(defaults)
+                fireAction(defaults)
             })
             .catch(gotErrorLoadingDefaults)
     }
+}
+
+
+// https://firebase.google.com/docs/reference/js/firebase.database.Reference
+export const subscribeToAppDefaultsChanges = dispatch => {
+    const fireAction = dispatcher(dispatch)
+    database.ref('/defaults')
+        .on('value', snap => {
+            const defaults = snap.val()
+            fireAction(defaults)
+        })
 }

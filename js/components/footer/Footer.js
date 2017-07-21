@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import glamorous from 'glamorous'
 import { footerStyle } from './Footer.glamor'
-import { startWorkoutWithCountdown, getAppDefaults } from '../../state/actions'
+import { startWorkoutWithCountdown, loadAppDefaults, subscribeToAppDefaultsChanges } from '../../state/actions'
 import { compose } from 'ramda'
 import { func, bool } from 'prop-types'
 
@@ -41,9 +41,12 @@ const mapStateToProps = ({ workoutStatus }) => ({
 })
 
 const mapActionsToProps = dispatch => {
+
+    subscribeToAppDefaultsChanges(dispatch)
+
     return {
         fireStartWorkout: compose(dispatch, startWorkoutWithCountdown),
-        loadDefaults: compose(dispatch, getAppDefaults)
+        loadDefaults: compose(dispatch, loadAppDefaults)
     }
 }
 
