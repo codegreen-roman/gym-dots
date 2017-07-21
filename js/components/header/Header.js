@@ -15,6 +15,24 @@ const _Header = ({ dateStr, subTitle, loginWith, auth }) => {
         fontFamily: 'sans-serif'
     }
 
+    const renderLoginOrUser = () => {
+
+        if (auth.user) {
+            return (
+                <div>
+                    <span>{auth.user.displayName}</span>
+                </div>
+            )
+        }
+
+        return (
+            <div>
+                <button onClick={() => loginWith('twitter')}>login with twitter</button>
+                <button onClick={() => loginWith('facebook')}>login with facebook</button>
+            </div>
+        )
+    }
+
     return (
         <section style={rootStyle}>
 
@@ -33,12 +51,7 @@ const _Header = ({ dateStr, subTitle, loginWith, auth }) => {
             </div>
 
             <div className='right-side'>
-
-                <div>{auth.user && auth.user.displayName}</div>
-
-                <button onClick={() => loginWith('twitter')}>login with twitter</button>
-                <button onClick={() => loginWith('facebook')}>login with facebook</button>
-
+                {renderLoginOrUser()}
                 <UserImage />
             </div>
 
