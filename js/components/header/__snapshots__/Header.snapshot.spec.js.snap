@@ -60,11 +60,13 @@ exports[`Details component snapshot test 1`] = `
   >
     <div>
       <button
+        className="twitter"
         onClick={[Function]}
       >
         login with twitter
       </button>
       <button
+        className="facebook"
         onClick={[Function]}
       >
         login with facebook

@@ -19,7 +19,7 @@ const _Header = ({ dateStr, subTitle, loginWith, auth }) => {
 
         if (auth.user) {
             return (
-                <div>
+                <div className='username'>
                     <span>{auth.user.displayName}</span>
                 </div>
             )
@@ -27,8 +27,8 @@ const _Header = ({ dateStr, subTitle, loginWith, auth }) => {
 
         return (
             <div>
-                <button onClick={() => loginWith('twitter')}>login with twitter</button>
-                <button onClick={() => loginWith('facebook')}>login with facebook</button>
+                <button className='twitter' onClick={() => loginWith('twitter')}>login with twitter</button>
+                <button className='facebook' onClick={() => loginWith('facebook')}>login with facebook</button>
             </div>
         )
     }
