@@ -16,7 +16,7 @@ describe('Defaults reducer', () => {
         }
     }
 
-    it('should return nice peace of state having restTime and sets as numbers', () => {
+    it('should return nice piece of state having restTime and sets as numbers', () => {
         const state = defaults(undefined, theAction)
         expect(state).toEqual(expect.objectContaining({
             restTime: expect.any(Number),
