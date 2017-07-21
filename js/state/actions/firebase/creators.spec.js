@@ -1,16 +1,60 @@
-/* global expect, describe, beforeAll, beforeEach, fdescribe, it, xit */
+/* global expect, describe, beforeAll, beforeEach, fdescribe, it, xit, afterEach */
 /* eslint-env jest */
 
 jest.mock('./database')
 
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
-import { loadAppDefaults, subscribeToAppDefaultsChanges } from './creators'
-import { GOT_DEFAULTS } from './types'
+import { loadAppDefaults, subscribeToAppDefaultsChanges, authWith } from './creators'
+import { GOT_DEFAULTS, AUTH_SUCCESS, START_AUTH } from './types'
 
 const mockStore = configureMockStore([thunk])
 
 describe('Firebase action creator', () => {
+
+    describe('.authWith', () => {
+        const expectedActions = [
+            {
+                type: START_AUTH,
+                payload: {}
+            },
+            {
+                type: AUTH_SUCCESS,
+                payload: {
+                    user: {
+                        displayName: 'Roman',
+                        uid: 'zzzzxxxxyyyy'
+                    }
+                }
+            }
+        ]
+
+        const store = mockStore({ defaults: {} })
+
+        afterEach(() => {
+            store.clearActions()
+        })
+
+        describe('and login is successful', () => {
+
+            it('creates START_AUTH and AUTH_SUCCESS actions after login in with facebook', (done) => {
+                store.dispatch(authWith('facebook'))
+                    .then(() => {
+                        expect(store.getActions()).toEqual(expectedActions)
+                        done()
+                    })
+            })
+
+            it('creates START_AUTH and AUTH_SUCCESS actions after login in with twitter', (done) => {
+                store.dispatch(authWith('twitter'))
+                    .then(() => {
+                        expect(store.getActions()).toEqual(expectedActions)
+                        done()
+                    })
+            })
+        })
+
+    })
 
     describe('.subscribeToAppDefaultsChanges', () => {
 

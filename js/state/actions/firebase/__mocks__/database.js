@@ -7,6 +7,11 @@ const defaultResult = {
     }
 }
 
+const user = {
+    displayName: 'Roman',
+    uid: 'zzzzxxxxyyyy'
+}
+
 export const defaultsRef = {
     once(eventType, successCallback) {
 
@@ -30,4 +35,8 @@ export const defaultsRef = {
         return () => {
         }
     }
+}
+
+export const loginWith = () => {
+    return new Promise(resolve => resolve(user))
 }

@@ -41,23 +41,27 @@ export const authWith = provider => {
     return function (dispatch) {
 
         const passUser = compose(dispatch, authSuccess)
+        const passError = compose(dispatch, gotErrorWhileAuth)
 
         dispatch(startingAuth())
         return loginWith(provider)
             .then(passUser)
-            .catch(gotErrorWhileAuth)
+            .catch(passError)
     }
 }
 
 export const loadAppDefaults = () => {
     return function (dispatch) {
+
         const fireAction = dispatcher(dispatch)
+        const fireErrorAction = compose(dispatch, gotErrorLoadingDefaults)
+
         return defaultsRef
             .once('value', snap => {
                 const defaults = snap.val()
                 fireAction(defaults)
             })
-            .catch(gotErrorLoadingDefaults)
+            .catch(fireErrorAction)
     }
 }
 
