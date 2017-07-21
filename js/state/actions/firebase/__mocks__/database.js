@@ -9,6 +9,7 @@ const defaultResult = {
 
 export const defaultsRef = {
     once(eventType, successCallback) {
+
         return new Promise((resolve) => {
             successCallback(defaultResult)
             resolve(defaultResult)
@@ -16,14 +17,17 @@ export const defaultsRef = {
     },
 
     on(eventType, callback) {
-        callback({
-            val() {
-                return {
-                    restTime: 200,
-                    sets: 200
+        setTimeout(() => {
+            callback({
+                val() {
+                    return {
+                        restTime: 200,
+                        sets: 200
+                    }
                 }
-            }
-        })
-        return () => {}
+            })
+        }, 500)
+        return () => {
+        }
     }
 }
