@@ -8,7 +8,9 @@ import { _Header as Header } from './Header'
 const setup = () => {
     const props = {
         dateStr: 'Saturday, Jul 15th',
-        subTitle: 'Start Workout'
+        subTitle: 'Start Workout',
+        auth: {},
+        loginWith: () => {},
     }
 
     return shallow(<Header {...props} />)

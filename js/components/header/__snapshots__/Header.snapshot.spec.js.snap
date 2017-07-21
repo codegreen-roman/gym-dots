@@ -58,6 +58,18 @@ exports[`Details component snapshot test 1`] = `
   <div
     className="right-side"
   >
+    <div>
+      <button
+        onClick={[Function]}
+      >
+        login with twitter
+      </button>
+      <button
+        onClick={[Function]}
+      >
+        login with facebook
+      </button>
+    </div>
     <UserImage />
   </div>
 </section>
