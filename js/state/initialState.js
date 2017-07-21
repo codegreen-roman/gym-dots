@@ -1,5 +1,6 @@
 export const INITIAL_STATE = {
     sessions: [],
+    auth: {},
     defaults: {},
     workoutName: 'Monday',
     workoutStatus: 'notStarted', // 'starting', 'started', 'paused', 'completed', 'aborted'

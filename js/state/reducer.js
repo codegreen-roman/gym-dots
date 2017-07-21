@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 import { i18nReducer } from 'react-redux-i18n'
-import { exerciseSession, githubLocation, sessions, workoutStatus, defaults } from './reducers'
+import { exerciseSession, githubLocation, sessions, workoutStatus, defaults, auth } from './reducers'
 
 export const reducer = combineReducers({
     exerciseSession,
@@ -8,5 +8,6 @@ export const reducer = combineReducers({
     sessions,
     workoutStatus,
     defaults,
+    auth,
     i18n: i18nReducer
 })

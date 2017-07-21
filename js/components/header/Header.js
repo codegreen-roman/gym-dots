@@ -1,8 +1,11 @@
 import React from 'react'
 import { UserImage } from './UserImage'
-import { string } from 'prop-types'
+import { string, object, func } from 'prop-types'
+import { connect } from 'react-redux'
+import { compose } from 'ramda'
+import { authWith } from '../../state/actions/firebase/creators'
 
-const _Header = ({dateStr, subTitle}) => {
+const _Header = ({ dateStr, subTitle, loginWith, auth }) => {
 
     const rootStyle = {
         padding: '1rem',
@@ -30,6 +33,12 @@ const _Header = ({dateStr, subTitle}) => {
             </div>
 
             <div className='right-side'>
+
+                <div>{auth.user && auth.user.displayName}</div>
+
+                <button onClick={() => loginWith('twitter')}>login with twitter</button>
+                <button onClick={() => loginWith('facebook')}>login with facebook</button>
+
                 <UserImage />
             </div>
 
@@ -38,9 +47,21 @@ const _Header = ({dateStr, subTitle}) => {
 }
 
 _Header.propTypes = {
+    auth: object.isRequired,
+    loginWith: func.isRequired,
     dateStr: string.isRequired,
     subTitle: string.isRequired
 }
 
+const mapStateToProps = ({ auth }, { dateStr, subTitle }) => ({
+    auth,
+    dateStr,
+    subTitle
+})
+
+const mapActionsToProps = dispatch => ({
+    loginWith: compose(dispatch, authWith)
+})
+
 export { _Header }
-export const Header = _Header
+export const Header = connect(mapStateToProps, mapActionsToProps)(_Header)
