@@ -1,6 +1,3 @@
-/* global expect, describe, beforeAll, beforeEach, fdescribe, xtest */
-/* eslint-env jest */
-
 import React from 'react'
 import { _Footer as Footer } from './Footer'
 import { shallow } from 'enzyme'

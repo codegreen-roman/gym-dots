@@ -1,6 +1,3 @@
-/* global expect, describe, beforeAll, beforeEach, fdescribe, it, xit, afterEach */
-/* eslint-env jest */
-
 jest.mock('./database', () => ({
     loginWith: () => {
         return new Promise((resolve, reject) => {
@@ -39,7 +36,7 @@ describe('Firebase action creator', () => {
                 },
                 {
                     type: AUTH_ERROR,
-                    payload: {error: {code: 1, message: 'not logged in'}}
+                    payload: { error: { code: 1, message: 'not logged in' } }
                 }
             ]
 

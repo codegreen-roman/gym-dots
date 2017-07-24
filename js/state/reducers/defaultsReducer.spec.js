@@ -1,6 +1,3 @@
-/* global expect, describe, beforeAll, beforeEach, fdescribe, it, xit */
-/* eslint-env jest */
-
 import { defaults } from './defaultsReducer'
 import { GOT_DEFAULTS } from '../actions/firebase/types'
 

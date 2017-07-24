@@ -1,6 +1,3 @@
-/* global expect*/
-/* eslint-env jest */
-
 // TODO: Move to separate Jest config folder
 import { matcher, serializer } from 'jest-glamor-react'
 
@@ -11,7 +8,10 @@ import React from 'react'
 import { render } from 'enzyme'
 import { Icon } from './Icon'
 
-test('the Icon component renders with defaults', () => {
-    const wrapper = render(<Icon icon='facebook' color='grey' />)
-    expect(wrapper).toMatchSnapshotWithGlamor()
+describe('Icon Component', () => {
+
+    it('renders with defaults', () => {
+        const wrapper = render(<Icon icon='facebook' color='grey' />)
+        expect(wrapper).toMatchSnapshotWithGlamor()
+    })
 })

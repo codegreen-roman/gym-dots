@@ -1,6 +1,3 @@
-/* global expect, describe, beforeAll, beforeEach, fdescribe, xtest, it, jest */
-/* eslint-env jest */
-
 import React from 'react'
 import { _Header as Header } from './Header'
 import { shallow } from 'enzyme'

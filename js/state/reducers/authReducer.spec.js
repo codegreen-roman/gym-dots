@@ -1,6 +1,3 @@
-/* global expect, describe, beforeAll, beforeEach, fdescribe, it, xit */
-/* eslint-env jest */
-
 import { auth } from './authReducer'
 import { AUTH_SUCCESS } from '../actions/firebase/types'
 
