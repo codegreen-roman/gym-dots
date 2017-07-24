@@ -67,3 +67,11 @@ The easiest way is to use the toMatchSnapshot() method for every input from this
 This will create a number of snapshots
 
 ## Action Creators
+
+Simple creator is just returning an object which should have payload and type props, easy to test. 
+
+Async creators are at the end generating a list of actions (expectedActions) to be dispatched by the store, 
+this behaviour should be tested. 
+
+## Reducers
+
