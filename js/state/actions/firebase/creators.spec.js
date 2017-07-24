@@ -1,6 +1,3 @@
-/* global expect, describe, beforeAll, beforeEach, fdescribe, it, xit, afterEach */
-/* eslint-env jest */
-
 jest.mock('./database')
 
 import configureMockStore from 'redux-mock-store'

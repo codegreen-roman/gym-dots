@@ -1,8 +1,6 @@
 import React from 'react'
-import { image } from 'faker'
 import glamorous from 'glamorous'
-
-const userPic = image.avatar()
+import { userPic } from './UserImage.helper'
 
 const ImgForUser = glamorous.img({
     width: '3rem',
