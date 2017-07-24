@@ -51,7 +51,7 @@ export const startWorkoutWithCountdown = () => {
         const promise = new Promise((resolve) => {
             setTimeout(() => {
                 resolve('started')
-            }, 5000)
+            }, 3000)
         })
 
         return promise

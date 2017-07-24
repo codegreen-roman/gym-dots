@@ -1,5 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`General Creators .loadLocationForUsername creates 2 WORKOUT_STATUS actions when loading dispatching 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "status": "started",
+    },
+    "type": "GET_LOCATION_START",
+  },
+  Object {
+    "payload": Object {
+      "location": "Tallinn, Estonia",
+      "status": "ready",
+    },
+    "type": "GET_LOCATION",
+  },
+]
+`;
+
+exports[`General Creators .loadLocationForUsername creates GET_LOCATION_START and GET_LOCATION actions when dispatching 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "status": "started",
+    },
+    "type": "GET_LOCATION_START",
+  },
+  Object {
+    "payload": Object {
+      "location": "Tallinn, Estonia",
+      "status": "ready",
+    },
+    "type": "GET_LOCATION",
+  },
+]
+`;
+
 exports[`General Creators .loadLocationStart should return action with a type of GET_LOCATION_START 1`] = `
 Object {
   "payload": Object {
@@ -36,4 +72,38 @@ Object {
   },
   "type": "WORKOUT_STATUS",
 }
+`;
+
+exports[`General Creators .startWorkoutWithCountdown creates 2 WORKOUT_STATUS actions when dispatching 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "status": "starting",
+    },
+    "type": "WORKOUT_STATUS",
+  },
+  Object {
+    "payload": Object {
+      "status": "started",
+    },
+    "type": "WORKOUT_STATUS",
+  },
+]
+`;
+
+exports[`General Creators .startWorkoutWithCountdown creates 2 WORKOUT_STATUS actions when loading dispatching 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "status": "starting",
+    },
+    "type": "WORKOUT_STATUS",
+  },
+  Object {
+    "payload": Object {
+      "status": "started",
+    },
+    "type": "WORKOUT_STATUS",
+  },
+]
 `;

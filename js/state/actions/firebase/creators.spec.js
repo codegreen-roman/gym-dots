@@ -70,11 +70,14 @@ describe('Firebase action creator', () => {
         const store = mockStore({ defaults: {} })
 
         it('creates GOT_DEFAULTS action after subscribing to changes', (done) => {
-            subscribeToAppDefaultsChanges(store.dispatch)
-                .then(() => {
-                    expect(store.getActions()).toEqual(expectedActions)
-                    done()
-                })
+            const promise = subscribeToAppDefaultsChanges(store.dispatch)
+
+            jest.runAllTimers()
+
+            promise.then(() => {
+                expect(store.getActions()).toEqual(expectedActions)
+                done()
+            })
         })
     })
 

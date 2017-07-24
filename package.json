@@ -96,6 +96,7 @@
         },
         "snapshotSerializers": [
             "enzyme-to-json/serializer"
-        ]
+        ],
+        "timers": "fake"
     }
 }
