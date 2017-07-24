@@ -1,4 +1,4 @@
-import { TEST_ACTION, PING, GET_LOCATION, GET_LOCATION_START, WORKOUT_STATUS } from './types'
+import { PING, GET_LOCATION, GET_LOCATION_START, WORKOUT_STATUS } from './types'
 import { compose } from 'ramda'
 
 export const startWorkout = () => ({
