@@ -1,22 +1,51 @@
 import React from 'react'
 import { _Footer as Footer } from './Footer'
-import { shallow } from 'enzyme'
+import { mount } from 'enzyme'
 
-const setup = () => {
+const setup = (blocked = false) => {
 
     const props = {
-        fireStartWorkout: () => ({}),
-        blocked: false
+        fireStartWorkout: jest.fn(),
+        loadDefaults: jest.fn(),
+        blocked
     }
 
-    return shallow(<Footer {...props} />)
+    return {
+        component: mount(<Footer {...props} />),
+        props
+    }
 }
 
 describe('Footer component', () => {
 
-    test('has footer type of the root component', () => {
-        const wrapper = setup()
-        expect(wrapper.type()).toBe('footer')
+    describe('snapshot not blocked', () => {
+        it('matches the previous snapshot', () => {
+            const { component } = setup()
+            expect(component).toMatchSnapshot()
+        })
+    })
+
+    describe('snapshot blocked', () => {
+        it('matches the previous snapshot', () => {
+            const { component } = setup(true)
+            expect(component).toMatchSnapshot()
+        })
+    })
+
+    describe('clicking on AButton', () => {
+        it('should call fireStartWorkout function', () => {
+            const { component, props } = setup()
+            component.find('button').simulate('click')
+
+            expect(props.fireStartWorkout).toHaveBeenCalledTimes(1)
+        })
+    })
+
+    describe('.componentDidMount', () => {
+        it('should call the loadDefaults', () => {
+            const { props } = setup()
+            expect(props.loadDefaults).toHaveBeenCalledTimes(1)
+        })
     })
 
 })
