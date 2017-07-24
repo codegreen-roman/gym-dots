@@ -1,5 +1,3 @@
-jest.mock('./database')
-
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
 import { loadAppDefaults, subscribeToAppDefaultsChanges, authWith } from './creators'

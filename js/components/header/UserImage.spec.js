@@ -1,5 +1,3 @@
-jest.mock('./UserImage.helper')
-
 import { matcher, serializer } from 'jest-glamor-react'
 
 expect.extend(matcher)
