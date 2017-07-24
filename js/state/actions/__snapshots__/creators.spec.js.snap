@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`General Creators .loadLocationStart should return action with a type of GET_LOCATION_START 1`] = `
+Object {
+  "payload": Object {
+    "status": "started",
+  },
+  "type": "GET_LOCATION_START",
+}
+`;
+
+exports[`General Creators .ping should return action with a type of PING 1`] = `
+Object {
+  "payload": Object {
+    "payload": Object {
+      "data": 2,
+    },
+  },
+  "type": "PING",
+}
+`;
+
+exports[`General Creators .setStartedWorkout should return action with a type of WORKOUT_STATUS 1`] = `
+Object {
+  "payload": Object {
+    "status": "started",
+  },
+  "type": "WORKOUT_STATUS",
+}
+`;
+
+exports[`General Creators .startWorkout should return action with a type of WORKOUT_STATUS 1`] = `
+Object {
+  "payload": Object {
+    "status": "starting",
+  },
+  "type": "WORKOUT_STATUS",
+}
+`;
