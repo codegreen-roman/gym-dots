@@ -72,6 +72,5 @@ export const loadLocationForUsername = () => {
 
         return promise
             .then(compose(dispatch, loadLocationSuccess))
-            .catch(() => dispatch(loadLocationError()))
     }
 }
