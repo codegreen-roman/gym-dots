@@ -47,11 +47,11 @@ our actions should contain props type and payload
 ## Component
 
 - How my component should look like with a given set of props?
-- Can I determine all possible collections of props. So if a day label should render a day of the week, 
+- Can I determine all possible collections of props. So if a day label should render a day of the week 
 
 ```['M', 'T', 'W', 'T', 'F', 'S', 'S']```
 
-The easiest way is to use the expect().toMatchSnapshot() for every input from this list
+The easiest way is to use the toMatchSnapshot() method for every input from this list
 
 ```$javascript
 
