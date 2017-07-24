@@ -1,3 +1,5 @@
+# General
+
 ### Running the app
 
 Use command `npm run dev:server` to start webpack and json-server
@@ -39,3 +41,7 @@ our actions should contain props type and payload
 
 - mapStateToProps
 - mapActionsToProps
+
+# Testing
+
+## Action Creators
