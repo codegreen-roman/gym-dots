@@ -29,13 +29,6 @@ const loadLocationSuccess = location => ({
     }
 })
 
-const loadLocationError = () => ({
-    type: GET_LOCATION,
-    payload: {
-        status: 'failed'
-    }
-})
-
 export const loadLocationStart = () => ({
     type: GET_LOCATION_START,
     payload: {
