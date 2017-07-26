@@ -4,7 +4,7 @@ import glamorous from 'glamorous'
 import { footerStyle } from './Footer.glamor'
 import { startWorkoutWithCountdown, loadAppDefaults, subscribeToAppDefaultsChanges } from '../../state/actions'
 import { compose } from 'ramda'
-import { func, bool, object } from 'prop-types'
+import { func, bool } from 'prop-types'
 
 const AButton = glamorous.button({
     flex: 1
@@ -19,24 +19,18 @@ export class _Footer extends React.Component {
 
     render() {
 
-        const { fireStartWorkout, blocked, history } = this.props
-        const handleClick = () => {
-            fireStartWorkout()
-                .then(() => history.push('/workout/started'))
-        }
-
+        const { fireStartWorkout, blocked } = this.props
         const buttonTitle = blocked ? 'Starting ...' : 'Start Workout'
 
         return (
             <footer {...footerStyle}>
-                <AButton disabled={blocked} onClick={handleClick}>{buttonTitle}</AButton>
+                <AButton disabled={blocked} onClick={fireStartWorkout}>{buttonTitle}</AButton>
             </footer>
         )
     }
 }
 
 _Footer.propTypes = {
-    history: object,
     blocked: bool.isRequired,
     fireStartWorkout: func.isRequired,
     loadDefaults: func.isRequired
@@ -46,12 +40,17 @@ const mapStateToProps = ({ workoutStatus }) => ({
     blocked: workoutStatus === 'starting'
 })
 
-const mapActionsToProps = dispatch => {
+const mapActionsToProps = (dispatch, { history }) => {
+
+    const startWorkout = compose(dispatch, startWorkoutWithCountdown)
 
     subscribeToAppDefaultsChanges(dispatch)
 
     return {
-        fireStartWorkout: compose(dispatch, startWorkoutWithCountdown),
+        fireStartWorkout: () => {
+            startWorkout()
+                .then(() => history.push('/workout/started'))
+        },
         loadDefaults: compose(dispatch, loadAppDefaults)
     }
 }
