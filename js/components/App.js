@@ -18,15 +18,20 @@ export const App = () => {
                 <Route exact path='/welcome'>
                     <div>Nothing here</div>
                 </Route>
-                <Route path='/'>
-                    <main>
-                        <Header dateStr={dateStr} subTitle={headerTitle} />
-                        <Route path='/workout' component={Activity} />
-                        <Route path='/status' component={() => <Status />} />
-                        <Route path='/list' component={() => <Exercises />} />
-                        <Footer />
-                    </main>
-                </Route>
+                <Route path='/' component={({history}) => {
+
+                    return (
+                        <main>
+                            <Header dateStr={dateStr} subTitle={headerTitle} />
+                            <Route path='/workout' component={Activity} />
+                            <Route path='/status' component={() => <Status />} />
+                            <Route path='/list' component={() => <Exercises />} />
+                            <Footer history={history} />
+                        </main>
+                    )
+
+                }} />
+                <Route component={() => (<section>404 Not Found</section>)} />
 
             </Switch>
 
