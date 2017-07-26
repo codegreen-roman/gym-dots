@@ -1,7 +1,7 @@
 import React from 'react'
 import { Header } from './header/Header'
 import { Footer } from './footer/Footer'
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import { Activity } from './Activity'
 import { Status } from './Status'
 import { Exercises } from './Exercises'
@@ -14,11 +14,23 @@ export const App = () => {
 
     return (
         <section className='app-container'>
-            <Header dateStr={dateStr} subTitle={headerTitle} />
-            <Route exact path='/' component={() => <Activity />} />
-            <Route path='/status' component={() => <Status />} />
-            <Route path='/list' component={() => <Exercises />} />
-            <Footer />
+            <Switch>
+                <Route exact path='/welcome'>
+                    <div>Nothing here</div>
+                </Route>
+                <Route path='/'>
+                    <main>
+                        <Header dateStr={dateStr} subTitle={headerTitle} />
+                        <Route path='/workout' component={Activity} />
+                        <Route path='/status' component={() => <Status />} />
+                        <Route path='/list' component={() => <Exercises />} />
+                        <Footer />
+                    </main>
+                </Route>
+
+            </Switch>
+
+
         </section>
     )
 }
