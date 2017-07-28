@@ -15,10 +15,9 @@ class _ManageExerciseList extends Component {
     }
 
     render() {
-        const { exercises: {current, upcoming, completed, skipped} } = this.props
+        const { exercises: { upcoming, completed, skipped } } = this.props
         return (
             <div>
-                <ExerciseList exercises={current} title='current' />
                 <ExerciseList exercises={upcoming} title='upcoming' />
                 <ExerciseList exercises={completed} title='completed' />
                 <ExerciseList exercises={skipped} title='skipped' />
