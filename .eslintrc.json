@@ -18,7 +18,10 @@
         "plugin:flowtype/recommended"
     ],
     "parserOptions": {
-        "sourceType": "module"
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true
+        }
     },
     "rules": {
         "jest/no-disabled-tests": "warn",
