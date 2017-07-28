@@ -6,13 +6,14 @@ import { loadTranslations, setLocale, syncTranslationWithStore } from 'react-red
 import { translations } from '../i18n/translations'
 import { loadSessions } from './actions'
 import { INITIAL_STATE } from './initialState'
+import reduxImmutableStateInvariant from 'redux-immutable-state-invariant'
 
 const logger = createLogger()
 
 export const configureStore = (initialState = INITIAL_STATE) => {
 
     const enchancers = [
-        applyMiddleware(thunk, logger),
+        applyMiddleware(reduxImmutableStateInvariant(), thunk, logger),
         window.devToolsExtension ? window.devToolsExtension() : f => f
     ]
 
