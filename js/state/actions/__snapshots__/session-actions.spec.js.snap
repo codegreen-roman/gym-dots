@@ -38,7 +38,9 @@ Array [
               "weight": 0,
             },
           ],
+          "incrementer": 5,
           "name": "Monday",
+          "sessionId": "",
         },
         Object {
           "exercises": Array [
