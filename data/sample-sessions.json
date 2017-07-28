@@ -1,10 +1,13 @@
 {
     "defaults": {
         "restTime": 60,
-        "sets": 5
+        "sets": 5,
+        "incrementer": 5
     },
     "sessions": [
         {
+            "sessionId": "",
+            "incrementer": 5,
             "name": "Monday",
             "exercises": [
                 {

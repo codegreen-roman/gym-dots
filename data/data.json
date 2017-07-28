@@ -1,4 +1,139 @@
 {
-    "exercises": [],
-    "sessions": []
+    "exercises": [
+        {
+            "exerciseId": "47394e41-1312-4fbb-a5f5-552f18c956e5",
+            "restTime": 90,
+            "name": "Push-ups",
+            "sets": 5,
+            "reps": 20,
+            "weight": 0
+        },
+        {
+            "exerciseId": "560008e8-b119-4037-ab9a-6b3a303d318a",
+            "restTime": 60,
+            "name": "Pull-up",
+            "sets": 5,
+            "reps": 8,
+            "weight": 0
+        },
+        {
+            "exerciseId": "475d7ff0-c1dc-4f8a-9b83-c477f323641a",
+            "restTime": 30,
+            "name": "Australian pull-ups",
+            "sets": 5,
+            "reps": 12,
+            "weight": 0
+        }
+    ],
+    "sessions": [
+        {
+            "sessionId": "bdf6f991-4f5b-4eb6-9708-af753f269550",
+            "incrementer": 5,
+            "name": "Monday Workout",
+            "exercises": [
+                {
+                    "exerciseId": "47394e41-1312-4fbb-a5f5-552f18c956e5",
+                    "restTime": 90,
+                    "name": "Push-ups",
+                    "sets": 5,
+                    "reps": 20,
+                    "weight": 0
+                },
+                {
+                    "exerciseId": "560008e8-b119-4037-ab9a-6b3a303d318a",
+                    "restTime": 60,
+                    "name": "Pull-up",
+                    "sets": 5,
+                    "reps": 8,
+                    "weight": 0
+                },
+                {
+                    "exerciseId": "475d7ff0-c1dc-4f8a-9b83-c477f323641a",
+                    "restTime": 30,
+                    "name": "Australian pull-ups",
+                    "sets": 5,
+                    "reps": 12,
+                    "weight": 0
+                }
+            ]
+        }
+    ],
+    "results": [
+        {
+            "id": "5d335d3e-0778-4b36-b797-6847c7500b57",
+            "timestamp": "",
+            "stats": {},
+            "exercises": {
+                "sessionId": "bdf6f991-4f5b-4eb6-9708-af753f269550",
+                "skipped": [],
+                "completed": [
+                    {
+                        "exerciseId": "",
+                        "restTime": 60,
+                        "name": "Pull-up",
+                        "setsLeft": 0,
+                        "reps": 8,
+                        "weight": 0,
+                        "results": [true, true, true, true, true]
+                    },
+                    {
+                        "exerciseId": "",
+                        "restTime": 90,
+                        "name": "Push-ups",
+                        "setsLeft": 0,
+                        "reps": 20,
+                        "weight": 0,
+                        "results": [true, true, true, true, true]
+                    },
+                    {
+                        "exerciseId": "",
+                        "restTime": 30,
+                        "name": "Australian pull-ups",
+                        "setsLeft": 0,
+                        "reps": 12,
+                        "weight": 0,
+                        "results": [true, true, true, true, false]
+                    }
+                ]
+            }
+        }
+    ],
+    "next":         {
+        "sessionId": "bdf6f991-4f5b-4eb6-9708-af753f269550",
+        "name": "Monday Workout",
+        "exercises": [
+            {
+                "exerciseId": "47394e41-1312-4fbb-a5f5-552f18c956e5",
+                "restTime": 90,
+                "name": "Push-ups",
+                "sets": 5,
+                "reps": 20,
+                "weight": 0
+            },
+            {
+                "exerciseId": "560008e8-b119-4037-ab9a-6b3a303d318a",
+                "restTime": 60,
+                "name": "Pull-up",
+                "sets": 5,
+                "reps": 8,
+                "weight": 0
+            },
+            {
+                "exerciseId": "475d7ff0-c1dc-4f8a-9b83-c477f323641a",
+                "restTime": 30,
+                "name": "Australian pull-ups",
+                "sets": 5,
+                "reps": 12,
+                "weight": 0
+            }
+        ]
+    }
+,
+    "config": {
+        "defaults": {
+            "restTime": 60,
+            "sets": 5,
+            "incrementer": 5
+        }
+    }
 }
