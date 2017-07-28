@@ -1,3 +1,7 @@
+
+[![build status](https://gitlab.com/neoroma/gym-dots/badges/master/build.svg)](https://gitlab.com/neoroma/gym-dots/commits/master)
+
+
 # General
 
 ### Running the app
