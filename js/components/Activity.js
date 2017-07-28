@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { shape, string, number, object } from 'prop-types'
 import { Route, NavLink, withRouter } from 'react-router-dom'
+import { ManageExerciseList } from './list/ManageExerciseList'
 
 const _Activity = ({ exerciseSession: { day }, defaults, match }) => {
 
@@ -15,7 +16,7 @@ const _Activity = ({ exerciseSession: { day }, defaults, match }) => {
     return (
         <section style={{ border: '2px solid #9ACD32' }}>
             <div><span>{day}</span> rendered at {now}</div>
-
+            <ManageExerciseList />
             <pre>{JSON.stringify(defaults, null, 4)}</pre>
 
             <NavLink to={match.url + '/starting'} activeStyle={activeStyle}>Begin</NavLink>
