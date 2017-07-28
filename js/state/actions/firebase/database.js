@@ -6,6 +6,7 @@ export const database = firebase.database()
 export const firebaseAuth = firebaseApp.auth()
 
 export const defaultsRef = database.ref('/defaults')
+export const nextRef = database.ref('/next')
 
 export const providers = {
     'facebook': new firebase.auth.FacebookAuthProvider(),

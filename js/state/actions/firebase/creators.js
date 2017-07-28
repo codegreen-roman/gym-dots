@@ -1,6 +1,14 @@
 import { compose } from 'ramda'
-import { GOT_DEFAULTS, GOT_ERROR_LOADING_DEFAULTS, START_AUTH, AUTH_ERROR, AUTH_SUCCESS } from './types'
-import { defaultsRef, loginWith } from './database'
+import {
+    GOT_DEFAULTS,
+    GOT_ERROR_LOADING_DEFAULTS,
+    START_AUTH,
+    AUTH_ERROR,
+    AUTH_SUCCESS,
+    EXERCISES_FETCHING_SUCCESS,
+    EXERCISES_FETCHING_ERROR
+} from './types'
+import { defaultsRef, nextRef, loginWith } from './database'
 
 const gotAppDefaults = defaults => ({
     type: GOT_DEFAULTS,
@@ -32,6 +40,20 @@ const authSuccess = user => ({
     type: AUTH_SUCCESS,
     payload: {
         user
+    }
+})
+
+const exercisesFetchingSuccess = exercises => ({
+    type: EXERCISES_FETCHING_SUCCESS,
+    payload: {
+        exercises
+    }
+})
+
+const exercisesFetchingError = error => ({
+    type: EXERCISES_FETCHING_ERROR,
+    payload: {
+        error
     }
 })
 
@@ -77,4 +99,17 @@ export const subscribeToAppDefaultsChanges = dispatch => {
                 resolve(defaults)
             })
     })
+}
+
+export const fetchExercises = () => dispatch => {
+    const fetchSuccess = compose(dispatch, exercisesFetchingSuccess)
+    const fetchError = compose(dispatch, exercisesFetchingError)
+
+    return nextRef
+        .once('value', snap => {
+            const next = snap.val()
+            // console.log(next)
+            fetchSuccess(next)
+        })
+        .catch(fetchError)
 }
