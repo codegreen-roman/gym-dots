@@ -8,7 +8,9 @@ import { loadSessions } from './actions'
 import { INITIAL_STATE } from './initialState'
 import reduxImmutableStateInvariant from 'redux-immutable-state-invariant'
 
-const logger = createLogger()
+const logger = createLogger({
+    collapsed: (getState, action, logEntry) => !logEntry.error
+})
 
 export const configureStore = (initialState = INITIAL_STATE) => {
 
