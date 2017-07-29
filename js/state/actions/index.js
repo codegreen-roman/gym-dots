@@ -1,5 +1,6 @@
 import { ping, startWorkoutWithCountdown } from './creators'
 import { loadSessions } from './session-actions'
+import { exercisesOrderChange } from './exercisesActions'
 import {
     loadAppDefaults,
     subscribeToAppDefaultsChanges,
@@ -12,5 +13,6 @@ export {
     startWorkoutWithCountdown,
     loadAppDefaults,
     subscribeToAppDefaultsChanges,
-    fetchExercises
+    fetchExercises,
+    exercisesOrderChange
 }
