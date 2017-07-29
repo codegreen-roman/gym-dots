@@ -1,22 +1,23 @@
 import React from 'react'
 import { Exercise } from './Exercise'
-import { object } from 'prop-types'
+import { object, func } from 'prop-types'
 import glamorous from 'glamorous'
 
-const _ExerciseListRow = ({ exercise }) => {
+const _ExerciseListRow = ({ exercise, onRowClick }) => {
     const Li = glamorous.li({
         padding: 10,
         display: 'flex'
     })
     return (
-        <Li>
+        <Li onClick={onRowClick}>
             <Exercise exercise={exercise} />
         </Li>
     )
 }
 
 _ExerciseListRow.propTypes = {
-    exercise: object.isRequired
+    exercise: object.isRequired,
+    onRowClick: func.isRequired
 }
 
 export const ExerciseListRow = _ExerciseListRow

@@ -3,7 +3,7 @@ import { ExerciseList } from './ExerciseList'
 import { connect } from 'react-redux'
 import { compose } from 'ramda'
 import { object, func } from 'prop-types'
-import { fetchExercises } from '../../state/actions'
+import { fetchExercises, exercisesOrderChange } from '../../state/actions'
 
 class _ManageExerciseList extends Component {
     constructor(props) {
@@ -15,10 +15,10 @@ class _ManageExerciseList extends Component {
     }
 
     render() {
-        const { exercises: { upcoming, completed, skipped } } = this.props
+        const { exercises: { upcoming, completed, skipped }, onOrderChange } = this.props
         return (
             <div>
-                <ExerciseList exercises={upcoming} title='upcoming' />
+                <ExerciseList exercises={upcoming} title='upcoming' onOrderChangeClick={onOrderChange} />
                 <ExerciseList exercises={completed} title='completed' />
                 <ExerciseList exercises={skipped} title='skipped' />
             </div>
@@ -28,7 +28,8 @@ class _ManageExerciseList extends Component {
 
 _ManageExerciseList.propTypes = {
     exercises: object.isRequired,
-    fetchExercises: func.isRequired
+    fetchExercises: func.isRequired,
+    onOrderChange: func.isRequired
 }
 
 const mapStateToProps = ({ exercises, sessionId, name }) => {
@@ -41,7 +42,8 @@ const mapStateToProps = ({ exercises, sessionId, name }) => {
 
 const mapActionsToProps = dispatch => {
     return {
-        fetchExercises: compose(dispatch, fetchExercises)
+        fetchExercises: compose(dispatch, fetchExercises),
+        onOrderChange: compose(dispatch, exercisesOrderChange)
     }
 }
 
