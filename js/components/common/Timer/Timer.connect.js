@@ -1,8 +1,12 @@
+/*eslint no-console: "warn"*/
+
 import { connect } from 'react-redux'
 import { cond, equals, always, T, ifElse } from 'ramda'
 import { Observable } from 'rxjs'
 
 export const mapStateToProps = ({ workoutStatus }, { children }) => {
+
+    console.log('calling mapStateToProps')
 
     const getKillingObservable = ifElse(
         equals('completed'),
