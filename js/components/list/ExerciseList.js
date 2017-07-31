@@ -5,6 +5,8 @@ import glamorous from 'glamorous'
 import { ExerciseListRow } from './ExerciseListRow'
 import { ExerciseListHeader } from './ExerciseListHeader'
 
+const onOrderChangeClick = () => {} // noop
+
 const _ExerciseList = ({ exercises, title, onOrderChangeClick }) => {
 
     const Ul = glamorous.ul({
@@ -22,9 +24,13 @@ const _ExerciseList = ({ exercises, title, onOrderChangeClick }) => {
     )
 }
 
+_ExerciseList.defaultProps = {
+    onOrderChangeClick
+}
+
 _ExerciseList.propTypes = {
     exercises: array.isRequired,
-    title: string,
+    title: string.isRequired,
     onOrderChangeClick: func.isRequired
 }
 

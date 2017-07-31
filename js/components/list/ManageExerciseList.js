@@ -18,9 +18,9 @@ class _ManageExerciseList extends Component {
         const { exercises: { upcoming, completed, skipped }, onOrderChange } = this.props
         return (
             <div>
-                <ExerciseList exercises={upcoming} title='upcoming' onOrderChangeClick={onOrderChange} />
-                <ExerciseList exercises={completed} title='completed' />
-                <ExerciseList exercises={skipped} title='skipped' />
+                <ExerciseList key='upcoming' exercises={upcoming} title='upcoming' onOrderChangeClick={onOrderChange} />
+                <ExerciseList key='completed'  exercises={completed} title='completed' />
+                <ExerciseList key='skipped'  exercises={skipped} title='skipped' />
             </div>
         )
     }
