@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Timer connect functions for completed status should return props for the component 1`] = `
+Object {
+  "children": Array [],
+  "workoutStatus": "completed",
+}
+`;
+
+exports[`Timer connect functions for started status should return props for the component 1`] = `
+Object {
+  "children": Array [],
+  "workoutStatus": "started",
+}
+`;
+
+exports[`Timer connect functions for starting status should return props for the component 1`] = `
+Object {
+  "children": Array [],
+  "workoutStatus": "starting",
+}
+`;
