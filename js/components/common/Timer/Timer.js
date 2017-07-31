@@ -1,8 +1,6 @@
-/*eslint no-console: "off"*/
-
 import { Observable, Subject } from 'rxjs'
 import React from 'react'
-import { array, func } from 'prop-types'
+import { array, func, string } from 'prop-types'
 import { timerConnect } from './Timer.connect'
 
 export class _Timer extends React.Component {
@@ -38,11 +36,11 @@ export class _Timer extends React.Component {
     }
 
     render() {
-        const { children, start, complete } = this.props
+        const { children, start, complete, workoutStatus } = this.props
         return (<div>
             {children}
-            <button onClick={start}>start</button>
-            <button onClick={complete}>complete</button>
+            <button disabled={workoutStatus === 'started'} onClick={start}>start</button>
+            <button disabled={workoutStatus !== 'started'} onClick={complete}>complete</button>
 
             <div>{this.state.timeSpent}</div>
         </div>)
@@ -50,6 +48,7 @@ export class _Timer extends React.Component {
 }
 
 _Timer.propTypes = {
+    workoutStatus: string,
     children: array,
     start: func,
     complete: func,
