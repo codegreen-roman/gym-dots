@@ -1,4 +1,4 @@
-import { AUTH_SUCCESS } from '../actions/firebase/types'
+import { AUTH_SUCCESS } from '../actions/types'
 import { INITIAL_STATE } from '../initialState'
 
 export const auth = (state = INITIAL_STATE.auth, action) => {

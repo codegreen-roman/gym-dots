@@ -7,7 +7,7 @@ import {
     loadLocationStart,
     startWorkoutWithCountdown,
     loadLocationForUsername
-} from './creators'
+} from '../creators'
 
 const mockStore = configureMockStore([thunk])
 

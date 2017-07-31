@@ -1,5 +1,5 @@
 import React from 'react'
-import { _Header as Header } from './Header'
+import { _Header as Header } from '../Header'
 import { shallow } from 'enzyme'
 
 const defaultProps = {

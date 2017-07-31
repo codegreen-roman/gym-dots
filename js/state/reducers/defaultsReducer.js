@@ -1,4 +1,4 @@
-import { GOT_DEFAULTS } from '../actions/firebase/types'
+import { GOT_DEFAULTS } from '../actions/types'
 import { INITIAL_STATE } from '../initialState'
 
 export const defaults = (state = INITIAL_STATE.defaults, action) => {

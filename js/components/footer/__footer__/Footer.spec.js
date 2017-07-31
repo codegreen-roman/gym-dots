@@ -1,5 +1,5 @@
 import React from 'react'
-import { _Footer as Footer } from './Footer'
+import { _Footer as Footer } from '../Footer'
 import { mount } from 'enzyme'
 
 const setup = (blocked = false) => {

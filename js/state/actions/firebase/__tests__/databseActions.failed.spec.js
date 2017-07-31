@@ -1,4 +1,4 @@
-jest.mock('./database', () => ({
+jest.mock('../database', () => ({
     loginWith: () => {
         return new Promise((resolve, reject) => {
             reject({
@@ -12,8 +12,8 @@ jest.mock('./database', () => ({
 
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
-import { authWith } from './creators'
-import { START_AUTH, AUTH_ERROR } from './types'
+import { authWith } from '../databaseActions'
+import { START_AUTH, AUTH_ERROR } from '../../types'
 
 const mockStore = configureMockStore([thunk])
 

@@ -5,7 +5,7 @@ import {
     loadAppDefaults,
     subscribeToAppDefaultsChanges,
     fetchExercises
-} from './firebase/creators'
+} from './firebase/databaseActions'
 
 export {
     ping,

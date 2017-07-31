@@ -1,5 +1,5 @@
-import { defaults } from './defaultsReducer'
-import { GOT_DEFAULTS } from '../actions/firebase/types'
+import { defaults } from '../defaultsReducer'
+import { GOT_DEFAULTS } from '../../actions/types'
 
 describe('Defaults reducer', () => {
 

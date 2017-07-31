@@ -1,4 +1,4 @@
-import { mapStateToProps } from './Timer.connect'
+import { mapStateToProps } from '../Timer.connect'
 
 describe('Timer connect functions', () => {
 

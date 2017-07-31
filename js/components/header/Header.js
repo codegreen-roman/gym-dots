@@ -3,7 +3,7 @@ import { UserImage } from './UserImage'
 import { string, object, func } from 'prop-types'
 import { connect } from 'react-redux'
 import { compose } from 'ramda'
-import { authWith } from '../../state/actions/firebase/creators'
+import { authWith } from '../../state/actions/firebase/databaseActions'
 
 const _Header = ({ dateStr, subTitle, loginWith, auth }) => {
 

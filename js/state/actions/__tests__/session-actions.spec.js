@@ -1,7 +1,7 @@
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
 
-import { loadSessions, loadSessionsSuccess } from './session-actions'
+import { loadSessions, loadSessionsSuccess } from '../session-actions'
 
 const mockStore = configureMockStore([thunk])
 

@@ -1,7 +1,7 @@
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
-import { loadAppDefaults, subscribeToAppDefaultsChanges, authWith } from './creators'
-import { GOT_DEFAULTS, AUTH_SUCCESS, START_AUTH } from './types'
+import { loadAppDefaults, subscribeToAppDefaultsChanges, authWith } from '../databaseActions'
+import { GOT_DEFAULTS, AUTH_SUCCESS, START_AUTH } from '../../types'
 
 const mockStore = configureMockStore([thunk])
 

@@ -5,7 +5,7 @@ expect.addSnapshotSerializer(serializer)
 
 import React from 'react'
 import { mount } from 'enzyme'
-import { UserImage } from './UserImage'
+import { UserImage } from '../UserImage'
 
 describe('UserImage component', () => {
 

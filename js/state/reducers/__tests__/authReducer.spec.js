@@ -1,5 +1,5 @@
-import { auth } from './authReducer'
-import { AUTH_SUCCESS } from '../actions/firebase/types'
+import { auth } from '../authReducer'
+import { AUTH_SUCCESS } from '../../actions/types'
 
 describe('Auth reducer', () => {
 

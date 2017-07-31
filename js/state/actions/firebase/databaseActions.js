@@ -7,7 +7,8 @@ import {
     AUTH_SUCCESS,
     EXERCISES_FETCHING_SUCCESS,
     EXERCISES_FETCHING_ERROR
-} from './types'
+} from '../types'
+
 import { defaultsRef, nextRef, loginWith } from './database'
 
 const gotAppDefaults = defaults => ({
