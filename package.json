@@ -39,6 +39,7 @@
         "redux": "^3.7.2",
         "redux-logger": "^3.0.6",
         "redux-thunk": "^2.2.0",
+        "rxjs": "^5.4.2",
         "styletron": "^2.5.7",
         "styletron-react": "^2.5.8",
         "styletron-utils": "^2.5.4",

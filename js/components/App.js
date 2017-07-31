@@ -6,6 +6,7 @@ import { Activity } from './Activity'
 import { Status } from './Status'
 import { Exercises } from './Exercises'
 import moment from 'moment'
+import { Timer } from './common/Timer/Timer'
 
 export const App = () => {
 
@@ -16,7 +17,12 @@ export const App = () => {
         <section className='app-container'>
             <Switch>
                 <Route exact path='/welcome'>
-                    <div>Nothing here</div>
+                    <Timer>
+                        <div>Child 1</div>
+                        <div>Child 2</div>
+                        <div>Child 3</div>
+                        <div>Child 4</div>
+                    </Timer>
                 </Route>
                 <Route path='/' component={({history}) => {
 

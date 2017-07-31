@@ -5,7 +5,7 @@ export const firebaseApp = firebase.initializeApp(FIREBASE_CINFIG)
 export const database = firebase.database()
 export const firebaseAuth = firebaseApp.auth()
 
-export const defaultsRef = database.ref('/defaults')
+export const defaultsRef = database.ref('/config/defaults')
 export const nextRef = database.ref('/next')
 
 export const providers = {

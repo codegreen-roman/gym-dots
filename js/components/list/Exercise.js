@@ -16,7 +16,7 @@ const _Exercise = ({ exercise }) => {
     return (
         <div>
             <ExerciseTitle>{exercise.name}</ExerciseTitle>
-            <ExerciseDetails>{exercise.weight} kg x {exercise.reps} reps x {exercise.setsLeft} sets</ExerciseDetails>
+            <ExerciseDetails>{exercise.weight} kg x {exercise.reps} reps x {exercise.sets} sets</ExerciseDetails>
         </div>
     )
 }
