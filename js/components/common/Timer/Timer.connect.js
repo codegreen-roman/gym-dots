@@ -1,36 +1,20 @@
-/*eslint no-console: "warn"*/
-
 import { connect } from 'react-redux'
-import { cond, equals, always, T, ifElse } from 'ramda'
-import { Observable } from 'rxjs'
+import { compose } from 'ramda'
+import { setStartedWorkout, completeWorkout } from '../../../state/actions/creators'
 
 export const mapStateToProps = ({ workoutStatus }, { children }) => {
 
-    console.log('calling mapStateToProps')
-
-    const getKillingObservable = ifElse(
-        equals('completed'),
-        always(Observable.of(42)),
-        always(Observable.empty())
-    )
-
-    const getTimerObservable = cond([
-        [equals('started'), always(Observable.interval(1000))],
-        [T, always(Observable.empty())]
-    ])
-
-    const time$ = getTimerObservable(workoutStatus)
-    const killer$ = getKillingObservable(workoutStatus)
-
     return {
-        time$,
-        killer$,
+        workoutStatus,
         children
     }
 }
 
-export const mapDispatchToProps = () => {
-
+export const mapDispatchToProps = dispatch => {
+    return {
+        start: compose(dispatch, setStartedWorkout),
+        complete: compose(dispatch, completeWorkout)
+    }
 }
 
 export const timerConnect = connect(mapStateToProps, mapDispatchToProps)

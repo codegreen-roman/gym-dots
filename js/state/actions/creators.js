@@ -8,6 +8,13 @@ export const startWorkout = () => ({
     }
 })
 
+export const completeWorkout = () => ({
+    type: WORKOUT_STATUS,
+    payload: {
+        status: 'completed'
+    }
+})
+
 export const setStartedWorkout = () => ({
     type: WORKOUT_STATUS,
     payload: {

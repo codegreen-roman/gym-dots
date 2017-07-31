@@ -3,49 +3,20 @@
 exports[`Timer connect functions for completed status should return props for the component 1`] = `
 Object {
   "children": Array [],
-  "killer$": ScalarObservable {
-    "_isScalar": true,
-    "scheduler": null,
-    "value": 42,
-  },
-  "time$": EmptyObservable {
-    "_isScalar": false,
-    "scheduler": undefined,
-  },
+  "workoutStatus": "completed",
 }
 `;
 
 exports[`Timer connect functions for started status should return props for the component 1`] = `
 Object {
   "children": Array [],
-  "killer$": EmptyObservable {
-    "_isScalar": false,
-    "scheduler": undefined,
-  },
-  "time$": IntervalObservable {
-    "_isScalar": false,
-    "period": 1000,
-    "scheduler": AsyncScheduler {
-      "SchedulerAction": [Function],
-      "actions": Array [],
-      "active": false,
-      "now": [Function],
-      "scheduled": undefined,
-    },
-  },
+  "workoutStatus": "started",
 }
 `;
 
 exports[`Timer connect functions for starting status should return props for the component 1`] = `
 Object {
   "children": Array [],
-  "killer$": EmptyObservable {
-    "_isScalar": false,
-    "scheduler": undefined,
-  },
-  "time$": EmptyObservable {
-    "_isScalar": false,
-    "scheduler": undefined,
-  },
+  "workoutStatus": "starting",
 }
 `;
