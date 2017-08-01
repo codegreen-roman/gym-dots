@@ -1,12 +1,12 @@
 import React from 'react'
-import { Header } from './header/Header'
-import { Footer } from './footer/Footer'
+import { Header } from '../header/Header'
+import { Footer } from '../footer/Footer'
 import { Route, Switch } from 'react-router-dom'
-import { Activity } from './Activity'
-import { Status } from './Status'
-import { Exercises } from './Exercises'
+import { Activity } from '../Activity'
+import { Status } from '../Status'
+import { Exercises } from '../Exercises'
 import moment from 'moment'
-import { Timer } from './common/Timer/Timer'
+import { Timer } from '../common/Timer/Timer'
 
 export const App = () => {
 
