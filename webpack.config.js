@@ -2,19 +2,21 @@
 
 const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
 
 module.exports = {
     context: __dirname,
     entry: {
         app: './js/index.js',
-        vendor: ['react', 'react-dom', 'react-router-dom', 'react-redux-i18n', 'ramda']
+        vendor: ['react', 'react-dom', 'react-router-dom', 'react-redux-i18n', 'ramda', require.resolve('react-error-overlay')]
     },
     devtool: 'eval',
     output: {
-        path: path.join(__dirname, 'public'),
+        path: path.join(__dirname, 'build'),
         filename: 'app.bundle.js',
-        publicPath: '/public/'
+        pathinfo: true,
+        publicPath: '/'
     },
     resolve: {
         extensions: ['.js', '.json']
@@ -25,7 +27,9 @@ module.exports = {
         chunks: true
     },
     devServer: {
-        publicPath: '/public/',
+        contentBase: path.join(__dirname, 'build'),
+        compress: true,
+        publicPath: '/',
         historyApiFallback: true
     },
     module: {
@@ -74,6 +78,10 @@ module.exports = {
         ]
     },
     plugins: [
+        new HtmlWebpackPlugin({
+            inject: true,
+            template: path.join(__dirname, 'public', 'index.html'),
+        }),
         new ExtractTextPlugin('main.css'),
         new webpack.optimize.CommonsChunkPlugin({ name:'vendor', filename: 'vendor.bundle.js'})
     ]
