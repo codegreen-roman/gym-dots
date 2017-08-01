@@ -5,16 +5,35 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
 
+const devtool = process.env.NODE_ENV === 'production' ? 'source-map' : 'eval'
+
 module.exports = {
     context: __dirname,
     entry: {
         app: './js/index.js',
-        vendor: ['react-error-overlay', 'react', 'react-dom', 'react-router-dom', 'react-redux-i18n', 'ramda']
+        common: [
+            'react',
+            'glamorous',
+            'glamor',
+            'ramda'
+        ],
+        vendor: [
+            'react-dom',
+            'react-router-dom',
+            'react-redux-i18n',
+            'firebase',
+            'moment',
+            'rxjs',
+            'redux',
+            'redux-logger',
+            'redux-thunk',
+            'faker'
+        ]
     },
-    devtool: 'eval',
+    devtool,
     output: {
         path: path.join(__dirname, 'build'),
-        filename: 'app.bundle.js',
+        filename: '[name].bundle.js',
         pathinfo: true,
         publicPath: '/'
     },
@@ -30,6 +49,7 @@ module.exports = {
         contentBase: path.join(__dirname, 'build'),
         compress: true,
         publicPath: '/',
+        stats: 'minimal',
         historyApiFallback: true
     },
     module: {
@@ -81,8 +101,44 @@ module.exports = {
         new HtmlWebpackPlugin({
             inject: true,
             template: path.join(__dirname, 'public', 'index.html'),
+            minify: {
+                removeComments: true,
+                collapseWhitespace: true,
+                removeRedundantAttributes: true,
+                useShortDoctype: true,
+                removeEmptyAttributes: true,
+                removeStyleLinkTypeAttributes: true,
+                keepClosingSlash: true,
+                minifyJS: true,
+                minifyCSS: true,
+                minifyURLs: true,
+            },
         }),
         new ExtractTextPlugin('main.css'),
-        new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.bundle.js' })
+        new webpack.optimize.CommonsChunkPlugin({
+            minChunks: 2,
+            names: ['common', 'vendor']
+        }),
+        new webpack.DefinePlugin({
+            'process.env': {
+                NODE_ENV: JSON.stringify(process.env.NODE_ENV)
+            }
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            sourceMap: true,
+            beautify: false,
+            mangle: {
+                screw_ie8: true,
+                keep_fnames: true
+            },
+            compress: {
+                warnings: false,
+                screw_ie8: true
+            },
+            output: {
+                comments: false,
+                ascii_only: true,
+            },
+        })
     ]
 }
