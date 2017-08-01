@@ -6,7 +6,7 @@ import { Activity } from '../Activity'
 import { Status } from '../Status'
 import { Exercises } from '../Exercises'
 import moment from 'moment'
-import { Timer } from '../common/Timer/Timer'
+import { Timer } from '../common/timer/Timer'
 
 export const App = () => {
 

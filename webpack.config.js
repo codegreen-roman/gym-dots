@@ -9,7 +9,7 @@ module.exports = {
     context: __dirname,
     entry: {
         app: './js/index.js',
-        vendor: ['react', 'react-dom', 'react-router-dom', 'react-redux-i18n', 'ramda', require.resolve('react-error-overlay')]
+        vendor: ['react-error-overlay', 'react', 'react-dom', 'react-router-dom', 'react-redux-i18n', 'ramda']
     },
     devtool: 'eval',
     output: {
@@ -83,6 +83,6 @@ module.exports = {
             template: path.join(__dirname, 'public', 'index.html'),
         }),
         new ExtractTextPlugin('main.css'),
-        new webpack.optimize.CommonsChunkPlugin({ name:'vendor', filename: 'vendor.bundle.js'})
+        new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.bundle.js' })
     ]
 }
