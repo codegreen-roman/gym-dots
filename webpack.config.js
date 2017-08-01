@@ -116,7 +116,7 @@ module.exports = {
         }),
         new ExtractTextPlugin('main.css'),
         new webpack.optimize.CommonsChunkPlugin({
-            minChunks: 2,
+            minChunks: 3,
             names: ['common', 'vendor']
         }),
         new webpack.DefinePlugin({
