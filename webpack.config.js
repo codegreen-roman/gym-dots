@@ -5,7 +5,60 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
 
-const devtool = process.env.NODE_ENV === 'production' ? 'source-map' : 'eval'
+const prodPlugins = [
+    new webpack.DefinePlugin({
+        'process.env': {
+            NODE_ENV: JSON.stringify(process.env.NODE_ENV)
+        }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+        sourceMap: true,
+        beautify: false,
+        mangle: {
+            screw_ie8: true,
+            keep_fnames: true
+        },
+        compress: {
+            warnings: false,
+            screw_ie8: true
+        },
+        output: {
+            comments: false,
+            ascii_only: true,
+        },
+    })
+]
+
+let plugins = [
+    new HtmlWebpackPlugin({
+        inject: true,
+        template: path.join(__dirname, 'public', 'index.html'),
+        minify: {
+            removeComments: true,
+            collapseWhitespace: true,
+            removeRedundantAttributes: true,
+            useShortDoctype: true,
+            removeEmptyAttributes: true,
+            removeStyleLinkTypeAttributes: true,
+            keepClosingSlash: true,
+            minifyJS: true,
+            minifyCSS: true,
+            minifyURLs: true,
+        },
+    }),
+    new ExtractTextPlugin('main.css'),
+    new webpack.optimize.CommonsChunkPlugin({
+        minChunks: 3,
+        names: ['common', 'vendor']
+    })
+]
+
+let devtool = 'eval'
+
+if (process.env.NODE_ENV === 'production') {
+    plugins = plugins.concat(prodPlugins)
+    devtool = 'source-map'
+}
 
 module.exports = {
     context: __dirname,
@@ -97,48 +150,5 @@ module.exports = {
             }
         ]
     },
-    plugins: [
-        new HtmlWebpackPlugin({
-            inject: true,
-            template: path.join(__dirname, 'public', 'index.html'),
-            minify: {
-                removeComments: true,
-                collapseWhitespace: true,
-                removeRedundantAttributes: true,
-                useShortDoctype: true,
-                removeEmptyAttributes: true,
-                removeStyleLinkTypeAttributes: true,
-                keepClosingSlash: true,
-                minifyJS: true,
-                minifyCSS: true,
-                minifyURLs: true,
-            },
-        }),
-        new ExtractTextPlugin('main.css'),
-        new webpack.optimize.CommonsChunkPlugin({
-            minChunks: 3,
-            names: ['common', 'vendor']
-        }),
-        new webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENV: JSON.stringify(process.env.NODE_ENV)
-            }
-        }),
-        new webpack.optimize.UglifyJsPlugin({
-            sourceMap: true,
-            beautify: false,
-            mangle: {
-                screw_ie8: true,
-                keep_fnames: true
-            },
-            compress: {
-                warnings: false,
-                screw_ie8: true
-            },
-            output: {
-                comments: false,
-                ascii_only: true,
-            },
-        })
-    ]
+    plugins
 }
