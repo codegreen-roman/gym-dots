@@ -1,10 +1,7 @@
-import express from 'express';
-import path from 'path';
+import express from 'express'
 
-let app = express();
+const PORT = 3333
+const app = express()
 
-app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../index.html'));
-});
-
-app.listen(3000, () => console.log('Running on localhost: 3000'));
+app.use(express.static('build'))
+app.listen(PORT, () => console.log(`Running on localhost: ${PORT}`))
