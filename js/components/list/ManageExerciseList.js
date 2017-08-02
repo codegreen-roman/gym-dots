@@ -15,12 +15,14 @@ class _ManageExerciseList extends Component {
     }
 
     render() {
-        const { exercises: { upcoming, completed, skipped }, onOrderChange } = this.props
+        const {
+            exercises: { upcoming, completed, skipped },
+            onOrderChange } = this.props
         return (
             <div>
-                <ExerciseList key='upcoming' exercises={upcoming} title='upcoming' onOrderChangeClick={onOrderChange} />
-                <ExerciseList key='completed'  exercises={completed} title='completed' />
-                <ExerciseList key='skipped'  exercises={skipped} title='skipped' />
+                <ExerciseList key='upcoming' list={upcoming} title='upcoming' onOrderChangeClick={onOrderChange} />
+                <ExerciseList key='completed' list={completed} title='completed' />
+                <ExerciseList key='skipped' list={skipped} title='skipped' />
             </div>
         )
     }

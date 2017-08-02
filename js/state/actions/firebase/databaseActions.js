@@ -109,7 +109,6 @@ export const fetchExercises = () => dispatch => {
     return nextRef
         .once('value', snap => {
             const next = snap.val()
-            // console.log(next)
             fetchSuccess(next)
         })
         .catch(fetchError)

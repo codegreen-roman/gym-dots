@@ -8,6 +8,7 @@ export const INITIAL_STATE = {
     stats: {},
     exercises: {
         sessionId: '',
+        name: '',
         upcoming: [],
         skipped: [],
         completed: [],
