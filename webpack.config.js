@@ -4,6 +4,8 @@ const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const DashboardPlugin = require('webpack-dashboard/plugin')
 
 const prodPlugins = [
     new webpack.DefinePlugin({
@@ -14,22 +16,25 @@ const prodPlugins = [
     new webpack.optimize.UglifyJsPlugin({
         sourceMap: true,
         beautify: false,
-        mangle: {
-            screw_ie8: true,
-            keep_fnames: true
-        },
+        mangle: true,
         compress: {
-            warnings: false,
+            warnings: false, // Suppress uglification warnings
+            pure_getters: true,
+            unsafe: true,
+            unsafe_comps: true,
             screw_ie8: true
         },
         output: {
             comments: false,
-            ascii_only: true,
         },
-    })
+        exclude: [/\.min\.js$/gi] // skip pre-minified libs
+    }),
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+    new webpack.NoEmitOnErrorsPlugin()
 ]
 
 let plugins = [
+    // new DashboardPlugin({ port: 3001 }),
     new HtmlWebpackPlugin({
         inject: true,
         template: path.join(__dirname, 'public', 'index.html'),
@@ -50,7 +55,8 @@ let plugins = [
     new webpack.optimize.CommonsChunkPlugin({
         minChunks: 3,
         names: ['common', 'vendor']
-    })
+    }),
+    // new BundleAnalyzerPlugin()
 ]
 
 let devtool = 'eval'
@@ -68,7 +74,8 @@ module.exports = {
             'react',
             'glamorous',
             'glamor',
-            'ramda'
+            'ramda',
+            'rxjs'
         ],
         vendor: [
             'react-dom',
@@ -76,17 +83,16 @@ module.exports = {
             'react-redux-i18n',
             'firebase',
             'moment',
-            'rxjs',
             'redux',
-            'redux-logger',
             'redux-thunk',
+            'redux-logger',
             'faker'
         ]
     },
     devtool,
     output: {
         path: path.join(__dirname, 'build'),
-        filename: '[name].bundle.js',
+        filename: '[name].[hash].bundle.js',
         pathinfo: true,
         publicPath: '/'
     },
