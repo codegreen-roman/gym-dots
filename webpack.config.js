@@ -4,8 +4,8 @@ const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-const DashboardPlugin = require('webpack-dashboard/plugin')
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+// const DashboardPlugin = require('webpack-dashboard/plugin')
 
 const prodPlugins = [
     new webpack.DefinePlugin({
@@ -34,7 +34,11 @@ const prodPlugins = [
 ]
 
 let plugins = [
+
+    // nice reporting
     // new DashboardPlugin({ port: 3001 }),
+    // new BundleAnalyzerPlugin(),
+
     new HtmlWebpackPlugin({
         inject: true,
         template: path.join(__dirname, 'public', 'index.html'),
@@ -55,8 +59,7 @@ let plugins = [
     new webpack.optimize.CommonsChunkPlugin({
         minChunks: 3,
         names: ['common', 'vendor']
-    }),
-    // new BundleAnalyzerPlugin()
+    })
 ]
 
 let devtool = 'eval'
