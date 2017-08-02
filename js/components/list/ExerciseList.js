@@ -1,26 +1,23 @@
 import React from 'react'
 import { array, string, func } from 'prop-types'
-import glamorous from 'glamorous'
-
+import { exerciseList, exerciseListHeader } from './ExerciseList.glamor'
 import { ExerciseListRow } from './ExerciseListRow'
-import { ExerciseListHeader } from './ExerciseListHeader'
 
 const onOrderChangeClick = () => {} // noop
 
-const _ExerciseList = ({ exercises, title, onOrderChangeClick }) => {
-
-    const Ul = glamorous.ul({
-        listStyleType: 'none',
-        padding: 0
-    })
-
+const _ExerciseList = ({ list, title, onOrderChangeClick }) => {
+    if (list.length === 0) {
+        return null
+    }
     return (
-        <Ul>
-            {exercises.length > 0 ? <ExerciseListHeader title={title} /> : null }
-            {exercises.map((exercise, idx) => (
-                <ExerciseListRow onRowClick={() => onOrderChangeClick(exercise)} key={idx} exercise={exercise} />
-            ))}
-        </Ul>
+        <div>
+            <span data-test='list-title' {...exerciseListHeader}>{title}</span>
+            <ul data-test='list' {...exerciseList}>
+                {list.map((itm, idx) => (
+                    <ExerciseListRow key={idx} {...itm} onClick={() => onOrderChangeClick(itm)} />
+                ))}
+            </ul>
+        </div>
     )
 }
 
@@ -29,7 +26,7 @@ _ExerciseList.defaultProps = {
 }
 
 _ExerciseList.propTypes = {
-    exercises: array.isRequired,
+    list: array.isRequired,
     title: string.isRequired,
     onOrderChangeClick: func.isRequired
 }

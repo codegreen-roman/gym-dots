@@ -1,22 +1,27 @@
 import React from 'react'
-import { Exercise } from './Exercise'
-import { object, func } from 'prop-types'
-import glamorous from 'glamorous'
+import { func, string, number } from 'prop-types'
+import { exerciseTitle, exerciseDetails } from './ExerciseList.glamor'
 
-const _ExerciseListRow = ({ exercise, onRowClick }) => {
-    const Li = glamorous.li({
-        padding: 10,
-        display: 'flex'
-    })
+const onRowClick = () => {} // noop
+
+const _ExerciseListRow = ({ name, weight, reps, sets, onRowClick }) => {
     return (
-        <Li onClick={onRowClick}>
-            <Exercise exercise={exercise} />
-        </Li>
+        <li data-test='exercise-row' onClick={onRowClick}>
+            <h3 {...exerciseTitle}>{name}</h3>
+            <span {...exerciseDetails}>{weight} kg x {reps} reps x {sets} sets</span>
+        </li>
     )
 }
 
+_ExerciseListRow.defaultProps = {
+    onRowClick
+}
+
 _ExerciseListRow.propTypes = {
-    exercise: object.isRequired,
+    name: string.isRequired,
+    weight: number.isRequired,
+    reps: number.isRequired,
+    sets: number.isRequired,
     onRowClick: func.isRequired
 }
 
