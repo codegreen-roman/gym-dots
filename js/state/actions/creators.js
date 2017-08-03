@@ -18,13 +18,13 @@ export const completeWorkout = () => ({
 export const setStartedWorkout = () => ({
     type: WORKOUT_STATUS,
     payload: {
-        name: 'Monday Sweat',
+        name: 'Pull-up',
         status: 'started',
         restTime: 60,
         sets: 5,
         setsLeft: 5,
         reps: 12,
-        weight: 100,
+        weight: 10,
         results: []
     }
 })
