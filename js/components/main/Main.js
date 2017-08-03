@@ -1,9 +1,10 @@
 import React from 'react'
+import moment from 'moment'
+
 import { Header } from '../common/header/Header'
 import { Footer } from '../common/footer/Footer'
 import { Route, Switch, NavLink } from 'react-router-dom'
-import { ManageExerciseList } from '../views/activity/preWorkout/manageExerciseList/ManageExerciseList'
-import moment from 'moment'
+import { Activity } from '../views/activity/Activity'
 import { Timer } from '../common/timer/Timer'
 
 export const Main = () => {
@@ -28,7 +29,7 @@ export const Main = () => {
                         <main>
                             <Header dateStr={dateStr} subTitle={headerTitle} />
                             <Switch>
-                                <Route path='/activity' component={ManageExerciseList} />
+                                <Route path='/activity' component={Activity} />
                                 <Route path='/' component={
                                     () => <NavLink to='/activity'>go train</NavLink>
                                 } />

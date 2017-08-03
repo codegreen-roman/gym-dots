@@ -49,7 +49,7 @@ const mapActionsToProps = (dispatch, { history }) => {
     return {
         fireStartWorkout: () => {
             startWorkout()
-                .then(() => history.push('/workout/started'))
+                .then(() => history.push('/activity/workout'))
         },
         loadDefaults: compose(dispatch, loadAppDefaults)
     }
