@@ -50,6 +50,34 @@ our actions should contain props type and payload
 
 ## Component
 
+### Components structure
+
+```
+
+components
+       common
+           Header
+               UserArea
+           Footer
+               FooterButton
+       views
+           - Settings
+           - Activity
+               - PreWorkout (сортировка упражнений)
+                   - ManagingList
+               - Workout
+                   - Training
+                   - Resting
+                   - Completed
+               - PostWorkout | Completed
+           - Overlay
+               - GetReady
+               - Paused
+               
+```
+
+### Guide
+
 - How my component should look like with a given set of props?
 - Can I determine all possible collections of props. So if a day label should render a day of the week 
 
