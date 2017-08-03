@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PreWorkout component should match the snapshot 1`] = `
+<Switch>
+  <Route
+    component={[Function]}
+    path="/activity/pre"
+  />
+  <Route
+    component={[Function]}
+    path="/activity/workout"
+  />
+  <Route
+    component={[Function]}
+    path="/activity/post"
+  />
+  <Redirect
+    from="/activity/"
+    push={false}
+    to="/activity/pre"
+  />
+</Switch>
+`;
