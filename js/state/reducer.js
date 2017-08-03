@@ -6,6 +6,7 @@ import { workoutStatus } from './reducers/workoutStatusReducer'
 import { defaults } from './reducers/defaultsReducer'
 import { auth } from './reducers/authReducer'
 import { exercises } from './reducers/exercisesReducer'
+import { currentExercise } from './reducers/currentExerciseReducer'
 
 export const reducer = combineReducers({
     exercises: exercises,
@@ -14,5 +15,6 @@ export const reducer = combineReducers({
     workoutStatus,
     defaults,
     auth,
-    i18n: i18nReducer
+    i18n: i18nReducer,
+    currentExercise
 })
