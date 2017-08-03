@@ -2,18 +2,18 @@ import React from 'react'
 import { func, object } from 'prop-types'
 import { setLocale } from 'react-redux-i18n'
 import { connect } from 'react-redux'
-import R from 'ramda'
+import { map, compose, prop, keys } from 'ramda'
 
 const option = item => (
     <option key={item} value={item}>{item}</option>
 )
 
-const renderOptions = R.compose(R.map(option), R.keys)
-const extractValue = R.compose(R.prop('value'), R.prop('target'))
+const renderOptions = compose(map(option), keys)
+const extractValue = compose(prop('value'), prop('target'))
 
 const _ToggleMenu = ({ changeLanguage, translations }) => {
 
-    const handleChange = R.compose(changeLanguage, extractValue)
+    const handleChange = compose(changeLanguage, extractValue)
 
     return (
         <select onChange={handleChange}>

@@ -1,15 +1,15 @@
 import { PING } from '../actions/types'
-import R from 'ramda'
+import { prop, compose, merge } from 'ramda'
 
 const DEFAULT_SESSION = {
     day: 'MONDAY'
 }
 
-const getDay = R.compose(R.prop('day'), R.prop('payload'))
+const getDay = compose(prop('day'), prop('payload'))
 
 export const exerciseSession = (state = DEFAULT_SESSION, action) => {
 
-    const mergeState = R.merge(state)
+    const mergeState = merge(state)
     switch (action.type) {
         case PING:
             return getDay(action) === state.day ? state : mergeState({

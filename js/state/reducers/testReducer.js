@@ -1,6 +1,6 @@
 // Beware of heavy ramda usage
 import { GET_LOCATION, GET_LOCATION_START } from '../actions/types'
-import R from 'ramda'
+import { prop, compose, pick, equals, T, cond, always, objOf, merge } from 'ramda'
 
 const DEFAULT_GITHUB_DATA = {
     username: 'neoroma',
@@ -8,21 +8,21 @@ const DEFAULT_GITHUB_DATA = {
     status: 'ready'
 }
 
-const getType = R.prop('type')
-const typeOfGetLocation = R.compose(R.equals(GET_LOCATION), getType)
-const typeOfGetLocationStart = R.compose(R.equals(GET_LOCATION_START), getType)
-const getLocationData = R.compose(R.pick(['username', 'location', 'status']), R.prop('payload'))
-const getStatus = R.compose(R.objOf('status'), R.prop('status'), R.prop('payload'))
+const getType = prop('type')
+const typeOfGetLocation = compose(equals(GET_LOCATION), getType)
+const typeOfGetLocationStart = compose(equals(GET_LOCATION_START), getType)
+const getLocationData = compose(pick(['username', 'location', 'status']), prop('payload'))
+const getStatus = compose(objOf('status'), prop('status'), prop('payload'))
 
 const reducerMaker = (state) => {
-    const mergeState = R.merge(state)
-    const app = R.cond([
+    const mergeState = merge(state)
+    const app = cond([
         [typeOfGetLocation, getLocationData],
         [typeOfGetLocationStart, getStatus],
-        [R.T, R.compose(R.always(state))]
+        [T, compose(always(state))]
     ])
 
-    return R.compose(mergeState, app)
+    return compose(mergeState, app)
 }
 
 export const githubLocation = (state = DEFAULT_GITHUB_DATA, action) => reducerMaker(state)(action)
