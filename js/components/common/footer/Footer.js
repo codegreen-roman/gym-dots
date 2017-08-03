@@ -32,10 +32,19 @@ export class _Footer extends React.Component {
             )
         }
 
-        return (<AButton disabled={blocked} onClick={fireStartWorkout}>{buttonTitle}</AButton>)
+        return (
+            <Flex>
+                <AButton disabled={blocked} onClick={fireStartWorkout}>{buttonTitle}</AButton>
+            </Flex>
+        )
     }
 
     render() {
+
+        const { hidden } = this.props
+
+        if (hidden) return null
+
         return (
             <footer {...footerStyle}>
                 {this.renderTrainingButtons()}
@@ -47,11 +56,13 @@ export class _Footer extends React.Component {
 _Footer.propTypes = {
     blocked: bool.isRequired,
     training: bool.isRequired,
+    hidden: bool.isRequired,
     fireStartWorkout: func.isRequired,
     loadDefaults: func.isRequired
 }
 
 const mapStateToProps = ({ workoutStatus }) => ({
+    hidden: false,
     blocked: workoutStatus === 'starting',
     training: workoutStatus === 'started',
 })

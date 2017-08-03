@@ -4,6 +4,7 @@ exports[`Footer component in training status matches the previous snapshot 1`] =
 <_Footer
   blocked={false}
   fireStartWorkout={[Function]}
+  hidden={false}
   loadDefaults={[Function]}
   training={true}
 >
@@ -48,24 +49,31 @@ exports[`Footer component snapshot blocked matches the previous snapshot 1`] = `
 <_Footer
   blocked={true}
   fireStartWorkout={[Function]}
+  hidden={false}
   loadDefaults={[Function]}
   training={false}
 >
   <footer
     data-css-116hn21=""
   >
-    <glamorous(button)
-      disabled={true}
-      onClick={[Function]}
-    >
-      <button
-        className="css-mfy564"
-        disabled={true}
-        onClick={[Function]}
+    <glamorous(div)>
+      <div
+        className="css-1cqgl9p"
       >
-        Starting ...
-      </button>
-    </glamorous(button)>
+        <glamorous(button)
+          disabled={true}
+          onClick={[Function]}
+        >
+          <button
+            className="css-mfy564"
+            disabled={true}
+            onClick={[Function]}
+          >
+            Starting ...
+          </button>
+        </glamorous(button)>
+      </div>
+    </glamorous(div)>
   </footer>
 </_Footer>
 `;
@@ -74,24 +82,31 @@ exports[`Footer component snapshot not blocked matches the previous snapshot 1`]
 <_Footer
   blocked={false}
   fireStartWorkout={[Function]}
+  hidden={false}
   loadDefaults={[Function]}
   training={false}
 >
   <footer
     data-css-116hn21=""
   >
-    <glamorous(button)
-      disabled={false}
-      onClick={[Function]}
-    >
-      <button
-        className="css-mfy564"
-        disabled={false}
-        onClick={[Function]}
+    <glamorous(div)>
+      <div
+        className="css-1cqgl9p"
       >
-        Start Workout
-      </button>
-    </glamorous(button)>
+        <glamorous(button)
+          disabled={false}
+          onClick={[Function]}
+        >
+          <button
+            className="css-mfy564"
+            disabled={false}
+            onClick={[Function]}
+          >
+            Start Workout
+          </button>
+        </glamorous(button)>
+      </div>
+    </glamorous(div)>
   </footer>
 </_Footer>
 `;
