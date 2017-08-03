@@ -2,10 +2,12 @@ import React from 'react'
 import { UserImage } from './UserImage'
 import { string, object, func } from 'prop-types'
 import { connect } from 'react-redux'
-import { compose } from 'ramda'
+import { compose, propOr, isEmpty } from 'ramda'
 import { authWith } from '../../../state/actions/firebase/databaseActions'
 
-const _Header = ({ dateStr, subTitle, loginWith, auth }) => {
+const getSafeNameOrEmptyString = propOr('', 'name')
+
+const _Header = ({ dateStr, subTitle, loginWith, auth, exerciseName }) => {
 
     const rootStyle = {
         padding: '1rem',
@@ -14,6 +16,8 @@ const _Header = ({ dateStr, subTitle, loginWith, auth }) => {
         borderBottom: '1px solid rgba(0, 0, 0, 0.15)',
         fontFamily: 'sans-serif'
     }
+
+    const renderTitle = () => isEmpty(exerciseName) ? subTitle : exerciseName
 
     const renderLoginOrUser = () => {
 
@@ -45,8 +49,8 @@ const _Header = ({ dateStr, subTitle, loginWith, auth }) => {
                 <div className='h-date' style={{ fontSize: '5vw', marginLeft: '4rem' }}>
                     {dateStr}
                 </div>
-                <div className='h-title' style={{ fontSize: '8vw', marginLeft: '3rem' }}>
-                    {subTitle}
+                <div className='h-title' data-test='currently' style={{ fontSize: '8vw', marginLeft: '3rem' }}>
+                    {renderTitle()}
                 </div>
             </div>
 
@@ -63,13 +67,19 @@ _Header.propTypes = {
     auth: object.isRequired,
     loginWith: func.isRequired,
     dateStr: string.isRequired,
-    subTitle: string.isRequired
+    subTitle: string.isRequired,
+    exerciseName: string.isRequired
 }
 
-const mapStateToProps = ({ auth }, { dateStr, subTitle }) => ({
+_Header.defaultProps = {
+    exerciseName: ''
+}
+
+const mapStateToProps = ({ auth, currentExercise }, { dateStr, subTitle }) => ({
     auth,
     dateStr,
-    subTitle
+    subTitle,
+    exerciseName: getSafeNameOrEmptyString(currentExercise)
 })
 
 const mapActionsToProps = dispatch => ({

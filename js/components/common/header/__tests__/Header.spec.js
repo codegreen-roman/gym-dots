@@ -1,10 +1,12 @@
 import React from 'react'
 import { _Header as Header } from '../Header'
 import { shallow } from 'enzyme'
+import { merge } from 'ramda'
 
 const defaultProps = {
     dateStr: 'Saturday, Jul 15th',
     subTitle: 'Start Workout',
+    exerciseName: '',
     auth: {},
     loginWith: () => {
     },
@@ -122,6 +124,28 @@ describe('Header component', () => {
         test('has titleElement with a value Start Workout', () => {
             expect(titleElement.text()).toBe('Start Workout')
         })
+    })
+
+    describe('Exercise name exist', () => {
+
+        const props = merge(defaultProps, { exerciseName: 'Pull Up' })
+        let header
+        let titleElement
+
+
+        beforeAll(() => {
+            header = setup(props)
+            titleElement = header.find('[data-test="currently"]')
+        })
+
+        it('should match the snapshot', () => {
+            expect(header).toMatchSnapshot()
+        })
+
+        it('should should show title with the exerciseName = Pull Up', () => {
+            expect(titleElement.text()).toBe('Pull Up')
+        })
+
     })
 
 })

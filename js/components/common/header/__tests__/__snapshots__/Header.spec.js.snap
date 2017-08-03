@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Details component snapshot test 1`] = `
+exports[`Header component Exercise name exist should match the snapshot 1`] = `
 <section
   style={
     Object {
@@ -53,7 +53,7 @@ exports[`Details component snapshot test 1`] = `
         }
       }
     >
-      Start Workout
+      Pull Up
     </div>
   </div>
   <div

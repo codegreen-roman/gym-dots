@@ -8,6 +8,7 @@ const setup = () => {
         dateStr: 'Saturday, Jul 15th',
         subTitle: 'Start Workout',
         auth: {},
+        exerciseName: '',
         loginWith: () => {},
     }
 
