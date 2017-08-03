@@ -1,6 +1,6 @@
 import React from 'react'
 import { _Footer as Footer } from '../Footer'
-import { mount } from 'enzyme'
+import { mount, render } from 'enzyme'
 import { findByDataAttr } from '../../../../utils/testUtils'
 
 const setup = (blocked = false, training = false) => {
@@ -15,6 +15,7 @@ const setup = (blocked = false, training = false) => {
 
     return {
         component: mount(<Footer {...props} />),
+        wrapper: render(<Footer {...props} />),
         props
     }
 }
@@ -22,9 +23,15 @@ const setup = (blocked = false, training = false) => {
 describe('Footer component', () => {
 
     describe('snapshot not blocked', () => {
-        it('matches the previous snapshot', () => {
+
+        it('matches the mounted snapshot', () => {
             const { component } = setup()
             expect(component).toMatchSnapshot()
+        })
+
+        it('matches the rendered snapshot', () => {
+            const { wrapper } = setup()
+            expect(wrapper).toMatchSnapshot()
         })
     })
 
