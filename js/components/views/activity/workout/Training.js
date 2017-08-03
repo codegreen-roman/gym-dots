@@ -2,14 +2,16 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { Exercise } from './Exercise/Exercise'
-import { fakeExercise } from './Exercise/exercise.helper'
+import { fakeExercise } from './Exercise/Exercise.helper'
 
+// kind of the container component
+// to hold the data about the current training
 const _Training = () => {
 
     const exerciseProps = fakeExercise()
 
     return (
-        <section style={{ border: '2px solid #9ACD32' }}>
+        <section>
             <Exercise {...exerciseProps} />
         </section>
     )
