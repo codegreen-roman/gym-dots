@@ -3,7 +3,7 @@ import { ExerciseList } from './ExerciseList'
 import { connect } from 'react-redux'
 import { compose } from 'ramda'
 import { object, func } from 'prop-types'
-import { fetchExercises, exercisesOrderChange } from '../../state/actions'
+import { fetchExercises, exercisesOrderChange } from '../../../../../state/actions/index'
 
 class _ManageExerciseList extends Component {
     constructor(props) {

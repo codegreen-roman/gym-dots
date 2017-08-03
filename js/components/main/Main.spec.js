@@ -2,11 +2,11 @@ import React from 'react'
 import configureMockStore from 'redux-mock-store'
 import { shallow } from 'enzyme'
 
-import { App } from './App'
+import { Main } from './Main'
 
 const setup = () => {
     const store = configureMockStore()()
-    const wrapper = shallow(<App store={store} />)
+    const wrapper = shallow(<Main store={store} />)
 
     return {
         store,

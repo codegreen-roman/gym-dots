@@ -1,14 +1,12 @@
 import React from 'react'
-import { Header } from '../header/Header'
-import { Footer } from '../footer/Footer'
-import { Route, Switch } from 'react-router-dom'
-import { Activity } from '../Activity'
-import { Status } from '../Status'
-import { Exercises } from '../Exercises'
+import { Header } from '../common/header/Header'
+import { Footer } from '../common/footer/Footer'
+import { Route, Switch, NavLink } from 'react-router-dom'
+import { ManageExerciseList } from '../views/activity/preWorkout/manageExerciseList/ManageExerciseList'
 import moment from 'moment'
 import { Timer } from '../common/timer/Timer'
 
-export const App = () => {
+export const Main = () => {
 
     const dateStr = moment().format('dddd, MMM Do')
     const headerTitle = 'Start Workout'
@@ -29,9 +27,12 @@ export const App = () => {
                     return (
                         <main>
                             <Header dateStr={dateStr} subTitle={headerTitle} />
-                            <Route path='/workout' component={Activity} />
-                            <Route path='/status' component={() => <Status />} />
-                            <Route path='/list' component={() => <Exercises />} />
+                            <Switch>
+                                <Route path='/activity' component={ManageExerciseList} />
+                                <Route path='/' component={
+                                    () => <NavLink to='/activity'>go train</NavLink>
+                                } />
+                            </Switch>
                             <Footer history={history} />
                         </main>
                     )

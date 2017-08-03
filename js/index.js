@@ -4,14 +4,14 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { configureStore } from './state/store'
 
-import { App } from './components/app/App'
+import { Main } from './components/main/Main'
 
 const store = configureStore()
 
 render(
     <Provider store={store}>
         <Router>
-            <App />
+            <Main />
         </Router>
     </Provider>,
     document.getElementById('app')

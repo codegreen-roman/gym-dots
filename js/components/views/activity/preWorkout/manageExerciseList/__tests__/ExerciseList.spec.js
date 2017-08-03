@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import { ExerciseList } from './ExerciseList'
-import { ExerciseListRow } from './ExerciseListRow'
+import { ExerciseList } from '../ExerciseList'
+import { ExerciseListRow } from '../ExerciseListRow'
 
 describe('ExerciseList component', () => {
 

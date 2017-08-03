@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import glamorous from 'glamorous'
 import { footerStyle } from './Footer.glamor'
-import { startWorkoutWithCountdown, loadAppDefaults, subscribeToAppDefaultsChanges } from '../../state/actions'
+import { startWorkoutWithCountdown, loadAppDefaults, subscribeToAppDefaultsChanges } from '../../../state/actions/index'
 import { compose } from 'ramda'
 import { func, bool } from 'prop-types'
 
