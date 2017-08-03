@@ -88,6 +88,7 @@ module.exports = {
             'moment',
             'redux',
             'redux-thunk',
+            'react-redux',
             'redux-logger',
             'faker'
         ]

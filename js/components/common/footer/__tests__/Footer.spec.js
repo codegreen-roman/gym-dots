@@ -1,13 +1,16 @@
 import React from 'react'
 import { _Footer as Footer } from '../Footer'
 import { mount } from 'enzyme'
+import { findByDataAttr } from '../../../../utils/testUtils'
 
-const setup = (blocked = false) => {
+const setup = (blocked = false, training = false) => {
 
     const props = {
         fireStartWorkout: jest.fn(),
         loadDefaults: jest.fn(),
-        blocked
+        hidden: false,
+        blocked,
+        training
     }
 
     return {
@@ -45,6 +48,38 @@ describe('Footer component', () => {
         it('should call the loadDefaults', () => {
             const { props } = setup()
             expect(props.loadDefaults).toHaveBeenCalledTimes(1)
+        })
+    })
+
+    describe('in training status', () => {
+
+        it('should show 2 buttons', () => {
+            const { component } = setup(false, true)
+            const buttons = component.find('button')
+
+            expect(buttons.length).toBe(2)
+
+        })
+
+        it('show failed button', () => {
+            const { component } = setup(false, true)
+            const button = findByDataAttr(component, 'failButton')
+
+            expect(button.text()).toBe('Failed')
+
+        })
+
+        it('show done button', () => {
+            const { component } = setup(false, true)
+            const button = findByDataAttr(component, 'doneButton')
+
+            expect(button.text()).toBe('Done')
+
+        })
+
+        it('matches the previous snapshot', () => {
+            const { component } = setup(false, true)
+            expect(component).toMatchSnapshot()
         })
     })
 

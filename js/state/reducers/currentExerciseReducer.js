@@ -1,6 +1,6 @@
 import { WORKOUT_STATUS } from '../actions/types'
 import { INITIAL_STATE } from '../initialState'
-import R from 'ramda'
+import { equals, compose, prop, pick, cond, merge, T, always } from 'ramda'
 
 const fillMissingFields = (obj) => {
     return {
@@ -10,22 +10,22 @@ const fillMissingFields = (obj) => {
     }
 }
 
-const getType = R.prop('type')
-const typeOfWorkoutStatus = R.compose(R.equals(WORKOUT_STATUS), getType)
-const getCurrentExerciseData = R.compose(
+const getType = prop('type')
+const typeOfWorkoutStatus = compose(equals(WORKOUT_STATUS), getType)
+const getCurrentExerciseData = compose(
     fillMissingFields,
-    R.pick(['name', 'restTime', 'setsLeft', 'reps', 'weight', 'status']),
-    R.prop('payload')
+    pick(['name', 'restTime', 'setsLeft', 'reps', 'weight', 'status']),
+    prop('payload')
 )
 
 const reducerMaker = (state) => {
-    const mergeState = R.merge(state)
-    const app = R.cond([
+    const mergeState = merge(state)
+    const app = cond([
         [typeOfWorkoutStatus, getCurrentExerciseData],
-        [R.T, R.compose(R.always(state))]
+        [T, compose(always(state))]
     ])
 
-    return R.compose(mergeState, app)
+    return compose(mergeState, app)
 }
 
 export const currentExercise = (state = INITIAL_STATE, action) => reducerMaker(state)(action)
