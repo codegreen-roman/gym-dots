@@ -1,13 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PreWorkout component should contain one ManageExerciseList component 1`] = `
-<section>
-  <Connect(_ManageExerciseList) />
-</section>
-`;
-
-exports[`PreWorkout component should contain one ManageExerciseList component 2`] = `<Connect(_ManageExerciseList) />`;
-
 exports[`PreWorkout component should match the snapshot 1`] = `
 <section>
   <Connect(_ManageExerciseList) />

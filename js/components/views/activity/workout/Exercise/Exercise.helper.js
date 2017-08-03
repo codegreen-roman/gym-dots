@@ -1,8 +1,6 @@
-import { date } from 'faker'
-
 export function fakeExercise() {
     return {
-        name: date.weekday(),
+        name: 'Monday Sweat',
         status: 'started',
         restTime: 60,
         sets: 5,
