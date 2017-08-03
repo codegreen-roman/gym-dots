@@ -1,10 +1,55 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Footer component in training status matches the previous snapshot 1`] = `
+<_Footer
+  blocked={false}
+  fireStartWorkout={[Function]}
+  loadDefaults={[Function]}
+  training={true}
+>
+  <footer
+    data-css-116hn21=""
+  >
+    <glamorous(div)>
+      <div
+        className="css-1cqgl9p"
+      >
+        <glamorous(button)
+          data-test="failButton"
+          disabled={false}
+        >
+          <button
+            className="css-mfy564"
+            data-test="failButton"
+            disabled={false}
+          >
+            Failed
+          </button>
+        </glamorous(button)>
+        <glamorous(button)
+          data-test="doneButton"
+          disabled={false}
+        >
+          <button
+            className="css-mfy564"
+            data-test="doneButton"
+            disabled={false}
+          >
+            Done
+          </button>
+        </glamorous(button)>
+      </div>
+    </glamorous(div)>
+  </footer>
+</_Footer>
+`;
+
 exports[`Footer component snapshot blocked matches the previous snapshot 1`] = `
 <_Footer
   blocked={true}
   fireStartWorkout={[Function]}
   loadDefaults={[Function]}
+  training={false}
 >
   <footer
     data-css-116hn21=""
@@ -30,6 +75,7 @@ exports[`Footer component snapshot not blocked matches the previous snapshot 1`]
   blocked={false}
   fireStartWorkout={[Function]}
   loadDefaults={[Function]}
+  training={false}
 >
   <footer
     data-css-116hn21=""

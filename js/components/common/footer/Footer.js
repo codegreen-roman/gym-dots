@@ -5,6 +5,7 @@ import { footerStyle } from './Footer.glamor'
 import { startWorkoutWithCountdown, loadAppDefaults, subscribeToAppDefaultsChanges } from '../../../state/actions/index'
 import { compose } from 'ramda'
 import { func, bool } from 'prop-types'
+import { Flex } from 'glamorous-jsxstyle'
 
 const AButton = glamorous.button({
     flex: 1
@@ -17,14 +18,27 @@ export class _Footer extends React.Component {
         loadDefaults()
     }
 
-    render() {
+    renderTrainingButtons() {
 
-        const { fireStartWorkout, blocked } = this.props
+        const { fireStartWorkout, blocked, training } = this.props
         const buttonTitle = blocked ? 'Starting ...' : 'Start Workout'
 
+        if (training) {
+            return (
+                <Flex>
+                    <AButton data-test='failButton' disabled={false}>Failed</AButton>
+                    <AButton data-test='doneButton' disabled={false}>Done</AButton>
+                </Flex>
+            )
+        }
+
+        return (<AButton disabled={blocked} onClick={fireStartWorkout}>{buttonTitle}</AButton>)
+    }
+
+    render() {
         return (
             <footer {...footerStyle}>
-                <AButton disabled={blocked} onClick={fireStartWorkout}>{buttonTitle}</AButton>
+                {this.renderTrainingButtons()}
             </footer>
         )
     }
@@ -32,12 +46,14 @@ export class _Footer extends React.Component {
 
 _Footer.propTypes = {
     blocked: bool.isRequired,
+    training: bool.isRequired,
     fireStartWorkout: func.isRequired,
     loadDefaults: func.isRequired
 }
 
 const mapStateToProps = ({ workoutStatus }) => ({
-    blocked: workoutStatus === 'starting'
+    blocked: workoutStatus === 'starting',
+    training: workoutStatus === 'started',
 })
 
 const mapActionsToProps = (dispatch, { history }) => {
