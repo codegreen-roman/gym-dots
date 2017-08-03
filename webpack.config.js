@@ -58,7 +58,7 @@ let plugins = [
     new ExtractTextPlugin('main.css'),
     new webpack.optimize.CommonsChunkPlugin({
         minChunks: 3,
-        names: ['common', 'vendor']
+        names: ['common', 'vendor', 'trash']
     })
 ]
 
@@ -73,6 +73,10 @@ module.exports = {
     context: __dirname,
     entry: {
         app: './js/index.js',
+        trash: [
+            'faker',
+            'moment',
+        ],
         common: [
             'react',
             'glamorous',
@@ -85,12 +89,10 @@ module.exports = {
             'react-router-dom',
             'react-redux-i18n',
             'firebase',
-            'moment',
             'redux',
             'redux-thunk',
             'react-redux',
-            'redux-logger',
-            'faker'
+            'redux-logger'
         ]
     },
     devtool,
