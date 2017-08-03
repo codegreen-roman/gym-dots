@@ -30,6 +30,7 @@
         "firebase": "^4.1.3",
         "glamor": "^3.0.0-3",
         "glamorous": "^3.23.5",
+        "glamorous-jsxstyle": "^2.0.0",
         "moment": "^2.18.1",
         "prop-types": "^15.5.10",
         "ramda": "^0.24.1",

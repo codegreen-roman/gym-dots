@@ -2985,7 +2985,13 @@ glamor@^3.0.0-3:
     inline-style-prefixer "^3.0.3"
     react-css-property-operations "^15.4.1"
 
-glamorous@^3.23.5:
+glamorous-jsxstyle@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/glamorous-jsxstyle/-/glamorous-jsxstyle-2.0.0.tgz#76aedf990cc9d3d347c60f1b134b54200d191adb"
+  dependencies:
+    glamorous "^3.7.1"
+
+glamorous@^3.23.5, glamorous@^3.7.1:
   version "3.25.0"
   resolved "https://registry.yarnpkg.com/glamorous/-/glamorous-3.25.0.tgz#d6d66c3dfffdc194761469adcbd996d4b70222e1"
   dependencies:
