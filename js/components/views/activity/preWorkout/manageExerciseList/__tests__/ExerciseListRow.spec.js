@@ -48,16 +48,11 @@ describe('ExerciseListRow component', () => {
         expect(mounted.props().name).toEqual('Push-ups')
     })
 
-    describe.skip('Clicking on a ExerciseListRow', () => {
+    describe('Clicking on a ExerciseListRow', () => {
         it('should call actions.onRowClick', () => {
             const { wrapper, actions } = setup(props)
             wrapper.simulate('click')
             expect(actions.onRowClick).toBeCalled()
-        })
-        it('should call the loginWith with twitter provider', () => {
-            const { wrapper, actions } = setup(props)
-            wrapper.simulate('click')
-            expect(actions.onRowClick).toBeCalledWith({ exerciseId: '1' })
         })
     })
 })
