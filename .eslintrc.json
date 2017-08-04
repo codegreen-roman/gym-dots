@@ -6,11 +6,7 @@
         "jest/globals": true
     },
     "parser": "babel-eslint",
-    "plugins": [
-        "react",
-        "flowtype",
-        "jest"
-    ],
+    "plugins": ["react", "flowtype", "jest"],
     "extends": [
         "eslint:recommended",
         "standard-react",
@@ -30,14 +26,8 @@
         "react/prop-types": "warn",
         "react/jsx-space-before-closing": "off",
         "react/jsx-tag-spacing": "warn",
-        "flowtype/space-before-generic-bracket": [
-            2,
-            "always"
-        ],
-        "flowtype/space-before-type-colon": [
-            2,
-            "always"
-        ],
+        "flowtype/space-before-generic-bracket": [2, "always"],
+        "flowtype/space-before-type-colon": [2, "always"],
         "no-console": "warn",
         "indent": [
             "error",
@@ -46,21 +36,10 @@
                 "SwitchCase": 1
             }
         ],
-        "react/jsx-indent": [
-            "error",
-            4
-        ],
-        "linebreak-style": [
-            "error",
-            "unix"
-        ],
-        "quotes": [
-            "error",
-            "single"
-        ],
-        "semi": [
-            "error",
-            "never"
-        ]
+        "react/jsx-indent": ["error", 4],
+        "react/jsx-indent-props": [2, 4],
+        "linebreak-style": ["error", "unix"],
+        "quotes": ["error", "single"],
+        "semi": ["error", "never"]
     }
 }
