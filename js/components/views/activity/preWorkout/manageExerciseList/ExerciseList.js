@@ -11,11 +11,17 @@ const _ExerciseList = ({ list, title, onOrderChangeClick }) => {
     }
     return (
         <div>
-            <span data-test='list-title' {...exerciseListHeader}>{title}</span>
+            <span data-test='list-title' {...exerciseListHeader}>
+                {title}
+            </span>
             <ul data-test='list' {...exerciseList}>
-                {list.map((itm, idx) => (
-                    <ExerciseListRow key={idx} {...itm} onClick={() => onOrderChangeClick(itm)} />
-                ))}
+                {list.map((itm, idx) =>
+                    <ExerciseListRow
+                        key={idx}
+                        {...itm}
+                        onRowClick={() => onOrderChangeClick(itm)}
+                    />
+                )}
             </ul>
         </div>
     )
