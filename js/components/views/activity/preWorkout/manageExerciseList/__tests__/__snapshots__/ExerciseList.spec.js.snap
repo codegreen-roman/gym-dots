@@ -1,13 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ExerciseList component When list is empty and has lenght 0 should not render the component and return null 1`] = `null`;
+exports[`ExerciseList component When list is empty and has length 0 should not render the component and return null 1`] = `undefined`;
 
-exports[`ExerciseList component renders without crashing 1`] = `
+exports[`ExerciseList component should render without crashing 1`] = `
 <div>
   <span
     data-css-8sps25=""
     data-test="list-title"
-  />
+  >
+    Some title
+  </span>
   <ul
     data-css-1a2tw8=""
     data-test="list"
@@ -15,7 +17,6 @@ exports[`ExerciseList component renders without crashing 1`] = `
     <_ExerciseListRow
       exerciseId=""
       name="Push-ups"
-      onClick={[Function]}
       onRowClick={[Function]}
       reps={20}
       restTime={90}
@@ -26,7 +27,6 @@ exports[`ExerciseList component renders without crashing 1`] = `
     <_ExerciseListRow
       exerciseId=""
       name="Australian pull-ups"
-      onClick={[Function]}
       onRowClick={[Function]}
       reps={12}
       restTime={30}
