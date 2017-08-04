@@ -7,8 +7,12 @@ const onRowClick = () => {} // noop
 const _ExerciseListRow = ({ name, weight, reps, sets, onRowClick }) => {
     return (
         <li data-test='exercise-row' onClick={onRowClick}>
-            <h3 {...exerciseTitle}>{name}</h3>
-            <span {...exerciseDetails}>{weight} kg x {reps} reps x {sets} sets</span>
+            <h3 {...exerciseTitle}>
+                {name}
+            </h3>
+            <span {...exerciseDetails}>
+                {weight} kg x {reps} reps x {sets} sets
+            </span>
         </li>
     )
 }
