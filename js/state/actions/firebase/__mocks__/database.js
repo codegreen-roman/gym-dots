@@ -12,10 +12,19 @@ const user = {
     uid: 'zzzzxxxxyyyy'
 }
 
+const exercisesResult = {
+    val() {
+        return {
+            sessionId: '',
+            name: '',
+            exercises: []
+        }
+    }
+}
+
 export const defaultsRef = {
     once(eventType, successCallback) {
-
-        return new Promise((resolve) => {
+        return new Promise(resolve => {
             successCallback(defaultResult)
             resolve(defaultResult)
         })
@@ -32,11 +41,19 @@ export const defaultsRef = {
                 }
             })
         }, 500)
-        return () => {
-        }
+        return () => {}
     }
 }
 
 export const loginWith = () => {
     return new Promise(resolve => resolve(user))
+}
+
+export const nextRef = {
+    once(eventType, successCallback) {
+        return new Promise(resolve => {
+            successCallback(exercisesResult)
+            resolve(exercisesResult)
+        })
+    }
 }
