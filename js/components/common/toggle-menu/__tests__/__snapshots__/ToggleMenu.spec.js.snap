@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToggleMenu component onChange should pass a selected value to the onChange handler 1`] = `
+<select
+  onChange={[Function]}
+>
+  <option
+    value="en"
+  >
+    en
+  </option>
+  <option
+    value="ee"
+  >
+    ee
+  </option>
+  <option
+    value="ru"
+  >
+    ru
+  </option>
+</select>
+`;
+
+exports[`ToggleMenu component onChange should pass a selected value to the onChange handler 2`] = `
+<select
+  onChange={[Function]}
+>
+  <option
+    value="en"
+  >
+    en
+  </option>
+  <option
+    value="ee"
+  >
+    ee
+  </option>
+  <option
+    value="ru"
+  >
+    ru
+  </option>
+</select>
+`;
+
+exports[`ToggleMenu component should render 1`] = `
+<select
+  onChange={[Function]}
+>
+  <option
+    value="en"
+  >
+    en
+  </option>
+  <option
+    value="ee"
+  >
+    ee
+  </option>
+  <option
+    value="ru"
+  >
+    ru
+  </option>
+</select>
+`;
