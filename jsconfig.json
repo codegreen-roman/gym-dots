@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "target": "es2017",
+        "allowSyntheticDefaultImports": true,
+        "checkJs": true,
+        "jsx": "react"
+    },
+    "include": ["js/**/*"],
+    "exclude": ["node_modules", "**/node_modules/*"]
+}
