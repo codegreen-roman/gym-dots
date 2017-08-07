@@ -28,9 +28,7 @@ const prodPlugins = [
             comments: false,
         },
         exclude: [/\.min\.js$/gi] // skip pre-minified libs
-    }),
-    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
-    new webpack.NoEmitOnErrorsPlugin()
+    })
 ]
 
 let plugins = [
@@ -59,7 +57,9 @@ let plugins = [
     new webpack.optimize.CommonsChunkPlugin({
         minChunks: 3,
         names: ['common', 'vendor', 'trash']
-    })
+    }),
+    new webpack.NoEmitOnErrorsPlugin(),
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
 ]
 
 let devtool = 'eval'
