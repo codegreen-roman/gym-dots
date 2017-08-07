@@ -1,5 +1,5 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow, mount } from 'enzyme'
 import { ExerciseList } from '../ExerciseList'
 import { ExerciseListRow } from '../ExerciseListRow'
 
@@ -8,7 +8,7 @@ describe('ExerciseList component', () => {
         title: 'Some title',
         list: [
             {
-                exerciseId: '',
+                exerciseId: 'xxy',
                 restTime: 90,
                 name: 'Push-ups',
                 sets: 5,
@@ -17,7 +17,7 @@ describe('ExerciseList component', () => {
                 results: []
             },
             {
-                exerciseId: '',
+                exerciseId: 'xyy',
                 restTime: 30,
                 name: 'Australian pull-ups',
                 sets: 5,
@@ -34,9 +34,11 @@ describe('ExerciseList component', () => {
         }
 
         const component = shallow(<ExerciseList {...props} {...actions} />)
+        const wrapper = mount(<ExerciseList {...props} {...actions} />)
 
         return {
             component,
+            wrapper,
             actions,
             props,
             title: component.find('[data-test="list-title"]'),
@@ -91,24 +93,41 @@ describe('ExerciseList component', () => {
         })
     })
 
-    describe.skip('Clicking on a row', () => {
-        let props
-        beforeEach(() => {
-            props = {
-                title: '',
-                list: []
-            }
-        })
-        it('should call onOrderChangeClick function', () => {
-            const { row, actions } = setup(props)
-            row.at(0).simulate('click')
-            expect(actions.onOrderChangeClick).toHaveBeenCalled()
+    describe('Clicking on a row', () => {
+
+        it('should match the snapshot', () => {
+            const { wrapper } = setup(props)
+            expect(wrapper).toMatchSnapshot()
         })
 
-        it('should call onOrderChangeClick once', () => {
-            const { row, actions } = setup(props)
-            row.at(0).simulate('click')
-            expect(actions.onOrderChangeClick).toHaveBeenCalledTimes(1)
+        it('should call onOrderChangeClick for every row - click', () => {
+            const { wrapper, actions: { onOrderChangeClick } } = setup(props)
+            const rows = wrapper.find('li')
+
+            for (let r = 0; r < rows.length; r++) {
+                rows.at(r).simulate('click')
+            }
+
+            expect(onOrderChangeClick).toHaveBeenCalledTimes(rows.length)
         })
+
+        it('should call onOrderChangeClick with list item object', () => {
+            const { wrapper, actions: { onOrderChangeClick } } = setup(props)
+            const row = wrapper.find('li').at(0)
+
+            row.simulate('click')
+
+            expect(onOrderChangeClick).toHaveBeenCalledWith({
+                exerciseId: 'xxy',
+                restTime: 90,
+                name: 'Push-ups',
+                sets: 5,
+                reps: 20,
+                weight: 0,
+                results: []
+            })
+
+        })
+
     })
 })

@@ -4,9 +4,9 @@ import { exerciseTitle, exerciseDetails } from './ExerciseList.glamor'
 
 const onRowClick = () => {} // noop
 
-const _ExerciseListRow = ({ name, weight, reps, sets, onRowClick }) => {
+const _ExerciseListRow = ({ name, weight, reps, sets, onRowClick, exerciseId }) => {
     return (
-        <li data-test='exercise-row' onClick={onRowClick}>
+        <li data-test={`exercise-row-${exerciseId}`} onClick={onRowClick}>
             <h3 {...exerciseTitle}>
                 {name}
             </h3>
