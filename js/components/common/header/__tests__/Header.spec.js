@@ -2,6 +2,7 @@ import React from 'react'
 import { _Header as Header } from '../Header'
 import { shallow } from 'enzyme'
 import { merge } from 'ramda'
+import { shallowToJson } from 'enzyme-to-json'
 
 const defaultProps = {
     dateStr: 'Saturday, Jul 15th',
@@ -148,4 +149,11 @@ describe('Header component', () => {
 
     })
 
+    describe('Shallow snapshot', () => {
+        test('matches the previous', () => {
+            const component = setup()
+            const tree = shallowToJson(component)
+            expect(tree).toMatchSnapshot()
+        })
+    })
 })

@@ -77,3 +77,81 @@ exports[`Header component Exercise name exist should match the snapshot 1`] = `
   </div>
 </section>
 `;
+
+exports[`Header component Shallow snapshot matches the previous 1`] = `
+<section
+  style={
+    Object {
+      "borderBottom": "1px solid rgba(0, 0, 0, 0.15)",
+      "display": "flex",
+      "fontFamily": "sans-serif",
+      "justifyContent": "space-between",
+      "padding": "1rem",
+    }
+  }
+>
+  <div
+    className="left-side"
+    style={
+      Object {
+        "display": "flex",
+        "flexDirection": "column",
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <a
+      className="h-menu"
+      style={
+        Object {
+          "fontSize": "8vw",
+        }
+      }
+    >
+      ☰
+    </a>
+    <div
+      className="h-date"
+      style={
+        Object {
+          "fontSize": "5vw",
+          "marginLeft": "4rem",
+        }
+      }
+    >
+      Saturday, Jul 15th
+    </div>
+    <div
+      className="h-title"
+      data-test="currently"
+      style={
+        Object {
+          "fontSize": "8vw",
+          "marginLeft": "3rem",
+        }
+      }
+    >
+      Start Workout
+    </div>
+  </div>
+  <div
+    className="right-side"
+  >
+    <div>
+      <button
+        className="twitter"
+        onClick={[Function]}
+      >
+        login with twitter
+      </button>
+      <button
+        className="facebook"
+        onClick={[Function]}
+      >
+        login with facebook
+      </button>
+    </div>
+    <UserImage />
+  </div>
+</section>
+`;
