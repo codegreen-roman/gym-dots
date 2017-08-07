@@ -11,7 +11,7 @@ const option = item => (
 const renderOptions = compose(map(option), keys)
 const extractValue = compose(prop('value'), prop('target'))
 
-const _ToggleMenu = ({ changeLanguage, translations }) => {
+export const _ToggleMenu = ({ changeLanguage, translations }) => {
 
     const handleChange = compose(changeLanguage, extractValue)
 
