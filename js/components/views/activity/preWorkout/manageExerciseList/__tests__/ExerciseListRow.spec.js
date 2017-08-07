@@ -23,6 +23,7 @@ describe('ExerciseListRow component', () => {
     beforeEach(() => {
         props = {
             name: 'Push-ups',
+            exerciseId: 'zzt',
             sets: 5,
             reps: 20,
             weight: 0,

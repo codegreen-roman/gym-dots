@@ -2,7 +2,7 @@
 
 exports[`ExerciseListRow component should render exercise 1`] = `
 <li
-  data-test="exercise-row-undefined"
+  data-test="exercise-row-zzt"
   onClick={[Function]}
 >
   <h3
