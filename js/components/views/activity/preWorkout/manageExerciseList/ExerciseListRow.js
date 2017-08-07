@@ -4,7 +4,14 @@ import { exerciseTitle, exerciseDetails } from './ExerciseList.glamor'
 
 const onRowClick = () => {} // noop
 
-const _ExerciseListRow = ({ name, weight, reps, sets, onRowClick, exerciseId }) => {
+const _ExerciseListRow = ({
+    name,
+    weight,
+    reps,
+    sets,
+    exerciseId,
+    onRowClick
+}) => {
     return (
         <li data-test={`exercise-row-${exerciseId}`} onClick={onRowClick}>
             <h3 {...exerciseTitle}>
@@ -26,6 +33,7 @@ _ExerciseListRow.propTypes = {
     weight: number.isRequired,
     reps: number.isRequired,
     sets: number.isRequired,
+    exerciseId: string.isRequired,
     onRowClick: func.isRequired
 }
 
