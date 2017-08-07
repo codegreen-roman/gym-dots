@@ -1,4 +1,4 @@
-import { currentExercise } from '../currentExerciseReducer'
+import { currentExercise } from '../currentExercise.reducer'
 import { WORKOUT_STATUS } from '../../actions/types'
 
 const action = {
@@ -16,19 +16,19 @@ const action = {
 }
 
 test('currentExercise returns an object with specific fields', () => {
-
     const output = currentExercise({}, action)
-    expect(output).toEqual(expect.objectContaining({
-        name: 'Monday Sweat',
-        status: 'started',
-        restTime: expect.any(Number),
-        sets: expect.any(Number),
-        setsLeft: expect.any(Number),
-        reps: expect.any(Number),
-        weight: expect.any(Number),
-        results: expect.any(Array)
-    }))
-
+    expect(output).toEqual(
+        expect.objectContaining({
+            name: 'Monday Sweat',
+            status: 'started',
+            restTime: expect.any(Number),
+            sets: expect.any(Number),
+            setsLeft: expect.any(Number),
+            reps: expect.any(Number),
+            weight: expect.any(Number),
+            results: expect.any(Array)
+        })
+    )
 })
 
 test('currentExercise output matches the snapshot', () => {
