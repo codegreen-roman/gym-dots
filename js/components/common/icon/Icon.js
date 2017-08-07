@@ -1,6 +1,6 @@
 import React from 'react'
 import { string, number } from 'prop-types'
-import glamorous from 'glamorous'
+import { svgStyle, pathStyle } from './Icon.glamor'
 
 const icons = {
     facebook:
@@ -8,19 +8,15 @@ const icons = {
 }
 
 export const Icon = ({ icon, size, color }) => {
-    const Svg = glamorous.svg({
-        display: 'inline-block',
-        verticalAlign: 'middle'
-    })
-
-    const Path = glamorous.path({
-        fill: color
-    })
-
     return (
-        <Svg width={`${size}px`} height={`${size}px`} viewBox='0 0 1024 1024'>
-            <Path d={icons[icon]} />
-        </Svg>
+        <svg
+            {...svgStyle}
+            width={`${size}px`}
+            height={`${size}px`}
+            viewBox='0 0 1024 1024'
+        >
+            <path {...pathStyle(color)} d={icons[icon]} />
+        </svg>
     )
 }
 
