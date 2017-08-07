@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Text component should render \`ee\` version of greeting 1`] = `"Tere maailm!"`;
-
-exports[`Text component should render \`ru\` version of greeting 1`] = `"Привет мир!"`;
-
-exports[`Text component should render defaults, which is \`en\` version of greeting 1`] = `"Hello World!"`;
+exports[`Text component should render defaults 1`] = `
+<Translate
+  value="greeting"
+/>
+`;
