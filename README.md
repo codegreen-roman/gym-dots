@@ -38,13 +38,29 @@ our actions should contain props type and payload
     }
 }
 ```
-## Presentational components
 
 ## Container components
-### Helper method names for connected components
+
+For a container component please use naming : 
+
+- {Name}Container.js
+- {Name}Container.connect.js to define a connection to redux
+- {Name}Container.helper.js to have some utility helper methods
+
+There should not be any tests for {Name}Container.connect.js files *
+
+### Helper method names for connected components (inside {Name}Container.connect.js)
 
 - mapStateToProps
 - mapActionsToProps
+
+## Presentational components
+
+For a dummy component please use naming : 
+
+- {Name}.js
+- {Name}.glamor.js (for having some significant amount of styles)
+- {Name}.helper.js to have some utility helper methods
 
 # Testing
 
@@ -103,7 +119,11 @@ This will create a number of snapshots
 Simple creator is just returning an object which should have payload and type props, easy to test. 
 
 Async creators are at the end generating a list of actions (expectedActions) to be dispatched by the store, 
-this behaviour should be tested. 
+this behaviour should be tested.
 
 ## Reducers
+
+should have names:
+
+- {name}.reducer.js where {name} is the property name in the global state
 
