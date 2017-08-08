@@ -1,45 +1,44 @@
-import { exercises } from '../exercisesReducer'
+import { exercises } from '../exercises.reducer'
 import { exercisesOrderChange } from '../../actions'
 
-
 describe('exercisesReducer', () => {
-
     it('should change order of upcoming exercises', () => {
-
         const initialState = {
             sessionId: '',
             upcoming: [
-                {exerciseId:'1'},
-                {exerciseId:'2'},
-                {exerciseId:'3'}
+                { exerciseId: '1' },
+                { exerciseId: '2' },
+                { exerciseId: '3' }
             ],
             skipped: [],
-            completed: [],
+            completed: []
         }
 
         const resultingState = {
             sessionId: '',
             upcoming: [
-                {exerciseId:'2'},
-                {exerciseId:'1'},
-                {exerciseId:'3'}
+                { exerciseId: '2' },
+                { exerciseId: '1' },
+                { exerciseId: '3' }
             ],
             skipped: [],
-            completed: [],
+            completed: []
         }
 
-        const newState = exercises(initialState, exercisesOrderChange({exerciseId:'2'}))
+        const newState = exercises(
+            initialState,
+            exercisesOrderChange({ exerciseId: '2' })
+        )
         expect(newState).toEqual(resultingState)
     })
 
     it('should return the state when not affected', () => {
-
         const initialState = {
             exercises: {
                 sessionId: '',
                 upcoming: [],
                 skipped: [],
-                completed: [],
+                completed: []
             }
         }
 

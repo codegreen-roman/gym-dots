@@ -1,8 +1,7 @@
-import { auth } from '../authReducer'
+import { auth } from '../auth.reducer'
 import { AUTH_SUCCESS } from '../../actions/types'
 
 describe('Auth reducer', () => {
-
     const theAction = {
         type: AUTH_SUCCESS,
         payload: {
@@ -15,16 +14,17 @@ describe('Auth reducer', () => {
 
     it('should return nice piece of state including auth object', () => {
         const state = auth(undefined, theAction)
-        expect(state).toEqual(expect.objectContaining({
-            user: {
-                displayName: expect.any(String),
-                uid: expect.any(String),
-            }
-        }))
+        expect(state).toEqual(
+            expect.objectContaining({
+                user: {
+                    displayName: expect.any(String),
+                    uid: expect.any(String)
+                }
+            })
+        )
     })
 
     describe('with action not of this type', () => {
-
         const initialState = {
             auth: {
                 user: {
@@ -41,14 +41,16 @@ describe('Auth reducer', () => {
 
         it('should return the initial state', () => {
             const state = auth(initialState, otherAction)
-            expect(state).toEqual(expect.objectContaining({
-                auth: {
-                    user: {
-                        displayName: 'Roman',
-                        uid: 'someUidx3',
+            expect(state).toEqual(
+                expect.objectContaining({
+                    auth: {
+                        user: {
+                            displayName: 'Roman',
+                            uid: 'someUidx3'
+                        }
                     }
-                }
-            }))
+                })
+            )
         })
     })
 })

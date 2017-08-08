@@ -1,8 +1,7 @@
-import { defaults } from '../defaultsReducer'
+import { defaults } from '../defaults.reducer'
 import { GOT_DEFAULTS } from '../../actions/types'
 
 describe('Defaults reducer', () => {
-
     const theAction = {
         type: GOT_DEFAULTS,
         payload: {
@@ -15,14 +14,15 @@ describe('Defaults reducer', () => {
 
     it('should return nice piece of state having restTime and sets as numbers', () => {
         const state = defaults(undefined, theAction)
-        expect(state).toEqual(expect.objectContaining({
-            restTime: expect.any(Number),
-            sets: expect.any(Number),
-        }))
+        expect(state).toEqual(
+            expect.objectContaining({
+                restTime: expect.any(Number),
+                sets: expect.any(Number)
+            })
+        )
     })
 
     describe('with action not of this type', () => {
-
         const initialState = {
             restTime: 0,
             sets: 0
@@ -35,10 +35,12 @@ describe('Defaults reducer', () => {
 
         it('should return the initial state', () => {
             const state = defaults(initialState, otherAction)
-            expect(state).toEqual(expect.objectContaining({
-                restTime: 0,
-                sets: 0,
-            }))
+            expect(state).toEqual(
+                expect.objectContaining({
+                    restTime: 0,
+                    sets: 0
+                })
+            )
         })
     })
 })
