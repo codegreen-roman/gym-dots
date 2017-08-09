@@ -1,15 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import glamorous from 'glamorous'
+import { FooterButton } from './buttons/FooterButton'
 import { footerStyle } from './Footer.glamor'
 import { startWorkoutWithCountdown, loadAppDefaults, subscribeToAppDefaultsChanges } from '../../../state/actions/index'
 import { compose } from 'ramda'
 import { func, bool } from 'prop-types'
 import { Flex } from 'glamorous-jsxstyle'
-
-const AButton = glamorous.button({
-    flex: 1
-})
 
 export class _Footer extends React.Component {
 
@@ -26,15 +22,15 @@ export class _Footer extends React.Component {
         if (training) {
             return (
                 <Flex>
-                    <AButton data-test='failButton' disabled={false}>Failed</AButton>
-                    <AButton data-test='doneButton' disabled={false}>Done</AButton>
+                    <FooterButton data-test='failButton' disabled={false}>Failed</FooterButton>
+                    <FooterButton data-test='doneButton' disabled={false}>Done</FooterButton>
                 </Flex>
             )
         }
 
         return (
             <Flex>
-                <AButton disabled={blocked} onClick={fireStartWorkout}>{buttonTitle}</AButton>
+                <FooterButton disabled={blocked} clickHandler={fireStartWorkout}>{buttonTitle}</FooterButton>
             </Flex>
         )
     }

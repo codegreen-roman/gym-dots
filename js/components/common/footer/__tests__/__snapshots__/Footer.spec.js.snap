@@ -15,30 +15,30 @@ exports[`Footer component in training status matches the previous snapshot 1`] =
       <div
         className="css-1cqgl9p"
       >
-        <glamorous(button)
+        <FooterButton
+          clickHandler={[Function]}
           data-test="failButton"
           disabled={false}
         >
           <button
-            className="css-mfy564"
-            data-test="failButton"
             disabled={false}
+            onClick={[Function]}
           >
             Failed
           </button>
-        </glamorous(button)>
-        <glamorous(button)
+        </FooterButton>
+        <FooterButton
+          clickHandler={[Function]}
           data-test="doneButton"
           disabled={false}
         >
           <button
-            className="css-mfy564"
-            data-test="doneButton"
             disabled={false}
+            onClick={[Function]}
           >
             Done
           </button>
-        </glamorous(button)>
+        </FooterButton>
       </div>
     </glamorous(div)>
   </footer>
@@ -60,18 +60,17 @@ exports[`Footer component snapshot blocked matches the previous snapshot 1`] = `
       <div
         className="css-1cqgl9p"
       >
-        <glamorous(button)
+        <FooterButton
+          clickHandler={[Function]}
           disabled={true}
-          onClick={[Function]}
         >
           <button
-            className="css-mfy564"
             disabled={true}
             onClick={[Function]}
           >
             Starting ...
           </button>
-        </glamorous(button)>
+        </FooterButton>
       </div>
     </glamorous(div)>
   </footer>
@@ -93,18 +92,17 @@ exports[`Footer component snapshot not blocked matches the mounted snapshot 1`] 
       <div
         className="css-1cqgl9p"
       >
-        <glamorous(button)
+        <FooterButton
+          clickHandler={[Function]}
           disabled={false}
-          onClick={[Function]}
         >
           <button
-            className="css-mfy564"
             disabled={false}
             onClick={[Function]}
           >
             Start Workout
           </button>
-        </glamorous(button)>
+        </FooterButton>
       </div>
     </glamorous(div)>
   </footer>
@@ -118,9 +116,7 @@ exports[`Footer component snapshot not blocked matches the rendered snapshot 1`]
   <div
     class="css-1cqgl9p"
   >
-    <button
-      class="css-mfy564"
-    >
+    <button>
       Start Workout
     </button>
   </div>

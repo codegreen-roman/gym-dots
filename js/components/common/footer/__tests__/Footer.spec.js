@@ -69,19 +69,17 @@ describe('Footer component', () => {
         })
 
         it('show failed button', () => {
-            const { component } = setup(false, true)
-            const button = findByDataAttr(component, 'failButton')
+            const { wrapper } = setup(false, true)
 
+            const button = wrapper.find('button').first()
             expect(button.text()).toBe('Failed')
-
         })
 
         it('show done button', () => {
-            const { component } = setup(false, true)
-            const button = findByDataAttr(component, 'doneButton')
+            const { wrapper } = setup(false, true)
 
+            const button = wrapper.find('button').last()
             expect(button.text()).toBe('Done')
-
         })
 
         it('matches the previous snapshot', () => {
