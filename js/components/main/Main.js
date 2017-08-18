@@ -23,7 +23,7 @@ export const Main = () => {
                         <div>Child 4</div>
                     </Timer>
                 </Route>
-                <Route path='/' component={({history}) => {
+                <Route path='/' component={() => {
 
                     return (
                         <main>
@@ -34,7 +34,7 @@ export const Main = () => {
                                     () => <NavLink to='/activity'>go train</NavLink>
                                 } />
                             </Switch>
-                            <Footer history={history} />
+                            <Footer />
                         </main>
                     )
 

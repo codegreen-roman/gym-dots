@@ -4,6 +4,7 @@ import { FooterButton } from './buttons/FooterButton'
 import { footerStyle } from './Footer.glamor'
 import { startWorkoutWithCountdown, loadAppDefaults, subscribeToAppDefaultsChanges } from '../../../state/actions/index'
 import { compose } from 'ramda'
+import { withRouter } from 'react-router-dom'
 import { func, bool } from 'prop-types'
 import { Flex } from 'glamorous-jsxstyle'
 
@@ -78,4 +79,4 @@ const mapActionsToProps = (dispatch, { history }) => {
     }
 }
 
-export const Footer = connect(mapStateToProps, mapActionsToProps)(_Footer)
+export const Footer = withRouter(connect(mapStateToProps, mapActionsToProps)(_Footer))
