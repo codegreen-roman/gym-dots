@@ -18,6 +18,12 @@ exports[`Exercise component should render something 1`] = `
     the time
   </div>
   <div>
+    results : []
+  </div>
+  <div>
+    setsLeft : 5
+  </div>
+  <div>
     <button>
       Make pause
     </button>
