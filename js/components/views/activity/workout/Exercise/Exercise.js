@@ -8,8 +8,9 @@ export const Exercise = ({ status, restTime, sets, setsLeft, reps, weight, resul
             <div>weight: {weight}</div>
             <div>reps: {reps}</div>
             <div>sets {sets - setsLeft} / {sets} done</div>
-            {results.map(b => b && '1' || '0')}
             <div>the time</div>
+            <div>results : {JSON.stringify(results, null, 2)}</div>
+            <div>setsLeft : {setsLeft}</div>
             <div>
                 <button>Make pause</button>
             </div>

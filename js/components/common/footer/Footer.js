@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { FooterButton } from './buttons/FooterButton'
 import { footerStyle } from './Footer.glamor'
 import { startWorkoutWithCountdown, loadAppDefaults, subscribeToAppDefaultsChanges } from '../../../state/actions/index'
+import { setFailed, setDone } from '../../../state/actions/exerciseActions'
 import { compose } from 'ramda'
 import { withRouter } from 'react-router-dom'
 import { func, bool } from 'prop-types'
@@ -17,14 +18,14 @@ export class _Footer extends React.Component {
 
     renderTrainingButtons() {
 
-        const { fireStartWorkout, blocked, training } = this.props
+        const { fireStartWorkout, blocked, training, onSetFailed, onSetDone } = this.props
         const buttonTitle = blocked ? 'Starting ...' : 'Start Workout'
 
         if (training) {
             return (
                 <Flex>
-                    <FooterButton data-test='failButton' disabled={false}>Failed</FooterButton>
-                    <FooterButton data-test='doneButton' disabled={false}>Done</FooterButton>
+                    <FooterButton clickHandler={onSetFailed} data-test='failButton' disabled={false}>Failed</FooterButton>
+                    <FooterButton clickHandler={onSetDone} data-test='doneButton' disabled={false}>Done</FooterButton>
                 </Flex>
             )
         }
@@ -55,7 +56,9 @@ _Footer.propTypes = {
     training: bool.isRequired,
     hidden: bool.isRequired,
     fireStartWorkout: func.isRequired,
-    loadDefaults: func.isRequired
+    loadDefaults: func.isRequired,
+    onSetFailed: func.isRequired,
+    onSetDone: func.isRequired
 }
 
 const mapStateToProps = ({ workoutStatus }) => ({
@@ -75,7 +78,9 @@ const mapActionsToProps = (dispatch, { history }) => {
             startWorkout()
                 .then(() => history.push('/activity/workout'))
         },
-        loadDefaults: compose(dispatch, loadAppDefaults)
+        loadDefaults: compose(dispatch, loadAppDefaults),
+        onSetFailed: compose(dispatch, setFailed),
+        onSetDone: compose(dispatch, setDone)
     }
 }
 
