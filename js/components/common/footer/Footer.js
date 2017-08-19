@@ -2,7 +2,12 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { FooterButton } from './buttons/FooterButton'
 import { footerStyle } from './Footer.glamor'
-import { startWorkoutWithCountdown, loadAppDefaults, subscribeToAppDefaultsChanges } from '../../../state/actions/index'
+import {
+    startWorkoutWithCountdown,
+    loadAppDefaults,
+    subscribeToAppDefaultsChanges,
+    setIntermediateWorkout
+} from '../../../state/actions/index'
 import { setFailed, setDone } from '../../../state/actions/exerciseActions'
 import { compose } from 'ramda'
 import { withRouter } from 'react-router-dom'
@@ -14,6 +19,10 @@ export class _Footer extends React.Component {
     componentDidMount() {
         const { loadDefaults } = this.props
         loadDefaults()
+    }
+
+    componentWillReceiveProps({ shouldEndExercise, fireCompleteExercise }) {
+        if (shouldEndExercise) fireCompleteExercise()
     }
 
     renderTrainingButtons() {
@@ -56,20 +65,24 @@ _Footer.propTypes = {
     training: bool.isRequired,
     hidden: bool.isRequired,
     fireStartWorkout: func.isRequired,
-    loadDefaults: func.isRequired,
+    fireCompleteExercise: func.isRequired,
+    // loadDefaults: func.isRequired,
     onSetFailed: func.isRequired,
-    onSetDone: func.isRequired
+    onSetDone: func.isRequired,
+    shouldEndExercise: bool.isRequired
 }
 
-const mapStateToProps = ({ workoutStatus }) => ({
+const mapStateToProps = ({ workoutStatus, currentExercise : { setsLeft } }) => ({
     hidden: false,
     blocked: workoutStatus === 'starting',
     training: workoutStatus === 'started',
+    shouldEndExercise: setsLeft === 0
 })
 
 const mapActionsToProps = (dispatch, { history }) => {
 
     const startWorkout = compose(dispatch, startWorkoutWithCountdown)
+    const completeCurrentExercise = compose(dispatch, setIntermediateWorkout)
 
     subscribeToAppDefaultsChanges(dispatch)
 
@@ -77,6 +90,10 @@ const mapActionsToProps = (dispatch, { history }) => {
         fireStartWorkout: () => {
             startWorkout()
                 .then(() => history.push('/activity/workout'))
+        },
+        fireCompleteExercise: () => {
+            completeCurrentExercise()
+            history.push('/activity/pre')
         },
         loadDefaults: compose(dispatch, loadAppDefaults),
         onSetFailed: compose(dispatch, setFailed),

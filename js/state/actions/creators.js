@@ -29,6 +29,20 @@ export const setStartedWorkout = () => ({
     }
 })
 
+export const setIntermediateWorkout = () => ({
+    type: WORKOUT_STATUS,
+    payload: {
+        name: '',
+        status: 'intermediate',
+        restTime: 0,
+        sets: 0,
+        setsLeft: 5,
+        reps: 0,
+        weight: 0,
+        results: []
+    }
+})
+
 
 export const ping = payload => ({
     type: PING,
