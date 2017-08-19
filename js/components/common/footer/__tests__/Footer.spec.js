@@ -10,7 +10,9 @@ const setup = (blocked = false, training = false) => {
         loadDefaults: jest.fn(),
         onSetFailed: jest.fn(),
         onSetDone: jest.fn(),
+        fireCompleteExercise: jest.fn(),
         hidden: false,
+        shouldEndExercise: false,
         blocked,
         training
     }

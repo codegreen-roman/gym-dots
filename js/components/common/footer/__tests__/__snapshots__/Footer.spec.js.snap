@@ -3,11 +3,13 @@
 exports[`Footer component in training status matches the previous snapshot 1`] = `
 <_Footer
   blocked={false}
+  fireCompleteExercise={[Function]}
   fireStartWorkout={[Function]}
   hidden={false}
   loadDefaults={[Function]}
   onSetDone={[Function]}
   onSetFailed={[Function]}
+  shouldEndExercise={false}
   training={true}
 >
   <footer
@@ -50,11 +52,13 @@ exports[`Footer component in training status matches the previous snapshot 1`] =
 exports[`Footer component snapshot blocked matches the previous snapshot 1`] = `
 <_Footer
   blocked={true}
+  fireCompleteExercise={[Function]}
   fireStartWorkout={[Function]}
   hidden={false}
   loadDefaults={[Function]}
   onSetDone={[Function]}
   onSetFailed={[Function]}
+  shouldEndExercise={false}
   training={false}
 >
   <footer
@@ -84,11 +88,13 @@ exports[`Footer component snapshot blocked matches the previous snapshot 1`] = `
 exports[`Footer component snapshot not blocked matches the mounted snapshot 1`] = `
 <_Footer
   blocked={false}
+  fireCompleteExercise={[Function]}
   fireStartWorkout={[Function]}
   hidden={false}
   loadDefaults={[Function]}
   onSetDone={[Function]}
   onSetFailed={[Function]}
+  shouldEndExercise={false}
   training={false}
 >
   <footer
