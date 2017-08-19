@@ -1,17 +1,8 @@
-/* eslint no-console: "off"*/
-/* eslint no-unused-vars: "off"*/
-
 import { WORKOUT_STATUS, SET_SUCCESSFULLY_COMPLETED, SET_FAILED } from '../actions/types'
 import { INITIAL_STATE } from '../initialState'
 import { equals, compose, prop, pick, cond, T, always, concat, flip, dec } from 'ramda'
 
-const fillMissingFields = (obj) => {
-    return {
-        ...obj,
-        sets: obj.setsLeft,
-        results: [],
-    }
-}
+import { fillMissingFields } from './currentExercise.reducer.helper'
 
 const addDone = flip(concat)([true])
 const addFailed = flip(concat)([false])
