@@ -8,6 +8,8 @@ const setup = (blocked = false, training = false) => {
     const props = {
         fireStartWorkout: jest.fn(),
         loadDefaults: jest.fn(),
+        onSetFailed: jest.fn(),
+        onSetDone: jest.fn(),
         hidden: false,
         blocked,
         training
