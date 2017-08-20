@@ -1,7 +1,5 @@
-/* eslint no-unused-vars: "off"*/
-
 import { WORKOUT_STATUS, SET_SUCCESSFULLY_COMPLETED, SET_FAILED } from '../actions/types'
-import { equals, compose, prop, pick, cond, T, always, concat, flip, dec } from 'ramda'
+import { equals, compose, prop, pick, concat, flip, dec } from 'ramda'
 
 export const fillMissingFields = (obj) => {
     return {

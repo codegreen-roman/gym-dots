@@ -14,13 +14,11 @@ import {
 const registerOkResult = processResultWith(addDone)
 const registerFailedResult = processResultWith(addFailed)
 
-const reducerMaker = (state) => {
-    return cond([
-        [typeOfWorkoutStatus, getCurrentExerciseData],
-        [typeOfSetCompleted, compose(registerOkResult, always(state))],
-        [typeOfSetFailed, compose(registerFailedResult, always(state))],
-        [T, compose(always(state))]
-    ])
-}
+const reducerMaker = (state) => cond([
+    [typeOfWorkoutStatus, getCurrentExerciseData],
+    [typeOfSetCompleted, compose(registerOkResult, always(state))],
+    [typeOfSetFailed, compose(registerFailedResult, always(state))],
+    [T, compose(always(state))]
+])
 
 export const currentExercise = (state = INITIAL_STATE, action) => reducerMaker(state)(action)
