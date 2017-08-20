@@ -1,5 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Workout in progress registering result : Done 1`] = `
+Object {
+  "exerciseId": "",
+  "name": "Push-ups",
+  "reps": 10,
+  "restTime": 90,
+  "results": Array [
+    true,
+    true,
+    true,
+    true,
+  ],
+  "sets": 5,
+  "setsLeft": 1,
+  "weight": 0,
+}
+`;
+
+exports[`Workout in progress registering result : Failed 1`] = `
+Object {
+  "exerciseId": "",
+  "name": "Push-ups",
+  "reps": 10,
+  "restTime": 90,
+  "results": Array [
+    true,
+    true,
+    true,
+    false,
+  ],
+  "sets": 5,
+  "setsLeft": 1,
+  "weight": 0,
+}
+`;
+
 exports[`currentExercise output matches the snapshot 1`] = `
 Object {
   "name": "Monday Sweat",
