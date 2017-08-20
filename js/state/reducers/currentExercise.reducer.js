@@ -18,7 +18,7 @@ const reducerMaker = (state) => cond([
     [typeOfWorkoutStatus, getCurrentExerciseData],
     [typeOfSetCompleted, compose(registerOkResult, always(state))],
     [typeOfSetFailed, compose(registerFailedResult, always(state))],
-    [T, compose(always(state))]
+    [T, always(state)]
 ])
 
 export const currentExercise = (state = INITIAL_STATE, action) => reducerMaker(state)(action)
