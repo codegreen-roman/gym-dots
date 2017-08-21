@@ -29,11 +29,13 @@ export const exercises = (state = INITIAL_STATE, action) => {
         case EXERCISES_MOVE_EXERCISE_TO_COMPLETED:
 
             const completedExercise = propEq('exerciseId', action.payload.exerciseId)
+            const withoutTheCompletedExerciseFrom = reject(completedExercise)
+            const withTheCompletedExerciseFrom = filter(completedExercise)
 
             return {
                 ...state,
-                upcoming: reject(completedExercise)(state.upcoming),
-                completed: concat(filter(completedExercise)(state.upcoming), state.completed)
+                upcoming: withoutTheCompletedExerciseFrom(state.upcoming),
+                completed: concat(withTheCompletedExerciseFrom(state.upcoming), state.completed)
             }
         default:
             return state
