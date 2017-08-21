@@ -1,6 +1,6 @@
 import { ping, startWorkoutWithCountdown, setIntermediateWorkout } from './creators'
 import { loadSessions } from './session-actions'
-import { exercisesOrderChange } from './exercisesActions'
+import { exercisesOrderChange, moveExerciseToCompleted } from './exercisesActions'
 import {
     loadAppDefaults,
     subscribeToAppDefaultsChanges,
@@ -15,5 +15,6 @@ export {
     subscribeToAppDefaultsChanges,
     fetchExercises,
     exercisesOrderChange,
-    setIntermediateWorkout
+    setIntermediateWorkout,
+    moveExerciseToCompleted
 }

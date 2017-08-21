@@ -4,7 +4,8 @@ import { FooterButton } from './buttons/FooterButton'
 import { footerStyle } from './Footer.glamor'
 import {
     startWorkoutWithCountdown,
-    setIntermediateWorkout
+    setIntermediateWorkout,
+    moveExerciseToCompleted
 } from '../../../state/actions/index'
 import { setFailed, setDone } from '../../../state/actions/exerciseActions'
 import { compose } from 'ramda'
@@ -14,8 +15,8 @@ import { Flex } from 'glamorous-jsxstyle'
 
 export class _Footer extends React.Component {
 
-    componentWillReceiveProps({ shouldEndExercise, fireCompleteExercise }) {
-        if (shouldEndExercise) fireCompleteExercise()
+    componentWillReceiveProps({ shouldEndExercise, fireCompleteExercise, nextExercise: { exerciseId } }) {
+        if (shouldEndExercise) fireCompleteExercise(exerciseId)
     }
 
     renderTrainingButtons() {
@@ -80,7 +81,8 @@ const mapStateToProps = ({ workoutStatus, currentExercise: { setsLeft }, exercis
 const mapActionsToProps = (dispatch, { history }) => {
 
     const startWorkout = compose(dispatch, startWorkoutWithCountdown)
-    const completeCurrentExercise = compose(dispatch, setIntermediateWorkout)
+    const goToPreparingAgain = compose(dispatch, setIntermediateWorkout)
+    const completeCurrentExercise = compose(dispatch, moveExerciseToCompleted)
 
     // subscribeToAppDefaultsChanges(dispatch)
 
@@ -89,8 +91,9 @@ const mapActionsToProps = (dispatch, { history }) => {
             startWorkout(nextExercise)
                 .then(() => history.push('/activity/workout'))
         },
-        fireCompleteExercise: () => {
-            completeCurrentExercise()
+        fireCompleteExercise: (exerciseId) => {
+            completeCurrentExercise(exerciseId)
+            goToPreparingAgain()
             history.push('/activity/pre')
         },
         onSetFailed: compose(dispatch, setFailed),
