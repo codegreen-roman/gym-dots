@@ -26,7 +26,7 @@ exports[`Header component Exercise name exist should match the snapshot 1`] = `
       className="h-menu"
       style={
         Object {
-          "fontSize": "8vw",
+          "fontSize": "16px",
         }
       }
     >
@@ -36,7 +36,7 @@ exports[`Header component Exercise name exist should match the snapshot 1`] = `
       className="h-date"
       style={
         Object {
-          "fontSize": "5vw",
+          "fontSize": "12px",
           "marginLeft": "4rem",
         }
       }
@@ -48,7 +48,7 @@ exports[`Header component Exercise name exist should match the snapshot 1`] = `
       data-test="currently"
       style={
         Object {
-          "fontSize": "8vw",
+          "fontSize": "16px",
           "marginLeft": "3rem",
         }
       }
@@ -104,7 +104,7 @@ exports[`Header component Shallow snapshot matches the previous 1`] = `
       className="h-menu"
       style={
         Object {
-          "fontSize": "8vw",
+          "fontSize": "16px",
         }
       }
     >
@@ -114,7 +114,7 @@ exports[`Header component Shallow snapshot matches the previous 1`] = `
       className="h-date"
       style={
         Object {
-          "fontSize": "5vw",
+          "fontSize": "12px",
           "marginLeft": "4rem",
         }
       }
@@ -126,7 +126,7 @@ exports[`Header component Shallow snapshot matches the previous 1`] = `
       data-test="currently"
       style={
         Object {
-          "fontSize": "8vw",
+          "fontSize": "16px",
           "marginLeft": "3rem",
         }
       }

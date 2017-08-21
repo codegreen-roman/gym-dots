@@ -41,14 +41,7 @@ Object {
 exports[`General Creators .setStartedWorkout should return action with a type of WORKOUT_STATUS 1`] = `
 Object {
   "payload": Object {
-    "name": "Pull-up",
-    "reps": 12,
-    "restTime": 60,
-    "results": Array [],
-    "sets": 5,
-    "setsLeft": 5,
     "status": "started",
-    "weight": 10,
   },
   "type": "WORKOUT_STATUS",
 }
@@ -73,14 +66,7 @@ Array [
   },
   Object {
     "payload": Object {
-      "name": "Pull-up",
-      "reps": 12,
-      "restTime": 60,
-      "results": Array [],
-      "sets": 5,
-      "setsLeft": 5,
       "status": "started",
-      "weight": 10,
     },
     "type": "WORKOUT_STATUS",
   },

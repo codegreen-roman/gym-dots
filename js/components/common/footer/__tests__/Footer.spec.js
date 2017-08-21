@@ -55,13 +55,6 @@ describe('Footer component', () => {
         })
     })
 
-    describe('.componentDidMount', () => {
-        it('should call the loadDefaults', () => {
-            const { props } = setup()
-            expect(props.loadDefaults).toHaveBeenCalledTimes(1)
-        })
-    })
-
     describe('in training status', () => {
 
         it('should show 2 buttons', () => {

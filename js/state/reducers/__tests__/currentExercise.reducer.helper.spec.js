@@ -17,7 +17,7 @@ test('.fillMissingFields', () => {
         'exerciseId': '',
         'restTime': 90,
         'name': 'Push-ups',
-        'setsLeft': 15,
+        'sets': 15,
         'reps': 20,
         'weight': 0
     }
@@ -44,7 +44,7 @@ test('.getCurrentExerciseData', () => {
             'exerciseId': '',
             'restTime': 60,
             'name': 'Pull-up',
-            'setsLeft': 5,
+            'sets': 5,
             'reps': 8,
             'weight': 0,
             'results': []

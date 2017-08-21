@@ -49,13 +49,6 @@ const setup = props => {
 }
 
 describe('ManageExerciseList component', () => {
-    describe('.componentDidMount', () => {
-        it('should call fetchExercises', () => {
-            const { actions } = setup(props)
-            expect(actions.fetchExercises).toHaveBeenCalledTimes(1)
-        })
-    })
-
     describe('When one list have exercises others should return null', () => {
         it('should render one list and other are empty', () => {
             const { list } = setup(props)
