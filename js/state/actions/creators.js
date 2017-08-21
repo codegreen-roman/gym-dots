@@ -1,4 +1,9 @@
-import { PING, GET_LOCATION, GET_LOCATION_START, WORKOUT_STATUS } from './types'
+import {
+    PING,
+    GET_LOCATION,
+    GET_LOCATION_START,
+    WORKOUT_STATUS
+} from './types'
 import { compose } from 'ramda'
 
 export const startWorkout = () => ({
@@ -15,17 +20,11 @@ export const completeWorkout = () => ({
     }
 })
 
-export const setStartedWorkout = () => ({
+export const setStartedWorkout = (nextExercise) => ({
     type: WORKOUT_STATUS,
     payload: {
-        name: 'Pull-up',
         status: 'started',
-        restTime: 60,
-        sets: 5,
-        setsLeft: 5,
-        reps: 12,
-        weight: 10,
-        results: []
+        ...nextExercise
     }
 })
 
@@ -35,11 +34,9 @@ export const setIntermediateWorkout = () => ({
         name: '',
         status: 'intermediate',
         restTime: 0,
-        sets: 0,
-        setsLeft: 5,
+        sets: 5,
         reps: 0,
-        weight: 0,
-        results: []
+        weight: 0
     }
 })
 
@@ -64,14 +61,14 @@ export const loadLocationStart = () => ({
     }
 })
 
-export const startWorkoutWithCountdown = () => {
+export const startWorkoutWithCountdown = (nextExercise) => {
     return function (dispatch) {
 
         dispatch(startWorkout())
 
         const promise = new Promise((resolve) => {
             setTimeout(() => {
-                resolve('started')
+                resolve(nextExercise)
             }, 3000)
         })
 

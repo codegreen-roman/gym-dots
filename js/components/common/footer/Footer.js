@@ -4,22 +4,15 @@ import { FooterButton } from './buttons/FooterButton'
 import { footerStyle } from './Footer.glamor'
 import {
     startWorkoutWithCountdown,
-    loadAppDefaults,
-    subscribeToAppDefaultsChanges,
     setIntermediateWorkout
 } from '../../../state/actions/index'
 import { setFailed, setDone } from '../../../state/actions/exerciseActions'
 import { compose } from 'ramda'
 import { withRouter } from 'react-router-dom'
-import { func, bool } from 'prop-types'
+import { func, bool, object } from 'prop-types'
 import { Flex } from 'glamorous-jsxstyle'
 
 export class _Footer extends React.Component {
-
-    componentDidMount() {
-        const { loadDefaults } = this.props
-        loadDefaults()
-    }
 
     componentWillReceiveProps({ shouldEndExercise, fireCompleteExercise }) {
         if (shouldEndExercise) fireCompleteExercise()
@@ -27,8 +20,12 @@ export class _Footer extends React.Component {
 
     renderTrainingButtons() {
 
-        const { fireStartWorkout, blocked, training, onSetFailed, onSetDone } = this.props
+        const { fireStartWorkout, blocked, training, onSetFailed, onSetDone, nextExercise } = this.props
         const buttonTitle = blocked ? 'Starting ...' : 'Start Workout'
+
+        const startButtonHandler = () => {
+            fireStartWorkout(nextExercise)
+        }
 
         if (training) {
             return (
@@ -41,7 +38,7 @@ export class _Footer extends React.Component {
 
         return (
             <Flex>
-                <FooterButton disabled={blocked} clickHandler={fireStartWorkout}>{buttonTitle}</FooterButton>
+                <FooterButton disabled={blocked} clickHandler={startButtonHandler}>{buttonTitle}</FooterButton>
             </Flex>
         )
     }
@@ -66,17 +63,18 @@ _Footer.propTypes = {
     hidden: bool.isRequired,
     fireStartWorkout: func.isRequired,
     fireCompleteExercise: func.isRequired,
-    // loadDefaults: func.isRequired,
     onSetFailed: func.isRequired,
     onSetDone: func.isRequired,
-    shouldEndExercise: bool.isRequired
+    shouldEndExercise: bool.isRequired,
+    nextExercise: object
 }
 
-const mapStateToProps = ({ workoutStatus, currentExercise : { setsLeft } }) => ({
+const mapStateToProps = ({ workoutStatus, currentExercise: { setsLeft }, exercises: { upcoming: [nextExercise] } }) => ({
     hidden: false,
     blocked: workoutStatus === 'starting',
     training: workoutStatus === 'started',
-    shouldEndExercise: setsLeft === 0
+    shouldEndExercise: setsLeft === 0,
+    nextExercise
 })
 
 const mapActionsToProps = (dispatch, { history }) => {
@@ -84,18 +82,17 @@ const mapActionsToProps = (dispatch, { history }) => {
     const startWorkout = compose(dispatch, startWorkoutWithCountdown)
     const completeCurrentExercise = compose(dispatch, setIntermediateWorkout)
 
-    subscribeToAppDefaultsChanges(dispatch)
+    // subscribeToAppDefaultsChanges(dispatch)
 
     return {
-        fireStartWorkout: () => {
-            startWorkout()
+        fireStartWorkout: (nextExercise) => {
+            startWorkout(nextExercise)
                 .then(() => history.push('/activity/workout'))
         },
         fireCompleteExercise: () => {
             completeCurrentExercise()
             history.push('/activity/pre')
         },
-        loadDefaults: compose(dispatch, loadAppDefaults),
         onSetFailed: compose(dispatch, setFailed),
         onSetDone: compose(dispatch, setDone)
     }

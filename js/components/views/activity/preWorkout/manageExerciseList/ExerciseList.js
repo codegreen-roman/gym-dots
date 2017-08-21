@@ -34,7 +34,7 @@ _ExerciseList.defaultProps = {
 _ExerciseList.propTypes = {
     list: array.isRequired,
     title: string.isRequired,
-    onOrderChangeClick: func.isRequired
+    onOrderChangeClick: func
 }
 
 export const ExerciseList = _ExerciseList

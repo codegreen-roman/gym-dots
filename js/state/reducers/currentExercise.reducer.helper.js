@@ -4,7 +4,7 @@ import { equals, compose, prop, pick, concat, flip, dec } from 'ramda'
 export const fillMissingFields = (obj) => {
     return {
         ...obj,
-        sets: obj.setsLeft,
+        setsLeft: obj.sets,
         results: [],
     }
 }
@@ -22,7 +22,7 @@ export const processResultWith = (resultModifier) => (currentExercise) => {
 
 export const getCurrentExerciseData = compose(
     fillMissingFields,
-    pick(['name', 'restTime', 'setsLeft', 'reps', 'weight', 'status', 'exerciseId']),
+    pick(['name', 'restTime', 'sets', 'reps', 'weight', 'status', 'exerciseId']),
     prop('payload')
 )
 
