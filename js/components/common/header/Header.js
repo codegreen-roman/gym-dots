@@ -45,11 +45,11 @@ const _Header = ({ dateStr, subTitle, loginWith, auth, exerciseName }) => {
                 flexDirection: 'column',
                 justifyContent: 'space-between'
             }}>
-                <a className='h-menu' style={{ fontSize: '8vw' }}>&#9776;</a>
-                <div className='h-date' style={{ fontSize: '5vw', marginLeft: '4rem' }}>
+                <a className='h-menu' style={{ fontSize: '16px' }}>&#9776;</a>
+                <div className='h-date' style={{ fontSize: '12px', marginLeft: '4rem' }}>
                     {dateStr}
                 </div>
-                <div className='h-title' data-test='currently' style={{ fontSize: '8vw', marginLeft: '3rem' }}>
+                <div className='h-title' data-test='currently' style={{ fontSize: '16px', marginLeft: '3rem' }}>
                     {renderTitle()}
                 </div>
             </div>
