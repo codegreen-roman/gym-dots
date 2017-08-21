@@ -3,16 +3,9 @@ import { ExerciseList } from './ExerciseList'
 import { connect } from 'react-redux'
 import { compose } from 'ramda'
 import { object, func } from 'prop-types'
-import { fetchExercises, exercisesOrderChange } from '../../../../../state/actions/index'
+import { exercisesOrderChange } from '../../../../../state/actions/index'
 
 class _ManageExerciseList extends Component {
-    constructor(props) {
-        super(props)
-    }
-
-    componentWillMount() {
-        this.props.fetchExercises()
-    }
 
     render() {
         const {
@@ -30,7 +23,6 @@ class _ManageExerciseList extends Component {
 
 _ManageExerciseList.propTypes = {
     exercises: object.isRequired,
-    fetchExercises: func.isRequired,
     onOrderChange: func.isRequired
 }
 
@@ -44,7 +36,6 @@ const mapStateToProps = ({ exercises, sessionId, name }) => {
 
 const mapActionsToProps = dispatch => {
     return {
-        fetchExercises: compose(dispatch, fetchExercises),
         onOrderChange: compose(dispatch, exercisesOrderChange)
     }
 }
