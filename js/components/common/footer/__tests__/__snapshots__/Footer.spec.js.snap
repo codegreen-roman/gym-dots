@@ -13,7 +13,7 @@ exports[`Footer component in training status matches the previous snapshot 1`] =
   training={true}
 >
   <footer
-    data-css-116hn21=""
+    data-css-ufkewi=""
   >
     <glamorous(div)>
       <div
@@ -62,7 +62,7 @@ exports[`Footer component snapshot blocked matches the previous snapshot 1`] = `
   training={false}
 >
   <footer
-    data-css-116hn21=""
+    data-css-ufkewi=""
   >
     <glamorous(div)>
       <div
@@ -98,7 +98,7 @@ exports[`Footer component snapshot not blocked matches the mounted snapshot 1`] 
   training={false}
 >
   <footer
-    data-css-116hn21=""
+    data-css-ufkewi=""
   >
     <glamorous(div)>
       <div
@@ -123,7 +123,7 @@ exports[`Footer component snapshot not blocked matches the mounted snapshot 1`] 
 
 exports[`Footer component snapshot not blocked matches the rendered snapshot 1`] = `
 <footer
-  data-css-116hn21=""
+  data-css-ufkewi=""
 >
   <div
     class="css-1cqgl9p"

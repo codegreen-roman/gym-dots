@@ -29,13 +29,13 @@ exports[`ExerciseList component Clicking on a row should match the snapshot 1`] 
 >
   <div>
     <span
-      data-css-8sps25=""
+      data-css-3atj9v=""
       data-test="list-title"
     >
       Some title
     </span>
     <ul
-      data-css-1a2tw8=""
+      data-css-1d8iqpl=""
       data-test="list"
     >
       <_ExerciseListRow
@@ -110,13 +110,13 @@ exports[`ExerciseList component When list is empty and has length 0 should not r
 exports[`ExerciseList component should render without crashing 1`] = `
 <div>
   <span
-    data-css-8sps25=""
+    data-css-3atj9v=""
     data-test="list-title"
   >
     Some title
   </span>
   <ul
-    data-css-1a2tw8=""
+    data-css-1d8iqpl=""
     data-test="list"
   >
     <_ExerciseListRow

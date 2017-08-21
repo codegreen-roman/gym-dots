@@ -1,7 +1,8 @@
 {
     "plugins": [
         "transform-class-properties",
-        "transform-object-rest-spread"
+        "transform-object-rest-spread",
+        "emotion/babel"
     ],
     "presets": [
         "react",
@@ -16,14 +17,10 @@
     ],
     "env": {
         "test": {
-            "plugins": [
-                "transform-es2015-modules-commonjs"
-            ]
+            "plugins": ["transform-es2015-modules-commonjs"]
         },
         "server": {
-            "plugins": [
-                "transform-es2015-modules-commonjs"
-            ]
+            "plugins": ["transform-es2015-modules-commonjs"]
         }
     }
 }

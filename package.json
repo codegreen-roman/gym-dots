@@ -64,6 +64,7 @@
         "compression": "^1.7.0",
         "cors": "^2.8.4",
         "css-loader": "^0.28.4",
+        "emotion": "^7.0.12",
         "enzyme": "^2.9.1",
         "enzyme-to-json": "^1.5.1",
         "eslint": "^4.2.0",

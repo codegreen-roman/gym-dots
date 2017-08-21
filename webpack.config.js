@@ -115,7 +115,8 @@ module.exports = {
         compress: true,
         publicPath: '/',
         stats: 'minimal',
-        historyApiFallback: true
+        historyApiFallback: true,
+        port: 9000
     },
     module: {
         rules: [
