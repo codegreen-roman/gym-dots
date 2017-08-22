@@ -17,14 +17,17 @@ const _Header = ({ dateStr, subTitle, loginWith, auth, exerciseName }) => {
         fontFamily: 'sans-serif'
     }
 
+    const { user } = auth
     const renderTitle = () => isEmpty(exerciseName) ? subTitle : exerciseName
 
     const renderLoginOrUser = () => {
 
-        if (auth.user) {
+        const { user } = auth
+
+        if (user) {
             return (
                 <div className='username'>
-                    <span>{auth.user.displayName}</span>
+                    <span>{user.displayName}</span>
                 </div>
             )
         }
@@ -56,7 +59,7 @@ const _Header = ({ dateStr, subTitle, loginWith, auth, exerciseName }) => {
 
             <div className='right-side'>
                 {renderLoginOrUser()}
-                <UserImage />
+                <UserImage image={user && user.photoURL || undefined} />
             </div>
 
         </section>

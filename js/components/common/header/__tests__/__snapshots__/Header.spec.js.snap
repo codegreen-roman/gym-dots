@@ -73,7 +73,9 @@ exports[`Header component Exercise name exist should match the snapshot 1`] = `
         login with facebook
       </button>
     </div>
-    <UserImage />
+    <UserImage
+      image="https://s3.amazonaws.com/uifaces/faces/twitter/antjanus/128.jpg"
+    />
   </div>
 </section>
 `;
@@ -151,7 +153,9 @@ exports[`Header component Shallow snapshot matches the previous 1`] = `
         login with facebook
       </button>
     </div>
-    <UserImage />
+    <UserImage
+      image="https://s3.amazonaws.com/uifaces/faces/twitter/antjanus/128.jpg"
+    />
   </div>
 </section>
 `;
