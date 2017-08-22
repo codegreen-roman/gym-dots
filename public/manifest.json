@@ -1,15 +1,11 @@
 {
-  "short_name": "Gym Dots",
-  "name": "Create Gym Plan",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "192x192",
-      "type": "image/png"
-    }
-  ],
-  "start_url": "./index.html",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+    "short_name": "Gym Dots",
+    "name": "Create Gym Plan",
+    "icons": [
+
+    ],
+    "start_url": "./index.html",
+    "display": "standalone",
+    "theme_color": "tomato",
+    "background_color": "tomato"
 }
