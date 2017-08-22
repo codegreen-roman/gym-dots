@@ -56,7 +56,7 @@ export const Header = ({ dateStr, subTitle, loginWith, auth, exerciseName }) => 
 
             <div className='right-side'>
                 {renderLoginOrUser()}
-                <UserImage image={user && user.photoURL || null} />
+                <UserImage image={user && user.photoURL || undefined} />
             </div>
 
         </section>
