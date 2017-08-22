@@ -9,7 +9,7 @@ const ImgForUser = glamorous.img({
 
 export const UserImage = ({ image }) => {
 
-    if (image) return <ImgForUser src={image} />
+    if (image) return <ImgForUser src={image} alt='This is your avatar' />
     return null
 }
 
