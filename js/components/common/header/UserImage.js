@@ -1,7 +1,6 @@
 import React from 'react'
 import glamorous from 'glamorous'
 import { string } from 'prop-types'
-import { userPic } from './UserImage.helper'
 
 const ImgForUser = glamorous.img({
     width: '3rem',
@@ -13,7 +12,7 @@ export const UserImage = ({ image }) => (
 )
 
 UserImage.defaultProps = {
-    image: userPic
+    image: ''
 }
 
 UserImage.propTypes = {
