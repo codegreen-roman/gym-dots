@@ -7,9 +7,12 @@ const defaultResult = {
     }
 }
 
+const accessToken = '4016011-iiVq1Y5AEjl76UB71po9d74L6LUWUnGWVayCILq66e'
+
 const user = {
     displayName: 'Roman',
-    uid: 'zzzzxxxxyyyy'
+    photoURL: 'https://pbs.twimg.com/profile_images/870699319183134720/IOqlC-IM_normal.jpg',
+    uid: 'C2NO2n89PQOwRDs2o5u6HkeDl5v1'
 }
 
 const exercisesResult = {
@@ -41,12 +44,16 @@ export const defaultsRef = {
                 }
             })
         }, 500)
-        return () => {}
+        return () => {
+        }
     }
 }
 
 export const loginWith = () => {
-    return new Promise(resolve => resolve(user))
+    return new Promise(resolve => resolve({
+        user,
+        accessToken
+    }))
 }
 
 export const nextRef = {

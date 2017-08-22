@@ -13,13 +13,14 @@ export const providers = {
     'twitter': new firebase.auth.TwitterAuthProvider(),
 }
 
-export const loginWith = provider => {
-    return firebaseAuth.signInWithPopup(providers[provider])
-        .then(({ user }) => {
-            return user
+export const loginWith = (provider) => {
+    return firebase.auth().signInWithPopup(providers[provider])
+        .then(function ({ credential: { accessToken }, user }) {
+            return {
+                user,
+                accessToken
+            }
+        }).catch(function ({ code, message, email, credential }) {
+            return Promise.reject({ code, message, email, credential })
         })
-        .catch(error => ({
-            errorCode: error.code,
-            errorMessage: error.message,
-        }))
 }

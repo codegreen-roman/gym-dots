@@ -16,22 +16,16 @@ import {
 const mockStore = configureMockStore([thunk])
 
 describe('Firebase action creator', () => {
+
+    const accessToken = '4016011-iiVq1Y5AEjl76UB71po9d74L6LUWUnGWVayCILq66e'
+
+    const user = {
+        displayName: 'Roman',
+        photoURL: 'https://pbs.twimg.com/profile_images/870699319183134720/IOqlC-IM_normal.jpg',
+        uid: 'C2NO2n89PQOwRDs2o5u6HkeDl5v1'
+    }
+
     describe('.authWith', () => {
-        const expectedActions = [
-            {
-                type: START_AUTH,
-                payload: {}
-            },
-            {
-                type: AUTH_SUCCESS,
-                payload: {
-                    user: {
-                        displayName: 'Roman',
-                        uid: 'zzzzxxxxyyyy'
-                    }
-                }
-            }
-        ]
 
         const store = mockStore({ defaults: {} })
 
@@ -41,6 +35,23 @@ describe('Firebase action creator', () => {
 
         describe('and login is successful', () => {
             it('creates START_AUTH and AUTH_SUCCESS actions after login in with facebook', done => {
+
+                const expectedActions = [
+                    {
+                        type: START_AUTH,
+                        payload: {
+                            provider: 'facebook'
+                        }
+                    },
+                    {
+                        type: AUTH_SUCCESS,
+                        payload: {
+                            user,
+                            accessToken
+                        }
+                    }
+                ]
+
                 store.dispatch(authWith('facebook')).then(() => {
                     expect(store.getActions()).toEqual(expectedActions)
                     done()
@@ -48,6 +59,23 @@ describe('Firebase action creator', () => {
             })
 
             it('creates START_AUTH and AUTH_SUCCESS actions after login in with twitter', done => {
+
+                const expectedActions = [
+                    {
+                        type: START_AUTH,
+                        payload: {
+                            provider: 'twitter'
+                        }
+                    },
+                    {
+                        type: AUTH_SUCCESS,
+                        payload: {
+                            user,
+                            accessToken
+                        }
+                    }
+                ]
+
                 store.dispatch(authWith('twitter')).then(() => {
                     expect(store.getActions()).toEqual(expectedActions)
                     done()

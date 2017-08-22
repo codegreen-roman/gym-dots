@@ -25,23 +25,21 @@ const gotErrorLoadingDefaults = error => ({
     }
 })
 
-const startingAuth = () => ({
+const startingAuth = (provider) => ({
     type: START_AUTH,
-    payload: {}
+    payload: {
+        provider
+    }
 })
 
-const gotErrorWhileAuth = error => ({
+const gotErrorWhileAuth = ({ code, message, email, credential }) => ({
     type: AUTH_ERROR,
-    payload: {
-        error
-    }
+    payload: { code, message, email, credential }
 })
 
-const authSuccess = user => ({
+const authSuccess = ({ user, accessToken }) => ({
     type: AUTH_SUCCESS,
-    payload: {
-        user
-    }
+    payload: { user, accessToken }
 })
 
 const exercisesFetchingSuccess = exercises => ({
@@ -60,13 +58,13 @@ const exercisesFetchingError = error => ({
 
 const dispatcher = dispatch => compose(dispatch, gotAppDefaults)
 
-export const authWith = provider => {
+export const authWith = (provider) => {
     return function (dispatch) {
 
         const passUser = compose(dispatch, authSuccess)
         const passError = compose(dispatch, gotErrorWhileAuth)
 
-        dispatch(startingAuth())
+        dispatch(startingAuth(provider))
         return loginWith(provider)
             .then(passUser)
             .catch(passError)

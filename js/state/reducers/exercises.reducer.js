@@ -1,5 +1,3 @@
-/* eslint no-case-declarations: off */
-
 import {
     EXERCISES_ORDER_CHANGE,
     EXERCISES_FETCHING_SUCCESS,
