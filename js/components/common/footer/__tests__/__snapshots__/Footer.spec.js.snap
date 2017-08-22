@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Footer component in training status matches the previous snapshot 1`] = `
-<_Footer
+<Footer
   blocked={false}
   fireCompleteExercise={[Function]}
   fireStartWorkout={[Function]}
@@ -46,11 +46,11 @@ exports[`Footer component in training status matches the previous snapshot 1`] =
       </div>
     </glamorous(div)>
   </footer>
-</_Footer>
+</Footer>
 `;
 
 exports[`Footer component snapshot blocked matches the previous snapshot 1`] = `
-<_Footer
+<Footer
   blocked={true}
   fireCompleteExercise={[Function]}
   fireStartWorkout={[Function]}
@@ -82,11 +82,11 @@ exports[`Footer component snapshot blocked matches the previous snapshot 1`] = `
       </div>
     </glamorous(div)>
   </footer>
-</_Footer>
+</Footer>
 `;
 
 exports[`Footer component snapshot not blocked matches the mounted snapshot 1`] = `
-<_Footer
+<Footer
   blocked={false}
   fireCompleteExercise={[Function]}
   fireStartWorkout={[Function]}
@@ -118,7 +118,7 @@ exports[`Footer component snapshot not blocked matches the mounted snapshot 1`] 
       </div>
     </glamorous(div)>
   </footer>
-</_Footer>
+</Footer>
 `;
 
 exports[`Footer component snapshot not blocked matches the rendered snapshot 1`] = `

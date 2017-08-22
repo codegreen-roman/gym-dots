@@ -108,11 +108,6 @@
                 "statements": 80
             }
         },
-        "collectCoverageFrom": [
-            "js/**/*.js",
-            "!**/node_modules/**",
-            "!**/flow-typed/**"
-        ],
         "snapshotSerializers": [
             "enzyme-to-json/serializer"
         ],

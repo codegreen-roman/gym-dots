@@ -1,13 +1,10 @@
 import React from 'react'
 import { UserImage } from './UserImage'
 import { string, object, func } from 'prop-types'
-import { connect } from 'react-redux'
-import { compose, propOr, isEmpty } from 'ramda'
-import { authWith } from '../../../state/actions/firebase/databaseActions'
+import { isEmpty } from 'ramda'
 
-const getSafeNameOrEmptyString = propOr('', 'name')
 
-const _Header = ({ dateStr, subTitle, loginWith, auth, exerciseName }) => {
+export const Header = ({ dateStr, subTitle, loginWith, auth, exerciseName }) => {
 
     const rootStyle = {
         padding: '1rem',
@@ -59,14 +56,14 @@ const _Header = ({ dateStr, subTitle, loginWith, auth, exerciseName }) => {
 
             <div className='right-side'>
                 {renderLoginOrUser()}
-                <UserImage image={user && user.photoURL || undefined} />
+                <UserImage image={user && user.photoURL || undefined}/>
             </div>
 
         </section>
     )
 }
 
-_Header.propTypes = {
+Header.propTypes = {
     auth: object.isRequired,
     loginWith: func.isRequired,
     dateStr: string.isRequired,
@@ -74,20 +71,6 @@ _Header.propTypes = {
     exerciseName: string.isRequired
 }
 
-_Header.defaultProps = {
+Header.defaultProps = {
     exerciseName: ''
 }
-
-const mapStateToProps = ({ auth, currentExercise }, { dateStr, subTitle }) => ({
-    auth,
-    dateStr,
-    subTitle,
-    exerciseName: getSafeNameOrEmptyString(currentExercise)
-})
-
-const mapActionsToProps = dispatch => ({
-    loginWith: compose(dispatch, authWith)
-})
-
-export { _Header }
-export const Header = connect(mapStateToProps, mapActionsToProps)(_Header)

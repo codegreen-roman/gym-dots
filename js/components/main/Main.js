@@ -1,8 +1,8 @@
 import React from 'react'
 import moment from 'moment'
 
-import { Header } from '../common/header/Header'
-import { Footer } from '../common/footer/Footer'
+import { Header } from '../common/header/Header.connect'
+import { Footer } from '../common/footer/Footer.connect'
 import { Route, Switch, NavLink } from 'react-router-dom'
 import { Activity } from '../views/activity/Activity'
 import { Timer } from '../common/timer/Timer'

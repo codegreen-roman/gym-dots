@@ -1,7 +1,6 @@
 import React from 'react'
-import { _Footer as Footer } from '../Footer'
+import { Footer } from '../Footer'
 import { mount, render } from 'enzyme'
-import { findByDataAttr } from '../../../../utils/testUtils'
 
 const setup = (blocked = false, training = false) => {
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { _Header as Header } from '../Header'
+import { Header } from '../Header'
 import { shallow } from 'enzyme'
 import { merge } from 'ramda'
 import { shallowToJson } from 'enzyme-to-json'

@@ -1,19 +1,10 @@
 import React from 'react'
-import { connect } from 'react-redux'
 import { FooterButton } from './buttons/FooterButton'
 import { footerStyle } from './Footer.glamor'
-import {
-    startWorkoutWithCountdown,
-    setIntermediateWorkout,
-    moveExerciseToCompleted
-} from '../../../state/actions/index'
-import { setFailed, setDone } from '../../../state/actions/exerciseActions'
-import { compose } from 'ramda'
-import { withRouter } from 'react-router-dom'
 import { func, bool, object } from 'prop-types'
 import { Flex } from 'glamorous-jsxstyle'
 
-export class _Footer extends React.Component {
+export class Footer extends React.Component {
 
     componentWillReceiveProps({ shouldEndExercise, fireCompleteExercise, nextExercise: { exerciseId } }) {
         if (shouldEndExercise) fireCompleteExercise(exerciseId)
@@ -58,7 +49,7 @@ export class _Footer extends React.Component {
     }
 }
 
-_Footer.propTypes = {
+Footer.propTypes = {
     blocked: bool.isRequired,
     training: bool.isRequired,
     hidden: bool.isRequired,
@@ -69,36 +60,3 @@ _Footer.propTypes = {
     shouldEndExercise: bool.isRequired,
     nextExercise: object
 }
-
-const mapStateToProps = ({ workoutStatus, currentExercise: { setsLeft }, exercises: { upcoming: [nextExercise] } }) => ({
-    hidden: false,
-    blocked: workoutStatus === 'starting',
-    training: workoutStatus === 'started',
-    shouldEndExercise: setsLeft === 0,
-    nextExercise
-})
-
-const mapActionsToProps = (dispatch, { history }) => {
-
-    const startWorkout = compose(dispatch, startWorkoutWithCountdown)
-    const goToPreparingAgain = compose(dispatch, setIntermediateWorkout)
-    const completeCurrentExercise = compose(dispatch, moveExerciseToCompleted)
-
-    // subscribeToAppDefaultsChanges(dispatch)
-
-    return {
-        fireStartWorkout: (nextExercise) => {
-            startWorkout(nextExercise)
-                .then(() => history.push('/activity/workout'))
-        },
-        fireCompleteExercise: (exerciseId) => {
-            completeCurrentExercise(exerciseId)
-            goToPreparingAgain()
-            history.push('/activity/pre')
-        },
-        onSetFailed: compose(dispatch, setFailed),
-        onSetDone: compose(dispatch, setDone)
-    }
-}
-
-export const Footer = withRouter(connect(mapStateToProps, mapActionsToProps)(_Footer))
