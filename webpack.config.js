@@ -5,7 +5,6 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-// const DashboardPlugin = require('webpack-dashboard/plugin')
 
 const prodPlugins = [
     new webpack.DefinePlugin({
@@ -34,7 +33,6 @@ const prodPlugins = [
 let plugins = [
 
     // nice reporting
-    // new DashboardPlugin({ port: 3001 }),
     // new BundleAnalyzerPlugin(),
 
     new HtmlWebpackPlugin({
