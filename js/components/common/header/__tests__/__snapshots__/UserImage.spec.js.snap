@@ -1,16 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`UserImage component should render the image for the user 1`] = `
-<UserImage
-  image="https://s3.amazonaws.com/uifaces/faces/twitter/antjanus/128.jpg"
->
-  <glamorous(img)
-    src="https://s3.amazonaws.com/uifaces/faces/twitter/antjanus/128.jpg"
-  >
-    <img
-      className="css-5sn766"
-      src="https://s3.amazonaws.com/uifaces/faces/twitter/antjanus/128.jpg"
-    />
-  </glamorous(img)>
-</UserImage>
+exports[`UserImage component for a logged in user should render the image for the user 1`] = `
+<img
+  class="css-5sn766"
+  src="https://pbs.twimg.com/profile_images/870699319183134720/IOqlC-IM_normal.jpg"
+/>
 `;
+
+exports[`UserImage component for anonymous user should render nothing 1`] = `null`;

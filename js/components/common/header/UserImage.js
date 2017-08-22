@@ -7,12 +7,10 @@ const ImgForUser = glamorous.img({
     borderRadius: '2rem'
 })
 
-export const UserImage = ({ image }) => (
-    <ImgForUser src={image} />
-)
+export const UserImage = ({ image }) => {
 
-UserImage.defaultProps = {
-    image: ''
+    if (image) return <ImgForUser src={image} />
+    return null
 }
 
 UserImage.propTypes = {

@@ -78,7 +78,6 @@ module.exports = {
     entry: {
         app: './js/index.js',
         trash: [
-            'faker',
             'moment',
         ],
         common: [
