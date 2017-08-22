@@ -1,10 +1,15 @@
 /* eslint-env node */
 
 const path = require('path')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+
+let pathsToClean = [
+    'build'
+]
 
 const prodPlugins = [
     new webpack.DefinePlugin({
@@ -12,6 +17,7 @@ const prodPlugins = [
             NODE_ENV: JSON.stringify(process.env.NODE_ENV)
         }
     }),
+    new CleanWebpackPlugin(pathsToClean),
     new webpack.optimize.UglifyJsPlugin({
         sourceMap: true,
         beautify: false,
