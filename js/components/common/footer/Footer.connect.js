@@ -1,8 +1,10 @@
 import { connect } from 'react-redux'
-import { compose } from 'ramda'
+import { compose, test, not } from 'ramda'
 import { setFailed, setDone } from '../../../state/actions/exerciseActions'
 import { withRouter } from 'react-router-dom'
-import { Footer as _Footer} from './Footer'
+import { Footer as _Footer } from './Footer'
+
+const isNotActivityPath = compose(not, test(/activity/))
 
 import {
     startWorkoutWithCountdown,
@@ -10,8 +12,8 @@ import {
     moveExerciseToCompleted
 } from '../../../state/actions'
 
-const mapStateToProps = ({ workoutStatus, currentExercise: { setsLeft }, exercises: { upcoming: [nextExercise] } }) => ({
-    hidden: false,
+const mapStateToProps = ({ workoutStatus, currentExercise: { setsLeft }, exercises: { upcoming: [nextExercise] } }, { location: { pathname } }) => ({
+    hidden: isNotActivityPath(pathname),
     blocked: workoutStatus === 'starting',
     training: workoutStatus === 'started',
     shouldEndExercise: setsLeft === 0,

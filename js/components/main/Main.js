@@ -31,7 +31,7 @@ export const Main = () => {
                             <Switch>
                                 <Route path='/activity' component={Activity} />
                                 <Route path='/' component={
-                                    () => <NavLink to='/activity'>go train</NavLink>
+                                    () => <NavLink to='/activity'>Start training</NavLink>
                                 } />
                             </Switch>
                             <Footer />
