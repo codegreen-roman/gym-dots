@@ -2,14 +2,16 @@ import { compose } from 'ramda'
 import {
     GOT_DEFAULTS,
     GOT_ERROR_LOADING_DEFAULTS,
-    START_AUTH,
+    AUTH_START,
+    AUTH_VOID_START,
     AUTH_ERROR,
+    AUTH_VOID,
     AUTH_SUCCESS,
     EXERCISES_FETCHING_SUCCESS,
     EXERCISES_FETCHING_ERROR
 } from '../types'
 
-import { defaultsRef, nextRef, loginWith } from './database'
+import { defaultsRef, nextRef, loginWith, loginAnonymously, logout, auth } from './database'
 
 const gotAppDefaults = defaults => ({
     type: GOT_DEFAULTS,
@@ -26,10 +28,15 @@ const gotErrorLoadingDefaults = error => ({
 })
 
 const startingAuth = (provider) => ({
-    type: START_AUTH,
+    type: AUTH_START,
     payload: {
         provider
     }
+})
+
+const startingLogout = () => ({
+    type: AUTH_VOID_START,
+    payload: {}
 })
 
 const gotErrorWhileAuth = ({ code, message, email, credential }) => ({
@@ -40,6 +47,11 @@ const gotErrorWhileAuth = ({ code, message, email, credential }) => ({
 const authSuccess = ({ user, accessToken }) => ({
     type: AUTH_SUCCESS,
     payload: { user, accessToken }
+})
+
+const authVoid = () => ({
+    type: AUTH_VOID,
+    payload: {}
 })
 
 const exercisesFetchingSuccess = exercises => ({
@@ -71,6 +83,32 @@ export const authWith = (provider) => {
     }
 }
 
+export const authAnonymously = () => {
+    return function (dispatch) {
+
+        const passUser = compose(dispatch, authSuccess)
+        const passError = compose(dispatch, gotErrorWhileAuth)
+
+        dispatch(startingAuth('guest'))
+        return loginAnonymously()
+            .then(passUser)
+            .catch(passError)
+    }
+}
+
+export const authVoidAction = () => {
+    return function (dispatch) {
+
+        const passUser = compose(dispatch, authVoid)
+        const passError = compose(dispatch, gotErrorWhileAuth)
+
+        dispatch(startingLogout())
+        return logout()
+            .then(passUser)
+            .catch(passError)
+    }
+}
+
 export const loadAppDefaults = () => {
     return function (dispatch) {
 
@@ -97,6 +135,20 @@ export const subscribeToAppDefaultsChanges = dispatch => {
                 fireAction(defaults)
                 resolve(defaults)
             })
+    })
+}
+
+export const subscribeToAuthStateChanged = dispatch => {
+
+    const passUser = compose(dispatch, authSuccess)
+
+    return new Promise(resolve => {
+        auth.onAuthStateChanged(function (user) {
+            if (user) {
+                passUser({ user })
+                resolve({ user })
+            }
+        })
     })
 }
 

@@ -9,8 +9,9 @@ const defaultProps = {
     subTitle: 'Start Workout',
     exerciseName: '',
     auth: {},
-    loginWith: () => {
-    },
+    loginWith: jest.fn(),
+    loginGuest: jest.fn(),
+    logout: jest.fn(),
 }
 
 const setup = (props = defaultProps) => {
@@ -35,7 +36,9 @@ describe('Header component', () => {
             dateStr: 'Saturday, Jul 15th',
             subTitle: 'Start Workout',
             auth: {},
-            loginWith: jest.fn()
+            loginWith: jest.fn(),
+            loginGuest: jest.fn(),
+            logout: jest.fn(),
         }
 
         let wrapper
@@ -69,7 +72,9 @@ describe('Header component', () => {
                     displayName: 'Roman'
                 }
             },
-            loginWith: jest.fn()
+            loginWith: jest.fn(),
+            loginGuest: jest.fn(),
+            logout: jest.fn(),
         }
 
         let wrapper

@@ -9,7 +9,7 @@ import {
 import {
     GOT_DEFAULTS,
     AUTH_SUCCESS,
-    START_AUTH,
+    AUTH_START,
     EXERCISES_FETCHING_SUCCESS
 } from '../../types'
 
@@ -38,7 +38,7 @@ describe('Firebase action creator', () => {
 
                 const expectedActions = [
                     {
-                        type: START_AUTH,
+                        type: AUTH_START,
                         payload: {
                             provider: 'facebook'
                         }
@@ -62,7 +62,7 @@ describe('Firebase action creator', () => {
 
                 const expectedActions = [
                     {
-                        type: START_AUTH,
+                        type: AUTH_START,
                         payload: {
                             provider: 'twitter'
                         }

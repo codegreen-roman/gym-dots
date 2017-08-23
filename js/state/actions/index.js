@@ -4,6 +4,7 @@ import { exercisesOrderChange, moveExerciseToCompleted } from './exercisesAction
 import {
     loadAppDefaults,
     subscribeToAppDefaultsChanges,
+    subscribeToAuthStateChanged,
     fetchExercises
 } from './firebase/databaseActions'
 
@@ -16,5 +17,6 @@ export {
     fetchExercises,
     exercisesOrderChange,
     setIntermediateWorkout,
-    moveExerciseToCompleted
+    moveExerciseToCompleted,
+    subscribeToAuthStateChanged
 }

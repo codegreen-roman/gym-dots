@@ -4,7 +4,7 @@ import { string, object, func } from 'prop-types'
 import { isEmpty } from 'ramda'
 
 
-export const Header = ({ dateStr, subTitle, loginWith, auth, exerciseName }) => {
+export const Header = ({ dateStr, subTitle, loginWith, auth, exerciseName, loginGuest, logout }) => {
 
     const rootStyle = {
         padding: '1rem',
@@ -23,9 +23,12 @@ export const Header = ({ dateStr, subTitle, loginWith, auth, exerciseName }) => 
 
         if (user) {
             return (
-                <div className='username'>
-                    <span>{user.displayName}</span>
-                </div>
+                <section>
+                    <div className='username'>
+                        <span>{user.displayName || user.uid}</span>
+                    </div>
+                    <button className='logout' onClick={logout}>logout</button>
+                </section>
             )
         }
 
@@ -33,6 +36,7 @@ export const Header = ({ dateStr, subTitle, loginWith, auth, exerciseName }) => 
             <div>
                 <button className='twitter' onClick={() => loginWith('twitter')}>login with twitter</button>
                 <button className='facebook' onClick={() => loginWith('facebook')}>login with facebook</button>
+                <button className='guest' onClick={loginGuest}>login as guest</button>
             </div>
         )
     }
@@ -66,6 +70,8 @@ export const Header = ({ dateStr, subTitle, loginWith, auth, exerciseName }) => 
 Header.propTypes = {
     auth: object.isRequired,
     loginWith: func.isRequired,
+    loginGuest: func.isRequired,
+    logout: func.isRequired,
     dateStr: string.isRequired,
     subTitle: string.isRequired,
     exerciseName: string.isRequired

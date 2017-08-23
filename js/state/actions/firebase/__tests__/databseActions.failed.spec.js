@@ -14,7 +14,7 @@ jest.mock('../database', () => ({
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
 import { authWith } from '../databaseActions'
-import { START_AUTH, AUTH_ERROR } from '../../types'
+import { AUTH_START, AUTH_ERROR } from '../../types'
 
 const mockStore = configureMockStore([thunk])
 
@@ -41,7 +41,7 @@ describe('Firebase action creator', () => {
 
                 const expectedActionsForFailedCase = [
                     {
-                        type: START_AUTH,
+                        type: AUTH_START,
                         payload: {
                             provider: 'facebook'
                         }
@@ -63,7 +63,7 @@ describe('Firebase action creator', () => {
 
                 const expectedActionsForFailedCase = [
                     {
-                        type: START_AUTH,
+                        type: AUTH_START,
                         payload: {
                             provider: 'twitter'
                         }
