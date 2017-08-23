@@ -99,12 +99,12 @@ export const authAnonymously = () => {
 export const authVoidAction = () => {
     return function (dispatch) {
 
-        const passUser = compose(dispatch, authVoid)
+        const loggedOut = compose(dispatch, authVoid)
         const passError = compose(dispatch, gotErrorWhileAuth)
 
         dispatch(startingLogout())
         return logout()
-            .then(passUser)
+            .then(loggedOut)
             .catch(passError)
     }
 }
@@ -141,12 +141,18 @@ export const subscribeToAppDefaultsChanges = dispatch => {
 export const subscribeToAuthStateChanged = dispatch => {
 
     const passUser = compose(dispatch, authSuccess)
+    const loggedOut = compose(dispatch, authVoid)
+
+    dispatch(startingAuth('guest'))
 
     return new Promise(resolve => {
         auth.onAuthStateChanged(function (user) {
             if (user) {
                 passUser({ user })
                 resolve({ user })
+            } else {
+                loggedOut()
+                resolve()
             }
         })
     })

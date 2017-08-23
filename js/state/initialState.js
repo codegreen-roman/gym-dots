@@ -1,6 +1,8 @@
 export const INITIAL_STATE = {
     sessions: [],
-    auth: {},
+    auth: {
+        status: 'loggedOut', // 'inProgress', 'loggedIn'
+    },
     defaults: {},
     workoutStatus: 'notStarted', // 'starting', 'started', 'paused', 'completed', 'aborted'
     currentExercise: {

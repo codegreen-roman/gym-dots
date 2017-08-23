@@ -19,7 +19,7 @@ export const Header = ({ dateStr, subTitle, loginWith, auth, exerciseName, login
 
     const renderLoginOrUser = () => {
 
-        const { user } = auth
+        const { user, status } = auth
 
         if (user) {
             return (
@@ -33,7 +33,7 @@ export const Header = ({ dateStr, subTitle, loginWith, auth, exerciseName, login
         }
 
         return (
-            <div>
+            <div style={status === 'inProgress' ? { opacity: '0.1' } : { opacity: '1' }}>
                 <button className='twitter' onClick={() => loginWith('twitter')}>login with twitter</button>
                 <button className='facebook' onClick={() => loginWith('facebook')}>login with facebook</button>
                 <button className='guest' onClick={loginGuest}>login as guest</button>
