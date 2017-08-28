@@ -8,7 +8,7 @@ describe('ExerciseList component', () => {
         title: 'Some title',
         list: [
             {
-                exerciseId: 'xxy',
+                exerciseKey: 'xxy',
                 restTime: 90,
                 name: 'Push-ups',
                 sets: 5,
@@ -17,7 +17,7 @@ describe('ExerciseList component', () => {
                 results: []
             },
             {
-                exerciseId: 'xyy',
+                exerciseKey: 'xyy',
                 restTime: 30,
                 name: 'Australian pull-ups',
                 sets: 5,
@@ -118,7 +118,7 @@ describe('ExerciseList component', () => {
             row.simulate('click')
 
             expect(onOrderChangeClick).toHaveBeenCalledWith({
-                exerciseId: 'xxy',
+                exerciseKey: 'xxy',
                 restTime: 90,
                 name: 'Push-ups',
                 sets: 5,

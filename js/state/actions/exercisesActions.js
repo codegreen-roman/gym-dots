@@ -7,9 +7,9 @@ export const exercisesOrderChange = (exercise) => ({
     }
 })
 
-export const moveExerciseToCompleted = (exerciseId) => ({
+export const moveExerciseToCompleted = (exerciseKey) => ({
     type: EXERCISES_MOVE_EXERCISE_TO_COMPLETED,
     payload: {
-        exerciseId
+        exerciseKey
     }
 })

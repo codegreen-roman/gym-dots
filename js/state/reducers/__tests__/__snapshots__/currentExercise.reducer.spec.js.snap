@@ -2,7 +2,7 @@
 
 exports[`Workout in progress registering result : Done 1`] = `
 Object {
-  "exerciseId": "",
+  "exerciseKey": "",
   "name": "Push-ups",
   "reps": 10,
   "restTime": 90,
@@ -20,7 +20,7 @@ Object {
 
 exports[`Workout in progress registering result : Failed 1`] = `
 Object {
-  "exerciseId": "",
+  "exerciseKey": "",
   "name": "Push-ups",
   "reps": 10,
   "restTime": 90,

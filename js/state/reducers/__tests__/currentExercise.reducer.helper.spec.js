@@ -14,7 +14,7 @@ import {
 
 test('.fillMissingFields', () => {
     const initialObj = {
-        'exerciseId': '',
+        'exerciseKey': '',
         'restTime': 90,
         'name': 'Push-ups',
         'sets': 15,
@@ -25,7 +25,7 @@ test('.fillMissingFields', () => {
     const actual = fillMissingFields(initialObj)
 
     expect(actual).toMatchObject({
-        'exerciseId': '',
+        'exerciseKey': '',
         'restTime': 90,
         'name': 'Push-ups',
         'setsLeft': 15,
@@ -41,7 +41,7 @@ test('.getCurrentExerciseData', () => {
         type: '',
         payload: {
             status: 'notStarted',
-            'exerciseId': '',
+            'exerciseKey': '',
             'restTime': 60,
             'name': 'Pull-up',
             'sets': 5,
@@ -55,7 +55,7 @@ test('.getCurrentExerciseData', () => {
 
     expect(actual).toMatchObject({
         status: 'notStarted',
-        'exerciseId': '',
+        'exerciseKey': '',
         'restTime': 60,
         'name': 'Pull-up',
         'setsLeft': 5,
@@ -122,7 +122,7 @@ describe('type selectors', () => {
 describe('.processResultWith', () => {
 
     const initial = {
-        'exerciseId': '',
+        'exerciseKey': '',
         'restTime': 90,
         'name': 'Push-ups',
         'setsLeft': 3,
@@ -137,7 +137,7 @@ describe('.processResultWith', () => {
 
         expect(actual)
             .toMatchObject({
-                'exerciseId': '',
+                'exerciseKey': '',
                 'restTime': 90,
                 'name': 'Push-ups',
                 'setsLeft': 2,
@@ -153,7 +153,7 @@ describe('.processResultWith', () => {
 
         expect(actual)
             .toMatchObject({
-                'exerciseId': '',
+                'exerciseKey': '',
                 'restTime': 90,
                 'name': 'Push-ups',
                 'setsLeft': 2,

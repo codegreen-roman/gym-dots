@@ -5,7 +5,7 @@ exports[`ExerciseList component Clicking on a row should match the snapshot 1`] 
   list={
     Array [
       Object {
-        "exerciseId": "xxy",
+        "exerciseKey": "xxy",
         "name": "Push-ups",
         "reps": 20,
         "restTime": 90,
@@ -14,7 +14,7 @@ exports[`ExerciseList component Clicking on a row should match the snapshot 1`] 
         "weight": 0,
       },
       Object {
-        "exerciseId": "xyy",
+        "exerciseKey": "xyy",
         "name": "Australian pull-ups",
         "reps": 12,
         "restTime": 30,
@@ -39,7 +39,7 @@ exports[`ExerciseList component Clicking on a row should match the snapshot 1`] 
       data-test="list"
     >
       <_ExerciseListRow
-        exerciseId="xxy"
+        exerciseKey="xxy"
         name="Push-ups"
         onRowClick={[Function]}
         reps={20}
@@ -70,7 +70,7 @@ exports[`ExerciseList component Clicking on a row should match the snapshot 1`] 
         </li>
       </_ExerciseListRow>
       <_ExerciseListRow
-        exerciseId="xyy"
+        exerciseKey="xyy"
         name="Australian pull-ups"
         onRowClick={[Function]}
         reps={12}
@@ -120,7 +120,7 @@ exports[`ExerciseList component should render without crashing 1`] = `
     data-test="list"
   >
     <_ExerciseListRow
-      exerciseId="xxy"
+      exerciseKey="xxy"
       name="Push-ups"
       onRowClick={[Function]}
       reps={20}
@@ -130,7 +130,7 @@ exports[`ExerciseList component should render without crashing 1`] = `
       weight={0}
     />
     <_ExerciseListRow
-      exerciseId="xyy"
+      exerciseKey="xyy"
       name="Australian pull-ups"
       onRowClick={[Function]}
       reps={12}

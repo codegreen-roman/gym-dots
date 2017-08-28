@@ -6,9 +6,9 @@ describe('exercisesReducer', () => {
     const initialState = {
         sessionId: '',
         upcoming: [
-            { exerciseId: '1' },
-            { exerciseId: '2' },
-            { exerciseId: '3' }
+            { exerciseKey: '1' },
+            { exerciseKey: '2' },
+            { exerciseKey: '3' }
         ],
         skipped: [],
         completed: []
@@ -19,9 +19,9 @@ describe('exercisesReducer', () => {
         const resultingState = {
             sessionId: '',
             upcoming: [
-                { exerciseId: '2' },
-                { exerciseId: '1' },
-                { exerciseId: '3' }
+                { exerciseKey: '2' },
+                { exerciseKey: '1' },
+                { exerciseKey: '3' }
             ],
             skipped: [],
             completed: []
@@ -29,7 +29,7 @@ describe('exercisesReducer', () => {
 
         const newState = exercises(
             initialState,
-            exercisesOrderChange({ exerciseId: '2' })
+            exercisesOrderChange({ exerciseKey: '2' })
         )
         expect(newState).toEqual(resultingState)
     })
@@ -66,12 +66,12 @@ describe('exercisesReducer', () => {
             const initialState = {
                 sessionId: '',
                 upcoming: [
-                    { exerciseId: '2' },
-                    { exerciseId: '3' }
+                    { exerciseKey: '2' },
+                    { exerciseKey: '3' }
                 ],
                 skipped: [],
                 completed: [
-                    { exerciseId: '1' },
+                    { exerciseKey: '1' },
                 ]
             }
 

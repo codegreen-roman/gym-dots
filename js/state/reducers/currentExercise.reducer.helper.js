@@ -22,7 +22,7 @@ export const processResultWith = (resultModifier) => (currentExercise) => {
 
 export const getCurrentExerciseData = compose(
     fillMissingFields,
-    pick(['name', 'restTime', 'sets', 'reps', 'weight', 'status', 'exerciseId']),
+    pick(['name', 'restTime', 'sets', 'reps', 'weight', 'status', 'exerciseKey']),
     prop('payload')
 )
 

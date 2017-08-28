@@ -38,7 +38,7 @@ test('currentExercise output matches the snapshot', () => {
 describe('Workout in progress', () => {
 
     const state = {
-        'exerciseId': '',
+        'exerciseKey': '',
         'restTime': 90,
         'name': 'Push-ups',
         'setsLeft': 2,

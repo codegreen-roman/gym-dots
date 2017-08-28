@@ -7,8 +7,6 @@ const defaultResult = {
     }
 }
 
-const accessToken = '4016011-iiVq1Y5AEjl76UB71po9d74L6LUWUnGWVayCILq66e'
-
 const user = {
     displayName: 'Roman',
     photoURL: 'https://pbs.twimg.com/profile_images/870699319183134720/IOqlC-IM_normal.jpg',
@@ -51,8 +49,7 @@ export const defaultsRef = {
 
 export const loginWith = () => {
     return new Promise(resolve => resolve({
-        user,
-        accessToken
+        user
     }))
 }
 
