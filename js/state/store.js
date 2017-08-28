@@ -4,7 +4,6 @@ import { createLogger } from 'redux-logger'
 import { reducer } from './reducer'
 import { loadTranslations, setLocale, syncTranslationWithStore } from 'react-redux-i18n'
 import { translations } from '../i18n/translations'
-import { loadSessions } from './actions'
 import { INITIAL_STATE } from './initialState'
 
 const logger = createLogger({
@@ -28,7 +27,6 @@ export const configureStore = (initialState = INITIAL_STATE) => {
 
     store.dispatch(loadTranslations(translations))
     store.dispatch(setLocale('en'))
-    store.dispatch(loadSessions())
 
     return store
 }

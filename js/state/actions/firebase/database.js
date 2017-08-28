@@ -2,6 +2,7 @@
 
 import firebase from 'firebase'
 import { FIREBASE_CINFIG } from './config'
+import { pick } from 'ramda'
 
 export const firebaseApp = firebase.initializeApp(FIREBASE_CINFIG)
 export const database = firebase.database()
@@ -19,14 +20,15 @@ const loginErrorHandler = function ({ code, message, email, credential }) {
     return Promise.reject({ code, message, email, credential })
 }
 
+export const loadNextSessionForUser = (userKey) => {
+    return nextRef.child(userKey)
+        .once('value', snap => snap.val())
+}
+
 export const loginWith = (provider) => {
     return firebase.auth().signInWithPopup(providers[provider])
-        .then(function ({ credential: { accessToken }, user }) {
-            return {
-                user,
-                accessToken
-            }
-        }).catch(loginErrorHandler)
+        .then(pick(['user']))
+        .catch(loginErrorHandler)
 }
 
 export const loginAnonymously = () => {

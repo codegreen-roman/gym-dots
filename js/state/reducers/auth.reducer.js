@@ -13,10 +13,11 @@ export const auth = (state = INITIAL_STATE.auth, action) => {
                 status: 'loggedOut'
             }
         case AUTH_SUCCESS:
-            const { user, accessToken } = action.payload
+            const { user } = action.payload
+            const { uid } = user
             return {
                 user,
-                accessToken,
+                uid,
                 status: 'loggedIn'
             }
         default:

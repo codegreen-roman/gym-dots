@@ -11,8 +11,10 @@ class _ManageExerciseList extends Component {
         const {
             exercises: { upcoming, completed, skipped },
             onOrderChange } = this.props
+
         return (
             <div>
+                <span>{upcoming.length === 0 ? 'You got no exercises' : null}</span>
                 <ExerciseList key='upcoming' list={upcoming} title='upcoming' onOrderChangeClick={onOrderChange} />
                 <ExerciseList key='completed' list={completed} title='completed' />
                 <ExerciseList key='skipped' list={skipped} title='skipped' />

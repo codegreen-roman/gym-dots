@@ -13,7 +13,7 @@ import {
 } from '../../../state/actions'
 
 const mapStateToProps = ({ workoutStatus, currentExercise: { setsLeft }, exercises: { upcoming: [nextExercise] } }, { location: { pathname } }) => ({
-    hidden: isNotActivityPath(pathname),
+    hidden: isNotActivityPath(pathname) || !nextExercise,
     blocked: workoutStatus === 'starting',
     training: workoutStatus === 'started',
     shouldEndExercise: setsLeft === 0,

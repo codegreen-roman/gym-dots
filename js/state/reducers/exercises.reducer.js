@@ -4,29 +4,44 @@ import {
     EXERCISES_MOVE_EXERCISE_TO_COMPLETED
 } from '../actions/types'
 import { INITIAL_STATE } from '../initialState'
-import { reject, filter, propEq, concat } from 'ramda'
+import { reject, filter, propEq, concat, mapObjIndexed, values, compose } from 'ramda'
 
 export const exercises = (state = INITIAL_STATE, action) => {
 
     switch (action.type) {
         case EXERCISES_FETCHING_SUCCESS:
+
+            const getValueAndKey = (val, key) => ({
+                ...val,
+                exerciseKey: key
+            })
+
+            const mapToExerciseList = compose(values, mapObjIndexed(getValueAndKey))
+            const { name, sessionKey, exercises } = action.payload.nextSession
+
             return {
                 ...state,
-                name: action.payload.exercises.name,
-                sessionId: action.payload.exercises.sessionId,
-                upcoming: action.payload.exercises.exercises
+                name,
+                sessionKey,
+                upcoming: mapToExerciseList(exercises)
             }
         case EXERCISES_ORDER_CHANGE:
+
+            const { exercise: { exerciseKey } } = action.payload
+            const sameKey = propEq('exerciseKey', exerciseKey)
+            const { upcoming } = state
+            const withoutTheExercise = reject(sameKey)
+
             return {
                 ...state,
                 upcoming: [
                     action.payload.exercise,
-                    ...state.upcoming.filter(itm => itm.exerciseId !== action.payload.exercise.exerciseId)
+                    ...withoutTheExercise(upcoming)
                 ]
             }
         case EXERCISES_MOVE_EXERCISE_TO_COMPLETED:
 
-            const completedExercise = propEq('exerciseId', action.payload.exerciseId)
+            const completedExercise = propEq('exerciseKey', action.payload.exerciseKey)
             const withoutTheCompletedExerciseFrom = reject(completedExercise)
             const withTheCompletedExerciseFrom = filter(completedExercise)
 

@@ -9,11 +9,11 @@ const _ExerciseListRow = ({
     weight,
     reps,
     sets,
-    exerciseId,
+    exerciseKey,
     onRowClick
 }) => {
     return (
-        <li data-test={`exercise-row-${exerciseId}`} onClick={onRowClick}>
+        <li data-test={`exercise-row-${exerciseKey}`} onClick={onRowClick}>
             <h3 {...exerciseTitle}>
                 {name}
             </h3>
@@ -33,7 +33,7 @@ _ExerciseListRow.propTypes = {
     weight: number.isRequired,
     reps: number.isRequired,
     sets: number.isRequired,
-    exerciseId: string.isRequired,
+    exerciseKey: string.isRequired,
     onRowClick: func.isRequired
 }
 

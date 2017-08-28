@@ -6,8 +6,8 @@ import { Flex } from 'glamorous-jsxstyle'
 
 export class Footer extends React.Component {
 
-    componentWillReceiveProps({ shouldEndExercise, fireCompleteExercise, nextExercise: { exerciseId } }) {
-        if (shouldEndExercise) fireCompleteExercise(exerciseId)
+    componentWillReceiveProps({ shouldEndExercise, fireCompleteExercise, nextExercise: { exerciseKey } }) {
+        if (shouldEndExercise) fireCompleteExercise(exerciseKey)
     }
 
     renderTrainingButtons() {

@@ -1,4 +1,4 @@
-import { compose } from 'ramda'
+import { compose, ifElse, isNil } from 'ramda'
 import {
     GOT_DEFAULTS,
     GOT_ERROR_LOADING_DEFAULTS,
@@ -10,8 +10,9 @@ import {
     EXERCISES_FETCHING_SUCCESS,
     EXERCISES_FETCHING_ERROR
 } from '../types'
+import { getVal } from './databaseActions.helper'
 
-import { defaultsRef, nextRef, loginWith, loginAnonymously, logout, auth } from './database'
+import { defaultsRef, loadNextSessionForUser, loginWith, loginAnonymously, logout, auth } from './database'
 
 const gotAppDefaults = defaults => ({
     type: GOT_DEFAULTS,
@@ -44,9 +45,9 @@ const gotErrorWhileAuth = ({ code, message, email, credential }) => ({
     payload: { code, message, email, credential }
 })
 
-const authSuccess = ({ user, accessToken }) => ({
+const authSuccess = ({ user }) => ({
     type: AUTH_SUCCESS,
-    payload: { user, accessToken }
+    payload: { user }
 })
 
 const authVoid = () => ({
@@ -54,10 +55,10 @@ const authVoid = () => ({
     payload: {}
 })
 
-const exercisesFetchingSuccess = exercises => ({
+const exercisesFetchingSuccess = nextSession => ({
     type: EXERCISES_FETCHING_SUCCESS,
     payload: {
-        exercises
+        nextSession
     }
 })
 
@@ -73,12 +74,10 @@ const dispatcher = dispatch => compose(dispatch, gotAppDefaults)
 export const authWith = (provider) => {
     return function (dispatch) {
 
-        const passUser = compose(dispatch, authSuccess)
         const passError = compose(dispatch, gotErrorWhileAuth)
 
         dispatch(startingAuth(provider))
         return loginWith(provider)
-            .then(passUser)
             .catch(passError)
     }
 }
@@ -86,12 +85,10 @@ export const authWith = (provider) => {
 export const authAnonymously = () => {
     return function (dispatch) {
 
-        const passUser = compose(dispatch, authSuccess)
         const passError = compose(dispatch, gotErrorWhileAuth)
 
         dispatch(startingAuth('guest'))
         return loginAnonymously()
-            .then(passUser)
             .catch(passError)
     }
 }
@@ -99,12 +96,10 @@ export const authAnonymously = () => {
 export const authVoidAction = () => {
     return function (dispatch) {
 
-        const loggedOut = compose(dispatch, authVoid)
         const passError = compose(dispatch, gotErrorWhileAuth)
 
         dispatch(startingLogout())
         return logout()
-            .then(loggedOut)
             .catch(passError)
     }
 }
@@ -149,6 +144,7 @@ export const subscribeToAuthStateChanged = dispatch => {
         auth.onAuthStateChanged(function (user) {
             if (user) {
                 passUser({ user })
+                loadNextSession(user.uid)(dispatch)
                 resolve({ user })
             } else {
                 loggedOut()
@@ -158,14 +154,17 @@ export const subscribeToAuthStateChanged = dispatch => {
     })
 }
 
-export const fetchExercises = () => dispatch => {
-    const fetchSuccess = compose(dispatch, exercisesFetchingSuccess)
-    const fetchError = compose(dispatch, exercisesFetchingError)
+export const loadNextSession = (userKey) => dispatch => {
 
-    return nextRef
-        .once('value', snap => {
-            const next = snap.val()
-            fetchSuccess(next)
-        })
+    const fetchSuccess = compose(dispatch, exercisesFetchingSuccess, getVal)
+    const fetchError = compose(dispatch, exercisesFetchingError)
+    const doNothingForNoValueOrFetch = ifElse(
+        compose(isNil, getVal),
+        () => {},
+        fetchSuccess
+    )
+
+    return loadNextSessionForUser(userKey)
+        .then(doNothingForNoValueOrFetch)
         .catch(fetchError)
 }
