@@ -9,7 +9,8 @@ export const database = firebase.database()
 export const auth = firebaseApp.auth()
 
 export const defaultsRef = database.ref('/config/defaults')
-export const nextRef = database.ref('/next')
+const nextRef = database.ref('/next')
+const resultsRef = database.ref('/results')
 
 export const providers = {
     'facebook': new firebase.auth.FacebookAuthProvider(),
@@ -23,6 +24,24 @@ const loginErrorHandler = function ({ code, message, email, credential }) {
 export const loadNextSessionForUser = (userKey) => {
     return nextRef.child(userKey)
         .once('value', snap => snap.val())
+}
+
+export const writeSessionResult = (userKey) => {
+
+    // 'sessionKey': {
+    //     'exerciseKey1': true, (done true | false)
+    //     'exerciseKey2': true,
+    //     'exerciseKey3': false
+    // }
+
+    return resultsRef.child(userKey)
+        .push({
+            '-KscIsIPLzAjqX9P_LC2': {
+                '-KscJ56jW3VnBhl_2Sq4': true,
+                '-KscJX4MQzhLTaR54onL': true,
+                '-KscJnfGUhPzAJ5BnTNa': false
+            }
+        })
 }
 
 export const loginWith = (provider) => {
