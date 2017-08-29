@@ -3,11 +3,24 @@
 exports[`Footer component in training status matches the previous snapshot 1`] = `
 <Footer
   blocked={false}
-  currentResults={Array []}
+  currentResults={
+    Array [
+      true,
+      true,
+      true,
+      true,
+      true,
+    ]
+  }
   fireCompleteExercise={[Function]}
   fireStartWorkout={[Function]}
   hidden={false}
   loadDefaults={[Function]}
+  nextExercise={
+    Object {
+      "exerciseKey": "thisIsTheUniqueKey",
+    }
+  }
   onSetDone={[Function]}
   onSetFailed={[Function]}
   shouldEndExercise={false}
@@ -53,11 +66,24 @@ exports[`Footer component in training status matches the previous snapshot 1`] =
 exports[`Footer component snapshot blocked matches the previous snapshot 1`] = `
 <Footer
   blocked={true}
-  currentResults={Array []}
+  currentResults={
+    Array [
+      true,
+      true,
+      true,
+      true,
+      true,
+    ]
+  }
   fireCompleteExercise={[Function]}
   fireStartWorkout={[Function]}
   hidden={false}
   loadDefaults={[Function]}
+  nextExercise={
+    Object {
+      "exerciseKey": "thisIsTheUniqueKey",
+    }
+  }
   onSetDone={[Function]}
   onSetFailed={[Function]}
   shouldEndExercise={false}
@@ -90,11 +116,24 @@ exports[`Footer component snapshot blocked matches the previous snapshot 1`] = `
 exports[`Footer component snapshot not blocked matches the mounted snapshot 1`] = `
 <Footer
   blocked={false}
-  currentResults={Array []}
+  currentResults={
+    Array [
+      true,
+      true,
+      true,
+      true,
+      true,
+    ]
+  }
   fireCompleteExercise={[Function]}
   fireStartWorkout={[Function]}
   hidden={false}
   loadDefaults={[Function]}
+  nextExercise={
+    Object {
+      "exerciseKey": "thisIsTheUniqueKey",
+    }
+  }
   onSetDone={[Function]}
   onSetFailed={[Function]}
   shouldEndExercise={false}

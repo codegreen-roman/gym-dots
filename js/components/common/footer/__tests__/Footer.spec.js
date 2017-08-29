@@ -2,7 +2,7 @@ import React from 'react'
 import { Footer } from '../Footer'
 import { mount, render } from 'enzyme'
 
-const setup = (blocked = false, training = false) => {
+const setup = (blocked = false, training = false, shouldEndExercise = false) => {
 
     const props = {
         fireStartWorkout: jest.fn(),
@@ -11,10 +11,13 @@ const setup = (blocked = false, training = false) => {
         onSetDone: jest.fn(),
         fireCompleteExercise: jest.fn(),
         hidden: false,
-        shouldEndExercise: false,
+        shouldEndExercise,
         blocked,
         training,
-        currentResults: []
+        currentResults: [true, true, true, true, true],
+        nextExercise: {
+            exerciseKey: 'thisIsTheUniqueKey'
+        }
     }
 
     return {
@@ -82,6 +85,18 @@ describe('Footer component', () => {
         it('matches the previous snapshot', () => {
             const { component } = setup(false, true)
             expect(component).toMatchSnapshot()
+        })
+    })
+
+    describe('shouldEndExercise prop is true', () => {
+        it('should call fireStartWorkout function', () => {
+
+            const { props, component } = setup(false, true, true)
+
+            component.update()
+            expect(props.fireCompleteExercise).toHaveBeenCalledTimes(1)
+            expect(props.fireCompleteExercise).toHaveBeenCalledWith('thisIsTheUniqueKey', [true, true, true, true, true])
+
         })
     })
 
