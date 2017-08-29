@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { compose, test, not } from 'ramda'
+import { compose, test, not, isEmpty } from 'ramda'
 import { setFailed, setDone } from '../../../state/actions/exerciseActions'
 import { withRouter } from 'react-router-dom'
 import { Footer as _Footer } from './Footer'
@@ -12,13 +12,20 @@ import {
 
 const isNotActivityPath = compose(not, test(/activity/))
 
-const mapStateToProps = ({ workoutStatus, currentExercise: { setsLeft }, exercises: { upcoming: [nextExercise] } }, { location: { pathname } }) => ({
-    hidden: isNotActivityPath(pathname) || !nextExercise,
-    blocked: workoutStatus === 'starting',
-    training: workoutStatus === 'started',
-    shouldEndExercise: setsLeft === 0,
-    nextExercise
-})
+const mapStateToProps = (state, { location: { pathname } }) => {
+
+    const { workoutStatus, currentExercise: { setsLeft, results }, exercises: { upcoming } } = state
+    const [nextExercise = {}] = upcoming
+
+    return {
+        hidden: isNotActivityPath(pathname) || isEmpty(nextExercise),
+        blocked: workoutStatus === 'starting',
+        training: workoutStatus === 'started',
+        shouldEndExercise: setsLeft === 0,
+        nextExercise,
+        currentResults: results || []
+    }
+}
 
 const mapActionsToProps = (dispatch, { history }) => {
 
@@ -33,8 +40,8 @@ const mapActionsToProps = (dispatch, { history }) => {
             startWorkout(nextExercise)
                 .then(() => history.push('/activity/workout'))
         },
-        fireCompleteExercise: (exerciseId) => {
-            completeCurrentExercise(exerciseId)
+        fireCompleteExercise: (exerciseKey, results) => {
+            completeCurrentExercise(exerciseKey, results)
             goToPreparingAgain()
             history.push('/activity/pre')
         },

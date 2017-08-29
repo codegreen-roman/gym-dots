@@ -1,13 +1,15 @@
 import React from 'react'
 import { FooterButton } from './buttons/FooterButton'
 import { footerStyle } from './Footer.glamor'
-import { func, bool, object } from 'prop-types'
+import { func, bool, object, array } from 'prop-types'
 import { Flex } from 'glamorous-jsxstyle'
 
 export class Footer extends React.Component {
 
-    componentWillReceiveProps({ shouldEndExercise, fireCompleteExercise, nextExercise: { exerciseKey } }) {
-        if (shouldEndExercise) fireCompleteExercise(exerciseKey)
+    componentWillReceiveProps({ shouldEndExercise, fireCompleteExercise, nextExercise: { exerciseKey }, currentResults }) {
+        if (shouldEndExercise) {
+            return fireCompleteExercise(exerciseKey, currentResults)
+        }
     }
 
     renderTrainingButtons() {
@@ -58,5 +60,6 @@ Footer.propTypes = {
     onSetFailed: func.isRequired,
     onSetDone: func.isRequired,
     shouldEndExercise: bool.isRequired,
-    nextExercise: object
+    nextExercise: object,
+    currentResults: array.isRequired
 }

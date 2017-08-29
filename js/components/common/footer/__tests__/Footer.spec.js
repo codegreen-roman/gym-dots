@@ -13,7 +13,8 @@ const setup = (blocked = false, training = false) => {
         hidden: false,
         shouldEndExercise: false,
         blocked,
-        training
+        training,
+        currentResults: []
     }
 
     return {
