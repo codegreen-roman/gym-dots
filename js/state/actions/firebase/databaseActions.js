@@ -12,7 +12,8 @@ import {
 } from '../types'
 import { getVal } from './databaseActions.helper'
 
-import { defaultsRef, loadNextSessionForUser, loginWith, loginAnonymously, logout, auth } from './database'
+import { saveResultsCompleted, saveResultsFailed } from '../exercisesActions'
+import { defaultsRef, loadNextSessionForUser, loginWith, loginAnonymously, logout, auth, writeSessionResult } from './database'
 
 const gotAppDefaults = defaults => ({
     type: GOT_DEFAULTS,
@@ -167,4 +168,16 @@ export const loadNextSession = (userKey) => dispatch => {
     return loadNextSessionForUser(userKey)
         .then(doNothingForNoValueOrFetch)
         .catch(fetchError)
+}
+
+export const saveExercisesResults = (userKey, data) => {
+    return function (dispatch) {
+
+        const saveFailed = compose(dispatch, saveResultsFailed)
+        const saveSuccess = () => compose(dispatch, saveResultsCompleted)(data)
+
+        return writeSessionResult(userKey, data)
+            .then(saveSuccess)
+            .catch(saveFailed)
+    }
 }

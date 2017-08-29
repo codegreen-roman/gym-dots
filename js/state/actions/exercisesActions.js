@@ -1,4 +1,9 @@
-import { EXERCISES_ORDER_CHANGE, EXERCISES_MOVE_EXERCISE_TO_COMPLETED, EXERCISES_SAVE_RESULT } from './types'
+import {
+    EXERCISES_ORDER_CHANGE,
+    EXERCISES_MOVE_EXERCISE_TO_COMPLETED,
+    EXERCISES_SAVED_RESULTS_SUCCESS,
+    EXERCISES_SAVED_RESULTS_FAILED
+} from './types'
 
 export const exercisesOrderChange = (exercise) => ({
     type: EXERCISES_ORDER_CHANGE,
@@ -7,17 +12,23 @@ export const exercisesOrderChange = (exercise) => ({
     }
 })
 
-export const moveExerciseToCompleted = (exerciseKey) => ({
+export const moveExerciseToCompleted = (exerciseKey, results) => ({
     type: EXERCISES_MOVE_EXERCISE_TO_COMPLETED,
     payload: {
-        exerciseKey
+        exerciseKey,
+        results
     }
 })
 
-export const saveExercisesResults = (sessionKey, completed) => ({
-    type: EXERCISES_SAVE_RESULT,
+export const saveResultsCompleted = (data) => ({
+    type: EXERCISES_SAVED_RESULTS_SUCCESS,
     payload: {
-        sessionKey,
-        completed
+        data
+    }
+})
+
+export const saveResultsFailed = () => ({
+    type: EXERCISES_SAVED_RESULTS_FAILED,
+    payload: {
     }
 })
