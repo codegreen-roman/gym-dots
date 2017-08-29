@@ -1,10 +1,11 @@
 import { ping, startWorkoutWithCountdown, setIntermediateWorkout } from './creators'
 import { loadSessions } from './session-actions'
-import { exercisesOrderChange, moveExerciseToCompleted, saveExercisesResults } from './exercisesActions'
+import { exercisesOrderChange, moveExerciseToCompleted } from './exercisesActions'
 import {
     loadAppDefaults,
     subscribeToAppDefaultsChanges,
-    subscribeToAuthStateChanged
+    subscribeToAuthStateChanged,
+    saveExercisesResults
 } from './firebase/databaseActions'
 
 export {

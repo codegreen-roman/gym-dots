@@ -4,7 +4,7 @@ import { exercisesOrderChange, moveExerciseToCompleted } from '../../actions'
 describe('exercisesReducer', () => {
 
     const initialState = {
-        sessionId: '',
+        sessionKey: '',
         upcoming: [
             { exerciseKey: '1' },
             { exerciseKey: '2' },
@@ -17,7 +17,7 @@ describe('exercisesReducer', () => {
     it('should change order of upcoming exercises', () => {
 
         const resultingState = {
-            sessionId: '',
+            sessionKey: '',
             upcoming: [
                 { exerciseKey: '2' },
                 { exerciseKey: '1' },
@@ -54,7 +54,7 @@ describe('exercisesReducer', () => {
         it('should move one exercise from upcoming to completed which was empty', () => {
             const actual = exercises(
                 initialState,
-                moveExerciseToCompleted('2')
+                moveExerciseToCompleted('2', [true, true, true, true, true])
             )
 
             expect(actual.upcoming.length).toBe(2)
@@ -77,7 +77,7 @@ describe('exercisesReducer', () => {
 
             const actual = exercises(
                 initialState,
-                moveExerciseToCompleted('2')
+                moveExerciseToCompleted('2', [true, true, true, true, false])
             )
 
             expect(actual.upcoming.length).toBe(1)

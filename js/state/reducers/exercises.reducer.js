@@ -1,10 +1,11 @@
 import {
     EXERCISES_ORDER_CHANGE,
     EXERCISES_FETCHING_SUCCESS,
-    EXERCISES_MOVE_EXERCISE_TO_COMPLETED
+    EXERCISES_MOVE_EXERCISE_TO_COMPLETED,
+    EXERCISES_SAVED_RESULTS_SUCCESS
 } from '../actions/types'
 import { INITIAL_STATE } from '../initialState'
-import { reject, filter, propEq, concat, mapObjIndexed, values, compose } from 'ramda'
+import { reject, filter, propEq, concat, mapObjIndexed, values, compose, reduce, and, map, assoc } from 'ramda'
 
 export const exercises = (state = INITIAL_STATE, action) => {
 
@@ -41,14 +42,23 @@ export const exercises = (state = INITIAL_STATE, action) => {
             }
         case EXERCISES_MOVE_EXERCISE_TO_COMPLETED:
 
+            const checkAllTrue = reduce(and, true)
+            const extendWithResults = map(assoc('allDone', checkAllTrue(action.payload.results)))
             const completedExercise = propEq('exerciseKey', action.payload.exerciseKey)
             const withoutTheCompletedExerciseFrom = reject(completedExercise)
-            const withTheCompletedExerciseFrom = filter(completedExercise)
+            const withTheCompletedExerciseFrom = compose(extendWithResults, filter(completedExercise))
 
             return {
                 ...state,
                 upcoming: withoutTheCompletedExerciseFrom(state.upcoming),
                 completed: concat(withTheCompletedExerciseFrom(state.upcoming), state.completed)
+            }
+        case EXERCISES_SAVED_RESULTS_SUCCESS:
+            return {
+                ...state,
+                upcoming: [],
+                completed: [],
+                skipped: []
             }
         default:
             return state

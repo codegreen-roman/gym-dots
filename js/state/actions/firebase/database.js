@@ -1,5 +1,3 @@
-/* eslint no-console: off  */
-
 import firebase from 'firebase'
 import { FIREBASE_CINFIG } from './config'
 import { pick } from 'ramda'
@@ -26,22 +24,11 @@ export const loadNextSessionForUser = (userKey) => {
         .once('value', snap => snap.val())
 }
 
-export const writeSessionResult = (userKey) => {
-
-    // 'sessionKey': {
-    //     'exerciseKey1': true, (done true | false)
-    //     'exerciseKey2': true,
-    //     'exerciseKey3': false
-    // }
-
-    return resultsRef.child(userKey)
-        .push({
-            '-KscIsIPLzAjqX9P_LC2': {
-                '-KscJ56jW3VnBhl_2Sq4': true,
-                '-KscJX4MQzhLTaR54onL': true,
-                '-KscJnfGUhPzAJ5BnTNa': false
-            }
-        })
+export const writeSessionResult = (userKey, data) => {
+    return resultsRef.child(userKey).push({
+        ...data,
+        timestamp: firebase.database.ServerValue.TIMESTAMP
+    })
 }
 
 export const loginWith = (provider) => {
