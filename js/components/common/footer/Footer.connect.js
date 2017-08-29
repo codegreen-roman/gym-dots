@@ -4,13 +4,13 @@ import { setFailed, setDone } from '../../../state/actions/exerciseActions'
 import { withRouter } from 'react-router-dom'
 import { Footer as _Footer } from './Footer'
 
-const isNotActivityPath = compose(not, test(/activity/))
-
 import {
     startWorkoutWithCountdown,
     setIntermediateWorkout,
     moveExerciseToCompleted
 } from '../../../state/actions'
+
+const isNotActivityPath = compose(not, test(/activity/))
 
 const mapStateToProps = ({ workoutStatus, currentExercise: { setsLeft }, exercises: { upcoming: [nextExercise] } }, { location: { pathname } }) => ({
     hidden: isNotActivityPath(pathname) || !nextExercise,
