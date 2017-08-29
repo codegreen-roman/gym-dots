@@ -1,14 +1,29 @@
 import React, { Component } from 'react'
 import { ExerciseList } from './ExerciseList'
 import { connect } from 'react-redux'
-import { compose, all, isEmpty, not, isNil } from 'ramda'
+import { compose, all, isEmpty, not, reduce } from 'ramda'
 import { func, bool, string, array } from 'prop-types'
-import { exercisesOrderChange } from '../../../../../state/actions/index'
+import { exercisesOrderChange, saveExercisesResults } from '../../../../../state/actions'
 
-const notMissing = compose(not, isNil)
+// todo: move to helper
+const notMissing = compose(not, isEmpty)
 const allListsEmpty = all(isEmpty)
+const toWritableResults = reduce((acc, { exerciseKey, allDone }) => ({
+    ...acc,
+    [exerciseKey]: allDone
+}), {})
 
 class _ManageExerciseList extends Component {
+
+    componentDidMount() {
+        const { sessionDone, sessionKey, completed, userKey, saveResults } = this.props
+        if (sessionDone) {
+
+            saveResults(userKey, {
+                [sessionKey]: toWritableResults(completed)
+            })
+        }
+    }
 
     congratulateUser() {
         const { sessionDone, sessionKey } = this.props
@@ -40,21 +55,25 @@ _ManageExerciseList.propTypes = {
     completed: array.isRequired,
     skipped: array.isRequired,
     onOrderChange: func.isRequired,
+    saveResults: func.isRequired,
     sessionKey: string,
-    sessionDone: bool.isRequired
+    sessionDone: bool.isRequired,
+    userKey: string
 }
 
-const mapStateToProps = ({ exercises: { upcoming, completed, skipped, sessionKey, name } }) => ({
+const mapStateToProps = ({ exercises: { upcoming, completed, skipped, sessionKey, name }, auth : { uid } }) => ({
     upcoming,
     completed,
     skipped,
     name,
     sessionKey,
-    sessionDone: allListsEmpty([upcoming, skipped]) && notMissing(sessionKey)
+    sessionDone: allListsEmpty([upcoming, skipped]) && notMissing(sessionKey),
+    userKey: uid
 })
 
 const mapActionsToProps = dispatch => {
     return {
+        saveResults: compose(dispatch, saveExercisesResults),
         onOrderChange: compose(dispatch, exercisesOrderChange)
     }
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import { isEmpty } from 'ramda'
 import { array, string, func } from 'prop-types'
 import { exerciseList, exerciseListHeader } from './ExerciseList.glamor'
 import { ExerciseListRow } from './ExerciseListRow'
@@ -6,7 +7,7 @@ import { ExerciseListRow } from './ExerciseListRow'
 const onOrderChangeClick = () => {} // noop
 
 const _ExerciseList = ({ list, title, onOrderChangeClick }) => {
-    if (list.length === 0) {
+    if (isEmpty(list)) {
         return null
     }
     return (

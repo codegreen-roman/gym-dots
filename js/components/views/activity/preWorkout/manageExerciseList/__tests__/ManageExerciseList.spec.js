@@ -33,7 +33,8 @@ const props = {
 
 const setup = props => {
     const actions = {
-        onOrderChange: jest.fn()
+        onOrderChange: jest.fn(),
+        saveResults: jest.fn(),
     }
 
     const component = shallow(<ManageExerciseList {...props} {...actions} />)
