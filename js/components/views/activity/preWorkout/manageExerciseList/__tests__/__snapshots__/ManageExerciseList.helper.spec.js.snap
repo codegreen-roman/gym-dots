@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.toWritableResults returns a freaking structure eatable by firebase 1`] = `
+Object {
+  "key1": true,
+  "key2": false,
+  "key3": false,
+  "key4": true,
+}
+`;

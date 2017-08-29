@@ -1,17 +1,10 @@
 import React, { Component } from 'react'
 import { ExerciseList } from './ExerciseList'
 import { connect } from 'react-redux'
-import { compose, all, isEmpty, not, reduce } from 'ramda'
+import { compose, isEmpty } from 'ramda'
+import { toWritableResults, allListsEmpty, notMissing } from './ManageExerciseList.helper'
 import { func, bool, string, array } from 'prop-types'
 import { exercisesOrderChange, saveExercisesResults } from '../../../../../state/actions'
-
-// todo: move to helper
-const notMissing = compose(not, isEmpty)
-const allListsEmpty = all(isEmpty)
-const toWritableResults = reduce((acc, { exerciseKey, allDone }) => ({
-    ...acc,
-    [exerciseKey]: allDone
-}), {})
 
 class _ManageExerciseList extends Component {
 
@@ -41,7 +34,7 @@ class _ManageExerciseList extends Component {
         return (
             <div>
                 {this.congratulateUser()}
-                <span>{isEmpty(upcoming) ? 'You got no exercises' : null}</span>
+                <span>{isEmpty(upcoming) ? 'You got no exercises yet' : null}</span>
                 <ExerciseList key='upcoming' list={upcoming} title='upcoming' onOrderChangeClick={onOrderChange} />
                 <ExerciseList key='completed' list={completed} title='completed' />
                 <ExerciseList key='skipped' list={skipped} title='skipped' />
