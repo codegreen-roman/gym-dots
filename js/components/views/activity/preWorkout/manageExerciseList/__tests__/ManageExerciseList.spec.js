@@ -4,37 +4,35 @@ import { _ManageExerciseList as ManageExerciseList } from '../ManageExerciseList
 import { ExerciseList } from '../ExerciseList'
 
 const props = {
-    sessionId: '',
+    sessionKey: '',
     name: '',
-    exercises: {
-        upcoming: [
-            {
-                exerciseId: '',
-                restTime: 90,
-                name: 'Push-ups',
-                sets: 5,
-                reps: 20,
-                weight: 0,
-                results: []
-            },
-            {
-                exerciseId: '',
-                restTime: 30,
-                name: 'Australian pull-ups',
-                sets: 5,
-                reps: 12,
-                weight: 0,
-                results: []
-            }
-        ],
-        skipped: [],
-        completed: []
-    }
+    sessionDone: false,
+    upcoming: [
+        {
+            exerciseId: '',
+            restTime: 90,
+            name: 'Push-ups',
+            sets: 5,
+            reps: 20,
+            weight: 0,
+            results: []
+        },
+        {
+            exerciseId: '',
+            restTime: 30,
+            name: 'Australian pull-ups',
+            sets: 5,
+            reps: 12,
+            weight: 0,
+            results: []
+        }
+    ],
+    skipped: [],
+    completed: []
 }
 
 const setup = props => {
     const actions = {
-        fetchExercises: jest.fn(),
         onOrderChange: jest.fn()
     }
 
