@@ -1,5 +1,5 @@
 import { exercises } from '../exercises.reducer'
-import { exercisesOrderChange, moveExerciseToCompleted } from '../../actions'
+import { exercisesOrderChange, moveExerciseToCompleted, saveResultsCompleted } from '../../actions'
 
 describe('exercisesReducer', () => {
 
@@ -51,10 +51,13 @@ describe('exercisesReducer', () => {
 
     describe('moving the exercise from upcoming to completed', () => {
 
+        const goodResults = [true, true, true, true, true]
+        const badResults = [true, true, true, true, false]
+
         it('should move one exercise from upcoming to completed which was empty', () => {
             const actual = exercises(
                 initialState,
-                moveExerciseToCompleted('2', [true, true, true, true, true])
+                moveExerciseToCompleted('2', goodResults)
             )
 
             expect(actual.upcoming.length).toBe(2)
@@ -77,11 +80,57 @@ describe('exercisesReducer', () => {
 
             const actual = exercises(
                 initialState,
-                moveExerciseToCompleted('2', [true, true, true, true, false])
+                moveExerciseToCompleted('2', badResults)
             )
 
             expect(actual.upcoming.length).toBe(1)
             expect(actual.completed.length).toBe(2)
+        })
+
+        it('should move one exercise from upcoming to completed and add allDone prop with true value to it', () => {
+            const actual = exercises(
+                initialState,
+                moveExerciseToCompleted('2', goodResults)
+            )
+
+            const { completed, upcoming } = actual
+            const [firstCompleted] = completed
+
+            expect(upcoming.length).toBe(2)
+            expect(completed.length).toBe(1)
+            expect(firstCompleted).toMatchObject({
+                exerciseKey: '2',
+                allDone: true
+            })
+        })
+
+        it('should move one exercise from upcoming to completed and add allDone prop with false value to it', () => {
+            const actual = exercises(
+                initialState,
+                moveExerciseToCompleted('2', badResults)
+            )
+
+            const { completed: [firstCompleted] } = actual
+
+            expect(firstCompleted).toMatchObject({
+                exerciseKey: '2',
+                allDone: false
+            })
+        })
+
+    })
+
+    describe('completing all exercises', () => {
+
+        it('should clear completed, upcoming and skipped', () => {
+            const actual = exercises(
+                initialState,
+                saveResultsCompleted()
+            )
+
+            expect(actual.upcoming.length).toBe(0)
+            expect(actual.completed.length).toBe(0)
+            expect(actual.skipped.length).toBe(0)
         })
 
     })
