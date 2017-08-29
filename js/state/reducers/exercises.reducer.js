@@ -43,10 +43,10 @@ export const exercises = (state = INITIAL_STATE, action) => {
         case EXERCISES_MOVE_EXERCISE_TO_COMPLETED:
 
             const checkAllTrue = reduce(and, true)
-            const extendWithResults = map(assoc('allDone', checkAllTrue(action.payload.results)))
+            const extendWithAllDoneDependingOnResults = map(assoc('allDone', checkAllTrue(action.payload.results)))
             const completedExercise = propEq('exerciseKey', action.payload.exerciseKey)
             const withoutTheCompletedExerciseFrom = reject(completedExercise)
-            const withTheCompletedExerciseFrom = compose(extendWithResults, filter(completedExercise))
+            const withTheCompletedExerciseFrom = compose(extendWithAllDoneDependingOnResults, filter(completedExercise))
 
             return {
                 ...state,
