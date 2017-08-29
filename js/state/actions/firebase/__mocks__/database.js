@@ -53,6 +53,12 @@ export const loginWith = () => {
     }))
 }
 
+export const writeSessionResult = () => {
+    return new Promise(resolve => resolve({
+        ref: true
+    }))
+}
+
 export const nextRef = {
     once(eventType, successCallback) {
         return new Promise(resolve => {

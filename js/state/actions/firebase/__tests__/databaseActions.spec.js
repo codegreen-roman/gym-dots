@@ -4,13 +4,12 @@ import {
     loadAppDefaults,
     subscribeToAppDefaultsChanges,
     authWith,
-    fetchExercises
+    saveExercisesResults
 } from '../databaseActions'
 import {
     GOT_DEFAULTS,
-    AUTH_SUCCESS,
     AUTH_START,
-    EXERCISES_FETCHING_SUCCESS
+    EXERCISES_SAVED_RESULTS_SUCCESS
 } from '../../types'
 
 const mockStore = configureMockStore([thunk])
@@ -105,6 +104,32 @@ describe('Firebase action creator', () => {
 
         it('creates GOT_DEFAULTS action when loading defaults', done => {
             store.dispatch(loadAppDefaults()).then(() => {
+                expect(store.getActions()).toEqual(expectedActions)
+                done()
+            })
+        })
+    })
+
+    describe('.saveExercisesResults', () => {
+
+        const data = {
+            ref: true
+        }
+
+        const userKey = 'C2NO2n89PQOwRDs2o5u6HkeDl5v1'
+
+        const expectedActions = [
+            {
+                type: EXERCISES_SAVED_RESULTS_SUCCESS,
+                payload: {
+                    data
+                }
+            }
+        ]
+        const store = mockStore({ defaults: {} })
+
+        it('creates EXERCISES_SAVED_RESULTS_SUCCESS action', done => {
+            store.dispatch(saveExercisesResults(userKey, data)).then(() => {
                 expect(store.getActions()).toEqual(expectedActions)
                 done()
             })

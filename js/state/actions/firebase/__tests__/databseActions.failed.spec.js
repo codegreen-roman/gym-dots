@@ -8,13 +8,16 @@ jest.mock('../database', () => ({
                 email: 'neoroma@gmail.com',
             })
         })
+    },
+    writeSessionResult: () => {
+        return new Promise((resolve, reject) => reject())
     }
 }))
 
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
-import { authWith } from '../databaseActions'
-import { AUTH_START, AUTH_ERROR } from '../../types'
+import { authWith, saveExercisesResults } from '../databaseActions'
+import { AUTH_START, AUTH_ERROR, EXERCISES_SAVED_RESULTS_FAILED } from '../../types'
 
 const mockStore = configureMockStore([thunk])
 
@@ -26,6 +29,37 @@ describe('Firebase action creator', () => {
         credential: {},
         email: 'neoroma@gmail.com',
     }
+
+    describe('.saveExercisesResults', () => {
+        const store = mockStore({ defaults: {} })
+
+        afterEach(() => {
+            store.clearActions()
+        })
+
+        describe('saving results failed', () => {
+            const data = {
+                ref: false
+            }
+
+            const userKey = 'C2NO2n89PQOwRDs2o5u6HkeDl5v1'
+
+            const expectedActions = [
+                {
+                    type: EXERCISES_SAVED_RESULTS_FAILED,
+                    payload: {}
+                }
+            ]
+            const store = mockStore({})
+
+            it('creates EXERCISES_SAVED_RESULTS_SUCCESS action', done => {
+                store.dispatch(saveExercisesResults(userKey, data)).then(() => {
+                    expect(store.getActions()).toEqual(expectedActions)
+                    done()
+                })
+            })
+        })
+    })
 
     describe('.authWith', () => {
 
