@@ -6,9 +6,10 @@ import { Footer } from '../common/footer/Footer.connect'
 import { Route, Switch, NavLink } from 'react-router-dom'
 import { Activity } from '../views/activity/Activity'
 import { Timer } from '../common/timer/Timer'
+import { Overlay } from '../common/overlay/Overlay'
+import { Countdown } from '../common/overlay/Countdown'
 
 export const Main = () => {
-
     const dateStr = moment().format('dddd, MMM Do')
     const headerTitle = 'Start Workout'
 
@@ -23,27 +24,38 @@ export const Main = () => {
                         <div>Child 4</div>
                     </Timer>
                 </Route>
-                <Route path='/' component={() => {
-
-                    return (
-                        <main>
-                            <Header dateStr={dateStr} subTitle={headerTitle} />
-                            <Switch>
-                                <Route path='/activity' component={Activity} />
-                                <Route path='/' component={
-                                    () => <NavLink to='/activity'>Start training</NavLink>
-                                } />
-                            </Switch>
-                            <Footer />
-                        </main>
-                    )
-
-                }} />
-                <Route component={() => (<section>404 Not Found</section>)} />
-
+                <Route
+                    path='/'
+                    component={() => {
+                        return (
+                            <main>
+                                <Header
+                                    dateStr={dateStr}
+                                    subTitle={headerTitle}
+                                />
+                                <Switch>
+                                    <Route
+                                        path='/activity'
+                                        component={Activity}
+                                    />
+                                    <Route
+                                        path='/'
+                                        component={() =>
+                                            <NavLink to='/activity'>
+                                                Start training
+                                            </NavLink>}
+                                    />
+                                </Switch>
+                                <Footer />
+                                <Overlay visible={false}>
+                                    <Countdown />
+                                </Overlay>
+                            </main>
+                        )
+                    }}
+                />
+                <Route component={() => <section>404 Not Found</section>} />
             </Switch>
-
-
         </section>
     )
 }
