@@ -7,6 +7,7 @@ const { allCompletedExercisesList } = require('./index.helper')
 admin.initializeApp(functions.config().firebase)
 
 const nextRef = admin.database().ref('/next')
+const resultsRef = admin.database().ref('/results')
 
 const transactionHandler = (error, committed, snapshot) => {
 
@@ -23,7 +24,7 @@ exports.resultsForUser = functions.https.onRequest((req, res) => {
 
     const { uid: userKey } = req.query
 
-    return admin.database().ref('/results').child(userKey)
+    return resultsRef.child(userKey)
         .once('value')
         .then(snap => snap.val())
         .then(data => res.json(data))
@@ -38,11 +39,7 @@ exports.generateNext = functions.database.ref('/results/{userKey}/{pushId}/')
         const { userKey } = event.params
 
 
-        const toTransactionPromise = (key) => nextRef
-            .child(userKey)
-            .child('exercises')
-            .child(key)
-            .child('weight')
+        const toTransactionPromise = (key) => nextRef.child(userKey).child('exercises').child(key).child('weight')
             .transaction(
                 R.add(incrementer),
                 transactionHandler
