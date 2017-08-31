@@ -9,18 +9,19 @@ admin.initializeApp(functions.config().firebase)
 const nextRef = admin.database().ref('/next')
 
 const transactionHandler = (error, committed, snapshot) => {
+
     if (error) {
-        console.log('Transaction failed abnormally!', error)
+        return console.error('Transaction failed abnormally!', error)
     } else if (!committed) {
-        console.log('We aborted the transaction')
-    } else {
-        console.log('weight is incremented')
+        return console.log('We aborted the transaction')
     }
-    console.log('new weight : ', snapshot.val())
+
+    return console.log(`weight is incremented and now it is ${snapshot.val()}`)
 }
 
 exports.resultsForUser = functions.https.onRequest((req, res) => {
-    const userKey = req.query.uid
+
+    const { uid: userKey } = req.query
 
     return admin.database().ref('/results').child(userKey)
         .once('value')
@@ -50,5 +51,6 @@ exports.generateNext = functions.database.ref('/results/{userKey}/{pushId}/')
         const getPromisesFrom = R.compose(R.map(toTransactionPromise), allCompletedExercisesList)
 
         return Promise.all(getPromisesFrom(results))
+            .then(() => console.log('All transactions done'))
 
     })
