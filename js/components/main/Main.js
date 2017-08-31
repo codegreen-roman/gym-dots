@@ -6,7 +6,7 @@ import { Footer } from '../common/footer/Footer.connect'
 import { Route, Switch, NavLink } from 'react-router-dom'
 import { Activity } from '../views/activity/Activity'
 import { Timer } from '../common/timer/Timer'
-import { Overlay } from '../common/overlay/Overlay'
+import { Overlay } from '../common/overlay/Overlay.connect'
 import { Countdown } from '../common/overlay/Countdown'
 
 export const Main = () => {
@@ -47,7 +47,7 @@ export const Main = () => {
                                     />
                                 </Switch>
                                 <Footer />
-                                <Overlay visible={false}>
+                                <Overlay>
                                     <Countdown />
                                 </Overlay>
                             </main>

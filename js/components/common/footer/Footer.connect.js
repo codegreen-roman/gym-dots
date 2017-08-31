@@ -3,6 +3,7 @@ import { compose, test, not, isEmpty } from 'ramda'
 import { setFailed, setDone } from '../../../state/actions/exerciseActions'
 import { withRouter } from 'react-router-dom'
 import { Footer as _Footer } from './Footer'
+import { WORKOUT_STATUS } from '../../../state/constants'
 
 import {
     startWorkoutWithCountdown,
@@ -19,8 +20,8 @@ const mapStateToProps = (state, { location: { pathname } }) => {
 
     return {
         hidden: isNotActivityPath(pathname) || isEmpty(nextExercise),
-        blocked: workoutStatus === 'starting',
-        training: workoutStatus === 'started',
+        blocked: WORKOUT_STATUS.isStarting(workoutStatus),
+        training: WORKOUT_STATUS.isStarted(workoutStatus),
         shouldEndExercise: setsLeft === 0,
         nextExercise,
         currentResults: results || []
