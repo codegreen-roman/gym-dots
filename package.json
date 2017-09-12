@@ -20,9 +20,9 @@
         "dev:server": "npm-run-all --parallel dev",
         "flow": "flow",
         "pretest": "NODE_ENV=test",
-        "test": "jest --env=jsdom",
-        "test:watch": "NODE_ENV=test jest --watch --env=jsdom",
-        "test:coverage": "NODE_ENV=test jest --coverage --env=jsdom"
+        "test": "NODE_PATH=./js/state/ jest --env=jsdom",
+        "test:watch": "NODE_ENV=test NODE_PATH=./js/state/ jest --watch --env=jsdom",
+        "test:coverage": "NODE_ENV=test NODE_PATH=./js/state/ jest --coverage --env=jsdom"
     },
     "dependencies": {
         "express": "^4.15.3",
