@@ -9,7 +9,7 @@ import {
     startWorkoutWithCountdown,
     setIntermediateWorkout,
     moveExerciseToCompleted
-} from '../../../state/actions'
+} from 'actions'
 
 const isNotActivityPath = compose(not, test(/activity/))
 
