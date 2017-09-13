@@ -1,9 +1,8 @@
-const R = require('ramda')
+import R from 'ramda'
 
-const extractSessionKey = R.compose(R.head, R.keys)
-exports.extractSessionKey = extractSessionKey
+export const extractSessionKey = R.compose(R.head, R.keys)
 
-exports.allCompletedExercisesList = (results) => {
+export const allCompletedExercisesList = (results) => {
 
     const sessionKey = extractSessionKey(results)
     const exercises = R.prop(sessionKey)(results)

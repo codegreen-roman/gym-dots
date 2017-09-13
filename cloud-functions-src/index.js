@@ -2,7 +2,9 @@ const functions = require('firebase-functions')
 const admin = require('firebase-admin')
 const R = require('ramda')
 
-const { allCompletedExercisesList } = require('./index.helper')
+import { generateMarkUp } from './serverRender'
+
+import { allCompletedExercisesList } from './index.helper'
 
 admin.initializeApp(functions.config().firebase)
 
@@ -51,3 +53,7 @@ exports.generateNext = functions.database.ref('/results/{userKey}/{pushId}/')
             .then(() => console.log('All transactions done'))
 
     })
+
+exports.rendered = functions.https.onRequest((req, res) => {
+    res.status(200).send(generateMarkUp())
+})
