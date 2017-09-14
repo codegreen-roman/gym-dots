@@ -9,3 +9,4 @@ node_modules/
 /flow-typed/
 /build/*
 /functions/
+/js-dist/

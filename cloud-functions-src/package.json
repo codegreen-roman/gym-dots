@@ -20,5 +20,8 @@
         ],
         "timers": "fake"
     },
-    "private": true
+    "private": true,
+    "devDependencies": {
+        "babel-preset-react": "^6.24.1"
+    }
 }

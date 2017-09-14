@@ -14,7 +14,7 @@ export const configureStore = (initialState = INITIAL_STATE) => {
 
     const enchancers = [
         applyMiddleware(thunk, logger),
-        window.devToolsExtension ? window.devToolsExtension() : f => f
+        (typeof window !== 'undefined' && window.devToolsExtension) ? window.devToolsExtension() : f => f
     ]
 
     const store = createStore(

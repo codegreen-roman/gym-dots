@@ -55,5 +55,5 @@ exports.generateNext = functions.database.ref('/results/{userKey}/{pushId}/')
     })
 
 exports.rendered = functions.https.onRequest((req, res) => {
-    res.status(200).send(generateMarkUp())
+    res.status(200).send(generateMarkUp(req))
 })

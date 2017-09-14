@@ -1,13 +1,23 @@
 import ReactDOMServer from 'react-dom/server'
 import React from 'react'
 
-const TestApp = ({ name }) => {
-    return (<section>Hi {name}, I am a react component</section>)
-}
+import { Main } from '../js-dist/components/main/Main'
+import { StaticRouter as Router } from 'react-router'
+import { Provider } from 'react-redux'
+import { configureStore } from '../js-dist/state/store'
 
-export const generateMarkUp = () => {
+const context = {}
+const store = configureStore()
 
-    const content = ReactDOMServer.renderToString(<TestApp name='Roman'/>)
+export const generateMarkUp = (req) => {
+
+    const content = ReactDOMServer.renderToString(
+        <Provider store={store}>
+            <Router location={req.url} context={context}>
+                <Main />
+            </Router>
+        </Provider>
+    )
 
     return `<!DOCTYPE html>
         <html lang="en">
