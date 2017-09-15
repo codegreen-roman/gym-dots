@@ -22,6 +22,10 @@ const prodPlugins = [
         sourceMap: true,
         beautify: false,
         mangle: true,
+        parallel: {
+            cache: true,
+            workers: 4
+        },
         compress: {
             warnings: false, // Suppress uglification warnings
             pure_getters: true,
@@ -123,7 +127,8 @@ module.exports = {
         publicPath: '/',
         stats: 'minimal',
         historyApiFallback: true,
-        port: 9000
+        port: 9000,
+        host: '0.0.0.0'
     },
     module: {
         rules: [
