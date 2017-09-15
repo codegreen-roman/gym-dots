@@ -61,7 +61,7 @@ export class CircleProgress extends React.Component {
 
     renderArcs() {
         const { arcClasses, arcPaths } = this.state
-        return mapWithIndex((ctrl, idx) => <Arc key={idx} d={R.nth(idx, arcPaths)} arcClass={ctrl}/>)(arcClasses)
+        return mapWithIndex((ctrl, idx) => <Arc key={idx} d={R.nth(idx, arcPaths)} arcClass={ctrl} />)(arcClasses)
     }
 
     render() {
