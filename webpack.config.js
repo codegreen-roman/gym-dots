@@ -106,7 +106,11 @@ module.exports = {
         publicPath: '/'
     },
     resolve: {
-        extensions: ['.js', '.json']
+        extensions: ['.js', '.json'],
+        modules: [
+            path.resolve('./js/state/'),
+            path.resolve('./node_modules')
+        ]
     },
     stats: {
         colors: true,
