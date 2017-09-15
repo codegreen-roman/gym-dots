@@ -1,7 +1,7 @@
 import { Observable, Subject } from 'rxjs'
 import React from 'react'
 import { equals, compose, not, inc } from 'ramda'
-import { string, arrayOf, number, bool } from 'prop-types'
+import { arrayOf, number, bool } from 'prop-types'
 import { CircleProgress } from '../../../../common/circle/CircleProgress'
 
 const compare = compose(not, equals)
@@ -15,7 +15,6 @@ const isResultDiff = (oldResults, newResults) => {
 export class Exercise extends React.Component {
 
     static propTypes = {
-        status: string.isRequired,
         restTime: number.isRequired,
         sets: number.isRequired,
         setsLeft: number.isRequired,
@@ -83,8 +82,6 @@ export class Exercise extends React.Component {
     render() {
 
         const {
-            status,
-            restTime,
             sets,
             setsLeft,
             reps,
@@ -95,31 +92,15 @@ export class Exercise extends React.Component {
         return (
             <section>
                 <div>
-                    {status}
+                    <span>weight: {weight}</span>
+                    <span>reps: {reps}</span>
                 </div>
                 <div>
-                    weight: {weight}
-                </div>
-                <div>
-                    reps: {reps}
-                </div>
-                <div>
-                    sets {sets - setsLeft} / {sets} done
-                </div>
-                <div>the time</div>
-                <div>
-                    results : {JSON.stringify(results, null, 2)}
-                </div>
-                <div>
-                    setsLeft : {setsLeft}
-                </div>
-                <div>
-                    <button>Make pause</button>
+                    sets {sets - setsLeft} / {sets} done <span>
+                        results : {JSON.stringify(results, null, 2)}
+                    </span>
                 </div>
                 {this.renderRestingTimer()}
-                <div>
-                    {restTime} sec rest time
-                </div>
                 <CircleProgress sets={sets} results={results} setsDone={sets - setsLeft} />
             </section>
         )

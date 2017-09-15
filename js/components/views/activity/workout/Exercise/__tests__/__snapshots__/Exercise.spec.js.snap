@@ -3,33 +3,18 @@
 exports[`Exercise component should match the snapshot 1`] = `
 <section>
   <div>
-    started
+    <span>
+      weight: 100
+    </span>
+    <span>
+      reps: 8
+    </span>
   </div>
   <div>
-    weight: 100
-  </div>
-  <div>
-    reps: 8
-  </div>
-  <div>
-    sets 0 / 5 done
-  </div>
-  <div>
-    the time
-  </div>
-  <div>
-    results : []
-  </div>
-  <div>
-    setsLeft : 5
-  </div>
-  <div>
-    <button>
-      Make pause
-    </button>
-  </div>
-  <div>
-    60 sec rest time
+    sets 0 / 5 done 
+    <span>
+      results : []
+    </span>
   </div>
   <svg
     height="300px"
