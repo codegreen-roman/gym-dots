@@ -28,6 +28,8 @@
         "prepackage-functions": "yarn run transpile-all-js && rimraf functions",
         "package-functions": "babel 'cloud-functions-src' --out-dir 'functions' --presets=es2015,react --copy-files --ignore 'node_modules'",
         "postpackage-functions": "cd functions && yarn",
+        "predeploy-hosting": "yarn run build:production",
+        "deploy-hosting": "firebase deploy --only hosting",
         "deploy": "yarn run package-functions && firebase deploy",
         "deploy-functions": "yarn run package-functions && firebase deploy --only functions",
         "serve-functions-local": "yarn run package-functions && firebase serve --only functions"
