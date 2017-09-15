@@ -1,5 +1,66 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Exercise component should match the snapshot 1`] = `
+<section>
+  <div>
+    started
+  </div>
+  <div>
+    weight: 100
+  </div>
+  <div>
+    reps: 8
+  </div>
+  <div>
+    sets 0 / 5 done
+  </div>
+  <div>
+    the time
+  </div>
+  <div>
+    results : []
+  </div>
+  <div>
+    setsLeft : 5
+  </div>
+  <div>
+    <button>
+      Make pause
+    </button>
+  </div>
+  <div>
+    60 sec rest time
+  </div>
+  <svg
+    height="300px"
+    width="300px"
+  >
+    <g>
+      <path
+        d="M 245.10565162951536 119.09830056250526 A 100 100 0 0 0 167.36481776669305 51.5192246987792"
+        style="fill:none;stroke-width:12px;stroke:lightgrey;"
+      />
+      <path
+        d="M 208.77852522924732 230.90169943749476 A 100 100 0 0 0 249.02680687415705 136.08268990399347"
+        style="fill:none;stroke-width:12px;stroke:lightgrey;"
+      />
+      <path
+        d="M 91.2214747707527 230.90169943749476 A 100 100 0 0 0 193.83711467890774 239.8794046299167"
+        style="fill:none;stroke-width:12px;stroke:lightgrey;"
+      />
+      <path
+        d="M 54.89434837048465 119.09830056250523 A 100 100 0 0 0 78.06601996613487 219.46583704589972"
+        style="fill:none;stroke-width:12px;stroke:lightgrey;"
+      />
+      <path
+        d="M 149.99999999999997 50 A 100 100 0 0 0 61.70524071410732 103.05284372141091"
+        style="fill:none;stroke-width:12px;stroke:lightgrey;"
+      />
+    </g>
+  </svg>
+</section>
+`;
+
 exports[`Exercise component should render something 1`] = `
 <section>
   <div>

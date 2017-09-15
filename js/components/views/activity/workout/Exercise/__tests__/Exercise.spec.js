@@ -21,7 +21,7 @@ const setup = (props = defaultProps) => {
 }
 
 describe('Exercise component', () => {
-    it('should render something', () => {
+    it('should match the snapshot', () => {
         const { component } = setup()
         expect(component).toMatchSnapshot()
     })

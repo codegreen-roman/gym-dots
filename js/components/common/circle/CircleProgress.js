@@ -1,16 +1,11 @@
 import React from 'react'
-import { connect } from 'react-redux'
+
 import { array, string, number } from 'prop-types'
 import {
     generateArcPaths,
     generateArcClasses
 } from './CircleProgress.helper'
 import R from 'ramda'
-
-// prestine - #ebf0f6
-// current - ?
-// done - #55bae5
-// failed - ?
 
 const SPACE_BETWEEN_ARCS = 10
 const CIRCLE_RADIUS = 100
@@ -36,6 +31,15 @@ Arc.propTypes = {
 
 export class CircleProgress extends React.Component {
 
+    defaultProps = {
+        sets: 5
+    }
+
+    propTypes = {
+        results: array.isRequired,
+        sets: number.isRequired
+    }
+
     constructor(props) {
         super(props)
         this.state = {
@@ -57,24 +61,15 @@ export class CircleProgress extends React.Component {
 
     renderArcs() {
         const { arcClasses, arcPaths } = this.state
-        return mapWithIndex((ctrl, idx) => <Arc key={idx} d={R.nth(idx, arcPaths)} arcClass={ctrl} />)(arcClasses)
+        return mapWithIndex((ctrl, idx) => <Arc key={idx} d={R.nth(idx, arcPaths)} arcClass={ctrl}/>)(arcClasses)
     }
 
     render() {
         return (
-            <svg width='300px' height='300px'><g>{this.renderArcs()}</g></svg>
+            <svg width='300px' height='300px'>
+                <g>{this.renderArcs()}</g>
+            </svg>
         )
     }
 
 }
-
-CircleProgress.defaultProps = {
-    sets: 5
-}
-
-CircleProgress.propTypes = {
-    results: array.isRequired,
-    sets: number.isRequired
-}
-
-export const _CircleProgress = connect(null, null)(CircleProgress)

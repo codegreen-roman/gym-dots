@@ -1,6 +1,6 @@
 import React from 'react'
 import { string, arrayOf, number, bool } from 'prop-types'
-import { _CircleProgress as CircleProgress } from '../../../../common/circle/CircleProgress'
+import { CircleProgress } from '../../../../common/circle/CircleProgress'
 export const Exercise = ({
     status,
     restTime,
