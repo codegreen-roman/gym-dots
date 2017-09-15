@@ -4,7 +4,7 @@ const FULL_TURN = 360
 const HALF_TURN = 180
 const QUARTER_TURN = 90
 
-const polarToCartesian = (centerX, centerY, radius, angleInDegrees) => {
+export const polarToCartesian = (centerX, centerY, radius, angleInDegrees) => {
     let angleInRadians = getAngleInRadians(angleInDegrees)
 
     return {
@@ -13,7 +13,7 @@ const polarToCartesian = (centerX, centerY, radius, angleInDegrees) => {
     }
 }
 
-const defineArc = (x, y, radius, startAngle, endAngle) => {
+export const defineArc = (x, y, radius, startAngle, endAngle) => {
 
     let start = polarToCartesian(x, y, radius, endAngle)
     let end = polarToCartesian(x, y, radius, startAngle)
@@ -25,11 +25,11 @@ const defineArc = (x, y, radius, startAngle, endAngle) => {
 
 }
 
-const getLargeArcFlag = (endAngle, startAngle) => endAngle - startAngle <= HALF_TURN ? '0' : '1'
+export const getLargeArcFlag = (endAngle, startAngle) => endAngle - startAngle <= HALF_TURN ? '0' : '1'
 
-const getAngleInRadians = (angleInDegrees) => (angleInDegrees - QUARTER_TURN) * Math.PI / HALF_TURN
+export const getAngleInRadians = (angleInDegrees) => (angleInDegrees - QUARTER_TURN) * Math.PI / HALF_TURN
 
-const getArcLength = (sets, space) => (FULL_TURN - (sets * space)) / sets
+export const getArcLength = (sets, space) => Math.ceil((FULL_TURN - (sets * space)) / sets)
 
 export const generateArcClasses = (sets, results) => {
     const resultsMirror = R.range(0, sets)
@@ -44,7 +44,7 @@ export const generateArcClasses = (sets, results) => {
     return R.compose(getAllArcClasses, wrapResults)(resultsMirror)
 }
 
-export const generateArcPaths = (x, y, r, space, sets) => {
+export const generateArcPaths = (x, y, radius, space, sets) => {
     let startAngle = space
     let arcLength = getArcLength(sets, space)
     let endAngle = space + arcLength
@@ -52,7 +52,7 @@ export const generateArcPaths = (x, y, r, space, sets) => {
     let d
 
     for (var i = 0; i < sets; i++) {
-        d = defineArc(x, y, r, startAngle, endAngle)
+        d = defineArc(x, y, radius, startAngle, endAngle)
         arcs.push(d)
         startAngle = endAngle + space
         endAngle = startAngle + arcLength
