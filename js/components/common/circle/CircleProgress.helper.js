@@ -45,19 +45,26 @@ export const generateArcClasses = (sets, results) => {
 }
 
 export const generateArcPaths = (x, y, radius, space, sets) => {
-    let startAngle = space
-    let arcLength = getArcLength(sets, space)
-    let endAngle = space + arcLength
-    let arcs = []
-    let d
 
-    for (var i = 0; i < sets; i++) {
-        d = defineArc(x, y, radius, startAngle, endAngle)
-        arcs.push(d)
-        startAngle = endAngle + space
-        endAngle = startAngle + arcLength
+    const initialValues = {
+        startAngle: space,
+        arcLength: getArcLength(sets, space),
+        endAngle: space + getArcLength(sets, space),
+        arcs: []
     }
-    return arcs
+
+    const reducer = ({ startAngle, endAngle, arcLength, arcs }) => ({
+        arcLength,
+        arcs: [...arcs, defineArc(x, y, radius, startAngle, endAngle)],
+        startAngle: endAngle + space,
+        endAngle: (endAngle + space) + arcLength
+    })
+
+    const getValues = R.reduce(reducer, initialValues)
+    const app = R.compose(R.prop('arcs'), getValues, R.range(0))
+
+    return app(sets)
+
 }
 
 // Some info here
