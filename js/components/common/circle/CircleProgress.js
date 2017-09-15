@@ -31,11 +31,11 @@ Arc.propTypes = {
 
 export class CircleProgress extends React.Component {
 
-    defaultProps = {
+    static defaultProps = {
         sets: 5
     }
 
-    propTypes = {
+    static propTypes = {
         results: array.isRequired,
         sets: number.isRequired
     }
