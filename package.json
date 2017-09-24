@@ -40,6 +40,7 @@
         "glamor": "^3.0.0-3",
         "glamorous": "^3.23.5",
         "glamorous-jsxstyle": "^2.0.0",
+        "google-fonts-webpack-plugin": "^0.4.3",
         "moment": "^2.18.1",
         "normalize.css": "^7.0.0",
         "nosleep.js": "^0.7.0",
