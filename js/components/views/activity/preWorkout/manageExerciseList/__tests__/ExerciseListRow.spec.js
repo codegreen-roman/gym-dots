@@ -14,7 +14,7 @@ const setup = props => {
         wrapper: wrapper,
         mounted: mounted,
         actions: actions,
-        span: wrapper.find('span')
+        exerciseDetails: wrapper.find('[data-test="exercise-details"]')
     }
 }
 
@@ -37,8 +37,8 @@ describe('ExerciseListRow component', () => {
     })
 
     it('should have matching text', () => {
-        const { span } = setup(props)
-        expect(span.text()).toMatch(/^0 kg x 20 reps x 5 set/)
+        const { exerciseDetails } = setup(props)
+        expect(exerciseDetails.text()).toMatch(/^0 kg x 20 reps x 5 set/)
     })
 
     it('should render same props as passed', () => {

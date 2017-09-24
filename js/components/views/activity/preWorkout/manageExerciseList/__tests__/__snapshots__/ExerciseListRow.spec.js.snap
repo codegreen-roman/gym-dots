@@ -2,23 +2,39 @@
 
 exports[`ExerciseListRow component should render exercise 1`] = `
 <li
+  data-css-wd60qt=""
   data-test="exercise-row-zzt"
   onClick={[Function]}
 >
-  <h3
-    data-css-17h8928=""
+  <div
+    data-css-12buxqa=""
   >
-    Push-ups
-  </h3>
-  <span
-    data-css-1jge3ly=""
+    <div
+      data-css-ikdvzh=""
+    />
+    <div
+      data-css-1hvluh9=""
+    />
+  </div>
+  <div
+    data-css-eypxw5=""
   >
-    0
-     kg x 
-    20
-     reps x 
-    5
-     sets
-  </span>
+    <div
+      data-css-1vhzv1k=""
+    >
+      Push-ups
+    </div>
+    <div
+      data-css-1q1fiqx=""
+      data-test="exercise-details"
+    >
+      0
+       kg x 
+      20
+       reps x 
+      5
+       sets
+    </div>
+  </div>
 </li>
 `;

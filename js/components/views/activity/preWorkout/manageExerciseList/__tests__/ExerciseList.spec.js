@@ -2,6 +2,7 @@ import React from 'react'
 import { shallow, mount } from 'enzyme'
 import { ExerciseList } from '../ExerciseList'
 import { ExerciseListRow } from '../ExerciseListRow'
+import { ExerciseListHeader } from '../ExerciseList'
 
 describe('ExerciseList component', () => {
     const props = {
@@ -41,7 +42,7 @@ describe('ExerciseList component', () => {
             wrapper,
             actions,
             props,
-            title: component.find('[data-test="list-title"]'),
+            title: component.find(ExerciseListHeader),
             list: component.find('[data-test="list"]'),
             row: component.find(ExerciseListRow)
         }
@@ -62,14 +63,14 @@ describe('ExerciseList component', () => {
         expect(row.length).toBe(2)
     })
 
-    it('should have list header of type span', () => {
+    it('should have list header', () => {
         const { title } = setup(props)
-        expect(title.node.type).toBe('span')
+        expect(title).toMatchSnapshot()
     })
 
     it('should have list header with title matching text of prop title', () => {
         const { title } = setup(props)
-        expect(title.text()).toMatch(/^Some title/)
+        expect(title.props().title).toMatch(/^Some title/)
     })
 
     describe('When list is empty and has length 0', () => {
