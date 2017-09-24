@@ -1,6 +1,14 @@
 import React from 'react'
 import { func, string, number } from 'prop-types'
-import { exerciseTitle, exerciseDetails } from './ExerciseList.glamor'
+import {
+    exerciseRow,
+    exerciseDataWrapper,
+    exerciseTitle,
+    exerciseDetails,
+    exerciseElementsWrapper,
+    exerciseLine,
+    exerciseDot
+} from './ExerciseList.glamor'
 
 const onRowClick = () => {} // noop
 
@@ -13,13 +21,19 @@ const _ExerciseListRow = ({
     onRowClick
 }) => {
     return (
-        <li data-test={`exercise-row-${exerciseKey}`} onClick={onRowClick}>
-            <h3 {...exerciseTitle}>
-                {name}
-            </h3>
-            <span {...exerciseDetails}>
-                {weight} kg x {reps} reps x {sets} sets
-            </span>
+        <li {...exerciseRow} data-test={`exercise-row-${exerciseKey}`} onClick={onRowClick}>
+            <div {...exerciseElementsWrapper}>
+                <div {...exerciseLine} />
+                <div {...exerciseDot} />
+            </div>
+            <div {...exerciseDataWrapper}>
+                <div {...exerciseTitle}>
+                    {name}
+                </div>
+                <div {...exerciseDetails} data-test='exercise-details'>
+                    {weight} kg x {reps} reps x {sets} sets
+                </div>
+            </div>
         </li>
     )
 }
