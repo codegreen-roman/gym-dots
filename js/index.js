@@ -6,6 +6,7 @@ import { subscribeToAuthStateChanged } from './state/actions'
 import { configureStore } from './state/store'
 
 import { Main } from './components/main/Main'
+import 'normalize.css'
 
 const store = configureStore()
 subscribeToAuthStateChanged(store.dispatch)

@@ -41,6 +41,7 @@
         "glamorous": "^3.23.5",
         "glamorous-jsxstyle": "^2.0.0",
         "moment": "^2.18.1",
+        "normalize.css": "^7.0.0",
         "nosleep.js": "^0.7.0",
         "prop-types": "^15.5.10",
         "ramda": "^0.24.1",
