@@ -148,7 +148,7 @@ exports[`ExerciseList component Clicking on a row should match the snapshot 1`] 
 </_ExerciseList>
 `;
 
-exports[`ExerciseList component When list is empty and has length 0 should not render the component and return null 1`] = `undefined`;
+exports[`ExerciseList component When list is empty and has length 0 should not render the component and return null 1`] = `null`;
 
 exports[`ExerciseList component should have list header 1`] = `
 <ExerciseListHeader

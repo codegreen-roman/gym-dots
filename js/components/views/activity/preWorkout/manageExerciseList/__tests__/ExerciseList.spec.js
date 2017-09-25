@@ -84,8 +84,8 @@ describe('ExerciseList component', () => {
         })
 
         it('should not render the component and return null', () => {
-            const { list } = setup(props)
-            expect(list).toMatchSnapshot()
+            const { wrapper } = setup(props)
+            expect(wrapper.find('[data-test="list"]')).toMatchSnapshot()
         })
 
         it('should have length of rows to be 0', () => {
