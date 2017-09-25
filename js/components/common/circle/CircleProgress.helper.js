@@ -4,12 +4,14 @@ const FULL_TURN = 360
 const HALF_TURN = 180
 const QUARTER_TURN = 90
 
+const round = (n) => Math.round(n * 10000000) / 10000000
+
 export const polarToCartesian = (centerX, centerY, radius, angleInDegrees) => {
     let angleInRadians = getAngleInRadians(angleInDegrees)
 
     return {
-        x: centerX + (radius * Math.cos(angleInRadians)),
-        y: centerY + (radius * Math.sin(angleInRadians))
+        x: round(centerX + (radius * Math.cos(angleInRadians))),
+        y: round(centerY + (radius * Math.sin(angleInRadians)))
     }
 }
 
@@ -20,7 +22,7 @@ export const defineArc = (x, y, radius, startAngle, endAngle) => {
 
     return [
         'M', start.x, start.y,
-        'A', radius, radius, 0, getLargeArcFlag(endAngle, startAngle), 0, end.x, end.y
+        'A', round(radius), round(radius), 0, getLargeArcFlag(endAngle, startAngle), 0, end.x, end.y
     ].join(' ')
 
 }
