@@ -121,7 +121,10 @@ module.exports = {
         modules: [
             path.resolve('./js/state/'),
             path.resolve('./node_modules')
-        ]
+        ],
+        alias: {
+            '@': path.resolve('js')
+        }
     },
     stats: {
         colors: true,
