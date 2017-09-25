@@ -8,13 +8,14 @@ import { Activity } from '../views/activity/Activity'
 import { Timer } from '../common/timer/Timer'
 import { Overlay } from '../common/overlay/Overlay.connect'
 import { Countdown } from '../common/overlay/Countdown'
+import { mainStyles } from './Main.glamor'
 
 export const Main = () => {
     const dateStr = moment().format('dddd, MMM Do')
     const headerTitle = 'Start Workout'
 
     return (
-        <section className='app-container'>
+        <section className='app-container' {...mainStyles}>
             <Switch>
                 <Route exact path='/welcome'>
                     <Timer>

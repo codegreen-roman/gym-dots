@@ -4,6 +4,7 @@ const path = require('path')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const GoogleFontsPlugin = require('google-fonts-webpack-plugin')
 const webpack = require('webpack')
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
@@ -67,7 +68,13 @@ let plugins = [
         names: ['common', 'vendor', 'trash']
     }),
     new webpack.NoEmitOnErrorsPlugin(),
-    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+    new GoogleFontsPlugin({
+        fonts: [
+            { family: 'Nunito', variants: [ '300', '400', '600', '700' ] }
+        ],
+        local: false
+    })
 ]
 
 let devtool = 'eval'

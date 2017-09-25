@@ -1,10 +1,29 @@
 import React from 'react'
 import { isEmpty } from 'ramda'
 import { array, string, func } from 'prop-types'
-import { exerciseList, exerciseListHeader } from './ExerciseList.glamor'
+import {
+    exerciseList,
+    exerciseListHeader,
+    exerciseListHeaderDot,
+    exerciseListHeaderText
+} from './ExerciseList.glamor'
 import { ExerciseListRow } from './ExerciseListRow'
 
 const onOrderChangeClick = () => {} // noop
+
+export const ExerciseListHeader = ({title}) => {
+    return (
+        <div data-test='list-title' {...exerciseListHeader}>
+            <div {...exerciseListHeaderDot} />
+            <div {...exerciseListHeaderText}>{title}</div>
+        </div>
+    )
+}
+
+ExerciseListHeader.propTypes = {
+    title: string.isRequired
+}
+
 
 const _ExerciseList = ({ list, title, onOrderChangeClick }) => {
     if (isEmpty(list)) {
@@ -12,9 +31,7 @@ const _ExerciseList = ({ list, title, onOrderChangeClick }) => {
     }
     return (
         <div>
-            <span data-test='list-title' {...exerciseListHeader}>
-                {title}
-            </span>
+            <ExerciseListHeader title={title} />
             <ul data-test='list' {...exerciseList}>
                 {list.map((itm, idx) =>
                     <ExerciseListRow
