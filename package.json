@@ -95,6 +95,7 @@
         "nodemon": "^1.11.0",
         "npm-run-all": "^4.0.2",
         "prettier-eslint": "^6.4.2",
+        "react-addons-perf": "^15.4.2",
         "react-addons-test-utils": "^15.6.0",
         "react-error-overlay": "^1.0.9",
         "react-test-renderer": "^15.6.1",
