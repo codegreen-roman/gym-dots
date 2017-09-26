@@ -1,5 +1,5 @@
 import { css } from 'glamor'
-import { variables } from '../../../utils/variables'
+import { variables } from '@utils/variables'
 
 export const footerStyle = css({
     position: 'absolute',
