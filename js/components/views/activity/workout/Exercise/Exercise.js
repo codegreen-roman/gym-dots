@@ -3,6 +3,7 @@ import React from 'react'
 import { equals, compose, not, inc } from 'ramda'
 import { arrayOf, number, bool } from 'prop-types'
 import { CircleProgress } from '../../../../common/circle/CircleProgress'
+import { Widget } from '@components/common/widget/Widget'
 
 const compare = compose(not, equals)
 const isResultDiff = (oldResults, newResults) => {
@@ -91,6 +92,20 @@ export class Exercise extends React.Component {
 
         return (
             <section>
+                <Widget
+                    iconTitle='dumbbells'
+                    iconSize={24}
+                    iconColor='red'
+                    dataNumber={weight}
+                    dataUnits='kg'
+                />
+                <Widget
+                    iconTitle='check'
+                    iconSize={24}
+                    iconColor='red'
+                    dataNumber={reps}
+                    dataUnits='kg'
+                />
                 <div>
                     <span>weight: {weight}</span>
                     <span>reps: {reps}</span>
