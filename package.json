@@ -115,6 +115,10 @@
             "<rootDir>/js/**/*.spec.js"
         ],
         "setupTestFrameworkScriptFile": "<rootDir>/test-setup/setup.js",
+        "moduleNameMapper": {
+            "^@components(.*)$": "<rootDir>/js/components$1",
+            "^@utils(.*)$": "<rootDir>/js/utils$1"
+        },
         "coverageThreshold": {
             "global": {
                 "branches": 80,

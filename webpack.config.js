@@ -123,7 +123,8 @@ module.exports = {
             path.resolve('./node_modules')
         ],
         alias: {
-            '@': path.resolve('js')
+            '@components': path.resolve(__dirname, './js/components'),
+            '@utils': path.resolve(__dirname, './js/utils')
         }
     },
     stats: {
