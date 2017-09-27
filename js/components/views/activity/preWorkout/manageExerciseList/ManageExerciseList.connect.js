@@ -2,9 +2,9 @@ import { connect } from 'react-redux'
 import { compose } from 'ramda'
 import { allListsEmpty, notMissing } from './ManageExerciseList.helper'
 import { ManageExerciseList as _ManageExerciseList } from './ManageExerciseList'
-import { exercisesOrderChange, saveExercisesResults } from '../../../../../state/actions'
+import { exercisesOrderChange, saveExercisesResults } from './actions'
 
-const mapStateToProps = ({ exercises: { upcoming, completed, skipped, sessionKey, name }, auth : { uid } }) => ({
+const mapStateToProps = ({ exercises: { upcoming, completed, skipped, sessionKey, name }, auth: { uid } }) => ({
     upcoming,
     completed,
     skipped,
