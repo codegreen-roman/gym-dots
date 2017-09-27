@@ -2,17 +2,17 @@ import React from 'react'
 import { UserImage } from './UserImage'
 import { string, object, func } from 'prop-types'
 import { isEmpty } from 'ramda'
+import {
+    header,
+    headerLeftSide,
+    headerDate,
+    headerText,
+    menu
+} from './Header.glamor.js'
+import { Icon } from '../icon/Icon'
 
 
 export const Header = ({ dateStr, subTitle, loginWith, auth, exerciseName, loginGuest, logout }) => {
-
-    const rootStyle = {
-        padding: '1rem',
-        display: 'flex',
-        justifyContent: 'space-between',
-        borderBottom: '1px solid rgba(0, 0, 0, 0.15)',
-        fontFamily: 'sans-serif'
-    }
 
     const { user } = auth
     const renderTitle = () => isEmpty(exerciseName) ? subTitle : exerciseName
@@ -42,19 +42,17 @@ export const Header = ({ dateStr, subTitle, loginWith, auth, exerciseName, login
     }
 
     return (
-        <section style={rootStyle}>
+        <header {...header}>
 
-            <div className='left-side' style={{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between'
-            }}>
-                <a className='h-menu' style={{ fontSize: '16px' }}>&#9776;</a>
-                <div className='h-date' style={{ fontSize: '12px', marginLeft: '4rem' }}>
-                    {dateStr}
-                </div>
-                <div className='h-title' data-test='currently' style={{ fontSize: '16px', marginLeft: '3rem' }}>
-                    {renderTitle()}
+            <div className='left-side' {...headerLeftSide}>
+                <Icon icon='menu' size={24} color='red' {...menu} />
+                <div>
+                    <div className='h-date' {...headerDate}>
+                        {dateStr}
+                    </div>
+                    <div className='h-title' data-test='currently' {...headerText}>
+                        {renderTitle()}
+                    </div>
                 </div>
             </div>
 
@@ -63,7 +61,7 @@ export const Header = ({ dateStr, subTitle, loginWith, auth, exerciseName, login
                 <UserImage image={user && user.photoURL || undefined} />
             </div>
 
-        </section>
+        </header>
     )
 }
 

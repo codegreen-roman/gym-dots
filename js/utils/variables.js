@@ -8,5 +8,6 @@ export const variables = {
     $color5: '#F07474', // red failed
     $listLeftMargin: '30px',
     $listLeftInnerPadding: '40px',
+    $headerWrappingPadding: '20px',
     $blueGradient: 'linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%)'
 }
