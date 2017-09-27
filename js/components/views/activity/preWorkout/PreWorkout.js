@@ -1,5 +1,5 @@
 import React from 'react'
-import { ManageExerciseList } from './manageExerciseList/ManageExerciseList'
+import { ManageExerciseList } from './manageExerciseList/ManageExerciseList.connect'
 
 // pre exercise
 export const PreWorkout = () => {
