@@ -1,59 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header component Exercise name exist should match the snapshot 1`] = `
-<section
-  style={
-    Object {
-      "borderBottom": "1px solid rgba(0, 0, 0, 0.15)",
-      "display": "flex",
-      "fontFamily": "sans-serif",
-      "justifyContent": "space-between",
-      "padding": "1rem",
-    }
-  }
+<header
+  data-css-1qqtemn=""
 >
   <div
     className="left-side"
-    style={
-      Object {
-        "display": "flex",
-        "flexDirection": "column",
-        "justifyContent": "space-between",
-      }
-    }
+    data-css-1ulbvcw=""
   >
-    <a
-      className="h-menu"
-      style={
-        Object {
-          "fontSize": "16px",
-        }
-      }
-    >
-      ☰
-    </a>
-    <div
-      className="h-date"
-      style={
-        Object {
-          "fontSize": "12px",
-          "marginLeft": "4rem",
-        }
-      }
-    >
-      Saturday, Jul 15th
-    </div>
-    <div
-      className="h-title"
-      data-test="currently"
-      style={
-        Object {
-          "fontSize": "16px",
-          "marginLeft": "3rem",
-        }
-      }
-    >
-      Pull Up
+    <Icon
+      color="red"
+      data-css-1nxzm7d=""
+      icon="menu"
+      size={24}
+    />
+    <div>
+      <div
+        className="h-date"
+        data-css-1ixk24o=""
+      >
+        Saturday, Jul 15th
+      </div>
+      <div
+        className="h-title"
+        data-css-1qe4ilz=""
+        data-test="currently"
+      >
+        Pull Up
+      </div>
     </div>
   </div>
   <div
@@ -87,63 +61,37 @@ exports[`Header component Exercise name exist should match the snapshot 1`] = `
     </div>
     <UserImage />
   </div>
-</section>
+</header>
 `;
 
 exports[`Header component Shallow snapshot matches the previous 1`] = `
-<section
-  style={
-    Object {
-      "borderBottom": "1px solid rgba(0, 0, 0, 0.15)",
-      "display": "flex",
-      "fontFamily": "sans-serif",
-      "justifyContent": "space-between",
-      "padding": "1rem",
-    }
-  }
+<header
+  data-css-1qqtemn=""
 >
   <div
     className="left-side"
-    style={
-      Object {
-        "display": "flex",
-        "flexDirection": "column",
-        "justifyContent": "space-between",
-      }
-    }
+    data-css-1ulbvcw=""
   >
-    <a
-      className="h-menu"
-      style={
-        Object {
-          "fontSize": "16px",
-        }
-      }
-    >
-      ☰
-    </a>
-    <div
-      className="h-date"
-      style={
-        Object {
-          "fontSize": "12px",
-          "marginLeft": "4rem",
-        }
-      }
-    >
-      Saturday, Jul 15th
-    </div>
-    <div
-      className="h-title"
-      data-test="currently"
-      style={
-        Object {
-          "fontSize": "16px",
-          "marginLeft": "3rem",
-        }
-      }
-    >
-      Start Workout
+    <Icon
+      color="red"
+      data-css-1nxzm7d=""
+      icon="menu"
+      size={24}
+    />
+    <div>
+      <div
+        className="h-date"
+        data-css-1ixk24o=""
+      >
+        Saturday, Jul 15th
+      </div>
+      <div
+        className="h-title"
+        data-css-1qe4ilz=""
+        data-test="currently"
+      >
+        Start Workout
+      </div>
     </div>
   </div>
   <div
@@ -177,5 +125,5 @@ exports[`Header component Shallow snapshot matches the previous 1`] = `
     </div>
     <UserImage />
   </div>
-</section>
+</header>
 `;
