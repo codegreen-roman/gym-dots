@@ -2,6 +2,6 @@
 
 exports[`PreWorkout component should match the snapshot 1`] = `
 <section>
-  <Connect(_ManageExerciseList) />
+  <Connect(ManageExerciseList) />
 </section>
 `;
