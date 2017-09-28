@@ -16,6 +16,12 @@ import { variables } from '@utils/variables'
 
 export class Welcome extends Component {
 
+    static propTypes = {
+        loginWith: func.isRequired,
+        loginGuest: func.isRequired,
+        history: object
+    }
+
     componentWillReceiveProps({status, history}) {
         const isLoggedIn = equals(status, 'loggedIn')
         if (isLoggedIn) {
@@ -57,10 +63,4 @@ export class Welcome extends Component {
             </section>
         )
     }
-}
-
-Welcome.propTypes = {
-    loginWith: func.isRequired,
-    loginGuest: func.isRequired,
-    history: object
 }
