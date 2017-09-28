@@ -1,12 +1,21 @@
 import React, { Component } from 'react'
 import { ExerciseList } from './ExerciseList'
-import { connect } from 'react-redux'
-import { compose, isEmpty } from 'ramda'
-import { toWritableResults, allListsEmpty, notMissing } from './ManageExerciseList.helper'
+import { isEmpty } from 'ramda'
+import { toWritableResults } from './ManageExerciseList.helper'
 import { func, bool, string, array } from 'prop-types'
-import { exercisesOrderChange, saveExercisesResults } from '../../../../../state/actions'
 
-class _ManageExerciseList extends Component {
+export class ManageExerciseList extends Component {
+
+    static propTypes = {
+        upcoming: array.isRequired,
+        completed: array.isRequired,
+        skipped: array.isRequired,
+        onOrderChange: func.isRequired,
+        saveResults: func.isRequired,
+        sessionKey: string,
+        sessionDone: bool.isRequired,
+        userKey: string
+    }
 
     componentDidMount() {
         const { sessionDone, sessionKey, completed, userKey, saveResults } = this.props
@@ -42,34 +51,3 @@ class _ManageExerciseList extends Component {
         )
     }
 }
-
-_ManageExerciseList.propTypes = {
-    upcoming: array.isRequired,
-    completed: array.isRequired,
-    skipped: array.isRequired,
-    onOrderChange: func.isRequired,
-    saveResults: func.isRequired,
-    sessionKey: string,
-    sessionDone: bool.isRequired,
-    userKey: string
-}
-
-const mapStateToProps = ({ exercises: { upcoming, completed, skipped, sessionKey, name }, auth : { uid } }) => ({
-    upcoming,
-    completed,
-    skipped,
-    name,
-    sessionKey,
-    sessionDone: allListsEmpty([upcoming, skipped]) && notMissing(sessionKey),
-    userKey: uid
-})
-
-const mapActionsToProps = dispatch => {
-    return {
-        saveResults: compose(dispatch, saveExercisesResults),
-        onOrderChange: compose(dispatch, exercisesOrderChange)
-    }
-}
-
-export { _ManageExerciseList }
-export const ManageExerciseList = connect(mapStateToProps, mapActionsToProps)(_ManageExerciseList)
