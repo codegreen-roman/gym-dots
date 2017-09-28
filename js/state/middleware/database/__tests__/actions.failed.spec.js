@@ -8,20 +8,20 @@ jest.mock('../database', () => ({
                 email: 'neoroma@gmail.com',
             })
         })
-    },
-    writeSessionResult: () => {
-        return new Promise((resolve, reject) => reject())
     }
 }))
 
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
-import { authWith, saveExercisesResults } from '../database/databaseActions'
-import { AUTH_START, AUTH_ERROR, EXERCISES_SAVED_RESULTS_FAILED } from '../../types'
+import { firebase } from '../firebaseApi'
+import { authWith } from '../actions'
+import {
+    types,
+} from '../../../'
 
-const mockStore = configureMockStore([thunk])
+const mockStore = configureMockStore([thunk, firebase])
 
-describe('Firebase action creator', () => {
+xdescribe('Firebase action creator', () => {
 
     const errorPayload = {
         code: 1,
@@ -29,37 +29,6 @@ describe('Firebase action creator', () => {
         credential: {},
         email: 'neoroma@gmail.com',
     }
-
-    describe('.saveExercisesResults', () => {
-        const store = mockStore({ defaults: {} })
-
-        afterEach(() => {
-            store.clearActions()
-        })
-
-        describe('saving results failed', () => {
-            const data = {
-                ref: false
-            }
-
-            const userKey = 'C2NO2n89PQOwRDs2o5u6HkeDl5v1'
-
-            const expectedActions = [
-                {
-                    type: EXERCISES_SAVED_RESULTS_FAILED,
-                    payload: {}
-                }
-            ]
-            const store = mockStore({})
-
-            it('creates EXERCISES_SAVED_RESULTS_SUCCESS action', done => {
-                store.dispatch(saveExercisesResults(userKey, data)).then(() => {
-                    expect(store.getActions()).toEqual(expectedActions)
-                    done()
-                })
-            })
-        })
-    })
 
     describe('.authWith', () => {
 
@@ -75,13 +44,13 @@ describe('Firebase action creator', () => {
 
                 const expectedActionsForFailedCase = [
                     {
-                        type: AUTH_START,
+                        type: types.AUTH_START,
                         payload: {
                             provider: 'facebook'
                         }
                     },
                     {
-                        type: AUTH_ERROR,
+                        type: types.AUTH_ERROR,
                         payload: errorPayload
                     }
                 ]
@@ -97,13 +66,13 @@ describe('Firebase action creator', () => {
 
                 const expectedActionsForFailedCase = [
                     {
-                        type: AUTH_START,
+                        type: types.AUTH_START,
                         payload: {
                             provider: 'twitter'
                         }
                     },
                     {
-                        type: AUTH_ERROR,
+                        type: types.AUTH_ERROR,
                         payload: errorPayload
                     }
                 ]

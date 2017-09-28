@@ -1,4 +1,4 @@
-import { getVal } from '../database/databaseActions.helper'
+import { getVal } from '../actions.helper'
 
 test('.getVal calls the val method of the argument', () => {
     const arg = {

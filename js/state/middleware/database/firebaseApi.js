@@ -11,9 +11,12 @@ export function firebase(store) {
 
         switch (action.type) {
             case types.AUTH_START:
-                return action.payload.provider === 'guest' ? dispatch(authAnonymously(action.payload.provider)) : dispatch(authWith(action.payload.provider))
+                console.log('I am in the middleware')
+                action.payload.provider === 'guest' ? dispatch(authAnonymously(action.payload.provider)) : dispatch(authWith(action.payload.provider))
+                return next(action)
             case types.AUTH_VOID_START:
-                return dispatch(authVoidAction())
+                dispatch(authVoidAction())
+                return next(action)
             default:
                 return next(action)
         }
