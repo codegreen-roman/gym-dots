@@ -11,7 +11,7 @@ import {
     moveExerciseToCompleted
 } from '../../../state/actions'
 
-const isNotActivityPath = compose(not, test(/activity/))
+const isNotActivityPath = compose(not, test(/in\/activity/))
 
 const mapStateToProps = (state, { location: { pathname } }) => {
 
