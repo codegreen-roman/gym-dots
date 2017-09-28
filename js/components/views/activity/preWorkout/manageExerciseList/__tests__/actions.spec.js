@@ -1,5 +1,5 @@
-import { exercisesOrderChange } from '../exercisesActions'
-import { EXERCISES_ORDER_CHANGE } from '../types'
+import { exercisesOrderChange } from '../actions'
+import { EXERCISES_ORDER_CHANGE } from '../constants'
 
 describe('Exercises Action Creators', () => {
     describe('.exercisesOrderChange', () => {
