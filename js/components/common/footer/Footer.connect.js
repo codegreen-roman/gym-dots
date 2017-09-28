@@ -3,7 +3,7 @@ import { compose, test, not, isEmpty } from 'ramda'
 import { setFailed, setDone } from '../../../state/actions/exerciseActions'
 import { withRouter } from 'react-router-dom'
 import { Footer as _Footer } from './Footer'
-import { WORKOUT_STATUS } from '../../../state/constants'
+import { WORKOUT_STATUS } from '../../../state/common/workoutStatus'
 
 import {
     startWorkoutWithCountdown,

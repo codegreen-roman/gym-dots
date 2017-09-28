@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { ExerciseList } from './ExerciseList'
 import { isEmpty } from 'ramda'
-import { toWritableResults } from './ManageExerciseList.helper'
 import { func, bool, string, array } from 'prop-types'
 
 export class ManageExerciseList extends Component {
@@ -11,20 +10,8 @@ export class ManageExerciseList extends Component {
         completed: array.isRequired,
         skipped: array.isRequired,
         onOrderChange: func.isRequired,
-        saveResults: func.isRequired,
         sessionKey: string,
         sessionDone: bool.isRequired,
-        userKey: string
-    }
-
-    componentDidMount() {
-        const { sessionDone, sessionKey, completed, userKey, saveResults } = this.props
-        if (sessionDone) {
-
-            saveResults(userKey, {
-                [sessionKey]: toWritableResults(completed)
-            })
-        }
     }
 
     congratulateUser() {

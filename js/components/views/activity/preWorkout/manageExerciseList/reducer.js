@@ -12,14 +12,14 @@ import {
     assoc
 } from 'ramda'
 
-import { AUTH_START, AUTH_SUCCESS, AUTH_VOID, AUTH_VOID_START } from './constants'
+import { AUTH_START, AUTH_SUCCESS, AUTH_VOID, AUTH_VOID_START } from '../../../../../state/common/workoutStatus'
 
 import {
     EXERCISES_ORDER_CHANGE,
     EXERCISES_FETCHING_SUCCESS,
     EXERCISES_MOVE_EXERCISE_TO_COMPLETED,
     EXERCISES_SAVED_RESULTS_SUCCESS
-} from './constants'
+} from '../../../../../state/common/workoutStatus'
 
 import { INITIAL_STATE } from '../../../../../state/initialState'
 

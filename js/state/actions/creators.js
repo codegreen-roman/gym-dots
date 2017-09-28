@@ -1,6 +1,6 @@
 import { WORKOUT_STATUS } from './types'
 
-import { WORKOUT_STATUS as ws } from '../constants'
+import { WORKOUT_STATUS as ws } from '../common/workoutStatus'
 import { compose } from 'ramda'
 
 export const startWorkout = () => ({
