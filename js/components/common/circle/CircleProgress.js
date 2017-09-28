@@ -1,16 +1,21 @@
 import React from 'react'
 
-import { array, string, number } from 'prop-types'
+import { array, string, number, oneOfType, arrayOf, node } from 'prop-types'
 import {
     generateArcPaths,
     generateArcClasses
 } from './CircleProgress.helper'
 import R from 'ramda'
+import { circleProgressWrapper, circleInnerWrapper } from './CircleProgress.glamor'
 
+// Adjust x, y to resize circle
+const CIRCLE_CENTER_X = 110
+const CIRCLE_CENTER_Y = 110
+
+const CIRCLE_RADIUS = CIRCLE_CENTER_X - 10
+const CIRCLE_WIDTH = 110 * 2
+const CIRCLE_HEIGHT = 110 * 2
 const SPACE_BETWEEN_ARCS = 10
-const CIRCLE_RADIUS = 100
-const CIRCLE_CENTER_X = 150
-const CIRCLE_CENTER_Y = 150
 
 
 const mapWithIndex = R.addIndex(R.map)
@@ -37,7 +42,11 @@ export class CircleProgress extends React.Component {
 
     static propTypes = {
         results: array.isRequired,
-        sets: number.isRequired
+        sets: number.isRequired,
+        children: oneOfType([
+            arrayOf(node),
+            node
+        ]).isRequired
     }
 
     constructor(props) {
@@ -66,9 +75,17 @@ export class CircleProgress extends React.Component {
 
     render() {
         return (
-            <svg width='300px' height='300px'>
-                <g>{this.renderArcs()}</g>
-            </svg>
+            <div {...circleProgressWrapper}>
+                <svg
+                    width={CIRCLE_WIDTH}
+                    height={CIRCLE_HEIGHT}
+                >
+                    <g>{this.renderArcs()}</g>
+                </svg>
+                <div {...circleInnerWrapper}>
+                    {this.props.children}
+                </div>
+            </div>
         )
     }
 
