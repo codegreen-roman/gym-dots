@@ -4,6 +4,7 @@ import { equals, compose, not, inc } from 'ramda'
 import { arrayOf, number, bool } from 'prop-types'
 import { CircleProgress } from '../../../../common/circle/CircleProgress'
 import { Widget } from '@components/common/widget/Widget'
+import { restingTimer } from './Exercise.glamor'
 
 const compare = compose(not, equals)
 const isResultDiff = (oldResults, newResults) => {
@@ -66,15 +67,12 @@ export class Exercise extends React.Component {
 
         const { seconds } = this.state
         const { restTime } = this.props
-        const style = {
-            fontSize: '110%',
-            color: seconds > restTime ? '#DC143C' : '#006400'
-        }
 
         if (this.state.seconds > 0) {
-            return (<div style={style}>
-                Resting for {this.state.seconds} / {restTime}
-            </div>)
+            return (
+                <div {...restingTimer(seconds > restTime)}>
+                    Resting for {this.state.seconds} / {restTime}
+                </div>)
         }
 
         return null
