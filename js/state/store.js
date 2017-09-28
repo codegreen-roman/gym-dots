@@ -5,6 +5,7 @@ import { reducer } from './reducer'
 import { loadTranslations, setLocale, syncTranslationWithStore } from 'react-redux-i18n'
 import { translations } from '../i18n/translations'
 import { INITIAL_STATE } from './initialState'
+import { firebase } from './middleware'
 
 const logger = createLogger({
     collapsed: (getState, action, logEntry) => !logEntry.error
@@ -13,7 +14,7 @@ const logger = createLogger({
 export const configureStore = (initialState = INITIAL_STATE) => {
 
     const enchancers = [
-        applyMiddleware(thunk, logger),
+        applyMiddleware(thunk, firebase, logger),
         (typeof window !== 'undefined' && window.devToolsExtension) ? window.devToolsExtension() : f => f
     ]
 

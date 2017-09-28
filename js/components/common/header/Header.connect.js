@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { compose, propOr } from 'ramda'
-import { authWith, authAnonymously, authVoidAction } from '../../../state/actions/firebase/databaseActions'
 import { Header as _Header } from './Header'
+import { doLogout, doLoginWithGuest, doLoginWithProvider } from './Header.actions'
 
 const getSafeNameOrEmptyString = propOr('', 'name')
 
@@ -15,9 +15,9 @@ const mapStateToProps = ({ auth, currentExercise }, { dateStr, subTitle }) => ({
 const mapActionsToProps = dispatch => {
 
     return {
-        loginWith: compose(dispatch, authWith),
-        loginGuest: compose(dispatch, authAnonymously),
-        logout: compose(dispatch, authVoidAction)
+        loginWith: compose(dispatch, doLoginWithProvider),
+        loginGuest: compose(dispatch, doLoginWithGuest),
+        logout: compose(dispatch, doLogout)
     }
 }
 

@@ -12,6 +12,6 @@ export const INITIAL_STATE = {
         upcoming: [],
         skipped: [],
         completed: [],
-    },
-    stats: {}
+    }
+    // stats: {}
 }
