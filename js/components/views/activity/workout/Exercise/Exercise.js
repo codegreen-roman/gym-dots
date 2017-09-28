@@ -4,7 +4,13 @@ import { equals, compose, not, inc } from 'ramda'
 import { arrayOf, number, bool } from 'prop-types'
 import { CircleProgress } from '../../../../common/circle/CircleProgress'
 import { Widget } from '@components/common/widget/Widget'
-import { restingTimer } from './Exercise.glamor'
+import {
+    restingTimer,
+    exerciseSection,
+    exerciseHeader,
+    exerciseBody,
+    exerciseFooter
+} from './Exercise.glamor'
 
 const compare = compose(not, equals)
 const isResultDiff = (oldResults, newResults) => {
@@ -87,34 +93,39 @@ export class Exercise extends React.Component {
             weight,
             results
         } = this.props
-
+        const setsDone = (sets - setsLeft) / sets
         return (
-            <section>
-                <Widget
-                    iconTitle='dumbbells'
-                    iconSize={24}
-                    iconColor='red'
-                    dataNumber={weight}
-                    dataUnits='kg'
-                />
-                <Widget
-                    iconTitle='check'
-                    iconSize={24}
-                    iconColor='red'
-                    dataNumber={reps}
-                    dataUnits='kg'
-                />
-                <div>
-                    <span>weight: {weight}</span>
-                    <span>reps: {reps}</span>
+            <section {...exerciseSection}>
+                <div {...exerciseHeader}>
+                    <Widget
+                        iconTitle='dumbbells'
+                        iconSize={24}
+                        iconColor='red'
+                        dataNumber={weight}
+                        dataUnits='kg'
+                    />
+                    <Widget
+                        iconTitle='check'
+                        iconSize={24}
+                        iconColor='red'
+                        dataNumber={reps}
+                        dataUnits='reps'
+                    />
                 </div>
-                <div>
-                    sets {sets - setsLeft} / {sets} done <span>
-                        results : {JSON.stringify(results, null, 2)}
-                    </span>
+                <div {...exerciseBody}>
+                    <CircleProgress
+                        sets={sets}
+                        results={results}
+                        setsDone={sets - setsLeft}
+                    >
+                        <div>sets {setsDone} done </div>
+                        {this.renderRestingTimer()}
+                    </CircleProgress>
+
                 </div>
-                {this.renderRestingTimer()}
-                <CircleProgress sets={sets} results={results} setsDone={sets - setsLeft} />
+                <div {...exerciseFooter}>
+                    results : {JSON.stringify(results, null, 2)}
+                </div>
             </section>
         )
     }
