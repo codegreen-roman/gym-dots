@@ -12,14 +12,14 @@ import {
 import { Icon } from '../icon/Icon'
 
 
-export const Header = ({ dateStr, subTitle, loginWith, auth, exerciseName, loginGuest, logout }) => {
+export const Header = ({ dateStr, subTitle, auth, exerciseName, logout }) => {
 
     const { user } = auth
     const renderTitle = () => isEmpty(exerciseName) ? subTitle : exerciseName
 
     const renderLoginOrUser = () => {
 
-        const { user, status } = auth
+        const { user } = auth
 
         if (user) {
             return (
@@ -31,14 +31,6 @@ export const Header = ({ dateStr, subTitle, loginWith, auth, exerciseName, login
                 </section>
             )
         }
-
-        return (
-            <div style={status === 'inProgress' ? { opacity: '0.1' } : { opacity: '1' }}>
-                <button className='twitter' onClick={() => loginWith('twitter')}>login with twitter</button>
-                <button className='facebook' onClick={() => loginWith('facebook')}>login with facebook</button>
-                <button className='guest' onClick={loginGuest}>login as guest</button>
-            </div>
-        )
     }
 
     return (
@@ -67,8 +59,6 @@ export const Header = ({ dateStr, subTitle, loginWith, auth, exerciseName, login
 
 Header.propTypes = {
     auth: object.isRequired,
-    loginWith: func.isRequired,
-    loginGuest: func.isRequired,
     logout: func.isRequired,
     dateStr: string.isRequired,
     subTitle: string.isRequired,
