@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { func, object } from 'prop-types'
+import { func, object, string } from 'prop-types'
 import { equals } from 'ramda'
 import {
     welcomeSection,
@@ -19,6 +19,8 @@ export class Welcome extends Component {
     static propTypes = {
         loginWith: func.isRequired,
         loginGuest: func.isRequired,
+        status: string.isRequired,
+        dateStr: string.isRequired,
         history: object
     }
 
@@ -30,7 +32,7 @@ export class Welcome extends Component {
     }
 
     render() {
-        const { status, loginGuest, loginWith, dateStr} = this.props
+        const { status, loginGuest, loginWith, dateStr } = this.props
         const isLoggedIn = equals(status, 'loggedIn')
         if (isLoggedIn) {
             return null
