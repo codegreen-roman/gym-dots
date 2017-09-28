@@ -32,7 +32,7 @@ export class Welcome extends PureComponent {
     }
 
     render() {
-        const { status, loginGuest, loginWith, dateStr} = this.props
+        const { status, loginGuest, loginWith, dateStr } = this.props
         const isLoggedIn = equals(status, 'loggedIn')
         if (isLoggedIn) {
             return null
