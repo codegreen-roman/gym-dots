@@ -5,10 +5,10 @@ import { Header } from '../common/header/Header.connect'
 import { Footer } from '../common/footer/Footer.connect'
 import { Route, Switch, NavLink } from 'react-router-dom'
 import { Activity } from '../views/activity/Activity'
-import { Timer } from '../common/timer/Timer'
 import { Overlay } from '../common/overlay/Overlay.connect'
 import { Countdown } from '../common/overlay/Countdown'
 import { mainStyles } from './Main.glamor'
+import { Welcome } from '../views/welcome/Welcome.connect'
 
 export const Main = () => {
     const dateStr = moment().format('dddd, MMM Do')
@@ -17,16 +17,8 @@ export const Main = () => {
     return (
         <section className='app-container' {...mainStyles}>
             <Switch>
-                <Route exact path='/welcome'>
-                    <Timer>
-                        <div>Child 1</div>
-                        <div>Child 2</div>
-                        <div>Child 3</div>
-                        <div>Child 4</div>
-                    </Timer>
-                </Route>
                 <Route
-                    path='/'
+                    path='/in'
                     component={() => {
                         return (
                             <main>
@@ -54,6 +46,8 @@ export const Main = () => {
                             </main>
                         )
                     }}
+                />
+                <Route path='/' component={() => <Welcome dateStr={dateStr} />}
                 />
                 <Route component={() => <section>404 Not Found</section>} />
             </Switch>

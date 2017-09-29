@@ -7,24 +7,9 @@ exports[`App renders without crashing 1`] = `
 >
   <Switch>
     <Route
-      exact={true}
-      path="/welcome"
-    >
-      <Connect(_Timer)>
-        <div>
-          Child 1
-        </div>
-        <div>
-          Child 2
-        </div>
-        <div>
-          Child 3
-        </div>
-        <div>
-          Child 4
-        </div>
-      </Connect(_Timer)>
-    </Route>
+      component={[Function]}
+      path="/in"
+    />
     <Route
       component={[Function]}
       path="/"

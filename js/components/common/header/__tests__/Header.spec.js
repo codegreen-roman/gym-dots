@@ -18,7 +18,7 @@ const setup = (props = defaultProps) => {
     return shallow(<Header {...props} />)
 }
 
-describe('Header component', () => {
+describe.skip('Header component', () => {
 
     test('has section type of the root component', () => {
         const wrapper = setup()
@@ -30,7 +30,7 @@ describe('Header component', () => {
         expect(wrapper.find('header > div').length).toBe(2)
     })
 
-    describe('not logged in', () => {
+    describe.skip('not logged in', () => {
 
         const props = {
             dateStr: 'Saturday, Jul 15th',
@@ -62,7 +62,7 @@ describe('Header component', () => {
         })
     })
 
-    describe('logged in', () => {
+    describe.skip('logged in', () => {
 
         const props = {
             dateStr: 'Saturday, Jul 15th',
@@ -100,7 +100,7 @@ describe('Header component', () => {
         })
     })
 
-    describe('Left side of the header', () => {
+    describe.skip('Left side of the header', () => {
 
         let root
         let menuElement
@@ -133,7 +133,7 @@ describe('Header component', () => {
         })
     })
 
-    describe('Exercise name exist', () => {
+    describe.skip('Exercise name exist', () => {
 
         const props = merge(defaultProps, { exerciseName: 'Pull Up' })
         let header
