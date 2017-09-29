@@ -22,7 +22,7 @@
         "pretest": "NODE_ENV=test",
         "test": "NODE_PATH=./js/state/ jest --env=jsdom",
         "test:watch": "NODE_ENV=test NODE_PATH=./js/state/ jest --watch --env=jsdom",
-        "test:coverage": "NODE_ENV=test NODE_PATH=./js/state/ jest --coverage --env=jsdom",
+        "test:coverage": "NODE_ENV=test NODE_PATH=./js/state/ yarn run size-limit && jest --coverage --env=jsdom",
         "pretranspile-all-js": "rimraf js-dist",
         "transpile-all-js": "babel js --out-dir js-dist --presets=es2015,react --plugins=emotion",
         "prepackage-functions": "yarn run transpile-all-js && rimraf functions",
@@ -110,6 +110,13 @@
         "webpack-bundle-analyzer": "^2.8.3",
         "webpack-dev-server": "^2.5.1"
     },
+    "size-limit": [
+        {
+            "path": "./build/*.js",
+            "webpack": false,
+            "limit": "500 KB"
+        }
+    ],
     "jest": {
         "testEnvironment": "jsdom",
         "testMatch": [
