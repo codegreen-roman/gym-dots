@@ -1,4 +1,5 @@
-import { compose, ifElse, isNil } from 'ramda'
+import { compose, ifElse, isNil, prop, identity } from 'ramda'
+import { createSelector } from 'reselect'
 import {
     GOT_DEFAULTS,
     GOT_ERROR_LOADING_DEFAULTS,
@@ -12,8 +13,22 @@ import {
 } from '../types'
 import { getVal } from './databaseActions.helper'
 
+const authProp = prop('auth')
+const uuidProp = prop('uid')
+const uuidSelect = compose(uuidProp, authProp)
+
+const userKeySelector = createSelector(uuidSelect, identity)
+
 import { saveResultsCompleted, saveResultsFailed } from '../exercisesActions'
-import { defaultsRef, loadNextSessionForUser, loginWith, loginAnonymously, logout, auth, writeSessionResult } from './database'
+import {
+    defaultsRef,
+    loadNextSessionForUser,
+    loginWith,
+    loginAnonymously,
+    logout,
+    auth,
+    writeSessionResult
+} from './database'
 
 const gotAppDefaults = defaults => ({
     type: GOT_DEFAULTS,
@@ -155,7 +170,7 @@ export const subscribeToAuthStateChanged = dispatch => {
     })
 }
 
-export const loadNextSession = (userKey) => dispatch => {
+export const loadNextSession = (userKey) => (dispatch) => {
 
     const fetchSuccess = compose(dispatch, exercisesFetchingSuccess, getVal)
     const fetchError = compose(dispatch, exercisesFetchingError)
@@ -170,13 +185,14 @@ export const loadNextSession = (userKey) => dispatch => {
         .catch(fetchError)
 }
 
-export const saveExercisesResults = (userKey, data) => {
-    return function (dispatch) {
+export const saveExercisesResults = (data) => {
+    return function (dispatch, getState) {
 
+        const getUserKey = compose(userKeySelector, getState)
         const saveFailed = compose(dispatch, saveResultsFailed)
         const saveSuccess = () => compose(dispatch, saveResultsCompleted)(data)
 
-        return writeSessionResult(userKey, data)
+        return writeSessionResult(getUserKey(), data)
             .then(saveSuccess)
             .catch(saveFailed)
     }
