@@ -1,6 +1,105 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Exercise component should match the snapshot 1`] = `
+.css-1xng80g,
+[data-css-1xng80g] {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
+}
+
+.css-1qcxu9b,
+[data-css-1qcxu9b] {
+  position: absolute;
+}
+
+.css-4t1vl3,
+[data-css-4t1vl3] {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.css-1c4gejy,
+[data-css-1c4gejy] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 0.8;
+  padding: 0 15px;
+  -webkit-flex-flow: row wrap;
+  -webkit-justify-content: center;
+}
+
+.css-194amhy,
+[data-css-194amhy] {
+  margin-left: 10px;
+}
+
+.css-6xnw37,
+[data-css-6xnw37] {
+  font-size: 29px;
+  display: inline-block;
+  color: #919AA7;
+}
+
+.css-1co8uoe,
+[data-css-1co8uoe] {
+  font-size: 14px;
+  display: inline-block;
+  margin-left: 5px;
+  color: #919AA7;
+}
+
+.css-13azwyo,
+[data-css-13azwyo] {
+  position: relative;
+}
+
+.css-1p3dylf,
+[data-css-1p3dylf] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 20px 0;
+  -webkit-flex-flow: row wrap;
+  -webkit-justify-content: center;
+}
+
+.css-1fpka8r,
+[data-css-1fpka8r] {
+  fill: red;
+}
+
+.css-8plr4h,
+[data-css-8plr4h] {
+  fill: none;
+  stroke-width: 12px;
+  stroke: lightgrey;
+}
+
 <section
   data-css-13azwyo=""
 >
@@ -8,14 +107,12 @@ exports[`Exercise component should match the snapshot 1`] = `
     data-css-1p3dylf=""
   >
     <div
-      data-css-98owhc=""
+      data-css-1c4gejy=""
     >
       <svg
         data-css-4t1vl3=""
-        height="24px"
-        preserveaspectratio="xMidYMid meet"
-        viewbox="0 0 34 34"
-        width="24px"
+        style="width:34px;height:20px;"
+        viewbox="0 0 34 20"
       >
         <path
           d="M33.48 6.796c-.353-.444-.85-.698-1.364-.698h-.773v-.653c0-1.173-.973-2.128-2.169-2.128h-1.018V2.112a2.15 2.15 0 0 0-.633-1.519c-.8-.79-2.183-.79-2.983 0a2.151 2.151 0 0 0-.634 1.52v5.654H10.094V2.113A2.15 2.15 0 0 0 9.46.594c-.8-.791-2.183-.791-2.983 0a2.149 2.149 0 0 0-.633 1.519v1.205H4.7a2.06 2.06 0 0 0-1.43.571c-.39.376-.615.9-.615 1.437v.772H1.89c-.516 0-1.016.255-1.37.7A2.516 2.516 0 0 0 0 8.362v3.257c0 .585.185 1.14.522 1.563.354.446.853.701 1.37.701h.764v.772c0 .537.224 1.06.616 1.437.385.368.892.571 1.43.571h1.142v1.205c0 .568.23 1.121.633 1.519.4.395.93.613 1.492.613a2.11 2.11 0 0 0 1.491-.613 2.15 2.15 0 0 0 .634-1.519v-5.653h13.812v5.653c0 .568.231 1.121.633 1.519.4.395.93.613 1.492.613a2.11 2.11 0 0 0 1.492-.613 2.15 2.15 0 0 0 .633-1.519v-1.205h1.018c1.196 0 2.17-.954 2.17-2.127v-.653h.772c.513 0 1.01-.255 1.364-.698a2.5 2.5 0 0 0 .52-1.557V8.353c0-.583-.185-1.136-.52-1.557zM1.89 12.77c-.202 0-.399-.107-.553-.3a1.384 1.384 0 0 1-.276-.852V8.362c0-.321.1-.632.276-.852.154-.193.35-.3.553-.3h.765v5.56H1.89zm2.81 2.78c-.267 0-.527-.102-.71-.278a.854.854 0 0 1-.272-.618V5.326c0-.23.096-.45.27-.617.186-.178.445-.28.712-.28h1.143v11.122H4.7zm4.33 2.317a.993.993 0 0 1-.3.71c-.398.394-1.126.394-1.524 0a.992.992 0 0 1-.3-.71V2.113c0-.267.106-.52.3-.71a1.091 1.091 0 0 1 1.524 0c.193.19.3.443.3.71v15.756zm1.063-6.765V8.878h13.812v2.225H10.094zm17 6.765a.993.993 0 0 1-.3.71c-.4.394-1.127.394-1.525 0a.992.992 0 0 1-.3-.71V2.112a.99.99 0 0 1 .3-.709 1.091 1.091 0 0 1 1.524 0c.194.19.3.443.3.71v15.755zm3.187-3.332c0 .56-.496 1.015-1.107 1.015h-1.018V4.43h1.018c.61 0 1.107.456 1.107 1.016v9.091zm2.656-2.909c0 .32-.1.627-.273.846-.153.192-.348.298-.548.298h-.773V7.21h.773c.2 0 .395.106.548.298.174.218.273.526.273.845v3.274z"
@@ -38,14 +135,12 @@ exports[`Exercise component should match the snapshot 1`] = `
       </div>
     </div>
     <div
-      data-css-98owhc=""
+      data-css-1c4gejy=""
     >
       <svg
         data-css-4t1vl3=""
-        height="24px"
-        preserveaspectratio="xMidYMid meet"
-        viewbox="0 0 34 34"
-        width="24px"
+        style="width:23px;height:23px;"
+        viewbox="0 0 27 27"
       >
         <path
           d="M13.5 0c1.863 0 3.617.352 5.26 1.055a13.547 13.547 0 0 1 4.298 2.887 13.547 13.547 0 0 1 2.887 4.298C26.648 9.883 27 11.637 27 13.5s-.352 3.617-1.055 5.26a13.547 13.547 0 0 1-2.887 4.298 13.547 13.547 0 0 1-4.298 2.887C17.117 26.648 15.363 27 13.5 27s-3.617-.352-5.26-1.055a13.547 13.547 0 0 1-4.298-2.887 13.547 13.547 0 0 1-2.887-4.298C.352 17.117 0 15.363 0 13.5s.352-3.617 1.055-5.26a13.547 13.547 0 0 1 2.887-4.298A13.547 13.547 0 0 1 8.24 1.055C9.883.352 11.637 0 13.5 0zm0 25.339c1.635 0 3.168-.312 4.601-.936a11.921 11.921 0 0 0 3.744-2.545 12.197 12.197 0 0 0 2.531-3.757c.624-1.433.936-2.966.936-4.601 0-1.635-.312-3.168-.936-4.601a12.034 12.034 0 0 0-2.53-3.744A12.034 12.034 0 0 0 18.1 2.624C16.668 2 15.135 1.687 13.5 1.687c-1.635 0-3.168.313-4.601.937a12.034 12.034 0 0 0-3.744 2.53A12.034 12.034 0 0 0 2.624 8.9C2 10.332 1.687 11.865 1.687 13.5c0 1.635.313 3.168.937 4.601a12.197 12.197 0 0 0 2.53 3.757A11.921 11.921 0 0 0 8.9 24.403c1.433.624 2.966.936 4.601.936zm5.379-16.77a.834.834 0 0 1 .606-.263c.229 0 .431.088.607.263a.805.805 0 0 1 .237.594c0 .237-.079.435-.237.593L11.68 18.22l-.106.105a.765.765 0 0 1-.593.264.765.765 0 0 1-.593-.264L6.196 14.16a.805.805 0 0 1-.237-.593c0-.237.08-.435.237-.593a.834.834 0 0 1 .607-.264c.228 0 .43.088.606.264l3.56 3.56 7.91-7.964z"
@@ -80,24 +175,24 @@ exports[`Exercise component should match the snapshot 1`] = `
       >
         <g>
           <path
+            class="css-8plr4h"
             d="M 205.1056516 79.0983006 A 100 100 0 0 0 127.3648178 11.5192247"
-            style="fill:none;stroke-width:12px;stroke:lightgrey;"
           />
           <path
+            class="css-8plr4h"
             d="M 168.7785252 190.9016994 A 100 100 0 0 0 209.0268069 96.0826899"
-            style="fill:none;stroke-width:12px;stroke:lightgrey;"
           />
           <path
+            class="css-8plr4h"
             d="M 51.2214748 190.9016994 A 100 100 0 0 0 153.8371147 199.8794046"
-            style="fill:none;stroke-width:12px;stroke:lightgrey;"
           />
           <path
+            class="css-8plr4h"
             d="M 14.8943484 79.0983006 A 100 100 0 0 0 38.06602 179.465837"
-            style="fill:none;stroke-width:12px;stroke:lightgrey;"
           />
           <path
+            class="css-8plr4h"
             d="M 110 10 A 100 100 0 0 0 21.7052407 63.0528437"
-            style="fill:none;stroke-width:12px;stroke:lightgrey;"
           />
         </g>
       </svg>
@@ -110,9 +205,7 @@ exports[`Exercise component should match the snapshot 1`] = `
       </div>
     </div>
   </div>
-  <div
-    data-css-nil=""
-  >
+  <div>
     results : []
   </div>
 </section>

@@ -1,6 +1,59 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Footer component in training status matches the previous snapshot 1`] = `
+.css-1kg5b3n,
+[data-css-1kg5b3n] {
+  outline: none;
+  height: 40px;
+  text-align: center;
+  letter-spacing: 1px;
+  text-shadow: none;
+  border: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  min-height: 1em;
+  display: inline-block;
+  background-color: transparent;
+  font-size: 20px;
+  color: #46B4E3;
+}
+
+.css-1dkzhsg,
+[data-css-1dkzhsg] {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 1rem;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: sans-serif;
+  background: -webkit-linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
+  background: -moz-linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
+  background: linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
+  -webkit-flex-direction: row;
+  -webkit-justify-content: center;
+}
+
+.css-1cqgl9p,
+[data-css-1cqgl9p] {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
 <Footer
   blocked={false}
   currentResults={
@@ -66,6 +119,59 @@ exports[`Footer component in training status matches the previous snapshot 1`] =
 `;
 
 exports[`Footer component snapshot blocked matches the previous snapshot 1`] = `
+.css-1kg5b3n,
+[data-css-1kg5b3n] {
+  outline: none;
+  height: 40px;
+  text-align: center;
+  letter-spacing: 1px;
+  text-shadow: none;
+  border: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  min-height: 1em;
+  display: inline-block;
+  background-color: transparent;
+  font-size: 20px;
+  color: #46B4E3;
+}
+
+.css-1dkzhsg,
+[data-css-1dkzhsg] {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 1rem;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: sans-serif;
+  background: -webkit-linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
+  background: -moz-linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
+  background: linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
+  -webkit-flex-direction: row;
+  -webkit-justify-content: center;
+}
+
+.css-1cqgl9p,
+[data-css-1cqgl9p] {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
 <Footer
   blocked={true}
   currentResults={
@@ -117,6 +223,59 @@ exports[`Footer component snapshot blocked matches the previous snapshot 1`] = `
 `;
 
 exports[`Footer component snapshot not blocked matches the mounted snapshot 1`] = `
+.css-1kg5b3n,
+[data-css-1kg5b3n] {
+  outline: none;
+  height: 40px;
+  text-align: center;
+  letter-spacing: 1px;
+  text-shadow: none;
+  border: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  min-height: 1em;
+  display: inline-block;
+  background-color: transparent;
+  font-size: 20px;
+  color: #46B4E3;
+}
+
+.css-1dkzhsg,
+[data-css-1dkzhsg] {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 1rem;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: sans-serif;
+  background: -webkit-linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
+  background: -moz-linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
+  background: linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
+  -webkit-flex-direction: row;
+  -webkit-justify-content: center;
+}
+
+.css-1cqgl9p,
+[data-css-1cqgl9p] {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
 <Footer
   blocked={false}
   currentResults={
@@ -168,6 +327,59 @@ exports[`Footer component snapshot not blocked matches the mounted snapshot 1`] 
 `;
 
 exports[`Footer component snapshot not blocked matches the rendered snapshot 1`] = `
+.css-1kg5b3n,
+[data-css-1kg5b3n] {
+  outline: none;
+  height: 40px;
+  text-align: center;
+  letter-spacing: 1px;
+  text-shadow: none;
+  border: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  min-height: 1em;
+  display: inline-block;
+  background-color: transparent;
+  font-size: 20px;
+  color: #46B4E3;
+}
+
+.css-1dkzhsg,
+[data-css-1dkzhsg] {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 1rem;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: sans-serif;
+  background: -webkit-linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
+  background: -moz-linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
+  background: linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
+  -webkit-flex-direction: row;
+  -webkit-justify-content: center;
+}
+
+.css-1cqgl9p,
+[data-css-1cqgl9p] {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
 <footer
   data-css-1dkzhsg=""
 >

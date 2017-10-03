@@ -1,16 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Icon Component renders with defaults 1`] = `
+.css-4t1vl3,
+[data-css-4t1vl3] {
+  display: inline-block;
+  vertical-align: middle;
+}
+
 <svg
   data-css-4t1vl3=""
-  height="16px"
-  preserveaspectratio="xMidYMid meet"
-  viewbox="0 0 34 34"
-  width="16px"
+  viewBox="0 0 24 24"
 >
   <path
     d="M6.491 19.991v-9.117H9.44l.442-3.557h-3.39V5.049c0-1.033.272-1.73 1.7-1.73H10V.14C9.686.097 8.607 0 7.358 0 4.74 0 2.957 1.66 2.957 4.695v2.622H0v3.557h2.957V20H6.49v-.009z"
-    data-css-rn73cr=""
   />
 </svg>
 `;

@@ -1,6 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App renders without crashing 1`] = `
+.css-wivn7t,
+[data-css-wivn7t] {
+  font-family: Nunito;
+}
+
 <section
   className="app-container"
   data-css-wivn7t=""
