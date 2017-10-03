@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { func, object, string } from 'prop-types'
 import { equals } from 'ramda'
 import {
@@ -14,20 +14,20 @@ import {
 import { Icon } from '@components/common/icon/Icon'
 import { variables } from '@utils/variables'
 
-export class Welcome extends Component {
+export class Welcome extends PureComponent {
 
     static propTypes = {
         loginWith: func.isRequired,
-        loginGuest: func.isRequired,
         status: string.isRequired,
         dateStr: string.isRequired,
+        loginGuest: func.isRequired,
         history: object
     }
 
     componentWillReceiveProps({status, history}) {
         const isLoggedIn = equals(status, 'loggedIn')
         if (isLoggedIn) {
-            history.push('/activity/pre')
+            history.push('/in/activity/pre')
         }
     }
 

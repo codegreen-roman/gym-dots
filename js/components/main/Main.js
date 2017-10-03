@@ -17,12 +17,8 @@ export const Main = () => {
     return (
         <section className='app-container' {...mainStyles}>
             <Switch>
-                <Route exact
-                    path='/welcome'
-                    component={() => <Welcome dateStr={dateStr} />}
-                />
                 <Route
-                    path='/'
+                    path='/in'
                     component={() => {
                         return (
                             <main>
@@ -50,6 +46,8 @@ export const Main = () => {
                             </main>
                         )
                     }}
+                />
+                <Route path='/' component={() => <Welcome dateStr={dateStr} />}
                 />
                 <Route component={() => <section>404 Not Found</section>} />
             </Switch>
