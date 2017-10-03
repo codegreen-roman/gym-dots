@@ -1,8 +1,3 @@
-import { matcher, serializer } from 'jest-glamor-react'
-
-expect.extend(matcher)
-expect.addSnapshotSerializer(serializer)
-
 import React from 'react'
 import { render } from 'enzyme'
 import { UserImage } from '../UserImage'
