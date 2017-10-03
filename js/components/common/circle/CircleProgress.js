@@ -1,12 +1,12 @@
 import React from 'react'
-
-import { array, string, number, oneOfType, arrayOf, node } from 'prop-types'
+import { array, number, oneOfType, arrayOf, node } from 'prop-types'
 import {
     generateArcPaths,
     generateArcClasses
 } from './CircleProgress.helper'
 import R from 'ramda'
 import { circleProgressWrapper, circleInnerWrapper } from './CircleProgress.glamor'
+import { Arc } from './Arc'
 
 // Adjust x, y to resize circle
 const CIRCLE_CENTER_X = 110
@@ -19,20 +19,6 @@ const SPACE_BETWEEN_ARCS = 10
 
 
 const mapWithIndex = R.addIndex(R.map)
-
-const Arc = ({ d, arcClass }) => {
-    const style = {
-        fill: 'none',
-        strokeWidth: '12px',
-        stroke: arcClass === 'toBeDone' ? 'lightgrey' : arcClass === 'completed' ? 'lime' : 'tomato'
-    }
-    return <path d={d} style={style} />
-}
-
-Arc.propTypes = {
-    d: string.isRequired,
-    arcClass: string.isRequired
-}
 
 export class CircleProgress extends React.Component {
 
