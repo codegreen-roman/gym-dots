@@ -98,18 +98,26 @@ export class Exercise extends React.Component {
             <section {...exerciseSection}>
                 <div {...exerciseHeader}>
                     <Widget
-                        iconTitle='dumbbells'
-                        iconSize={24}
+                        iconName='dumbbells'
                         iconColor='red'
                         dataNumber={weight}
                         dataUnits='kg'
+                        viewBox='0 0 34 20'
+                        style={{
+                            width: 34,
+                            height: 20
+                        }}
                     />
                     <Widget
-                        iconTitle='check'
-                        iconSize={24}
+                        iconName='check'
                         iconColor='red'
                         dataNumber={reps}
                         dataUnits='reps'
+                        viewBox='0 0 27 27'
+                        style={{
+                            width: 23,
+                            height: 23
+                        }}
                     />
                 </div>
                 <div {...exerciseBody}>

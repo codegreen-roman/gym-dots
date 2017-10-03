@@ -6,6 +6,7 @@ export const widgetContainer = css({
     flexFlow: 'row wrap',
     justifyContent: 'center',
     lineHeight: '0.8',
+    padding: '0 15px'
 })
 
 export const widgetDataContainer = css({

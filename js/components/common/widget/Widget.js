@@ -1,18 +1,21 @@
 import React from 'react'
 import { number, string } from 'prop-types'
-import {  } from './Widget.glamor'
 import { Icon } from '../icon/Icon'
 import {
     widgetContainer,
     widgetDataContainer,
     widgetDataNumber,
     widgetDataUnits
-} from './Widget.glamor.js'
+} from './Widget.glamor'
 
-export const Widget = ({iconTitle, iconSize, iconColor, dataNumber, dataUnits}) => {
+export const Widget = ({iconName, iconColor, dataNumber, dataUnits, ...other}) => {
     return (
         <div {...widgetContainer} >
-            <Icon icon={iconTitle} size={iconSize} color={iconColor} />
+            <Icon
+                iconName={iconName}
+                color={iconColor}
+                {...other}
+            />
             <div {...widgetDataContainer}>
                 <div {...widgetDataNumber}>{dataNumber}</div>
                 <div {...widgetDataUnits}>{dataUnits}</div>
@@ -22,9 +25,8 @@ export const Widget = ({iconTitle, iconSize, iconColor, dataNumber, dataUnits}) 
 }
 
 Widget.propTypes = {
-    iconTitle: string,
-    iconSize: number,
-    iconColor: string,
-    dataNumber: number,
-    dataUnits: string
+    iconName: string.isRequired,
+    iconColor: string.isRequired,
+    dataNumber: number.isRequired,
+    dataUnits: string.isRequired
 }
