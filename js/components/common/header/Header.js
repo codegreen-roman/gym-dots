@@ -24,8 +24,8 @@ export const Header = ({ dateStr, subTitle, auth, exerciseName, logout }) => {
         if (user) {
             return (
                 <section>
-                    <div className='username'>
-                        <span>{user.displayName || user.uid}</span>
+                    <div>
+                        <span data-test='username'>{user.displayName || user.uid}</span>
                     </div>
                     <button className='logout' onClick={logout}>logout</button>
                 </section>
@@ -37,18 +37,18 @@ export const Header = ({ dateStr, subTitle, auth, exerciseName, logout }) => {
         <header {...header}>
 
             <div className='left-side' {...headerLeftSide}>
-                <Icon icon='menu' size={24} color='red' {...menu} />
+                <Icon iconName='menu' color='red' data-test='menu' {...menu} />
                 <div>
-                    <div className='h-date' {...headerDate}>
+                    <div data-test='date' {...headerDate}>
                         {dateStr}
                     </div>
-                    <div className='h-title' data-test='currently' {...headerText}>
+                    <div data-test='currently' {...headerText}>
                         {renderTitle()}
                     </div>
                 </div>
             </div>
 
-            <div className='right-side'>
+            <div>
                 {renderLoginOrUser()}
                 <UserImage image={user && user.photoURL || undefined} />
             </div>
