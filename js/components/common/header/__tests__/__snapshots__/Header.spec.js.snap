@@ -36,10 +36,8 @@ exports[`Header component Exercise name exist should match the snapshot 1`] = `
   -webkit-justify-content: space-between;
 }
 
-.css-1nxzm7d,
-[data-css-1nxzm7d] {
-  margin-left: -10px;
-  margin-bottom: 35px;
+.css-1bdqo0b,
+[data-css-1bdqo0b] {
   color: #919AA7;
 }
 
@@ -66,10 +64,16 @@ exports[`Header component Exercise name exist should match the snapshot 1`] = `
   >
     <Icon
       color="red"
-      data-css-1nxzm7d=""
+      data-css-1bdqo0b=""
       data-test="menu"
       iconName="menu"
-      viewBox="0 0 24 24"
+      style={
+        Object {
+          "height": 16,
+          "width": 16,
+        }
+      }
+      viewBox="0 0 32 32"
     />
     <div>
       <div
@@ -128,10 +132,8 @@ exports[`Header component Shallow snapshot matches the previous 1`] = `
   -webkit-justify-content: space-between;
 }
 
-.css-1nxzm7d,
-[data-css-1nxzm7d] {
-  margin-left: -10px;
-  margin-bottom: 35px;
+.css-1bdqo0b,
+[data-css-1bdqo0b] {
   color: #919AA7;
 }
 
@@ -158,10 +160,16 @@ exports[`Header component Shallow snapshot matches the previous 1`] = `
   >
     <Icon
       color="red"
-      data-css-1nxzm7d=""
+      data-css-1bdqo0b=""
       data-test="menu"
       iconName="menu"
-      viewBox="0 0 24 24"
+      style={
+        Object {
+          "height": 16,
+          "width": 16,
+        }
+      }
+      viewBox="0 0 32 32"
     />
     <div>
       <div

@@ -17,8 +17,6 @@ export const headerLeftSide = css({
 })
 
 export const menu = css({
-    marginLeft: '-10px',
-    marginBottom: '35px',
     color: variables.$color1
 })
 

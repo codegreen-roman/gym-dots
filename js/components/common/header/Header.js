@@ -37,7 +37,16 @@ export const Header = ({ dateStr, subTitle, auth, exerciseName, logout }) => {
         <header {...header}>
 
             <div className='left-side' {...headerLeftSide}>
-                <Icon iconName='menu' color='red' data-test='menu' {...menu} />
+                <Icon
+                    iconName='menu'
+                    color='red'
+                    viewBox='0 0 32 32'
+                    data-test='menu'
+                    style={{
+                        width: 16,
+                        height: 16
+                    }} {...menu}
+                />
                 <div>
                     <div data-test='date' {...headerDate}>
                         {dateStr}
