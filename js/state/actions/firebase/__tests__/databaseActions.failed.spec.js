@@ -31,7 +31,12 @@ describe('Firebase action creator', () => {
     }
 
     describe('.saveExercisesResults', () => {
-        const store = mockStore({ defaults: {} })
+        const store = mockStore({
+            defaults: {},
+            auth: {
+                uid: 'C2NO2n89PQOwRDs2o5u6HkeDl5v1'
+            }
+        })
 
         afterEach(() => {
             store.clearActions()
@@ -42,18 +47,20 @@ describe('Firebase action creator', () => {
                 ref: false
             }
 
-            const userKey = 'C2NO2n89PQOwRDs2o5u6HkeDl5v1'
-
             const expectedActions = [
                 {
                     type: EXERCISES_SAVED_RESULTS_FAILED,
                     payload: {}
                 }
             ]
-            const store = mockStore({})
+            const store = mockStore({
+                auth: {
+                    uid: 'C2NO2n89PQOwRDs2o5u6HkeDl5v1'
+                }
+            })
 
             it('creates EXERCISES_SAVED_RESULTS_SUCCESS action', done => {
-                store.dispatch(saveExercisesResults(userKey, data)).then(() => {
+                store.dispatch(saveExercisesResults(data)).then(() => {
                     expect(store.getActions()).toEqual(expectedActions)
                     done()
                 })

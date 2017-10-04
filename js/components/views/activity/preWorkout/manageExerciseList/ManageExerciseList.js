@@ -9,10 +9,10 @@ import { exercisesOrderChange, saveExercisesResults } from '../../../../../state
 class _ManageExerciseList extends Component {
 
     componentDidMount() {
-        const { sessionDone, sessionKey, completed, userKey, saveResults } = this.props
+        const { sessionDone, sessionKey, completed, saveResults } = this.props
         if (sessionDone) {
 
-            saveResults(userKey, {
+            saveResults({
                 [sessionKey]: toWritableResults(completed)
             })
         }
@@ -50,18 +50,16 @@ _ManageExerciseList.propTypes = {
     onOrderChange: func.isRequired,
     saveResults: func.isRequired,
     sessionKey: string,
-    sessionDone: bool.isRequired,
-    userKey: string
+    sessionDone: bool.isRequired
 }
 
-const mapStateToProps = ({ exercises: { upcoming, completed, skipped, sessionKey, name }, auth : { uid } }) => ({
+const mapStateToProps = ({ exercises: { upcoming, completed, skipped, sessionKey, name } }) => ({
     upcoming,
     completed,
     skipped,
     name,
     sessionKey,
-    sessionDone: allListsEmpty([upcoming, skipped]) && notMissing(sessionKey),
-    userKey: uid
+    sessionDone: allListsEmpty([upcoming, skipped]) && notMissing(sessionKey)
 })
 
 const mapActionsToProps = dispatch => {

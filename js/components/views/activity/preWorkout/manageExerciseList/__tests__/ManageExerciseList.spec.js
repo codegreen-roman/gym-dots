@@ -28,8 +28,7 @@ const props = {
         }
     ],
     skipped: [],
-    completed: [],
-    userKey: 'C2NO2n89PQOwRDs2o5u6HkeDl5v1'
+    completed: []
 }
 
 const setup = props => {
@@ -114,7 +113,6 @@ describe('ManageExerciseList component', () => {
             mounted.update()
             expect(actions.saveResults).toHaveBeenCalled()
             expect(actions.saveResults).toHaveBeenLastCalledWith(
-                'C2NO2n89PQOwRDs2o5u6HkeDl5v1',
                 {
                     'thisIsUniqueSessionKey': {
                         'key1': true,
