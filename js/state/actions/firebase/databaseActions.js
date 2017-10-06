@@ -170,6 +170,8 @@ export const subscribeToAuthStateChanged = dispatch => {
     })
 }
 
+// it seems that we should use selector here also, but
+// we have nothing to select here, this method is called manually from subscribe only
 export const loadNextSession = (userKey) => (dispatch) => {
 
     const fetchSuccess = compose(dispatch, exercisesFetchingSuccess, getVal)
