@@ -12,25 +12,24 @@ import {
 import { Icon } from '../icon/Icon'
 
 
-export const Header = ({ dateStr, subTitle, auth, exerciseName, logout }) => {
+export const Header = ({ dateStr, subTitle, userDisplayName, exerciseName, logout, photoURL }) => {
 
-    const { user } = auth
     const renderTitle = () => isEmpty(exerciseName) ? subTitle : exerciseName
 
     const renderLoginOrUser = () => {
 
-        const { user } = auth
-
-        if (user) {
+        if (userDisplayName) {
             return (
                 <section>
                     <div>
-                        <span data-test='username'>{user.displayName || user.uid}</span>
+                        <span data-test='username'>{userDisplayName}</span>
                     </div>
                     <button className='logout' onClick={logout}>logout</button>
                 </section>
             )
         }
+
+        return null
     }
 
     return (
@@ -59,7 +58,7 @@ export const Header = ({ dateStr, subTitle, auth, exerciseName, logout }) => {
 
             <div>
                 {renderLoginOrUser()}
-                <UserImage image={user && user.photoURL || undefined} />
+                <UserImage image={photoURL || undefined} />
             </div>
 
         </header>
@@ -67,7 +66,8 @@ export const Header = ({ dateStr, subTitle, auth, exerciseName, logout }) => {
 }
 
 Header.propTypes = {
-    auth: object.isRequired,
+    userDisplayName: string.isRequired,
+    photoURL: string,
     logout: func.isRequired,
     dateStr: string.isRequired,
     subTitle: string.isRequired,

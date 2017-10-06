@@ -9,7 +9,8 @@ const defaultProps = {
     dateStr: 'Saturday, Jul 15th',
     subTitle: 'Start Workout',
     exerciseName: '',
-    auth: {},
+    photoURL: null,
+    userDisplayName: '',
     logout: jest.fn(),
 }
 
@@ -34,11 +35,7 @@ describe('Header component', () => {
         const props = {
             dateStr: 'Saturday, Jul 15th',
             subTitle: 'Start Workout',
-            auth: {
-                user: {
-                    displayName: 'Roman'
-                }
-            },
+            userDisplayName: 'Roman',
             logout: jest.fn(),
         }
 
