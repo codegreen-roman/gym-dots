@@ -1,6 +1,6 @@
 import React from 'react'
 import { UserImage } from './UserImage'
-import { string, object, func } from 'prop-types'
+import { string, func } from 'prop-types'
 import { isEmpty } from 'ramda'
 import {
     header,

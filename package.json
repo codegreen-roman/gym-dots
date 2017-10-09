@@ -10,8 +10,8 @@
         "build": "webpack",
         "build:production": "NODE_ENV=production webpack --optimize-minimize",
         "dev": "webpack-dev-server",
-        "lint-fix": "node_modules/.bin/eslint --fix js/**/*.js",
-        "lint": "node_modules/.bin/eslint js/**/*.js webpack.config.js",
+        "lint-fix": "node_modules/.bin/eslint --fix src/**/*.js",
+        "lint": "node_modules/.bin/eslint src/**/*.js webpack.config.js",
         "watch": "npm run build -- --watch",
         "server": "nodemon --watch server --exec babel-node -- server/index.js",
         "babel-node": "babel-node",
@@ -20,11 +20,11 @@
         "dev:server": "npm-run-all --parallel dev",
         "flow": "flow",
         "pretest": "NODE_ENV=test",
-        "test": "NODE_PATH=./js/state/ jest --env=jsdom",
-        "test:watch": "NODE_ENV=test NODE_PATH=./js/state/ jest --watch --env=jsdom",
-        "test:coverage": "NODE_ENV=test NODE_PATH=./js/state/ yarn run size-limit && jest --coverage --env=jsdom",
-        "pretranspile-all-js": "rimraf js-dist",
-        "transpile-all-js": "babel js --out-dir js-dist --presets=es2015,react --plugins=emotion",
+        "test": "NODE_PATH=./src/state/ jest --env=jsdom",
+        "test:watch": "NODE_ENV=test NODE_PATH=./src/state/ jest --watch --env=jsdom",
+        "test:coverage": "NODE_ENV=test NODE_PATH=./src/state/ yarn run size-limit && jest --coverage --env=jsdom",
+        "pretranspile-all-js": "rimraf src-dist",
+        "transpile-all-js": "babel src --out-dir src-dist --presets=es2015,react --plugins=emotion",
         "prepackage-functions": "yarn run transpile-all-js && rimraf functions",
         "package-functions": "babel 'cloud-functions-src' --out-dir 'functions' --presets=es2015,react --copy-files --ignore 'node_modules'",
         "postpackage-functions": "cd functions && yarn",
@@ -123,12 +123,12 @@
     "jest": {
         "testEnvironment": "jsdom",
         "testMatch": [
-            "<rootDir>/js/**/*.spec.js"
+            "<rootDir>/src/**/*.spec.js"
         ],
         "setupTestFrameworkScriptFile": "<rootDir>/test-setup/setup.js",
         "moduleNameMapper": {
-            "^@components(.*)$": "<rootDir>/js/components$1",
-            "^@utils(.*)$": "<rootDir>/js/utils$1"
+            "^@components(.*)$": "<rootDir>/src/components$1",
+            "^@utils(.*)$": "<rootDir>/src/utils$1"
         },
         "coverageThreshold": {
             "global": {
@@ -139,7 +139,7 @@
             }
         },
         "collectCoverageFrom": [
-            "js/**/*.js",
+            "src/**/*.js",
             "!**/node_modules/**",
             "!**/flow-typed/**"
         ],
