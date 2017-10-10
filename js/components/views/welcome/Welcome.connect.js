@@ -1,9 +1,19 @@
 import { connect } from 'react-redux'
 import { compose } from 'ramda'
-import { authWith, authAnonymously } from '../../../state/actions/firebase/databaseActions'
 import { Welcome as _Welcome } from './Welcome'
 import { withRouter } from 'react-router-dom'
 
+const authWith = (provider) => ({
+    type: 'FBASE:AUTH_PROVIDER',
+    payload: {
+        provider
+    }
+})
+
+const authAnonymously = () => ({
+    type: 'FBASE:AUTH_GUEST',
+    payload: {}
+})
 
 const mapStateToProps = ({ auth: { user, status } }, { dateStr }) => ({ user, status, dateStr })
 

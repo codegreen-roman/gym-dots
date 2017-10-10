@@ -1,5 +1,11 @@
+/* eslint no-unused-vars: off */
+/* eslint no-console: off */
+
 import { types } from '../../'
-import { subscribeToAuthStateChanged, authWith, authVoidAction, authAnonymously } from './actions'
+
+import R from 'ramda'
+import { logout, loginWith, loginAnonymously } from './database'
+import { subscribeToAuthStateChanged } from './actions'
 
 export function firebase(store) {
 
@@ -7,19 +13,22 @@ export function firebase(store) {
 
     subscribeToAuthStateChanged(dispatch)
 
-    return (next) => (action) => {
+    return (next) => ({ type, payload }) => {
 
-        switch (action.type) {
-            case types.AUTH_START:
-                action.payload.provider === 'guest' ? dispatch(authAnonymously(action.payload.provider)) : dispatch(authWith(action.payload.provider))
-                return next(action)
-            case types.AUTH_VOID_START:
-                dispatch(authVoidAction())
-                return next(action)
-            default:
-                return next(action)
+        next({ type, payload })
+
+        if (R.startsWith('FBASE:')(type)) {
+            if (type === 'FBASE:AUTH_PROVIDER') {
+                loginWith(payload.provider)
+            }
+
+            if (type === 'FBASE:AUTH_GUEST') {
+                loginAnonymously()
+            }
+
+            if (type === 'FBASE:AUTH_VOID_START') {
+                logout()
+            }
         }
-
     }
-
 }
