@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import { ExerciseList } from './ExerciseList'
 import { connect } from 'react-redux'
 import { compose, isEmpty } from 'ramda'
-import { toWritableResults, allListsEmpty, notMissing } from './ManageExerciseList.helper'
+import { toWritableResults } from './ManageExerciseList.helper'
 import { func, bool, string, array } from 'prop-types'
+import { sessionDoneSelector } from './selctors'
 import { exercisesOrderChange, saveExercisesResults } from '../../../../../state/actions'
 
 class _ManageExerciseList extends Component {
@@ -53,14 +54,18 @@ _ManageExerciseList.propTypes = {
     sessionDone: bool.isRequired
 }
 
-const mapStateToProps = ({ exercises: { upcoming, completed, skipped, sessionKey, name } }) => ({
-    upcoming,
-    completed,
-    skipped,
-    name,
-    sessionKey,
-    sessionDone: allListsEmpty([upcoming, skipped]) && notMissing(sessionKey)
-})
+const mapStateToProps = ({ exercises }) => {
+
+    const { upcoming, completed, skipped, sessionKey, name } = exercises
+    return {
+        upcoming,
+        completed,
+        skipped,
+        name,
+        sessionKey,
+        sessionDone: sessionDoneSelector(exercises)
+    }
+}
 
 const mapActionsToProps = dispatch => {
     return {

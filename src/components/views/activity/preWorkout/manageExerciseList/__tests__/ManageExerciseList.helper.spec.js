@@ -4,6 +4,7 @@ test('.notMissing returns true or false for strings', () => {
     expect(typeof notMissing === 'function').toBeTruthy()
     expect(notMissing('12345')).toBeTruthy()
     expect(notMissing('')).toBeFalsy()
+    expect(notMissing()).toBeFalsy()
 })
 
 test('.allListsEmpty returns true for a list of empty lists', () => {
