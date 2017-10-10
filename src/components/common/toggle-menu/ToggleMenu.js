@@ -23,18 +23,16 @@ export const _ToggleMenu = ({ changeLanguage, translations }) => {
 }
 
 _ToggleMenu.propTypes = {
-    changeLanguage: func,
-    translations: object
+    changeLanguage: func.isRequired,
+    translations: object.isRequired
 }
 
-const mapStateToProps = (state) => ({
-    translations: state.i18n.translations
+const mapStateToProps = ({ i18n: { translations } }) => ({
+    translations
 })
 
 const mapActionsToProps = dispatch => ({
-    changeLanguage(locale) {
-        dispatch(setLocale(locale))
-    }
+    changeLanguage: compose(dispatch, setLocale)
 })
 
 export const ToggleMenu = connect(mapStateToProps, mapActionsToProps)(_ToggleMenu)
