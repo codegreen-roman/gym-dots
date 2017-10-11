@@ -39,12 +39,12 @@ const mapActionsToProps = (dispatch, { history }) => {
     return {
         fireStartWorkout: (nextExercise) => {
             startWorkout(nextExercise)
-                .then(() => history.push('/activity/workout'))
+                .then(() => history.push('/in/activity/workout'))
         },
         fireCompleteExercise: (exerciseKey, results) => {
             completeCurrentExercise(exerciseKey, results)
             goToPreparingAgain()
-            history.push('/activity/pre')
+            history.push('/in/activity/pre')
         },
         onSetFailed: compose(dispatch, setFailed),
         onSetDone: compose(dispatch, setDone)

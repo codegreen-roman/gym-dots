@@ -19,7 +19,7 @@ export const Main = () => {
             <Switch>
                 <Route
                     path='/in'
-                    component={() => {
+                    component={({ match }) => {
                         return (
                             <main>
                                 <Header
@@ -28,13 +28,13 @@ export const Main = () => {
                                 />
                                 <Switch>
                                     <Route
-                                        path='/activity'
+                                        path={`${match.url}/activity`}
                                         component={Activity}
                                     />
                                     <Route
-                                        path='/'
+                                        path={`${match.url}/`}
                                         component={() =>
-                                            <NavLink to='/activity'>
+                                            <NavLink to={`${match.url}/activity`}>
                                                 Start training
                                             </NavLink>}
                                     />
@@ -47,6 +47,7 @@ export const Main = () => {
                         )
                     }}
                 />
+
                 <Route path='/' component={() => <Welcome dateStr={dateStr} />}
                 />
                 <Route component={() => <section>404 Not Found</section>} />
