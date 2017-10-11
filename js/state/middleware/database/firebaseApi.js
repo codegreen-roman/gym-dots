@@ -44,7 +44,6 @@ const saveResultsWithDispatch = (next, getState) => () => {
 
 }
 
-
 export function firebase(store) {
 
     const { dispatch, getState } = store

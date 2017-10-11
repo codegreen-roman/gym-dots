@@ -34,8 +34,6 @@ const mapActionsToProps = (dispatch, { history }) => {
     const goToPreparingAgain = compose(dispatch, setIntermediateWorkout)
     const completeCurrentExercise = compose(dispatch, moveExerciseToCompleted)
 
-    // subscribeToAppDefaultsChanges(dispatch)
-
     return {
         fireStartWorkout: (nextExercise) => {
             startWorkout(nextExercise)
