@@ -6,17 +6,11 @@ import { push } from 'react-router-redux'
 const {
     AUTH_SUCCESS,
     AUTH_VOID,
-    AUTH_ERROR,
     EXERCISES_FETCHING_ERROR,
     EXERCISES_FETCHING_SUCCESS
 } = types
 
-import { loginWith, loginAnonymously, logout, auth, loadNextSessionForUser } from './database'
-
-const gotErrorWhileAuth = ({ code, message, email, credential }) => ({
-    type: AUTH_ERROR,
-    payload: { code, message, email, credential }
-})
+import { auth, loadNextSessionForUser } from './database'
 
 const authSuccess = ({ user }) => ({
     type: AUTH_SUCCESS,
@@ -41,12 +35,6 @@ const exercisesFetchingError = error => ({
         error
     }
 })
-
-const authActionMaker = (method) => (provider) => (dispatch) => method(provider).catch(compose(dispatch, gotErrorWhileAuth))
-
-export const authWith = authActionMaker(loginWith)
-export const authAnonymously = authActionMaker(loginAnonymously)
-export const authVoidAction = authActionMaker(logout)
 
 export const subscribeToAuthStateChanged = dispatch => {
 

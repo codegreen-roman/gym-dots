@@ -33,32 +33,6 @@ exports[`Header component Exercise name exist should match the snapshot 1`] = `
   <div
     className="right-side"
   >
-    <div
-      style={
-        Object {
-          "opacity": "1",
-        }
-      }
-    >
-      <button
-        className="twitter"
-        onClick={[Function]}
-      >
-        login with twitter
-      </button>
-      <button
-        className="facebook"
-        onClick={[Function]}
-      >
-        login with facebook
-      </button>
-      <button
-        className="guest"
-        onClick={[Function]}
-      >
-        login as guest
-      </button>
-    </div>
     <UserImage />
   </div>
 </header>
@@ -97,32 +71,6 @@ exports[`Header component Shallow snapshot matches the previous 1`] = `
   <div
     className="right-side"
   >
-    <div
-      style={
-        Object {
-          "opacity": "1",
-        }
-      }
-    >
-      <button
-        className="twitter"
-        onClick={[Function]}
-      >
-        login with twitter
-      </button>
-      <button
-        className="facebook"
-        onClick={[Function]}
-      >
-        login with facebook
-      </button>
-      <button
-        className="guest"
-        onClick={[Function]}
-      >
-        login as guest
-      </button>
-    </div>
     <UserImage />
   </div>
 </header>

@@ -18,7 +18,7 @@ const setup = (props = defaultProps) => {
     return shallow(<Header {...props} />)
 }
 
-describe.skip('Header component', () => {
+describe('Header component', () => {
 
     test('has section type of the root component', () => {
         const wrapper = setup()
@@ -30,39 +30,7 @@ describe.skip('Header component', () => {
         expect(wrapper.find('header > div').length).toBe(2)
     })
 
-    describe.skip('not logged in', () => {
-
-        const props = {
-            dateStr: 'Saturday, Jul 15th',
-            subTitle: 'Start Workout',
-            auth: {},
-            loginWith: jest.fn(),
-            loginGuest: jest.fn(),
-            logout: jest.fn(),
-        }
-
-        let wrapper
-        let twitterBtn
-        let facebookBtn
-
-        beforeEach(() => {
-            wrapper = setup(props)
-            twitterBtn = wrapper.find('button.twitter')
-            facebookBtn = wrapper.find('button.facebook')
-        })
-
-        it('should call the loginWith with twitter provider', () => {
-            twitterBtn.simulate('click')
-            expect(props.loginWith).toBeCalledWith('twitter')
-        })
-
-        it('should call the loginWith with facebook provider', () => {
-            facebookBtn.simulate('click')
-            expect(props.loginWith).toBeCalledWith('facebook')
-        })
-    })
-
-    describe.skip('logged in', () => {
+    describe('logged in', () => {
 
         const props = {
             dateStr: 'Saturday, Jul 15th',
@@ -100,40 +68,7 @@ describe.skip('Header component', () => {
         })
     })
 
-    describe.skip('Left side of the header', () => {
-
-        let root
-        let menuElement
-        let dateElement
-        let titleElement
-        const currentDate = 'Saturday, Jul 15th'
-
-        beforeAll(() => {
-            root = setup().find('section > div.left-side')
-            menuElement = root.find('a.h-menu')
-            dateElement = root.find('div.h-date')
-            titleElement = root.find('div.h-title')
-        })
-
-        // Tests are skipped, awaiting further rewrite
-        test.skip('has a menu icon wrapped in a tag', () => {
-            expect(menuElement.length).toBe(1)
-        })
-
-        test.skip('has a menu icon as a value', () => {
-            expect(menuElement.text()).toBe('☰')
-        })
-
-        test.skip('has dateElement with a date value Saturday, Jul 15th', () => {
-            expect(dateElement.text()).toBe(currentDate)
-        })
-
-        test.skip('has titleElement with a value Start Workout', () => {
-            expect(titleElement.text()).toBe('Start Workout')
-        })
-    })
-
-    describe.skip('Exercise name exist', () => {
+    describe('Exercise name exist', () => {
 
         const props = merge(defaultProps, { exerciseName: 'Pull Up' })
         let header
