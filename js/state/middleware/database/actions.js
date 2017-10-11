@@ -1,6 +1,7 @@
 import { compose, ifElse, isNil } from 'ramda'
 import { types } from '../../'
 import { getVal } from './actions.helper'
+import { push } from 'react-router-redux'
 
 const {
     AUTH_SUCCESS,
@@ -50,6 +51,7 @@ export const authVoidAction = authActionMaker(logout)
 export const subscribeToAuthStateChanged = dispatch => {
 
     const passUser = compose(dispatch, authSuccess)
+    // const navigateHome = compose(dispatch, push('/'))
     const loggedOut = compose(dispatch, authVoid)
 
     return new Promise(resolve => {
@@ -60,6 +62,7 @@ export const subscribeToAuthStateChanged = dispatch => {
                 resolve({ user })
             } else {
                 loggedOut()
+                dispatch(push('/'))
                 resolve()
             }
         })

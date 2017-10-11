@@ -1,6 +1,7 @@
 /* eslint no-unused-vars: off */
 /* eslint no-console: off */
 
+import { types } from '../../common/constants'
 import { toWritableResults } from '../../../components/views/activity/preWorkout/manageExerciseList/ManageExerciseList.helper'
 
 import { sessionDoneSelector } from '../../selectors/exercises'
@@ -12,10 +13,10 @@ import { subscribeToAuthStateChanged } from './actions'
 
 export const getType = prop('type')
 
-export const typeOfAuthProvider = compose(equals('FBASE:AUTH_PROVIDER'), getType)
-export const typeOfAuthGuest = compose(equals('FBASE:AUTH_GUEST'), getType)
-export const typeOfAuthVoid = compose(equals('FBASE:AUTH_VOID_START'), getType)
-export const typeOfExerciseCompleted = compose(equals('EXERCISES_MOVE_EXERCISE_TO_COMPLETED'), getType)
+export const typeOfAuthProvider = compose(equals(types.AUTH_PROVIDER), getType)
+export const typeOfAuthGuest = compose(equals(types.AUTH_GUEST), getType)
+export const typeOfAuthVoid = compose(equals(types.AUTH_VOID_START), getType)
+export const typeOfExerciseCompleted = compose(equals(types.EXERCISES_MOVE_EXERCISE_TO_COMPLETED), getType)
 
 const isSessionDoneFactory = (getState) => () => {
     const { exercises: { upcoming, skipped }, auth: { uid } } = getState()
@@ -35,7 +36,7 @@ const saveResultsWithDispatch = (next, getState) => () => {
     writeSessionResult(userKey, data)
         .then(function (data) {
             return next({
-                type: 'EXERCISES_SAVED_RESULTS_SUCCESS',
+                type: types.EXERCISES_SAVED_RESULTS_SUCCESS,
                 payload: {
                     data
                 }

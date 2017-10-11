@@ -4,11 +4,13 @@ import { workoutStatus } from './reducers/workoutStatus.reducer'
 import { auth } from './reducers/auth.reducer'
 import { exercises } from './reducers/exercises.reducer'
 import { currentExercise } from './reducers/currentExercise.reducer'
+import { routerReducer } from 'react-router-redux'
 
 export const reducer = combineReducers({
     exercises,
     workoutStatus,
     auth,
     i18n,
-    currentExercise
+    currentExercise,
+    router: routerReducer
 })
