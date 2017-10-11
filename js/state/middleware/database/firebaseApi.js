@@ -23,7 +23,7 @@ const isSessionDoneFactory = (getState) => () => {
     return sessionDoneSelector({ upcoming, skipped, sessionKey: uid })
 }
 
-const saveResultsWithDispatch = (next, getState) => () => {
+const saveResultsWithDispatch = (next, getState) => async () => {
 
     const getUserKey = compose(userKeySelector, getState)
     const { exercises: { completed, sessionKey } } = getState()
@@ -33,15 +33,14 @@ const saveResultsWithDispatch = (next, getState) => () => {
         [sessionKey]: toWritableResults(completed)
     }
 
-    writeSessionResult(userKey, data)
-        .then(function (data) {
-            return next({
-                type: types.EXERCISES_SAVED_RESULTS_SUCCESS,
-                payload: {
-                    data
-                }
-            })
-        })
+    const savedData = await writeSessionResult(userKey, data)
+
+    return next({
+        type: types.EXERCISES_SAVED_RESULTS_SUCCESS,
+        payload: {
+            savedData
+        }
+    })
 
 }
 

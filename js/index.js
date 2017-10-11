@@ -1,3 +1,6 @@
+require('babel-core/register')
+require('babel-polyfill')
+
 import React from 'react'
 import { render } from 'react-dom'
 import { ConnectedRouter as Router } from 'react-router-redux'
