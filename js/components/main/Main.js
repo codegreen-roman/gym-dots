@@ -1,12 +1,12 @@
 import React from 'react'
 import moment from 'moment'
 
-import { Header } from '../common/header/Header.connect'
-import { Footer } from '../common/footer/Footer.connect'
+import { Header } from '@components/common/header/Header.connect'
+import { Footer } from '@components/common/footer/Footer.connect'
 import { Route, Switch, NavLink } from 'react-router-dom'
 import { Activity } from '../views/activity/Activity'
-import { Overlay } from '../common/overlay/Overlay.connect'
-import { Countdown } from '../common/overlay/Countdown'
+import { Overlay } from '@components/common/overlay/Overlay.connect'
+import { Countdown } from '@components/common/overlay/Countdown'
 import { mainStyles } from './Main.glamor'
 import { Welcome } from '../views/welcome/Welcome.connect'
 

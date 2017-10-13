@@ -2,7 +2,7 @@ import Rx from 'rx-dom'
 import React from 'react'
 import { equals, compose, not, inc } from 'ramda'
 import { arrayOf, number, bool } from 'prop-types'
-import { CircleProgress } from '../../../../common/circle/CircleProgress'
+import { CircleProgress } from '@components/common/circle/CircleProgress'
 import { Widget } from '@components/common/widget/Widget'
 
 const compare = compose(not, equals)
