@@ -51,6 +51,7 @@ exports[`ExerciseList component Clicking on a row should match the snapshot 1`] 
     >
       <_ExerciseListRow
         exerciseKey="xxy"
+        key="0"
         name="Push-ups"
         onRowClick={[Function]}
         reps={20}
@@ -98,6 +99,7 @@ exports[`ExerciseList component Clicking on a row should match the snapshot 1`] 
       </_ExerciseListRow>
       <_ExerciseListRow
         exerciseKey="xyy"
+        key="1"
         name="Australian pull-ups"
         onRowClick={[Function]}
         reps={12}
@@ -165,6 +167,7 @@ exports[`ExerciseList component should render without crashing 1`] = `
   >
     <_ExerciseListRow
       exerciseKey="xxy"
+      key="0"
       name="Push-ups"
       onRowClick={[Function]}
       reps={20}
@@ -175,6 +178,7 @@ exports[`ExerciseList component should render without crashing 1`] = `
     />
     <_ExerciseListRow
       exerciseKey="xyy"
+      key="1"
       name="Australian pull-ups"
       onRowClick={[Function]}
       reps={12}

@@ -5,7 +5,9 @@ exports[`UserImage component for a logged in user should render the image for th
   alt="This is your avatar"
   class="css-5sn766"
   src="https://pbs.twimg.com/profile_images/870699319183134720/IOqlC-IM_normal.jpg"
-/>
+>
+  
+</img>
 `;
 
 exports[`UserImage component for anonymous user should render nothing 1`] = `null`;

@@ -6,16 +6,19 @@ exports[`ManageExerciseList component No exercises case should show 'You got no 
     You got no exercises yet
   </span>
   <_ExerciseList
+    key="upcoming"
     list={Array []}
     onOrderChangeClick={[Function]}
     title="upcoming"
   />
   <_ExerciseList
+    key="completed"
     list={Array []}
     onOrderChangeClick={[Function]}
     title="completed"
   />
   <_ExerciseList
+    key="skipped"
     list={Array []}
     onOrderChangeClick={[Function]}
     title="skipped"

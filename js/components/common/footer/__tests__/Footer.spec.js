@@ -1,6 +1,6 @@
 import React from 'react'
 import { Footer } from '../Footer'
-import { mount, render } from 'enzyme'
+import { mount, render, shallow } from 'enzyme'
 
 const setup = (blocked = false, training = false, shouldEndExercise = false) => {
 
@@ -23,6 +23,7 @@ const setup = (blocked = false, training = false, shouldEndExercise = false) => 
     return {
         component: mount(<Footer {...props} />),
         wrapper: render(<Footer {...props} />),
+        shallowWrapper: shallow(<Footer {...props} />),
         props
     }
 }
@@ -52,7 +53,7 @@ describe('Footer component', () => {
     describe('clicking on AButton', () => {
         it('should call fireStartWorkout function', () => {
             const { component, props } = setup()
-            component.find('button').simulate('click')
+            component.find('button').last().simulate('click')
 
             expect(props.fireStartWorkout).toHaveBeenCalledTimes(1)
         })
@@ -89,13 +90,14 @@ describe('Footer component', () => {
     })
 
     describe('shouldEndExercise prop is true', () => {
-        it('should call fireStartWorkout function', () => {
+        it('should call fireCompleteExercise function', () => {
 
-            const { props, component } = setup(false, true, true)
+            const { props, shallowWrapper } = setup(false, true, false)
 
-            component.update()
-            expect(props.fireCompleteExercise).toHaveBeenCalledTimes(1)
-            expect(props.fireCompleteExercise).toHaveBeenCalledWith('thisIsTheUniqueKey', [true, true, true, true, true])
+            shallowWrapper.setProps({ shouldEndExercise: true }, () => {
+                expect(props.fireCompleteExercise).toHaveBeenCalledTimes(1)
+                expect(props.fireCompleteExercise).toHaveBeenCalledWith('thisIsTheUniqueKey', [true, true, true, true, true])
+            })
 
         })
     })

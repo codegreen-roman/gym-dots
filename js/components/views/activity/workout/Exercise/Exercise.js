@@ -1,4 +1,4 @@
-import { Observable, Subject } from 'rxjs'
+import Rx from 'rx-dom'
 import React from 'react'
 import { equals, compose, not, inc } from 'ramda'
 import { arrayOf, number, bool } from 'prop-types'
@@ -37,11 +37,11 @@ export class Exercise extends React.Component {
             })
         }
 
-        this.restingStart$ = new Subject()
-        this.kill$ = new Subject()
+        this.restingStart$ = new Rx.Subject()
+        this.kill$ = new Rx.Subject()
 
         this.restingStart$
-            .switchMap(() => Observable.timer(0, 1000)
+            .switchMap(() => Rx.Observable.timer(0, 1000, Rx.Scheduler.requestAnimationFrame)
                 .take(this.props.restTime + 20))
             .map(inc)
             .takeUntil(this.kill$)
@@ -50,7 +50,7 @@ export class Exercise extends React.Component {
     }
 
     componentWillUnmount() {
-        this.kill$.next()
+        this.kill$.onNext()
     }
 
     componentWillUpdate({results : newResults}) {
@@ -58,7 +58,7 @@ export class Exercise extends React.Component {
         const { results : oldResults } = this.props
 
         if (isResultDiff(oldResults, newResults)) {
-            this.restingStart$.next()
+            this.restingStart$.onNext()
         }
     }
 
