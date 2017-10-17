@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
-import { _ManageExerciseList as ManageExerciseList } from '../ManageExerciseList'
+import { ManageExerciseList } from '../ManageExerciseList'
 import { ExerciseList } from '../ExerciseList'
 
 const props = {
