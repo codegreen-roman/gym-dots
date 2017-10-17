@@ -5,6 +5,15 @@ import { toWritableResults } from './ManageExerciseList.helper'
 import { func, bool, string, array } from 'prop-types'
 
 export class ManageExerciseList extends Component {
+    static propTypes = {
+        upcoming: array.isRequired,
+        completed: array.isRequired,
+        skipped: array.isRequired,
+        onOrderChange: func.isRequired,
+        saveResults: func.isRequired,
+        sessionKey: string,
+        sessionDone: bool.isRequired
+    }
 
     componentDidMount() {
         const { sessionDone, sessionKey, completed, saveResults } = this.props
@@ -39,14 +48,4 @@ export class ManageExerciseList extends Component {
             </div>
         )
     }
-}
-
-ManageExerciseList.propTypes = {
-    upcoming: array.isRequired,
-    completed: array.isRequired,
-    skipped: array.isRequired,
-    onOrderChange: func.isRequired,
-    saveResults: func.isRequired,
-    sessionKey: string,
-    sessionDone: bool.isRequired
 }

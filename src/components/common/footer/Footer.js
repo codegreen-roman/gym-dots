@@ -5,6 +5,18 @@ import { func, bool, object, array } from 'prop-types'
 import { Flex } from 'glamorous-jsxstyle'
 
 export class Footer extends React.Component {
+    static propTypes = {
+        blocked: bool.isRequired,
+        training: bool.isRequired,
+        hidden: bool.isRequired,
+        fireStartWorkout: func.isRequired,
+        fireCompleteExercise: func.isRequired,
+        onSetFailed: func.isRequired,
+        onSetDone: func.isRequired,
+        shouldEndExercise: bool.isRequired,
+        nextExercise: object,
+        currentResults: array.isRequired
+    }
 
     componentWillReceiveProps({ shouldEndExercise, fireCompleteExercise, nextExercise: { exerciseKey }, currentResults }) {
         if (shouldEndExercise) {
@@ -49,17 +61,4 @@ export class Footer extends React.Component {
             </footer>
         )
     }
-}
-
-Footer.propTypes = {
-    blocked: bool.isRequired,
-    training: bool.isRequired,
-    hidden: bool.isRequired,
-    fireStartWorkout: func.isRequired,
-    fireCompleteExercise: func.isRequired,
-    onSetFailed: func.isRequired,
-    onSetDone: func.isRequired,
-    shouldEndExercise: bool.isRequired,
-    nextExercise: object,
-    currentResults: array.isRequired
 }

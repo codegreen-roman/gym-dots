@@ -4,6 +4,12 @@ import { array, func, string } from 'prop-types'
 import { timerConnect } from './Timer.connect'
 
 export class _Timer extends React.Component {
+    static propTypes = {
+        workoutStatus: string,
+        children: array,
+        start: func,
+        complete: func,
+    }
 
     constructor(props) {
         super(props)
@@ -45,13 +51,6 @@ export class _Timer extends React.Component {
             <div>{this.state.timeSpent}</div>
         </div>)
     }
-}
-
-_Timer.propTypes = {
-    workoutStatus: string,
-    children: array,
-    start: func,
-    complete: func,
 }
 
 export const Timer = timerConnect(_Timer)
