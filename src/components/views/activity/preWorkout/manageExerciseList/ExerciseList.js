@@ -1,5 +1,4 @@
 import React from 'react'
-import { isEmpty } from 'ramda'
 import { array, string, func } from 'prop-types'
 import {
     exerciseList,
@@ -8,8 +7,7 @@ import {
     exerciseListHeaderText
 } from './ExerciseList.glamor'
 import { ExerciseListRow } from './ExerciseListRow'
-
-const onOrderChangeClick = () => {} // noop
+import { compose, not, map, isEmpty } from 'ramda'
 
 export const ExerciseListHeader = ({title}) => {
     return (
@@ -24,24 +22,22 @@ ExerciseListHeader.propTypes = {
     title: string.isRequired
 }
 
+const onOrderChangeClick = () => {} // noop
 
 const _ExerciseList = ({ list, title, onOrderChangeClick }) => {
-    if (isEmpty(list)) {
-        return null
-    }
-    return (
-        <div>
+    const row = (item) => (
+        <ExerciseListRow key={item.exerciseKey} {...item} onRowClick={() => onOrderChangeClick(item)} />
+    )
+    const renderRows = () => map(row, list)
+    const notEmpty = compose(not, isEmpty)
+
+    return (notEmpty(list) ?
+        (<div>
             <ExerciseListHeader title={title} />
             <ul data-test='list' {...exerciseList}>
-                {list.map((itm, idx) =>
-                    <ExerciseListRow
-                        key={idx}
-                        {...itm}
-                        onRowClick={() => onOrderChangeClick(itm)}
-                    />
-                )}
+                {renderRows()}
             </ul>
-        </div>
+        </div>) : null
     )
 }
 
