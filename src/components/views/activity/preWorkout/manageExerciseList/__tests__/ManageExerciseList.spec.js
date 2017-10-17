@@ -9,7 +9,7 @@ const props = {
     sessionDone: false,
     upcoming: [
         {
-            exerciseKey: '',
+            exerciseKey: '1',
             restTime: 90,
             name: 'Push-ups',
             sets: 5,
@@ -18,7 +18,7 @@ const props = {
             results: []
         },
         {
-            exerciseKey: '',
+            exerciseKey: '2',
             restTime: 30,
             name: 'Australian pull-ups',
             sets: 5,
