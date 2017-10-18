@@ -104,14 +104,10 @@ exports[`Welcome component Shallow snapshot matches the previous 1`] = `
       >
         <Icon
           color="#5E6B7D"
+          height={26}
           iconName="facebook"
-          style={
-            Object {
-              "height": 26,
-              "width": 26,
-            }
-          }
           viewBox="0 0 24 24"
+          width={26}
         />
         <button
           data-css-3l7lts=""
@@ -126,14 +122,10 @@ exports[`Welcome component Shallow snapshot matches the previous 1`] = `
       >
         <Icon
           color="#5E6B7D"
+          height={23}
           iconName="twitter"
-          style={
-            Object {
-              "height": 23,
-              "width": 23,
-            }
-          }
           viewBox="0 0 20 17"
+          width={23}
         />
         <button
           data-css-3l7lts=""
@@ -148,14 +140,10 @@ exports[`Welcome component Shallow snapshot matches the previous 1`] = `
       >
         <Icon
           color="#5E6B7D"
+          height={26}
           iconName="guest"
-          style={
-            Object {
-              "height": 26,
-              "width": 26,
-            }
-          }
           viewBox="0 0 24 24"
+          width={26}
         />
         <button
           data-css-3l7lts=""

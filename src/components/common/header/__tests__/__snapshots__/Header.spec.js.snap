@@ -65,15 +65,10 @@ exports[`Header component Exercise name exist should match the snapshot 1`] = `
     <Icon
       color="red"
       data-css-1bdqo0b=""
-      data-test="menu"
+      height={16}
       iconName="menu"
-      style={
-        Object {
-          "height": 16,
-          "width": 16,
-        }
-      }
       viewBox="0 0 32 32"
+      width={16}
     />
     <div>
       <div
@@ -161,15 +156,10 @@ exports[`Header component Shallow snapshot matches the previous 1`] = `
     <Icon
       color="red"
       data-css-1bdqo0b=""
-      data-test="menu"
+      height={16}
       iconName="menu"
-      style={
-        Object {
-          "height": 16,
-          "width": 16,
-        }
-      }
       viewBox="0 0 32 32"
+      width={16}
     />
     <div>
       <div
