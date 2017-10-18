@@ -40,11 +40,9 @@ export const Header = ({ dateStr, subTitle, userDisplayName, exerciseName, logou
                     iconName='menu'
                     color='red'
                     viewBox='0 0 32 32'
-                    data-test='menu'
-                    style={{
-                        width: 16,
-                        height: 16
-                    }} {...menu}
+                    width={16}
+                    height={16}
+                    {...menu}
                 />
                 <div>
                     <div data-test='date' {...headerDate}>

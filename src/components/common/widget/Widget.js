@@ -8,13 +8,15 @@ import {
     widgetDataUnits
 } from './Widget.glamor'
 
-export const Widget = ({iconName, iconColor, dataNumber, dataUnits, ...other}) => {
+export const Widget = ({iconName, iconColor, dataNumber, dataUnits, viewBox, width, height }) => {
     return (
         <div {...widgetContainer} >
             <Icon
                 iconName={iconName}
                 color={iconColor}
-                {...other}
+                viewBox={viewBox}
+                width={width}
+                height={height}
             />
             <div {...widgetDataContainer}>
                 <div {...widgetDataNumber}>{dataNumber}</div>
@@ -28,5 +30,9 @@ Widget.propTypes = {
     iconName: string.isRequired,
     iconColor: string.isRequired,
     dataNumber: number.isRequired,
-    dataUnits: string.isRequired
+    dataUnits: string.isRequired,
+    width: number.isRequired,
+    height: number.isRequired,
+    viewBox: string.isRequired
 }
+

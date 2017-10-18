@@ -103,10 +103,8 @@ export class Exercise extends React.Component {
                         dataNumber={weight}
                         dataUnits='kg'
                         viewBox='0 0 34 20'
-                        style={{
-                            width: 34,
-                            height: 20
-                        }}
+                        width={34}
+                        height={20}
                     />
                     <Widget
                         iconName='check'
@@ -114,10 +112,8 @@ export class Exercise extends React.Component {
                         dataNumber={reps}
                         dataUnits='reps'
                         viewBox='0 0 27 27'
-                        style={{
-                            width: 23,
-                            height: 23
-                        }}
+                        width={23}
+                        height={23}
                     />
                 </div>
                 <div {...exerciseBody}>
