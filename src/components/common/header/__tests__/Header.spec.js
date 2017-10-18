@@ -4,6 +4,7 @@ import { shallow } from 'enzyme'
 import { merge } from 'ramda'
 import { shallowToJson } from 'enzyme-to-json'
 import { findByDataAttr } from '@utils/testUtils'
+import { Icon } from '../../icon/Icon'
 
 const defaultProps = {
     dateStr: 'Saturday, Jul 15th',
@@ -63,7 +64,7 @@ describe('Header component', () => {
 
         beforeAll(() => {
             wrapper = setup()
-            menuElement = findByDataAttr(wrapper, 'menu')
+            menuElement = wrapper.find(Icon)
             dateElement =  findByDataAttr(wrapper, 'date')
             titleElement =  findByDataAttr(wrapper, 'currently')
         })

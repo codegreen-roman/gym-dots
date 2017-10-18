@@ -6,7 +6,10 @@ const defaultProps = {
     iconName: 'facebook',
     iconColor: 'red',
     dataNumber: 20,
-    dataUnits: 'reps'
+    dataUnits: 'reps',
+    viewBox: '0 0 23 23',
+    height: 23,
+    width: 23
 }
 
 const setup = (props = defaultProps) => {
