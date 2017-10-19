@@ -86,6 +86,7 @@ exports[`Header component Exercise name exist should match the snapshot 1`] = `
     </div>
   </div>
   <div>
+    <RenderNothing />
     <UserImage />
   </div>
 </header>
@@ -177,6 +178,7 @@ exports[`Header component Shallow snapshot matches the previous 1`] = `
     </div>
   </div>
   <div>
+    <RenderNothing />
     <UserImage />
   </div>
 </header>
