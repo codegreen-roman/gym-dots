@@ -3,6 +3,20 @@ import { ExerciseList } from './ExerciseList'
 import { isEmpty } from 'ramda'
 import { toWritableResults } from './ManageExerciseList.helper'
 import { func, bool, string, array } from 'prop-types'
+import { branch, RenderNothing } from '@utils/helpers'
+
+export const Congrats = ({sessionKey, sessionDone}) => branch(sessionDone, <h2>Your session {sessionKey} is COMPLETED!</h2>, <RenderNothing />)
+
+Congrats.propTypes = {
+    sessionKey: string,
+    sessionDone: bool
+}
+
+export const NoExercises = ({upcoming}) => branch(isEmpty(upcoming), <span>You got no exercises yet</span>, <RenderNothing />)
+
+NoExercises.propTypes = {
+    upcoming: array
+}
 
 export class ManageExerciseList extends Component {
     static propTypes = {
@@ -25,23 +39,13 @@ export class ManageExerciseList extends Component {
         }
     }
 
-    congratulateUser() {
-        const { sessionDone, sessionKey } = this.props
-
-        if (sessionDone) {
-            return (<h2>Your session {sessionKey} is COMPLETED!</h2>)
-        }
-
-        return null
-    }
-
     render() {
-        const { upcoming, completed, skipped, onOrderChange, } = this.props
+        const { sessionDone, sessionKey, upcoming, completed, skipped, onOrderChange, } = this.props
 
         return (
             <div>
-                {this.congratulateUser()}
-                <span>{isEmpty(upcoming) ? 'You got no exercises yet' : null}</span>
+                <Congrats sessionDone={sessionDone} sessionKey={sessionKey} />
+                <NoExercises upcoming={upcoming} />
                 <ExerciseList key='upcoming' list={upcoming} title='upcoming' onOrderChangeClick={onOrderChange} />
                 <ExerciseList key='completed' list={completed} title='completed' />
                 <ExerciseList key='skipped' list={skipped} title='skipped' />
