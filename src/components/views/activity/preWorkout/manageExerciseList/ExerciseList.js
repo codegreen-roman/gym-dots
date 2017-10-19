@@ -8,6 +8,7 @@ import {
 } from './ExerciseList.glamor'
 import { ExerciseListRow } from './ExerciseListRow'
 import { compose, not, map, isEmpty } from 'ramda'
+import { branch, RenderNothing } from '@utils/helpers'
 
 export const ExerciseListHeader = ({title}) => {
     return (
@@ -31,13 +32,15 @@ const _ExerciseList = ({ list, title, onOrderChangeClick }) => {
     const renderRows = () => map(row, list)
     const notEmpty = compose(not, isEmpty)
 
-    return (notEmpty(list) ?
+    return branch(
+        notEmpty(list),
         (<div>
             <ExerciseListHeader title={title} />
             <ul data-test='list' {...exerciseList}>
                 {renderRows()}
             </ul>
-        </div>) : null
+        </div>),
+        <RenderNothing />
     )
 }
 
