@@ -1,7 +1,9 @@
 import { Observable, Subject } from 'rxjs'
 import React from 'react'
-import { equals, compose, not, inc } from 'ramda'
+import { inc } from 'ramda'
 import { arrayOf, number, bool } from 'prop-types'
+import { isResultDiff } from './Exercise.helper'
+import { branch, RenderNothing } from '@utils/helpers'
 import { CircleProgress } from '../../../../common/circle/CircleProgress'
 import { Widget } from '@components/common/widget/Widget'
 import {
@@ -12,12 +14,18 @@ import {
     exerciseFooter
 } from './Exercise.glamor'
 
-const compare = compose(not, equals)
-const isResultDiff = (oldResults, newResults) => {
-    return compare(
-        JSON.stringify(oldResults),
-        JSON.stringify(newResults)
+export const RestFor = ({seconds, restTime}) => {
+    const isPassedRestTime = seconds > restTime
+    return (
+        <div {...restingTimer(isPassedRestTime)}>
+            Resting for {seconds} / {restTime}
+        </div>
     )
+}
+
+RestFor.propTypes = {
+    seconds: number.isRequired,
+    restTime: number.isRequired
 }
 
 export class Exercise extends React.Component {
@@ -74,14 +82,10 @@ export class Exercise extends React.Component {
         const { seconds } = this.state
         const { restTime } = this.props
 
-        if (this.state.seconds > 0) {
-            return (
-                <div {...restingTimer(seconds > restTime)}>
-                    Resting for {this.state.seconds} / {restTime}
-                </div>)
-        }
-
-        return null
+        return branch(
+            seconds > 0,
+            <RestFor seconds={seconds} restTime={restTime} />,
+            <RenderNothing />)
     }
 
     render() {
