@@ -7,8 +7,9 @@ import {
     widgetDataNumber,
     widgetDataUnits
 } from './Widget.glamor'
+import { pure } from 'recompose'
 
-export const Widget = ({iconName, iconColor, dataNumber, dataUnits, viewBox, width, height }) => {
+const _Widget = ({iconName, iconColor, dataNumber, dataUnits, viewBox, width, height }) => {
     return (
         <div {...widgetContainer} >
             <Icon
@@ -26,7 +27,7 @@ export const Widget = ({iconName, iconColor, dataNumber, dataUnits, viewBox, wid
     )
 }
 
-Widget.propTypes = {
+_Widget.propTypes = {
     iconName: string.isRequired,
     iconColor: string.isRequired,
     dataNumber: number.isRequired,
@@ -36,3 +37,4 @@ Widget.propTypes = {
     viewBox: string.isRequired
 }
 
+export const Widget = pure(_Widget)
