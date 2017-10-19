@@ -2,9 +2,13 @@
 
 exports[`ManageExerciseList component No exercises case should show 'You got no exercises yet' 1`] = `
 <div>
-  <span>
-    You got no exercises yet
-  </span>
+  <Congrats
+    sessionDone={false}
+    sessionKey=""
+  />
+  <NoExercises
+    upcoming={Array []}
+  />
   <_ExerciseList
     list={Array []}
     onOrderChangeClick={[Function]}
@@ -25,14 +29,13 @@ exports[`ManageExerciseList component No exercises case should show 'You got no 
 
 exports[`ManageExerciseList component Session is completed should show the completed message 1`] = `
 <div>
-  <h2>
-    Your session 
-    thisIsUniqueSessionKey
-     is COMPLETED!
-  </h2>
-  <span>
-    You got no exercises yet
-  </span>
+  <Congrats
+    sessionDone={true}
+    sessionKey="thisIsUniqueSessionKey"
+  />
+  <NoExercises
+    upcoming={Array []}
+  />
   <_ExerciseList
     list={Array []}
     onOrderChangeClick={[Function]}
