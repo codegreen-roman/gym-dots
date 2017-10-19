@@ -10,27 +10,24 @@ import {
     menu
 } from './Header.glamor.js'
 import { Icon } from '../icon/Icon'
+import { branch, RenderNothing } from '@utils/helpers'
 
+export const LoginOrUser = (userDisplayName, logout) => {
+    return (
+        <section>
+            <div>
+                <span data-test='username'>{userDisplayName}</span>
+            </div>
+            <button className='logout' onClick={logout}>logout</button>
+        </section>
+    )
+}
 
 export const Header = ({ dateStr, subTitle, userDisplayName, exerciseName, logout, photoURL }) => {
 
     const renderTitle = () => isEmpty(exerciseName) ? subTitle : exerciseName
 
-    const renderLoginOrUser = () => {
-
-        if (userDisplayName) {
-            return (
-                <section>
-                    <div>
-                        <span data-test='username'>{userDisplayName}</span>
-                    </div>
-                    <button className='logout' onClick={logout}>logout</button>
-                </section>
-            )
-        }
-
-        return null
-    }
+    const renderLoginOrUser = () => branch(userDisplayName, LoginOrUser(userDisplayName, logout), <RenderNothing />)
 
     return (
         <header {...header}>
