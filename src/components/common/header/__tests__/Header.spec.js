@@ -41,16 +41,16 @@ describe('Header component', () => {
         }
 
         let wrapper
-        let usernameDiv
+        let User
 
         beforeEach(() => {
             wrapper = setup(props)
-            usernameDiv = findByDataAttr(wrapper, 'username')
+            User = wrapper.find('User')
         })
 
-        it('should have a div with a class of username and text Roman', () => {
-            expect(usernameDiv.length).toBe(1)
-            expect(usernameDiv.text()).toBe('Roman')
+        it('should have `User` component with prop user eq Roman', () => {
+            expect(User.length).toBe(1)
+            expect(User.props().user).toBe('Roman')
         })
     })
 
