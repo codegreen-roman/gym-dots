@@ -10,7 +10,6 @@ import {
     exerciseDot
 } from './ExerciseList.glamor'
 
-const onRowClick = () => {} // noop
 
 const _ExerciseListRow = ({
     name,
@@ -39,7 +38,7 @@ const _ExerciseListRow = ({
 }
 
 _ExerciseListRow.defaultProps = {
-    onRowClick
+    onRowClick: () => {}
 }
 
 _ExerciseListRow.propTypes = {

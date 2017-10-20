@@ -23,7 +23,6 @@ ExerciseListHeader.propTypes = {
     title: string.isRequired
 }
 
-const onOrderChangeClick = () => {} // noop
 
 const _ExerciseList = ({ list, title, onOrderChangeClick }) => {
     const row = (item) => (
@@ -45,7 +44,7 @@ const _ExerciseList = ({ list, title, onOrderChangeClick }) => {
 }
 
 _ExerciseList.defaultProps = {
-    onOrderChangeClick
+    onOrderChangeClick: () => {}
 }
 
 _ExerciseList.propTypes = {
