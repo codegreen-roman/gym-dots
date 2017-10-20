@@ -26,8 +26,8 @@ const _FooterButtons = ({ fireStartWorkout, blocked, training, onSetFailed, onSe
         training,
         (
             <div>
-                <FooterButton key={1} clickHandler={onSetFailed} data-test='failButton' disabled={false}>Failed</FooterButton>
-                <FooterButton key={2} clickHandler={onSetDone} data-test='doneButton' disabled={false}>Done</FooterButton>
+                <FooterButton clickHandler={onSetFailed} data-test='failButton' disabled={false}>Failed</FooterButton>
+                <FooterButton clickHandler={onSetDone} data-test='doneButton' disabled={false}>Done</FooterButton>
             </div>
         ),
         <FooterButton disabled={blocked} clickHandler={startButtonHandler}>{blocked ? 'Starting ...' : 'Start Workout'}</FooterButton>
