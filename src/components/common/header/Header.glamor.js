@@ -16,8 +16,17 @@ export const headerLeftSide = css({
     justifyContent: 'space-between'
 })
 
-export const menu = css({
+export const headerMenu = css({
     color: variables.$color1
+})
+
+export const userWrapper = css({
+    display: 'flex',
+    alignItems: 'center',
+})
+
+export const userPic = css({
+    fontSize: '10px'
 })
 
 export const headerDataWrap = css({

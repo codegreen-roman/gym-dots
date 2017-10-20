@@ -7,27 +7,34 @@ import {
     headerLeftSide,
     headerDate,
     headerText,
-    menu
+    headerMenu,
+    userWrapper,
+    userPic
 } from './Header.glamor.js'
 import { Icon } from '../icon/Icon'
 import { branch, RenderNothing } from '@utils/helpers'
 
-export const LoginOrUser = (userDisplayName, logout) => {
-    return (
-        <section>
-            <div>
-                <span data-test='username'>{userDisplayName}</span>
-            </div>
-            <button className='logout' onClick={logout}>logout</button>
-        </section>
-    )
+export const User = ({user, logout, photoURL}) => (
+    <section {...userWrapper}>
+        <span {...userPic} data-test='username'>{user}</span>
+        <button className='logout' onClick={logout}>
+            <UserImage image={photoURL || undefined} />
+        </button>
+    </section>
+)
+
+User.propTypes = {
+    user: string,
+    logout: func,
+    photoURL: string
 }
+
 
 export const Header = ({ dateStr, subTitle, userDisplayName, exerciseName, logout, photoURL }) => {
 
     const renderTitle = () => isEmpty(exerciseName) ? subTitle : exerciseName
 
-    const renderLoginOrUser = () => branch(userDisplayName, LoginOrUser(userDisplayName, logout), <RenderNothing />)
+    const renderLogoutAndUser = () => branch(userDisplayName, <User user={userDisplayName} logout={logout} photoURL={photoURL} />, <RenderNothing />)
 
     return (
         <header {...header}>
@@ -39,7 +46,7 @@ export const Header = ({ dateStr, subTitle, userDisplayName, exerciseName, logou
                     viewBox='0 0 32 32'
                     width={16}
                     height={16}
-                    {...menu}
+                    {...headerMenu}
                 />
                 <div>
                     <div data-test='date' {...headerDate}>
@@ -52,8 +59,7 @@ export const Header = ({ dateStr, subTitle, userDisplayName, exerciseName, logou
             </div>
 
             <div>
-                {renderLoginOrUser()}
-                <UserImage image={photoURL || undefined} />
+                {renderLogoutAndUser()}
             </div>
 
         </header>
