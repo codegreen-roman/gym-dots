@@ -18,7 +18,7 @@ export const User = ({user, logout, photoURL}) => (
     <section {...userWrapper}>
         <span {...userPic} data-test='username'>{user}</span>
         <button className='logout' onClick={logout}>
-            <UserImage image={photoURL || undefined} />
+            <UserImage image={photoURL} />
         </button>
     </section>
 )
