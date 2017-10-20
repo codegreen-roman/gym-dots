@@ -2,9 +2,10 @@ import React from 'react'
 import { array, number, oneOfType, arrayOf, node } from 'prop-types'
 import {
     generateArcPaths,
-    generateArcClasses
+    generateArcClasses,
+    mapWithIndex
 } from './CircleProgress.helper'
-import R from 'ramda'
+import { nth } from 'ramda'
 import { circleProgressWrapper, circleInnerWrapper } from './CircleProgress.glamor'
 import { Arc } from './Arc'
 
@@ -17,8 +18,6 @@ const CIRCLE_WIDTH = 110 * 2
 const CIRCLE_HEIGHT = 110 * 2
 const SPACE_BETWEEN_ARCS = 10
 
-
-const mapWithIndex = R.addIndex(R.map)
 
 export class CircleProgress extends React.Component {
 
@@ -56,7 +55,7 @@ export class CircleProgress extends React.Component {
 
     renderArcs() {
         const { arcClasses, arcPaths } = this.state
-        return mapWithIndex((ctrl, idx) => <Arc key={idx} d={R.nth(idx, arcPaths)} arcClass={ctrl} />)(arcClasses)
+        return mapWithIndex((ctrl, idx) => <Arc key={idx} d={nth(idx, arcPaths)} arcClass={ctrl} />)(arcClasses)
     }
 
     render() {
