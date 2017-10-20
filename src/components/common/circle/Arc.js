@@ -1,5 +1,5 @@
 import React from 'react'
-import { string } from 'prop-types'
+import { string, oneOf } from 'prop-types'
 import { Path } from './Arc.glamor'
 import { pure } from 'recompose'
 
@@ -9,7 +9,7 @@ const _Arc = ({ d, arcClass }) => {
 
 _Arc.propTypes = {
     d: string.isRequired,
-    arcClass: string.isRequired
+    arcClass: oneOf(['toBeDone', 'failed', 'completed'])
 }
 
 export const Arc = pure(_Arc)
