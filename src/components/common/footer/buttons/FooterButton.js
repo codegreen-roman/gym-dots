@@ -11,8 +11,7 @@ export const FooterButton = ({ clickHandler, disabled, children }) => {
 
 FooterButton.defaultProps = {
     disabled: false,
-    clickHandler: () => {
-    }
+    clickHandler: () => {}
 }
 
 FooterButton.propTypes = {

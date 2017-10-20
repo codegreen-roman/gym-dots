@@ -12,4 +12,9 @@ _Arc.propTypes = {
     arcClass: oneOf(['toBeDone', 'failed', 'completed'])
 }
 
+_Arc.defaultProps = {
+    d: '',
+    arcClass: 'toBeDone'
+}
+
 export const Arc = pure(_Arc)
