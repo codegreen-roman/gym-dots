@@ -1,6 +1,7 @@
 import {
     curry,
-    complement,
+    compose,
+    not,
     isEmpty
 } from 'ramda'
 /**
@@ -29,4 +30,5 @@ export const RenderNothing = () => null
 /**
  * Opposite of isEmpty
  */
-export const notEmpty = complement(isEmpty)
+export const notEmpty = compose(not, isEmpty)
+// tried const notEmpty = complement(isEmpty), which is the same, but test ManageExerciseList.helper.spec.js:8 failed =(
