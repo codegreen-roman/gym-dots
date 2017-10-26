@@ -2,12 +2,12 @@ import React from 'react'
 import { array, number, oneOfType, arrayOf, node } from 'prop-types'
 import {
     generateArcPaths,
-    generateArcClasses,
-    mapWithIndex
+    generateArcClasses
 } from './CircleProgress.helper'
 import { nth } from 'ramda'
 import { circleProgressWrapper, circleInnerWrapper } from './CircleProgress.glamor'
 import { Arc } from './Arc'
+import { mapIndexed } from '@utils/helpers'
 
 // Adjust x, y to resize circle
 const CIRCLE_CENTER_X = 110
@@ -55,7 +55,7 @@ export class CircleProgress extends React.Component {
 
     renderArcs() {
         const { arcClasses, arcPaths } = this.state
-        return mapWithIndex((ctrl, idx) => <Arc key={idx} d={nth(idx, arcPaths)} arcClass={ctrl} />)(arcClasses)
+        return mapIndexed((ctrl, idx) => <Arc key={idx} d={nth(idx, arcPaths)} arcClass={ctrl} />)(arcClasses)
     }
 
     render() {

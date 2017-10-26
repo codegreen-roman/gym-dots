@@ -6,8 +6,6 @@ const QUARTER_TURN = 90
 
 const round = (n) => Math.round(n * 10000000) / 10000000
 
-export const mapWithIndex = R.addIndex(R.map)
-
 export const polarToCartesian = (centerX, centerY, radius, angleInDegrees) => {
     let angleInRadians = getAngleInRadians(angleInDegrees)
 
