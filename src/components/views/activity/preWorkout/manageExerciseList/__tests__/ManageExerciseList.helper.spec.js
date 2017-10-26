@@ -1,10 +1,11 @@
-import { toWritableResults, allListsEmpty, notMissing } from '../ManageExerciseList.helper'
+import { toWritableResults, allListsEmpty } from '../ManageExerciseList.helper'
+import { notEmpty } from '@utils/helpers'
 
 test('.notMissing returns true or false for strings', () => {
-    expect(typeof notMissing === 'function').toBeTruthy()
-    expect(notMissing('12345')).toBeTruthy()
-    expect(notMissing('')).toBeFalsy()
-    expect(notMissing()).toBeFalsy()
+    expect(typeof notEmpty === 'function').toBeTruthy()
+    expect(notEmpty('12345')).toBeTruthy()
+    expect(notEmpty('')).toBeFalsy()
+    expect(notEmpty()).toBeFalsy()
 })
 
 test('.allListsEmpty returns true for a list of empty lists', () => {
