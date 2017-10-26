@@ -4,6 +4,7 @@ import { setFailed, setDone } from '../../../state/actions/exerciseActions'
 import { withRouter } from 'react-router-dom'
 import { Footer as _Footer } from './Footer'
 import { WORKOUT_STATUS } from '../../../state/constants'
+import { toClass, lifecycle } from 'recompose'
 
 import {
     startWorkoutWithCountdown,
@@ -51,4 +52,19 @@ const mapActionsToProps = (dispatch, { history }) => {
     }
 }
 
-export const Footer = withRouter(connect(mapStateToProps, mapActionsToProps)(_Footer))
+const withLifecycle = lifecycle({
+    componentWillReceiveProps({ shouldEndExercise, fireCompleteExercise, nextExercise: { exerciseKey }, currentResults }) {
+        if (shouldEndExercise) {
+            return fireCompleteExercise(exerciseKey, currentResults)
+        }
+    }
+})
+
+export const enhance = compose(
+    withRouter,
+    connect(mapStateToProps, mapActionsToProps),
+    toClass,
+    withLifecycle
+)
+
+export const Footer = enhance(_Footer)
