@@ -7,8 +7,8 @@ import {
     exerciseListHeaderText
 } from './ExerciseList.glamor'
 import { ExerciseListRow } from './ExerciseListRow'
-import { compose, not, map, isEmpty } from 'ramda'
-import { branch, RenderNothing } from '@utils/helpers'
+import { map } from 'ramda'
+import { branch, RenderNothing, notEmpty } from '@utils/helpers'
 
 export const ExerciseListHeader = ({title}) => {
     return (
@@ -29,7 +29,6 @@ const _ExerciseList = ({ list, title, onOrderChangeClick }) => {
         <ExerciseListRow key={item.exerciseKey} {...item} onRowClick={() => onOrderChangeClick(item)} />
     )
     const renderRows = () => map(row, list)
-    const notEmpty = compose(not, isEmpty)
 
     return branch(
         notEmpty(list),
