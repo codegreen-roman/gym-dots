@@ -2,7 +2,9 @@ import {
     curry,
     compose,
     not,
-    isEmpty
+    isEmpty,
+    addIndex,
+    map
 } from 'ramda'
 /**
  * branch
@@ -32,3 +34,7 @@ export const RenderNothing = () => null
  */
 export const notEmpty = compose(not, isEmpty)
 // tried const notEmpty = complement(isEmpty), which is the same, but test ManageExerciseList.helper.spec.js:8 failed =(
+
+
+// Adding indexes to map
+export const mapIndexed = addIndex(map)
