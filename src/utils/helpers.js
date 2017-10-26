@@ -1,4 +1,8 @@
-import { curry } from 'ramda'
+import {
+    curry,
+    complement,
+    isEmpty
+} from 'ramda'
 /**
  * branch
  *
@@ -21,3 +25,8 @@ export const branch = curry((predicatefn, comp1, comp2) => (predicatefn ? comp1 
  * Example usage: branch(isEmpty(items), <RenderNothing />, <Item items={items} />)
  */
 export const RenderNothing = () => null
+
+/**
+ * Opposite of isEmpty
+ */
+export const notEmpty = complement(isEmpty)
