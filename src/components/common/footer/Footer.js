@@ -4,9 +4,9 @@ import { bool } from 'prop-types'
 import { branch, RenderNothing } from '@utils/helpers'
 
 
-export const Footer = (props, { hidden }) => (
+export const Footer = (props) => (
     branch(
-        hidden,
+        props.hidden,
         <RenderNothing />,
         <FooterActivityControls {...props} />
     )
