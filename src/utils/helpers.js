@@ -4,7 +4,8 @@ import {
     not,
     isEmpty,
     addIndex,
-    map
+    map,
+    prop
 } from 'ramda'
 /**
  * branch
@@ -22,7 +23,6 @@ import {
  */
 export const branch = curry((predicatefn, comp1, comp2) => (predicatefn ? comp1 : comp2)); // eslint-disable-line
 
-
 /**
  * Function (Component) that returns null.
  * Example usage: branch(isEmpty(items), <RenderNothing />, <Item items={items} />)
@@ -35,6 +35,12 @@ export const RenderNothing = () => null
 export const notEmpty = compose(not, isEmpty)
 // tried const notEmpty = complement(isEmpty), which is the same, but test ManageExerciseList.helper.spec.js:8 failed =(
 
-
-// Adding indexes to map
+/**
+ * Adding indexes to map
+ */
 export const mapIndexed = addIndex(map)
+
+/**
+ * Exctracting event.target.value
+ */
+export const extractTargetValue = compose(prop('value'), prop('target'))
