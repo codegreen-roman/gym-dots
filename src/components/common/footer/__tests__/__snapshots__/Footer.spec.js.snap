@@ -111,7 +111,7 @@ exports[`Footer component in training status matches the previous snapshot 1`] =
         <div
           className="css-1cqgl9p"
         >
-          <_FooterButtons
+          <_FooterActivityControls
             blocked={false}
             currentResults={
               Array [
@@ -164,7 +164,7 @@ exports[`Footer component in training status matches the previous snapshot 1`] =
                 </button>
               </FooterButton>
             </div>
-          </_FooterButtons>
+          </_FooterActivityControls>
         </div>
       </glamorous(div)>
     </footer>
@@ -283,7 +283,7 @@ exports[`Footer component snapshot blocked matches the previous snapshot 1`] = `
         <div
           className="css-1cqgl9p"
         >
-          <_FooterButtons
+          <_FooterActivityControls
             blocked={true}
             currentResults={
               Array [
@@ -320,7 +320,7 @@ exports[`Footer component snapshot blocked matches the previous snapshot 1`] = `
                 Starting ...
               </button>
             </FooterButton>
-          </_FooterButtons>
+          </_FooterActivityControls>
         </div>
       </glamorous(div)>
     </footer>
@@ -439,7 +439,7 @@ exports[`Footer component snapshot not blocked matches the mounted snapshot 1`] 
         <div
           className="css-1cqgl9p"
         >
-          <_FooterButtons
+          <_FooterActivityControls
             blocked={false}
             currentResults={
               Array [
@@ -476,7 +476,7 @@ exports[`Footer component snapshot not blocked matches the mounted snapshot 1`] 
                 Start Workout
               </button>
             </FooterButton>
-          </_FooterButtons>
+          </_FooterActivityControls>
         </div>
       </glamorous(div)>
     </footer>
