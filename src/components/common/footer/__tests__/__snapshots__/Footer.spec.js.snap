@@ -111,7 +111,7 @@ exports[`Footer component in training status matches the previous snapshot 1`] =
         <div
           className="css-1cqgl9p"
         >
-          <_FooterActivityControls
+          <_FooterControlsHolder
             blocked={false}
             currentResults={
               Array [
@@ -136,35 +136,61 @@ exports[`Footer component in training status matches the previous snapshot 1`] =
             shouldEndExercise={false}
             training={true}
           >
-            <div>
-              <FooterButton
-                clickHandler={[Function]}
-                data-test="failButton"
-                disabled={false}
-              >
-                <button
-                  data-css-1kg5b3n=""
+            <FooterWorkoutControls
+              blocked={false}
+              currentResults={
+                Array [
+                  true,
+                  true,
+                  true,
+                  true,
+                  true,
+                ]
+              }
+              fireCompleteExercise={[Function]}
+              fireStartWorkout={[Function]}
+              hidden={false}
+              loadDefaults={[Function]}
+              nextExercise={
+                Object {
+                  "exerciseKey": "thisIsTheUniqueKey",
+                }
+              }
+              onSetDone={[Function]}
+              onSetFailed={[Function]}
+              shouldEndExercise={false}
+              training={true}
+            >
+              <div>
+                <FooterButton
+                  clickHandler={[Function]}
+                  data-test="failButton"
                   disabled={false}
-                  onClick={[Function]}
                 >
-                  Failed
-                </button>
-              </FooterButton>
-              <FooterButton
-                clickHandler={[Function]}
-                data-test="doneButton"
-                disabled={false}
-              >
-                <button
-                  data-css-1kg5b3n=""
+                  <button
+                    data-css-1kg5b3n=""
+                    disabled={false}
+                    onClick={[Function]}
+                  >
+                    Failed
+                  </button>
+                </FooterButton>
+                <FooterButton
+                  clickHandler={[Function]}
+                  data-test="doneButton"
                   disabled={false}
-                  onClick={[Function]}
                 >
-                  Done
-                </button>
-              </FooterButton>
-            </div>
-          </_FooterActivityControls>
+                  <button
+                    data-css-1kg5b3n=""
+                    disabled={false}
+                    onClick={[Function]}
+                  >
+                    Done
+                  </button>
+                </FooterButton>
+              </div>
+            </FooterWorkoutControls>
+          </_FooterControlsHolder>
         </div>
       </glamorous(div)>
     </footer>
@@ -283,7 +309,7 @@ exports[`Footer component snapshot blocked matches the previous snapshot 1`] = `
         <div
           className="css-1cqgl9p"
         >
-          <_FooterActivityControls
+          <_FooterControlsHolder
             blocked={true}
             currentResults={
               Array [
@@ -308,19 +334,74 @@ exports[`Footer component snapshot blocked matches the previous snapshot 1`] = `
             shouldEndExercise={false}
             training={false}
           >
-            <FooterButton
-              clickHandler={[Function]}
-              disabled={true}
+            <withHandlers(_FooterWorkoutStart)
+              blocked={true}
+              currentResults={
+                Array [
+                  true,
+                  true,
+                  true,
+                  true,
+                  true,
+                ]
+              }
+              fireCompleteExercise={[Function]}
+              fireStartWorkout={[Function]}
+              hidden={false}
+              loadDefaults={[Function]}
+              nextExercise={
+                Object {
+                  "exerciseKey": "thisIsTheUniqueKey",
+                }
+              }
+              onSetDone={[Function]}
+              onSetFailed={[Function]}
+              shouldEndExercise={false}
+              training={false}
             >
-              <button
-                data-css-1kg5b3n=""
-                disabled={true}
-                onClick={[Function]}
+              <_FooterWorkoutStart
+                blocked={true}
+                currentResults={
+                  Array [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                  ]
+                }
+                fireCompleteExercise={[Function]}
+                fireStartWorkout={[Function]}
+                hidden={false}
+                loadDefaults={[Function]}
+                nextExercise={
+                  Object {
+                    "exerciseKey": "thisIsTheUniqueKey",
+                  }
+                }
+                onSetDone={[Function]}
+                onSetFailed={[Function]}
+                shouldEndExercise={false}
+                startButtonHandler={[Function]}
+                training={false}
               >
-                Starting ...
-              </button>
-            </FooterButton>
-          </_FooterActivityControls>
+                <div>
+                  <FooterButton
+                    clickHandler={[Function]}
+                    disabled={true}
+                  >
+                    <button
+                      data-css-1kg5b3n=""
+                      disabled={true}
+                      onClick={[Function]}
+                    >
+                      Starting ...
+                    </button>
+                  </FooterButton>
+                </div>
+              </_FooterWorkoutStart>
+            </withHandlers(_FooterWorkoutStart)>
+          </_FooterControlsHolder>
         </div>
       </glamorous(div)>
     </footer>
@@ -439,7 +520,7 @@ exports[`Footer component snapshot not blocked matches the mounted snapshot 1`] 
         <div
           className="css-1cqgl9p"
         >
-          <_FooterActivityControls
+          <_FooterControlsHolder
             blocked={false}
             currentResults={
               Array [
@@ -464,19 +545,74 @@ exports[`Footer component snapshot not blocked matches the mounted snapshot 1`] 
             shouldEndExercise={false}
             training={false}
           >
-            <FooterButton
-              clickHandler={[Function]}
-              disabled={false}
+            <withHandlers(_FooterWorkoutStart)
+              blocked={false}
+              currentResults={
+                Array [
+                  true,
+                  true,
+                  true,
+                  true,
+                  true,
+                ]
+              }
+              fireCompleteExercise={[Function]}
+              fireStartWorkout={[Function]}
+              hidden={false}
+              loadDefaults={[Function]}
+              nextExercise={
+                Object {
+                  "exerciseKey": "thisIsTheUniqueKey",
+                }
+              }
+              onSetDone={[Function]}
+              onSetFailed={[Function]}
+              shouldEndExercise={false}
+              training={false}
             >
-              <button
-                data-css-1kg5b3n=""
-                disabled={false}
-                onClick={[Function]}
+              <_FooterWorkoutStart
+                blocked={false}
+                currentResults={
+                  Array [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                  ]
+                }
+                fireCompleteExercise={[Function]}
+                fireStartWorkout={[Function]}
+                hidden={false}
+                loadDefaults={[Function]}
+                nextExercise={
+                  Object {
+                    "exerciseKey": "thisIsTheUniqueKey",
+                  }
+                }
+                onSetDone={[Function]}
+                onSetFailed={[Function]}
+                shouldEndExercise={false}
+                startButtonHandler={[Function]}
+                training={false}
               >
-                Start Workout
-              </button>
-            </FooterButton>
-          </_FooterActivityControls>
+                <div>
+                  <FooterButton
+                    clickHandler={[Function]}
+                    disabled={false}
+                  >
+                    <button
+                      data-css-1kg5b3n=""
+                      disabled={false}
+                      onClick={[Function]}
+                    >
+                      Start Workout
+                    </button>
+                  </FooterButton>
+                </div>
+              </_FooterWorkoutStart>
+            </withHandlers(_FooterWorkoutStart)>
+          </_FooterControlsHolder>
         </div>
       </glamorous(div)>
     </footer>
@@ -544,11 +680,13 @@ exports[`Footer component snapshot not blocked matches the rendered snapshot 1`]
   <div
     class="css-1cqgl9p"
   >
-    <button
-      data-css-1kg5b3n=""
-    >
-      Start Workout
-    </button>
+    <div>
+      <button
+        data-css-1kg5b3n=""
+      >
+        Start Workout
+      </button>
+    </div>
   </div>
 </footer>
 `;
