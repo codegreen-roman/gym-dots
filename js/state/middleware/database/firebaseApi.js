@@ -1,6 +1,3 @@
-/* eslint no-unused-vars: off */
-/* eslint no-console: off */
-
 import { types } from '../../common/constants'
 import { toWritableResults } from '../../../components/views/activity/preWorkout/manageExerciseList/ManageExerciseList.helper'
 
