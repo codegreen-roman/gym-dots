@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LanguageSelector component onChange should pass a selected value to the onChange handler 1`] = `
+<select
+  onChange={[Function]}
+>
+  <option
+    key="en"
+    value="en"
+  >
+    en
+  </option>
+  <option
+    key="ee"
+    value="ee"
+  >
+    ee
+  </option>
+  <option
+    key="ru"
+    value="ru"
+  >
+    ru
+  </option>
+</select>
+`;
+
+exports[`LanguageSelector component onChange should pass a selected value to the onChange handler 2`] = `
+<select
+  onChange={[Function]}
+>
+  <option
+    key="en"
+    value="en"
+  >
+    en
+  </option>
+  <option
+    key="ee"
+    value="ee"
+  >
+    ee
+  </option>
+  <option
+    key="ru"
+    value="ru"
+  >
+    ru
+  </option>
+</select>
+`;
+
+exports[`LanguageSelector component should render 1`] = `
+<select
+  onChange={[Function]}
+>
+  <option
+    key="en"
+    value="en"
+  >
+    en
+  </option>
+  <option
+    key="ee"
+    value="ee"
+  >
+    ee
+  </option>
+  <option
+    key="ru"
+    value="ru"
+  >
+    ru
+  </option>
+</select>
+`;

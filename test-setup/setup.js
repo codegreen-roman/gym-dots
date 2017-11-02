@@ -9,4 +9,4 @@ configure({ adapter: new Adapter() })
 expect.extend(matcher)
 expect.addSnapshotSerializer(serializer)
 
-jest.mock('../js/state/middleware/database/database')
+jest.mock('../src/state/middleware/database/database')

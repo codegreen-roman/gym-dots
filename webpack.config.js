@@ -12,6 +12,8 @@ let pathsToClean = [
     'build'
 ]
 
+const srcDir = 'src'
+
 const prodPlugins = [
     new webpack.DefinePlugin({
         'process.env': {
@@ -71,7 +73,7 @@ let plugins = [
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new GoogleFontsPlugin({
         fonts: [
-            { family: 'Nunito', variants: [ '300', '400', '600', '700' ] }
+            { family: 'Nunito', variants: ['300', '400', '600', '700'] }
         ],
         local: false
     })
@@ -87,7 +89,7 @@ if (process.env.NODE_ENV === 'production') {
 module.exports = {
     context: __dirname,
     entry: {
-        app: './js/index.js',
+        app: `./${srcDir}/index.js`,
         trash: [
             'moment',
         ],
@@ -119,12 +121,13 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.json'],
         modules: [
-            path.resolve('./js/state/'),
+            path.resolve(`./${srcDir}/state/`),
+            path.resolve(`./${srcDir}/`),
             path.resolve('./node_modules')
         ],
         alias: {
-            '@components': path.resolve(__dirname, './js/components'),
-            '@utils': path.resolve(__dirname, './js/utils')
+            '@components': path.resolve(__dirname, `./${srcDir}/components`),
+            '@utils': path.resolve(__dirname, `./${srcDir}/utils`)
         }
     },
     stats: {
@@ -149,7 +152,7 @@ module.exports = {
                 use: {
                     loader: 'eslint-loader'
                 },
-                include: path.resolve(__dirname, 'js')
+                include: path.resolve(__dirname, srcDir)
             },
             {
                 test: /\.json$/,
@@ -162,7 +165,7 @@ module.exports = {
                 use: {
                     loader: 'babel-loader'
                 },
-                include: path.resolve(__dirname, 'js')
+                include: path.resolve(__dirname, srcDir)
             },
             {
                 test: /\.css$/,

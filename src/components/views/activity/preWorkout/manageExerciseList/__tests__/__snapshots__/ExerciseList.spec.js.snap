@@ -1,0 +1,322 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExerciseList component Clicking on a row should match the snapshot 1`] = `
+.css-1rl8e2c,
+[data-css-1rl8e2c] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  padding-left: 40px;
+  -webkit-flex-flow: column wrap;
+}
+
+.css-1blrzta,
+[data-css-1blrzta] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-top: 1px solid #E4EBF5;
+  border-bottom: 1px solid #E4EBF5;
+  padding: 10px 0 10px 40px;
+}
+
+.css-1dke3ly,
+[data-css-1dke3ly] {
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  background: #83D1F3;
+  border: 3px solid #46B4E3;
+  margin-left: -1px;
+}
+
+.css-iqmdqc,
+[data-css-iqmdqc] {
+  font-size: 16px;
+  font-weight: 500;
+  color: #919AA7;
+  margin-left: 30px;
+  text-transform: capitalize;
+}
+
+.css-wd60qt,
+[data-css-wd60qt] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+}
+
+.css-eypxw5,
+[data-css-eypxw5] {
+  width: 100%;
+  margin-left: 30px;
+  margin-top: 40px;
+}
+
+.css-1vhzv1k,
+[data-css-1vhzv1k] {
+  font-size: 22px;
+  font-weight: 600;
+  color: #5E6B7D;
+  text-transform: capitalize;
+}
+
+.css-1q1fiqx,
+[data-css-1q1fiqx] {
+  font-size: 14px;
+  font-weight: 100;
+  color: #919AA7;
+}
+
+.css-12buxqa,
+[data-css-12buxqa] {
+  margin-top: -10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #fff;
+  -webkit-flex-flow: column wrap;
+  -webkit-align-items: center;
+}
+
+.css-ikdvzh,
+[data-css-ikdvzh] {
+  height: 55px;
+  width: 3px;
+  background: #83D1F3;
+  border-radius: 3px;
+}
+
+.css-1hvluh9,
+[data-css-1hvluh9] {
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  border: 3px solid #46B4E3;
+  margin: 4px 0;
+}
+
+<_ExerciseList
+  list={
+    Array [
+      Object {
+        "exerciseKey": "xxy",
+        "name": "Push-ups",
+        "reps": 20,
+        "restTime": 90,
+        "results": Array [],
+        "sets": 5,
+        "weight": 0,
+      },
+      Object {
+        "exerciseKey": "xyy",
+        "name": "Australian pull-ups",
+        "reps": 12,
+        "restTime": 30,
+        "results": Array [],
+        "sets": 5,
+        "weight": 0,
+      },
+    ]
+  }
+  onOrderChangeClick={[Function]}
+  title="Some title"
+>
+  <div>
+    <ExerciseListHeader
+      title="Some title"
+    >
+      <div
+        data-css-1blrzta=""
+        data-test="list-title"
+      >
+        <div
+          data-css-1dke3ly=""
+        />
+        <div
+          data-css-iqmdqc=""
+        >
+          Some title
+        </div>
+      </div>
+    </ExerciseListHeader>
+    <ul
+      data-css-1rl8e2c=""
+      data-test="list"
+    >
+      <_ExerciseListRow
+        exerciseKey="xxy"
+        key="0"
+        name="Push-ups"
+        onRowClick={[Function]}
+        reps={20}
+        restTime={90}
+        results={Array []}
+        sets={5}
+        weight={0}
+      >
+        <li
+          data-css-wd60qt=""
+          data-test="exercise-row-xxy"
+          onClick={[Function]}
+        >
+          <div
+            data-css-12buxqa=""
+          >
+            <div
+              data-css-ikdvzh=""
+            />
+            <div
+              data-css-1hvluh9=""
+            />
+          </div>
+          <div
+            data-css-eypxw5=""
+          >
+            <div
+              data-css-1vhzv1k=""
+            >
+              Push-ups
+            </div>
+            <div
+              data-css-1q1fiqx=""
+              data-test="exercise-details"
+            >
+              0
+               kg x 
+              20
+               reps x 
+              5
+               sets
+            </div>
+          </div>
+        </li>
+      </_ExerciseListRow>
+      <_ExerciseListRow
+        exerciseKey="xyy"
+        key="1"
+        name="Australian pull-ups"
+        onRowClick={[Function]}
+        reps={12}
+        restTime={30}
+        results={Array []}
+        sets={5}
+        weight={0}
+      >
+        <li
+          data-css-wd60qt=""
+          data-test="exercise-row-xyy"
+          onClick={[Function]}
+        >
+          <div
+            data-css-12buxqa=""
+          >
+            <div
+              data-css-ikdvzh=""
+            />
+            <div
+              data-css-1hvluh9=""
+            />
+          </div>
+          <div
+            data-css-eypxw5=""
+          >
+            <div
+              data-css-1vhzv1k=""
+            >
+              Australian pull-ups
+            </div>
+            <div
+              data-css-1q1fiqx=""
+              data-test="exercise-details"
+            >
+              0
+               kg x 
+              12
+               reps x 
+              5
+               sets
+            </div>
+          </div>
+        </li>
+      </_ExerciseListRow>
+    </ul>
+  </div>
+</_ExerciseList>
+`;
+
+exports[`ExerciseList component should have list header 1`] = `
+<ExerciseListHeader
+  title="Some title"
+/>
+`;
+
+exports[`ExerciseList component should render without crashing 1`] = `
+.css-1rl8e2c,
+[data-css-1rl8e2c] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  padding-left: 40px;
+  -webkit-flex-flow: column wrap;
+}
+
+<div>
+  <ExerciseListHeader
+    title="Some title"
+  />
+  <ul
+    data-css-1rl8e2c=""
+    data-test="list"
+  >
+    <_ExerciseListRow
+      exerciseKey="xxy"
+      key="0"
+      name="Push-ups"
+      onRowClick={[Function]}
+      reps={20}
+      restTime={90}
+      results={Array []}
+      sets={5}
+      weight={0}
+    />
+    <_ExerciseListRow
+      exerciseKey="xyy"
+      key="1"
+      name="Australian pull-ups"
+      onRowClick={[Function]}
+      reps={12}
+      restTime={30}
+      results={Array []}
+      sets={5}
+      weight={0}
+    />
+  </ul>
+</div>
+`;

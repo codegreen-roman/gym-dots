@@ -1,0 +1,159 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Welcome component Shallow snapshot matches the previous 1`] = `
+.css-kj33m7,
+[data-css-kj33m7] {
+  position: relative;
+  height: 100vh;
+}
+
+.css-ut9bv,
+[data-css-ut9bv] {
+  height: 147px;
+  padding: 20px;
+}
+
+.css-5vm3an,
+[data-css-5vm3an] {
+  position: relative;
+  height: calc(100% - 147px);
+  padding: 20px;
+  background-image: -webkit-linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
+  background-image: -moz-linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
+  background-image: linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
+}
+
+.css-1ixk24o,
+[data-css-1ixk24o] {
+  text-transform: uppercase;
+  color: #919AA7;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.css-1qe4ilz,
+[data-css-1qe4ilz] {
+  color: #5E6B7D;
+  font-size: 23px;
+}
+
+.css-1frxcgx,
+[data-css-1frxcgx] {
+  position: absolute;
+  bottom: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  -webkit-flex-flow: column wrap;
+}
+
+.css-16vjom5,
+[data-css-16vjom5] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
+}
+
+.css-3l7lts,
+[data-css-3l7lts] {
+  text-transform: capitalize;
+  color: #5E6B7D;
+}
+
+<section
+  data-css-kj33m7=""
+>
+  <div
+    data-css-ut9bv=""
+  >
+    <div
+      data-css-1ixk24o=""
+      data-test="date"
+    >
+      Saturday, Jul 15th
+    </div>
+    <div
+      data-css-1qe4ilz=""
+    >
+      Gym dots
+    </div>
+  </div>
+  <div
+    data-css-5vm3an=""
+  >
+    <div>
+      Welcome!
+    </div>
+    <div>
+      Login into gym dots systems
+    </div>
+    <div
+      data-css-1frxcgx=""
+    >
+      <div
+        data-css-16vjom5=""
+      >
+        <Icon
+          color="#5E6B7D"
+          height={26}
+          iconName="facebook"
+          viewBox="0 0 24 24"
+          width={26}
+        />
+        <button
+          data-css-3l7lts=""
+          data-test="facebook"
+          onClick={[Function]}
+        >
+          login with facebook
+        </button>
+      </div>
+      <div
+        data-css-16vjom5=""
+      >
+        <Icon
+          color="#5E6B7D"
+          height={23}
+          iconName="twitter"
+          viewBox="0 0 20 17"
+          width={23}
+        />
+        <button
+          data-css-3l7lts=""
+          data-test="twitter"
+          onClick={[Function]}
+        >
+          login with twitter
+        </button>
+      </div>
+      <div
+        data-css-16vjom5=""
+      >
+        <Icon
+          color="#5E6B7D"
+          height={26}
+          iconName="guest"
+          viewBox="0 0 24 24"
+          width={26}
+        />
+        <button
+          data-css-3l7lts=""
+          data-test="guest"
+          onClick={[Function]}
+        >
+          login as guest
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+`;
