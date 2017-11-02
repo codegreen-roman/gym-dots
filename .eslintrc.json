@@ -21,6 +21,7 @@
         }
     },
     "rules": {
+        "max-len": ["error", 120],
         "jest/no-disabled-tests": "warn",
         "jest/no-identical-title": "error",
         "jest/valid-expect": "error",
