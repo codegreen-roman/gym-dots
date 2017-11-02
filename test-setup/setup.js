@@ -1,4 +1,6 @@
 import { matcher, serializer } from 'jest-glamor-react'
+
+// eslint-disable-next-line no-unused-vars
 import { raf } from './tempPolyfills'
 
 import { configure } from 'enzyme'

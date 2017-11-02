@@ -10,16 +10,19 @@ exports[`ManageExerciseList component No exercises case should show 'You got no 
     upcoming={Array []}
   />
   <_ExerciseList
+    key="upcoming"
     list={Array []}
     onOrderChangeClick={[Function]}
     title="upcoming"
   />
   <_ExerciseList
+    key="completed"
     list={Array []}
     onOrderChangeClick={[Function]}
     title="completed"
   />
   <_ExerciseList
+    key="skipped"
     list={Array []}
     onOrderChangeClick={[Function]}
     title="skipped"
@@ -37,16 +40,19 @@ exports[`ManageExerciseList component Session is completed should show the compl
     upcoming={Array []}
   />
   <_ExerciseList
+    key="upcoming"
     list={Array []}
     onOrderChangeClick={[Function]}
     title="upcoming"
   />
   <_ExerciseList
+    key="completed"
     list={Array []}
     onOrderChangeClick={[Function]}
     title="completed"
   />
   <_ExerciseList
+    key="skipped"
     list={Array []}
     onOrderChangeClick={[Function]}
     title="skipped"
