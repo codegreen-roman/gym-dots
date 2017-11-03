@@ -2,43 +2,9 @@
 
 exports[`ManageExerciseList component No exercises case should show 'You got no exercises yet' 1`] = `
 <div>
-  <Congrats
-    sessionDone={false}
-    sessionKey=""
-  />
-  <NoExercises
-    upcoming={Array []}
-  />
-  <_ExerciseList
-    key="upcoming"
-    list={Array []}
-    onOrderChangeClick={[Function]}
-    title="upcoming"
-  />
-  <_ExerciseList
-    key="completed"
-    list={Array []}
-    onOrderChangeClick={[Function]}
-    title="completed"
-  />
-  <_ExerciseList
-    key="skipped"
-    list={Array []}
-    onOrderChangeClick={[Function]}
-    title="skipped"
-  />
-</div>
-`;
-
-exports[`ManageExerciseList component Session is completed should show the completed message 1`] = `
-<div>
-  <Congrats
-    sessionDone={true}
-    sessionKey="thisIsUniqueSessionKey"
-  />
-  <NoExercises
-    upcoming={Array []}
-  />
+  <span>
+    You got no exercises yet
+  </span>
   <_ExerciseList
     key="upcoming"
     list={Array []}

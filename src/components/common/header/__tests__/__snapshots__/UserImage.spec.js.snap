@@ -1,6 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`UserImage component for a logged in user should render the image for the user 1`] = `
+.css-5sn766,
+[data-css-5sn766] {
+  width: 3rem;
+  border-radius: 2rem;
+}
+
 <img
   alt="This is your avatar"
   class="css-5sn766"

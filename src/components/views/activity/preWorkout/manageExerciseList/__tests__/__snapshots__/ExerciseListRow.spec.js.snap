@@ -1,6 +1,75 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ExerciseListRow component should render exercise 1`] = `
+.css-wd60qt,
+[data-css-wd60qt] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+}
+
+.css-eypxw5,
+[data-css-eypxw5] {
+  width: 100%;
+  margin-left: 30px;
+  margin-top: 40px;
+}
+
+.css-1vhzv1k,
+[data-css-1vhzv1k] {
+  font-size: 22px;
+  font-weight: 600;
+  color: #5E6B7D;
+  text-transform: capitalize;
+}
+
+.css-1q1fiqx,
+[data-css-1q1fiqx] {
+  font-size: 14px;
+  font-weight: 100;
+  color: #919AA7;
+}
+
+.css-12buxqa,
+[data-css-12buxqa] {
+  margin-top: -10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #fff;
+  -webkit-flex-flow: column wrap;
+  -webkit-align-items: center;
+}
+
+.css-ikdvzh,
+[data-css-ikdvzh] {
+  height: 55px;
+  width: 3px;
+  background: #83D1F3;
+  border-radius: 3px;
+}
+
+.css-1hvluh9,
+[data-css-1hvluh9] {
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  border: 3px solid #46B4E3;
+  margin: 4px 0;
+}
+
 <li
   data-css-wd60qt=""
   data-test="exercise-row-zzt"
