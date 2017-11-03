@@ -3,7 +3,7 @@ import { compose, test, not, isEmpty } from 'ramda'
 import { setFailed, setDone } from '../../../state/actions/exerciseActions'
 import { withRouter } from 'react-router-dom'
 import { Footer as _Footer } from './Footer'
-import { WORKOUT_STATUS } from '../../../state/constants'
+import { WORKOUT_STATUS } from '../../../state/common/workoutStatus'
 import { toClass, lifecycle } from 'recompose'
 
 import {
@@ -35,8 +35,6 @@ const mapActionsToProps = (dispatch, { history }) => {
     const goToPreparingAgain = compose(dispatch, setIntermediateWorkout)
     const completeCurrentExercise = compose(dispatch, moveExerciseToCompleted)
 
-    // subscribeToAppDefaultsChanges(dispatch)
-
     return {
         fireStartWorkout: (nextExercise) => {
             startWorkout(nextExercise)
@@ -53,7 +51,8 @@ const mapActionsToProps = (dispatch, { history }) => {
 }
 
 const withLifecycle = lifecycle({
-    componentWillReceiveProps({ shouldEndExercise, fireCompleteExercise, nextExercise: { exerciseKey }, currentResults }) {
+    componentWillReceiveProps({ shouldEndExercise, fireCompleteExercise, nextExercise, currentResults }) {
+        const { exerciseKey } = nextExercise
         if (shouldEndExercise) {
             return fireCompleteExercise(exerciseKey, currentResults)
         }

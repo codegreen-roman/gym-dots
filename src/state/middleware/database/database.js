@@ -1,8 +1,8 @@
 import firebase from 'firebase'
-import { FIREBASE_CINFIG } from './config'
+import { FIREBASE_CONFIG } from './config'
 import { pick } from 'ramda'
 
-export const firebaseApp = firebase.initializeApp(FIREBASE_CINFIG)
+export const firebaseApp = firebase.initializeApp(FIREBASE_CONFIG)
 export const database = firebase.database()
 export const auth = firebaseApp.auth()
 

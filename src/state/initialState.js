@@ -1,4 +1,4 @@
-import { WORKOUT_STATUS } from './constants'
+import { WORKOUT_STATUS } from './common/workoutStatus'
 
 export const INITIAL_STATE = {
     auth: {
@@ -12,6 +12,6 @@ export const INITIAL_STATE = {
         upcoming: [],
         skipped: [],
         completed: [],
-    },
-    stats: {}
+    }
+    // stats: {}
 }

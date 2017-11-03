@@ -5,16 +5,19 @@ exports[`LanguageSelector component onChange should pass a selected value to the
   onChange={[Function]}
 >
   <option
+    key="en"
     value="en"
   >
     en
   </option>
   <option
+    key="ee"
     value="ee"
   >
     ee
   </option>
   <option
+    key="ru"
     value="ru"
   >
     ru
@@ -27,16 +30,19 @@ exports[`LanguageSelector component onChange should pass a selected value to the
   onChange={[Function]}
 >
   <option
+    key="en"
     value="en"
   >
     en
   </option>
   <option
+    key="ee"
     value="ee"
   >
     ee
   </option>
   <option
+    key="ru"
     value="ru"
   >
     ru
@@ -49,16 +55,19 @@ exports[`LanguageSelector component should render 1`] = `
   onChange={[Function]}
 >
   <option
+    key="en"
     value="en"
   >
     en
   </option>
   <option
+    key="ee"
     value="ee"
   >
     ee
   </option>
   <option
+    key="ru"
     value="ru"
   >
     ru

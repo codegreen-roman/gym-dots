@@ -1,9 +1,8 @@
 import { connect } from 'react-redux'
 import { compose } from 'ramda'
-import { authWith, authAnonymously } from '../../../state/actions/firebase/databaseActions'
-import { Welcome as _Welcome } from './Welcome'
+import { Welcome as Display } from './Welcome'
 import { withRouter } from 'react-router-dom'
-
+import { authAnonymously, authWith } from './Welcome.actions'
 
 const mapStateToProps = ({ auth: { user, status } }, { dateStr }) => ({ user, status, dateStr })
 
@@ -14,4 +13,4 @@ const mapActionsToProps = dispatch => {
     }
 }
 
-export const Welcome = withRouter(connect(mapStateToProps, mapActionsToProps)(_Welcome))
+export const Welcome = withRouter(connect(mapStateToProps, mapActionsToProps)(Display))

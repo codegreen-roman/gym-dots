@@ -1,12 +1,16 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Redirect } from 'react-router-dom'
 import { shape, arrayOf, string, number, bool } from 'prop-types'
 import { Exercise } from './Exercise/Exercise'
+import { isNil } from 'ramda'
+import { currentExerciseOrNil } from '../../../../state/selectors/currentExercise'
 
-// kind of the container component
-// to hold the data about the current training
 const _Training = ({ currentExercise }) => {
+
+    if (isNil(currentExercise)) return (
+        <Redirect to={'/'} />
+    )
 
     return (
         <section>
@@ -24,8 +28,11 @@ _Training.propTypes = {
         reps: number.isRequired,
         weight: number.isRequired,
         results: arrayOf(bool).isRequired
-    }).isRequired
+    })
 }
 
-const mapStateToProps = ({ currentExercise }) => ({ currentExercise })
+const mapStateToProps = ({ currentExercise }) => ({
+    currentExercise: currentExerciseOrNil(currentExercise)
+})
+
 export const Training = withRouter(connect(mapStateToProps)(_Training))

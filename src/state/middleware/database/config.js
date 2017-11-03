@@ -1,4 +1,4 @@
-export const FIREBASE_CINFIG = {
+export const FIREBASE_CONFIG = {
     apiKey: 'AIzaSyARA0ptkxvGrwaTkVT_6SSciStLVQ7D-iU',
     authDomain: 'gym-dots.firebaseapp.com',
     databaseURL: 'https://gym-dots.firebaseio.com',

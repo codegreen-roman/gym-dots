@@ -34,7 +34,12 @@ export const Header = ({ dateStr, subTitle, userDisplayName, exerciseName, logou
 
     const renderTitle = () => isEmpty(exerciseName) ? subTitle : exerciseName
 
-    const renderLogoutAndUser = () => branch(userDisplayName, <User user={userDisplayName} logout={logout} photoURL={photoURL} />, <RenderNothing />)
+    const renderLogoutAndUser = () =>
+        branch(
+            userDisplayName,
+            <User user={userDisplayName} logout={logout} photoURL={photoURL} />,
+            <RenderNothing />
+        )
 
     return (
         <header {...header}>

@@ -1,25 +1,21 @@
 import { connect } from 'react-redux'
-import { sessionDoneSelector } from './selctors'
-import { exercisesOrderChange, saveExercisesResults } from '../../../../../state/actions'
 import { compose } from 'ramda'
+import { allListsEmpty } from './ManageExerciseList.helper'
 import { ManageExerciseList as _ManageExerciseList } from './ManageExerciseList'
+import { exercisesOrderChange } from './actions'
 
-const mapStateToProps = ({ exercises }) => {
-
-    const { upcoming, completed, skipped, sessionKey, name } = exercises
-    return {
-        upcoming,
-        completed,
-        skipped,
-        name,
-        sessionKey,
-        sessionDone: sessionDoneSelector(exercises)
-    }
-}
+const mapStateToProps = ({ exercises: { upcoming, completed, skipped, sessionKey, name }, auth: { uid } }) => ({
+    upcoming,
+    completed,
+    skipped,
+    name,
+    sessionKey,
+    sessionDone: allListsEmpty([upcoming, skipped]) && !!sessionKey,
+    userKey: uid
+})
 
 const mapActionsToProps = dispatch => {
     return {
-        saveResults: compose(dispatch, saveExercisesResults),
         onOrderChange: compose(dispatch, exercisesOrderChange)
     }
 }

@@ -55,7 +55,7 @@ describe('ExerciseList component', () => {
 
     it('should have list of type ul', () => {
         const { list } = setup(props)
-        expect(list.node.type).toBe('ul')
+        expect(list.getElement().type).toBe('ul')
     })
 
     it('should have length of rows to be 2', () => {

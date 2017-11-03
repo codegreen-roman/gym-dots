@@ -36,7 +36,7 @@ describe('Arc Component', () => {
 
     test('should apply path when provided', () => {
         wrapper = setup('toBeDone', 'M 110 10 A 100 100 0 0 0 21.7052407 63.0528437')
-        expect(wrapper.find('path').prop('d')).toBe(path)
+        expect(wrapper).toMatchSnapshot()
     })
 
 })

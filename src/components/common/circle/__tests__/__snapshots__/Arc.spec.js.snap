@@ -1,5 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Arc Component should apply path when provided 1`] = `
+.css-8plr4h,
+[data-css-8plr4h] {
+  fill: none;
+  stroke-width: 12px;
+  stroke: lightgrey;
+}
+
+<path
+  class="css-8plr4h"
+  d="M 110 10 A 100 100 0 0 0 21.7052407 63.0528437"
+>
+  
+</path>
+`;
+
 exports[`Arc Component should render correct color by default 1`] = `
 .css-8plr4h,
 [data-css-8plr4h] {
@@ -11,7 +27,9 @@ exports[`Arc Component should render correct color by default 1`] = `
 <path
   class="css-8plr4h"
   d="M 205.1056516 79.0983006 A 100 100 0 0 0 127.3648178 11.5192247"
-/>
+>
+  
+</path>
 `;
 
 exports[`Arc Component should render correct color when completed 1`] = `
@@ -25,7 +43,9 @@ exports[`Arc Component should render correct color when completed 1`] = `
 <path
   class="css-zw8vjp"
   d="M 205.1056516 79.0983006 A 100 100 0 0 0 127.3648178 11.5192247"
-/>
+>
+  
+</path>
 `;
 
 exports[`Arc Component should render correct color when failed 1`] = `
@@ -39,5 +59,7 @@ exports[`Arc Component should render correct color when failed 1`] = `
 <path
   class="css-1tskx0m"
   d="M 205.1056516 79.0983006 A 100 100 0 0 0 127.3648178 11.5192247"
-/>
+>
+  
+</path>
 `;

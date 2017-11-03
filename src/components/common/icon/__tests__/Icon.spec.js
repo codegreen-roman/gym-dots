@@ -18,6 +18,7 @@ describe('Icon Component', () => {
 
     beforeEach(() => {
         wrapper = setup()
+        // eslint-disable-next-line max-len
         path = 'M6.491 19.991v-9.117H9.44l.442-3.557h-3.39V5.049c0-1.033.272-1.73 1.7-1.73H10V.14C9.686.097 8.607 0 7.358 0 4.74 0 2.957 1.66 2.957 4.695v2.622H0v3.557h2.957V20H6.49v-.009z'
     })
 

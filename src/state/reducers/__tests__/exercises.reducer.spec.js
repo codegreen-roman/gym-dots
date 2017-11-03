@@ -1,5 +1,8 @@
 import { exercises } from '../exercises.reducer'
-import { exercisesOrderChange, moveExerciseToCompleted, saveResultsCompleted } from '../../actions'
+import { moveExerciseToCompleted, saveResultsCompleted } from '../../actions'
+
+// todo: move the reducer
+import { exercisesOrderChange } from '../../../components/views/activity/preWorkout/manageExerciseList/actions'
 
 describe('exercisesReducer', () => {
 
