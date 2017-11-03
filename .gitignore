@@ -10,3 +10,4 @@ node_modules/
 /build/*
 /functions/
 /js-dist/
+/monitor/

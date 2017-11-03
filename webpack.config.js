@@ -5,6 +5,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const GoogleFontsPlugin = require('google-fonts-webpack-plugin')
+const WebpackMonitor = require('webpack-monitor')
 const webpack = require('webpack')
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
@@ -40,6 +41,10 @@ const prodPlugins = [
             comments: false,
         },
         exclude: [/\.min\.js$/gi] // skip pre-minified libs
+    }),
+    new WebpackMonitor({
+        capture: true,
+        launch: false,
     })
 ]
 
