@@ -5,6 +5,11 @@
         "checkJs": true,
         "jsx": "react"
     },
-    "include": ["js/**/*"],
-    "exclude": ["node_modules", "**/node_modules/*"]
+    "include": [
+        "js/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/node_modules/*"
+    ]
 }

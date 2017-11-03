@@ -4,12 +4,15 @@ const path = require('path')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const GoogleFontsPlugin = require('google-fonts-webpack-plugin')
 const webpack = require('webpack')
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 let pathsToClean = [
     'build'
 ]
+
+const srcDir = 'src'
 
 const prodPlugins = [
     new webpack.DefinePlugin({
@@ -22,6 +25,10 @@ const prodPlugins = [
         sourceMap: true,
         beautify: false,
         mangle: true,
+        parallel: {
+            cache: true,
+            workers: 4
+        },
         compress: {
             warnings: false, // Suppress uglification warnings
             pure_getters: true,
@@ -63,7 +70,13 @@ let plugins = [
         names: ['common', 'vendor', 'trash']
     }),
     new webpack.NoEmitOnErrorsPlugin(),
-    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+    new GoogleFontsPlugin({
+        fonts: [
+            { family: 'Nunito', variants: ['300', '400', '600', '700'] }
+        ],
+        local: false
+    })
 ]
 
 let devtool = 'eval'
@@ -76,7 +89,7 @@ if (process.env.NODE_ENV === 'production') {
 module.exports = {
     context: __dirname,
     entry: {
-        app: './js/index.js',
+        app: `./${srcDir}/index.js`,
         trash: [
             'moment',
         ],
@@ -106,7 +119,16 @@ module.exports = {
         publicPath: '/'
     },
     resolve: {
-        extensions: ['.js', '.json']
+        extensions: ['.js', '.json'],
+        modules: [
+            path.resolve(`./${srcDir}/state/`),
+            path.resolve(`./${srcDir}/`),
+            path.resolve('./node_modules')
+        ],
+        alias: {
+            '@components': path.resolve(__dirname, `./${srcDir}/components`),
+            '@utils': path.resolve(__dirname, `./${srcDir}/utils`)
+        }
     },
     stats: {
         colors: true,
@@ -119,7 +141,8 @@ module.exports = {
         publicPath: '/',
         stats: 'minimal',
         historyApiFallback: true,
-        port: 9000
+        port: 9000,
+        host: '0.0.0.0'
     },
     module: {
         rules: [
@@ -129,7 +152,7 @@ module.exports = {
                 use: {
                     loader: 'eslint-loader'
                 },
-                include: path.resolve(__dirname, 'js')
+                include: path.resolve(__dirname, srcDir)
             },
             {
                 test: /\.json$/,
@@ -142,7 +165,7 @@ module.exports = {
                 use: {
                     loader: 'babel-loader'
                 },
-                include: path.resolve(__dirname, 'js')
+                include: path.resolve(__dirname, srcDir)
             },
             {
                 test: /\.css$/,

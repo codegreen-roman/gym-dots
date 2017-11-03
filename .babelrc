@@ -1,26 +1,39 @@
 {
     "plugins": [
+        "ramda",
         "transform-class-properties",
         "transform-object-rest-spread",
+        "transform-async-to-generator",
         "emotion/babel"
     ],
     "presets": [
         "react",
         "flow",
         [
-            "es2015",
+            "env",
             {
                 "modules": false,
-                "loose": true
+                "loose": true,
+                "useBuiltIns": true,
+                "targets": {
+                    "browsers": [
+                        "> 1%",
+                        "last 2 versions"
+                    ]
+                }
             }
         ]
     ],
     "env": {
         "test": {
-            "plugins": ["transform-es2015-modules-commonjs"]
+            "plugins": [
+                "transform-es2015-modules-commonjs"
+            ]
         },
         "server": {
-            "plugins": ["transform-es2015-modules-commonjs"]
+            "plugins": [
+                "transform-es2015-modules-commonjs"
+            ]
         }
     }
 }

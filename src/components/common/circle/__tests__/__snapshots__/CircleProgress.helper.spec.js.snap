@@ -1,0 +1,1558 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CircleProgress helper .defineArc matches 1`] = `"M 0 20 A 20 20 0 0 0 0 -20"`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 1`] = `
+Array [
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 2`] = `
+Array [
+  "completed",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 3`] = `
+Array [
+  "completed",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 4`] = `
+Array [
+  "completed",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 5`] = `
+Array [
+  "completed",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 6`] = `
+Array [
+  "completed",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 7`] = `
+Array [
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 8`] = `
+Array [
+  "completed",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 9`] = `
+Array [
+  "completed",
+  "completed",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 10`] = `
+Array [
+  "completed",
+  "completed",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 11`] = `
+Array [
+  "completed",
+  "completed",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 12`] = `
+Array [
+  "completed",
+  "completed",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 13`] = `
+Array [
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 14`] = `
+Array [
+  "completed",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 15`] = `
+Array [
+  "completed",
+  "completed",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 16`] = `
+Array [
+  "completed",
+  "completed",
+  "completed",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 17`] = `
+Array [
+  "completed",
+  "completed",
+  "completed",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 18`] = `
+Array [
+  "completed",
+  "completed",
+  "completed",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 19`] = `
+Array [
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 20`] = `
+Array [
+  "completed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 21`] = `
+Array [
+  "completed",
+  "completed",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 22`] = `
+Array [
+  "completed",
+  "completed",
+  "completed",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 23`] = `
+Array [
+  "completed",
+  "completed",
+  "completed",
+  "completed",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 24`] = `
+Array [
+  "completed",
+  "completed",
+  "completed",
+  "completed",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 25`] = `
+Array [
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 26`] = `
+Array [
+  "completed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 27`] = `
+Array [
+  "completed",
+  "completed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 28`] = `
+Array [
+  "completed",
+  "completed",
+  "completed",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 29`] = `
+Array [
+  "completed",
+  "completed",
+  "completed",
+  "completed",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 30`] = `
+Array [
+  "completed",
+  "completed",
+  "completed",
+  "completed",
+  "completed",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 31`] = `
+Array [
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 32`] = `
+Array [
+  "completed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 33`] = `
+Array [
+  "completed",
+  "completed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 34`] = `
+Array [
+  "completed",
+  "completed",
+  "completed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 35`] = `
+Array [
+  "completed",
+  "completed",
+  "completed",
+  "completed",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 36`] = `
+Array [
+  "completed",
+  "completed",
+  "completed",
+  "completed",
+  "completed",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 37`] = `
+Array [
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 38`] = `
+Array [
+  "completed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 39`] = `
+Array [
+  "completed",
+  "completed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 40`] = `
+Array [
+  "completed",
+  "completed",
+  "completed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 41`] = `
+Array [
+  "completed",
+  "completed",
+  "completed",
+  "completed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 42`] = `
+Array [
+  "completed",
+  "completed",
+  "completed",
+  "completed",
+  "completed",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 43`] = `
+Array [
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 44`] = `
+Array [
+  "completed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 45`] = `
+Array [
+  "completed",
+  "completed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 46`] = `
+Array [
+  "completed",
+  "completed",
+  "completed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 47`] = `
+Array [
+  "completed",
+  "completed",
+  "completed",
+  "completed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 48`] = `
+Array [
+  "completed",
+  "completed",
+  "completed",
+  "completed",
+  "completed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 49`] = `
+Array [
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 50`] = `
+Array [
+  "completed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 51`] = `
+Array [
+  "completed",
+  "completed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 52`] = `
+Array [
+  "completed",
+  "completed",
+  "completed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 53`] = `
+Array [
+  "completed",
+  "completed",
+  "completed",
+  "completed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets DONE should match 54`] = `
+Array [
+  "completed",
+  "completed",
+  "completed",
+  "completed",
+  "completed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 1`] = `
+Array [
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 2`] = `
+Array [
+  "failed",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 3`] = `
+Array [
+  "failed",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 4`] = `
+Array [
+  "failed",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 5`] = `
+Array [
+  "failed",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 6`] = `
+Array [
+  "failed",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 7`] = `
+Array [
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 8`] = `
+Array [
+  "failed",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 9`] = `
+Array [
+  "failed",
+  "failed",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 10`] = `
+Array [
+  "failed",
+  "failed",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 11`] = `
+Array [
+  "failed",
+  "failed",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 12`] = `
+Array [
+  "failed",
+  "failed",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 13`] = `
+Array [
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 14`] = `
+Array [
+  "failed",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 15`] = `
+Array [
+  "failed",
+  "failed",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 16`] = `
+Array [
+  "failed",
+  "failed",
+  "failed",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 17`] = `
+Array [
+  "failed",
+  "failed",
+  "failed",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 18`] = `
+Array [
+  "failed",
+  "failed",
+  "failed",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 19`] = `
+Array [
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 20`] = `
+Array [
+  "failed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 21`] = `
+Array [
+  "failed",
+  "failed",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 22`] = `
+Array [
+  "failed",
+  "failed",
+  "failed",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 23`] = `
+Array [
+  "failed",
+  "failed",
+  "failed",
+  "failed",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 24`] = `
+Array [
+  "failed",
+  "failed",
+  "failed",
+  "failed",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 25`] = `
+Array [
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 26`] = `
+Array [
+  "failed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 27`] = `
+Array [
+  "failed",
+  "failed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 28`] = `
+Array [
+  "failed",
+  "failed",
+  "failed",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 29`] = `
+Array [
+  "failed",
+  "failed",
+  "failed",
+  "failed",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 30`] = `
+Array [
+  "failed",
+  "failed",
+  "failed",
+  "failed",
+  "failed",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 31`] = `
+Array [
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 32`] = `
+Array [
+  "failed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 33`] = `
+Array [
+  "failed",
+  "failed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 34`] = `
+Array [
+  "failed",
+  "failed",
+  "failed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 35`] = `
+Array [
+  "failed",
+  "failed",
+  "failed",
+  "failed",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 36`] = `
+Array [
+  "failed",
+  "failed",
+  "failed",
+  "failed",
+  "failed",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 37`] = `
+Array [
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 38`] = `
+Array [
+  "failed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 39`] = `
+Array [
+  "failed",
+  "failed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 40`] = `
+Array [
+  "failed",
+  "failed",
+  "failed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 41`] = `
+Array [
+  "failed",
+  "failed",
+  "failed",
+  "failed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 42`] = `
+Array [
+  "failed",
+  "failed",
+  "failed",
+  "failed",
+  "failed",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 43`] = `
+Array [
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 44`] = `
+Array [
+  "failed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 45`] = `
+Array [
+  "failed",
+  "failed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 46`] = `
+Array [
+  "failed",
+  "failed",
+  "failed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 47`] = `
+Array [
+  "failed",
+  "failed",
+  "failed",
+  "failed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 48`] = `
+Array [
+  "failed",
+  "failed",
+  "failed",
+  "failed",
+  "failed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 49`] = `
+Array [
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 50`] = `
+Array [
+  "failed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 51`] = `
+Array [
+  "failed",
+  "failed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 52`] = `
+Array [
+  "failed",
+  "failed",
+  "failed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 53`] = `
+Array [
+  "failed",
+  "failed",
+  "failed",
+  "failed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcClasses all sets FAILED should match 54`] = `
+Array [
+  "failed",
+  "failed",
+  "failed",
+  "failed",
+  "failed",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+  "toBeDone",
+]
+`;
+
+exports[`CircleProgress helper .generateArcPaths matches 1`] = `
+Array [
+  "M 0 -20 A 20 20 0 1 0 3.4729636 -19.6961551",
+]
+`;
+
+exports[`CircleProgress helper .generateArcPaths matches 2`] = `
+Array [
+  "M 0 20 A 20 20 0 0 0 3.4729636 -19.6961551",
+  "M 0 -20 A 20 20 0 0 0 -3.4729636 19.6961551",
+]
+`;
+
+exports[`CircleProgress helper .generateArcPaths matches 3`] = `
+Array [
+  "M 17.3205081 10 A 20 20 0 0 0 3.4729636 -19.6961551",
+  "M -17.3205081 10 A 20 20 0 0 0 15.3208889 12.8557522",
+  "M 0 -20 A 20 20 0 0 0 -18.7938524 6.8404029",
+]
+`;
+
+exports[`CircleProgress helper .generateArcPaths matches 4`] = `
+Array [
+  "M 20 0 A 20 20 0 0 0 3.4729636 -19.6961551",
+  "M 0 20 A 20 20 0 0 0 19.6961551 3.4729636",
+  "M -20 0 A 20 20 0 0 0 -3.4729636 19.6961551",
+  "M 0 -20 A 20 20 0 0 0 -19.6961551 -3.4729636",
+]
+`;
+
+exports[`CircleProgress helper .generateArcPaths matches 5`] = `
+Array [
+  "M 19.0211303 -6.1803399 A 20 20 0 0 0 3.4729636 -19.6961551",
+  "M 11.755705 16.1803399 A 20 20 0 0 0 19.8053614 -2.783462",
+  "M -11.755705 16.1803399 A 20 20 0 0 0 8.7674229 17.9758809",
+  "M -19.0211303 -6.1803399 A 20 20 0 0 0 -14.386796 13.8931674",
+  "M 0 -20 A 20 20 0 0 0 -17.6589519 -9.3894313",
+]
+`;
+
+exports[`CircleProgress helper .generateArcPaths matches 6`] = `
+Array [
+  "M 17.3205081 -10 A 20 20 0 0 0 3.4729636 -19.6961551",
+  "M 17.3205081 10 A 20 20 0 0 0 18.7938524 -6.8404029",
+  "M 0 20 A 20 20 0 0 0 15.3208889 12.8557522",
+  "M -17.3205081 10 A 20 20 0 0 0 -3.4729636 19.6961551",
+  "M -17.3205081 -10 A 20 20 0 0 0 -18.7938524 6.8404029",
+  "M 0 -20 A 20 20 0 0 0 -15.3208889 -12.8557522",
+]
+`;
+
+exports[`CircleProgress helper .generateArcPaths matches 7`] = `
+Array [
+  "M 15.7602151 -12.3132295 A 20 20 0 0 0 3.4729636 -19.6961551",
+  "M 19.4059145 4.8384379 A 20 20 0 0 0 17.6589519 -9.3894313",
+  "M 8.1347329 18.2709092 A 20 20 0 0 0 18.2709092 8.1347329",
+  "M -9.3894313 17.6589519 A 20 20 0 0 0 4.8384379 19.4059145",
+  "M -19.6961551 3.4729636 A 20 20 0 0 0 -12.3132295 15.7602151",
+  "M -14.8628965 -13.3826121 A 20 20 0 0 0 -20 0",
+  "M 1.3951295 -19.951281 A 20 20 0 0 0 -12.3132295 -15.7602151",
+]
+`;
+
+exports[`CircleProgress helper .generateArcPaths matches 8`] = `
+Array [
+  "M 14.1421356 -14.1421356 A 20 20 0 0 0 3.4729636 -19.6961551",
+  "M 20 0 A 20 20 0 0 0 16.3830409 -11.4715287",
+  "M 14.1421356 14.1421356 A 20 20 0 0 0 19.6961551 3.4729636",
+  "M 0 20 A 20 20 0 0 0 11.4715287 16.3830409",
+  "M -14.1421356 14.1421356 A 20 20 0 0 0 -3.4729636 19.6961551",
+  "M -20 0 A 20 20 0 0 0 -16.3830409 11.4715287",
+  "M -14.1421356 -14.1421356 A 20 20 0 0 0 -19.6961551 -3.4729636",
+  "M 0 -20 A 20 20 0 0 0 -11.4715287 -16.3830409",
+]
+`;
+
+exports[`CircleProgress helper .generateArcPaths matches 9`] = `
+Array [
+  "M 12.8557522 -15.3208889 A 20 20 0 0 0 3.4729636 -19.6961551",
+  "M 19.6961551 -3.4729636 A 20 20 0 0 0 15.3208889 -12.8557522",
+  "M 17.3205081 10 A 20 20 0 0 0 20 0",
+  "M 6.8404029 18.7938524 A 20 20 0 0 0 15.3208889 12.8557522",
+  "M -6.8404029 18.7938524 A 20 20 0 0 0 3.4729636 19.6961551",
+  "M -17.3205081 10 A 20 20 0 0 0 -10 17.3205081",
+  "M -19.6961551 -3.4729636 A 20 20 0 0 0 -18.7938524 6.8404029",
+  "M -12.8557522 -15.3208889 A 20 20 0 0 0 -18.7938524 -6.8404029",
+  "M 0 -20 A 20 20 0 0 0 -10 -17.3205081",
+]
+`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 1`] = `-1.5707963267948966`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 2`] = `-1.5533430342749535`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 3`] = `-1.53588974175501`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 4`] = `-1.5184364492350666`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 5`] = `-1.5009831567151233`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 6`] = `-1.4835298641951802`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 7`] = `-1.4660765716752369`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 8`] = `-1.4486232791552935`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 9`] = `-1.43116998663535`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 10`] = `-1.413716694115407`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 11`] = `-1.3962634015954636`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 12`] = `-1.3788101090755203`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 13`] = `-1.361356816555577`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 14`] = `-1.3439035240356338`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 15`] = `-1.3264502315156903`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 16`] = `-1.3089969389957472`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 17`] = `-1.2915436464758039`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 18`] = `-1.2740903539558606`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 19`] = `-1.2566370614359172`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 20`] = `-1.239183768915974`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 21`] = `-1.2217304763960306`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 22`] = `-1.2042771838760873`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 23`] = `-1.1868238913561442`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 24`] = `-1.1693705988362006`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 25`] = `-1.1519173063162575`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 26`] = `-1.1344640137963142`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 27`] = `-1.117010721276371`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 28`] = `-1.0995574287564276`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 29`] = `-1.0821041362364843`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 30`] = `-1.064650843716541`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 31`] = `-1.0471975511965976`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 32`] = `-1.0297442586766543`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 33`] = `-1.0122909661567112`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 34`] = `-0.9948376736367678`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 35`] = `-0.9773843811168246`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 36`] = `-0.9599310885968813`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 37`] = `-0.9424777960769379`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 38`] = `-0.9250245035569946`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 39`] = `-0.9075712110370514`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 40`] = `-0.890117918517108`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 41`] = `-0.8726646259971648`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 42`] = `-0.8552113334772214`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 43`] = `-0.8377580409572781`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 44`] = `-0.8203047484373349`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 45`] = `-0.8028514559173915`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 46`] = `-0.7853981633974483`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 47`] = `-0.767944870877505`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 48`] = `-0.7504915783575616`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 49`] = `-0.7330382858376184`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 50`] = `-0.715584993317675`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 51`] = `-0.6981317007977318`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 52`] = `-0.6806784082777885`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 53`] = `-0.6632251157578452`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 54`] = `-0.6457718232379019`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 55`] = `-0.6283185307179586`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 56`] = `-0.6108652381980153`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 57`] = `-0.5934119456780721`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 58`] = `-0.5759586531581288`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 59`] = `-0.5585053606381855`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 60`] = `-0.5410520681182421`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 61`] = `-0.5235987755982988`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 62`] = `-0.5061454830783556`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 63`] = `-0.4886921905584123`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 64`] = `-0.47123889803846897`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 65`] = `-0.4537856055185257`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 66`] = `-0.4363323129985824`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 67`] = `-0.41887902047863906`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 68`] = `-0.40142572795869574`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 69`] = `-0.3839724354387525`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 70`] = `-0.3665191429188092`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 71`] = `-0.3490658503988659`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 72`] = `-0.3316125578789226`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 73`] = `-0.3141592653589793`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 74`] = `-0.29670597283903605`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 75`] = `-0.2792526803190927`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 76`] = `-0.2617993877991494`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 77`] = `-0.24434609527920614`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 78`] = `-0.22689280275926285`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 79`] = `-0.20943951023931953`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 80`] = `-0.19198621771937624`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 81`] = `-0.17453292519943295`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 82`] = `-0.15707963267948966`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 83`] = `-0.13962634015954636`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 84`] = `-0.12217304763960307`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 85`] = `-0.10471975511965977`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 86`] = `-0.08726646259971647`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 87`] = `-0.06981317007977318`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 88`] = `-0.05235987755982988`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 89`] = `-0.03490658503988659`;
+
+exports[`CircleProgress helper .getAngleInRadians matches 90`] = `-0.017453292519943295`;
+
+exports[`CircleProgress helper .getArcLength matches 1`] = `350`;
+
+exports[`CircleProgress helper .getArcLength matches 2`] = `170`;
+
+exports[`CircleProgress helper .getArcLength matches 3`] = `110`;
+
+exports[`CircleProgress helper .getArcLength matches 4`] = `80`;
+
+exports[`CircleProgress helper .getArcLength matches 5`] = `62`;
+
+exports[`CircleProgress helper .getArcLength matches 6`] = `50`;
+
+exports[`CircleProgress helper .getArcLength matches 7`] = `42`;
+
+exports[`CircleProgress helper .getArcLength matches 8`] = `35`;
+
+exports[`CircleProgress helper .getArcLength matches 9`] = `30`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 1`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 2`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 3`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 4`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 5`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 6`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 7`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 8`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 9`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 10`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 11`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 12`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 13`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 14`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 15`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 16`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 17`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 18`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 19`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 20`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 21`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 22`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 23`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 24`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 25`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 26`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 27`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 28`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 29`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 30`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 31`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 32`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 33`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 34`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 35`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 36`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 37`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 38`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 39`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 40`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 41`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 42`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 43`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 44`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 45`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 46`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 47`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 48`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 49`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 50`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 51`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 52`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 53`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 54`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 55`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 56`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 57`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 58`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 59`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 60`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 61`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 62`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 63`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 64`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 65`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 66`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 67`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 68`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 69`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 70`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 71`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 72`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 73`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 74`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 75`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 76`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 77`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 78`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 79`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 80`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 81`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 82`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 83`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 84`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 85`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 86`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 87`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 88`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 89`] = `"0"`;
+
+exports[`CircleProgress helper .getLargeArcFlag matches 90`] = `"0"`;
+
+exports[`CircleProgress helper .polarToCartesian matches 1`] = `
+Object {
+  "x": 20,
+  "y": 0,
+}
+`;

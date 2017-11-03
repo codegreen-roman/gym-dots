@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Overlay Component should be hidden by default 1`] = `""`;
+
+exports[`Overlay Component should be hidden on the screen 1`] = `""`;
+
+exports[`Overlay Component should be visible on the screen 1`] = `
+<styled(Component)
+  visible={true}
+>
+  <Countdown />
+</styled(Component)>
+`;
