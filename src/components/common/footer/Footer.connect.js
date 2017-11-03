@@ -51,7 +51,8 @@ const mapActionsToProps = (dispatch, { history }) => {
 }
 
 const withLifecycle = lifecycle({
-    componentWillReceiveProps({ shouldEndExercise, fireCompleteExercise, nextExercise: { exerciseKey }, currentResults }) {
+    componentWillReceiveProps({ shouldEndExercise, fireCompleteExercise, nextExercise, currentResults }) {
+        const { exerciseKey } = nextExercise
         if (shouldEndExercise) {
             return fireCompleteExercise(exerciseKey, currentResults)
         }

@@ -55,7 +55,11 @@ export class Welcome extends PureComponent {
                                 width={26}
                                 height={26}
                             />
-                            <button {...buttonText} data-test='facebook' onClick={() => loginWith('facebook')}>login with facebook</button>
+                            <button
+                                {...buttonText}
+                                data-test='facebook'
+                                onClick={() => loginWith('facebook')}>login with facebook
+                            </button>
                         </div>
                         <div {...buttonAndIconWrap}>
                             <Icon
@@ -65,7 +69,11 @@ export class Welcome extends PureComponent {
                                 width={23}
                                 height={23}
                             />
-                            <button {...buttonText} data-test='twitter' onClick={() => loginWith('twitter')}>login with twitter</button>
+                            <button
+                                {...buttonText}
+                                data-test='twitter'
+                                onClick={() => loginWith('twitter')}>login with twitter
+                            </button>
                         </div>
                         <div {...buttonAndIconWrap}>
                             <Icon

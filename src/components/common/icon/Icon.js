@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react'
 import { string, number } from 'prop-types'
 import { svgStyle, pathStyle } from './Icon.glamor'

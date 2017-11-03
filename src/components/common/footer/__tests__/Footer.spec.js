@@ -96,7 +96,10 @@ describe('Footer component', () => {
 
             shallowWrapper.setProps({ shouldEndExercise: true }, () => {
                 expect(props.fireCompleteExercise).toHaveBeenCalledTimes(1)
-                expect(props.fireCompleteExercise).toHaveBeenCalledWith('thisIsTheUniqueKey', [true, true, true, true, true])
+                expect(props.fireCompleteExercise).toHaveBeenCalledWith(
+                    'thisIsTheUniqueKey',
+                    [true, true, true, true, true]
+                )
             })
 
         })

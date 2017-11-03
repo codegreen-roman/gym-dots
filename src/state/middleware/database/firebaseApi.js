@@ -1,5 +1,7 @@
 import { types } from '../../common/constants'
-import { toWritableResults } from '../../../components/views/activity/preWorkout/manageExerciseList/ManageExerciseList.helper'
+import {
+    toWritableResults
+} from '../../../components/views/activity/preWorkout/manageExerciseList/ManageExerciseList.helper'
 
 import { sessionDoneSelector } from '../../selectors/exercises'
 import { userKeySelector } from '../../selectors/auth'
