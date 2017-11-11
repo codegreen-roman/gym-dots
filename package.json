@@ -21,19 +21,27 @@
         "flow": "flow",
         "pretest": "NODE_ENV=test",
         "test": "NODE_PATH=./src/state/ jest --env=jsdom",
-        "test:watch": "NODE_ENV=test NODE_PATH=./src/state/ jest --watch --env=jsdom",
-        "test:coverage": "NODE_ENV=test NODE_PATH=./src/state/ yarn run size-limit && jest --coverage --env=jsdom",
+        "test:watch":
+            "NODE_ENV=test NODE_PATH=./src/state/ jest --watch --env=jsdom",
+        "test:coverage":
+            "NODE_ENV=test NODE_PATH=./src/state/ yarn run size-limit && jest --coverage --env=jsdom",
         "pretranspile-all-js": "rimraf src-dist",
-        "transpile-all-js": "babel src --out-dir src-dist --presets=es2015,react --plugins=emotion",
+        "transpile-all-js":
+            "babel src --out-dir src-dist --presets=es2015,react --plugins=emotion",
         "prepackage-functions": "yarn run transpile-all-js && rimraf functions",
-        "package-functions": "babel 'cloud-functions-src' --out-dir 'functions' --presets=es2015,react --copy-files --ignore 'node_modules'",
+        "package-functions":
+            "babel 'cloud-functions-src' --out-dir 'functions' --presets=es2015,react --copy-files --ignore 'node_modules'",
         "postpackage-functions": "cd functions && yarn",
-        "lint-test-build": "yarn run lint && yarn run test && yarn run build:production",
+        "lint-test-build":
+            "yarn run lint && yarn run test && yarn run build:production",
         "predeploy-hosting": "yarn run lint-test-build",
         "deploy-hosting": "firebase deploy --only hosting",
         "deploy": "yarn run package-functions && firebase deploy",
-        "deploy-functions": "yarn run package-functions && firebase deploy --only functions",
-        "serve-functions-local": "yarn run package-functions && firebase serve --only functions"
+        "deploy-functions":
+            "yarn run package-functions && firebase deploy --only functions",
+        "serve-functions-local":
+            "yarn run package-functions && firebase serve --only functions",
+        "storybook": "start-storybook -p 9001 -c .storybook"
     },
     "dependencies": {
         "express": "^4.15.3",
@@ -66,6 +74,7 @@
         "toastr": "^2.1.2"
     },
     "devDependencies": {
+        "@storybook/react": "^3.2.15",
         "babel-cli": "^6.24.1",
         "babel-core": "^6.25.0",
         "babel-eslint": "^7.2.3",
@@ -131,9 +140,7 @@
     ],
     "jest": {
         "testEnvironment": "jsdom",
-        "testMatch": [
-            "<rootDir>/src/**/*.spec.js"
-        ],
+        "testMatch": ["<rootDir>/src/**/*.spec.js"],
         "setupTestFrameworkScriptFile": "<rootDir>/test-setup/setup.js",
         "moduleNameMapper": {
             "^@components(.*)$": "<rootDir>/src/components$1",
@@ -152,9 +159,7 @@
             "!**/node_modules/**",
             "!**/flow-typed/**"
         ],
-        "snapshotSerializers": [
-            "enzyme-to-json/serializer"
-        ],
+        "snapshotSerializers": ["enzyme-to-json/serializer"],
         "timers": "fake"
     }
 }
