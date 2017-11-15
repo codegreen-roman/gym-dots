@@ -9,7 +9,8 @@ export const exerciseList = css({
     listStyleType: 'none',
     padding: '0', //remove with reset.css
     margin: '0', //remove with reset.css
-    paddingLeft: variables.$listLeftInnerPadding
+    paddingLeft: variables.$listLeftInnerPadding,
+    marginBottom: '20px'
 })
 
 
@@ -18,16 +19,16 @@ export const exerciseListHeader = css({
     display: 'flex',
     borderTop: `1px solid ${variables.$color0}`,
     borderBottom: `1px solid ${variables.$color0}`,
-    padding: `10px 0 10px ${variables.$listLeftInnerPadding}`
+    padding: `10px 0 10px ${variables.$listLeftInnerPadding}`,
+    alignItems: 'center'
 })
 
 export const exerciseListHeaderDot = css({
     borderRadius: '50%',
-    width: '10px',
-    height: '10px',
+    width: '15px',
+    height: '15px',
     background: variables.$color4,
-    border: `3px solid ${variables.$color3}`,
-    marginLeft: '-1px'
+    border: `3px solid ${variables.$color3}`
 })
 
 export const exerciseListHeaderText = css({
@@ -81,8 +82,8 @@ export const exerciseLine = css({
 
 export const exerciseDot = css({
     borderRadius: '50%',
-    width: '8px',
-    height: '8px',
+    width: '15px',
+    height: '15px',
     border: `3px solid ${variables.$color3}`,
-    margin: '4px 0',
+    margin: '12px 0',
 })

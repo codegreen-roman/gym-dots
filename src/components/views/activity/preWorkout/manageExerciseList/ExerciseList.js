@@ -1,55 +1,36 @@
 import React from 'react'
-import { array, string, func } from 'prop-types'
+import { map, pipe, compose } from 'ramda'
+import { combineComponents } from '../../../../../utils/enhancers'
+import { notEmpty } from '../../../../../utils/helpers'
+import { ExerciseListRow } from './ExerciseListRow'
 import {
     exerciseList,
     exerciseListHeader,
     exerciseListHeaderDot,
     exerciseListHeaderText
 } from './ExerciseList.glamor'
-import { ExerciseListRow } from './ExerciseListRow'
-import { map } from 'ramda'
-import { branch, RenderNothing, notEmpty } from '@utils/helpers'
 
-export const ExerciseListHeader = ({title}) => {
-    return (
-        <div data-test='list-title' {...exerciseListHeader}>
-            <div {...exerciseListHeaderDot} />
-            <div {...exerciseListHeaderText}>{title}</div>
-        </div>
-    )
-}
+/* Presentational Header component */
+const Header = (title) =>
+    <div data-test='list-header' {...exerciseListHeader}>
+        <div {...exerciseListHeaderDot} />
+        <div {...exerciseListHeaderText}>{title}</div>
+    </div>
 
-ExerciseListHeader.propTypes = {
-    title: string.isRequired
-}
+const ExerciseListHeader = pipe(props => props.title, Header)
 
+/* Presentational List component */
+const List = items => notEmpty(items) && <ul data-test='list' {...exerciseList}>{items}</ul>
 
-const _ExerciseList = ({ list, title, onOrderChangeClick }) => {
-    const row = (item) => (
-        <ExerciseListRow key={item.exerciseKey} {...item} onRowClick={() => onOrderChangeClick(item)} />
-    )
-    const renderRows = () => map(row, list)
+/* Mapping over exercises lists and preparing each ExerciseListRow */
+const mapItems = ({list, onOrderChangeClick}) =>
+    map(exercise => ExerciseListRow({ exercise, onOrderChangeClick }), list)
 
-    return branch(
-        notEmpty(list),
-        (<div>
-            <ExerciseListHeader title={title} />
-            <ul data-test='list' {...exerciseList}>
-                {renderRows()}
-            </ul>
-        </div>),
-        <RenderNothing />
-    )
-}
+/* Combining ExerciseListRow and List */
+const CombinedList = pipe(
+    props => ({list: props.list, onOrderChangeClick: props.onOrderChangeClick}),
+    compose(List, mapItems)
+)
 
-_ExerciseList.defaultProps = {
-    onOrderChangeClick: () => {}
-}
-
-_ExerciseList.propTypes = {
-    list: array.isRequired,
-    title: string.isRequired,
-    onOrderChangeClick: func
-}
-
-export const ExerciseList = _ExerciseList
+/* Combining ExerciseListHeader with a list */
+export const ExerciseList = combineComponents(ExerciseListHeader, CombinedList)

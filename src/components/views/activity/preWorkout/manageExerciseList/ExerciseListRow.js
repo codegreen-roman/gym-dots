@@ -1,5 +1,5 @@
 import React from 'react'
-import { func, string, number } from 'prop-types'
+import { func, object } from 'prop-types'
 import {
     exerciseRow,
     exerciseDataWrapper,
@@ -10,17 +10,14 @@ import {
     exerciseDot
 } from './ExerciseList.glamor'
 
-
-const _ExerciseListRow = ({
-    name,
-    weight,
-    reps,
-    sets,
-    exerciseKey,
-    onRowClick
-}) => {
+export const ExerciseListRow = ({ exercise, onOrderChangeClick }) => {
+    const { name, weight, reps, sets, exerciseKey } = exercise
     return (
-        <li {...exerciseRow} data-test={`exercise-row-${exerciseKey}`} onClick={onRowClick}>
+        <li {...exerciseRow}
+            key={exerciseKey}
+            data-test={`exercise-row-${exerciseKey}`}
+            onClick={() => onOrderChangeClick(exercise)}
+        >
             <div {...exerciseElementsWrapper}>
                 <div {...exerciseLine} />
                 <div {...exerciseDot} />
@@ -37,17 +34,11 @@ const _ExerciseListRow = ({
     )
 }
 
-_ExerciseListRow.defaultProps = {
-    onRowClick: () => {}
+ExerciseListRow.defaultProps = {
+    onOrderChangeClick: () => {}
 }
 
-_ExerciseListRow.propTypes = {
-    name: string.isRequired,
-    weight: number.isRequired,
-    reps: number.isRequired,
-    sets: number.isRequired,
-    exerciseKey: string.isRequired,
-    onRowClick: func.isRequired
+ExerciseListRow.propTypes = {
+    exercise: object.isRequired,
+    onOrderChangeClick: func.isRequired
 }
-
-export const ExerciseListRow = _ExerciseListRow
