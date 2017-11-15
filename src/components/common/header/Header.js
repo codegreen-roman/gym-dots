@@ -1,72 +1,47 @@
 import React from 'react'
-import { UserImage } from './UserImage'
-import { string, func } from 'prop-types'
+import { string, func, bool } from 'prop-types'
 import { isEmpty } from 'ramda'
-import {
-    header,
-    headerLeftSide,
-    headerDate,
-    headerText,
-    headerMenu,
-    userWrapper,
-    userPic
-} from './Header.glamor.js'
-import { Icon } from '../icon/Icon'
-import { branch, RenderNothing } from '@utils/helpers'
+import { MenuIcon } from '../icon/SvgIcon'
+import { LinkButton } from '../button/Button'
+import { SideMenu } from '../sidemenu/SideMenu'
+import { UserImage } from './UserImage'
+import { header, headerLeftSide, headerMenu, headerDate, headerText, userWrapper } from './Header.glamor.js'
 
-export const User = ({user, logout, photoURL}) => (
-    <section {...userWrapper}>
-        <span {...userPic} data-test='username'>{user}</span>
-        <button className='logout' onClick={logout}>
-            <UserImage image={photoURL} />
-        </button>
-    </section>
-)
-
-User.propTypes = {
-    user: string,
-    logout: func,
-    photoURL: string
-}
-
-
-export const Header = ({ dateStr, subTitle, userDisplayName, exerciseName, logout, photoURL }) => {
-
-    const renderTitle = () => isEmpty(exerciseName) ? subTitle : exerciseName
-
-    const renderLogoutAndUser = () =>
-        branch(
-            userDisplayName,
-            <User user={userDisplayName} logout={logout} photoURL={photoURL} />,
-            <RenderNothing />
-        )
+export const Header = ({
+    dateStr,
+    subTitle,
+    userDisplayName,
+    logout,
+    exerciseName,
+    photoURL,
+    toggleMenu,
+    isSideMenuOpen
+}) => {
+    const renderTitle = () => (isEmpty(exerciseName) ? subTitle : exerciseName)
 
     return (
         <header {...header}>
-
-            <div className='left-side' {...headerLeftSide}>
-                <Icon
-                    iconName='menu'
-                    color='red'
-                    viewBox='0 0 32 32'
-                    width={16}
-                    height={16}
-                    {...headerMenu}
-                />
-                <div>
-                    <div data-test='date' {...headerDate}>
-                        {dateStr}
-                    </div>
-                    <div data-test='currently' {...headerText}>
-                        {renderTitle()}
-                    </div>
+            <LinkButton data-test='menu-btn' {...headerMenu} onClickAction={toggleMenu}>
+                <MenuIcon />
+            </LinkButton>
+            <div {...headerLeftSide}>
+                <div data-test='current-date' {...headerDate}>
+                    {dateStr}
+                </div>
+                <div data-test='current-subtitle' {...headerText}>
+                    {renderTitle()}
                 </div>
             </div>
-
-            <div>
-                {renderLogoutAndUser()}
+            <div {...userWrapper}>
+                <UserImage image={photoURL} />
             </div>
-
+            <SideMenu
+                image={photoURL}
+                userDisplayName={userDisplayName}
+                logout={logout}
+                toggleMenu={toggleMenu}
+                isSideMenuOpen={isSideMenuOpen}
+            />
         </header>
     )
 }
@@ -77,7 +52,9 @@ Header.propTypes = {
     logout: func.isRequired,
     dateStr: string.isRequired,
     subTitle: string.isRequired,
-    exerciseName: string.isRequired
+    exerciseName: string.isRequired,
+    toggleMenu: func.isRequired,
+    isSideMenuOpen: bool.isRequired,
 }
 
 Header.defaultProps = {

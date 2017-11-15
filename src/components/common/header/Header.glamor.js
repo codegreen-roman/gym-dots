@@ -1,8 +1,8 @@
 import { css } from 'glamor'
-import { variables } from '@utils/variables'
+import { variables } from '../../../utils/variables'
 
 export const header = css({
-    height: '107px',
+    height: '147px',
     display: 'flex',
     flexFlow: 'row wrap',
     justifyContent: 'space-between',
@@ -13,38 +13,41 @@ export const header = css({
 export const headerLeftSide = css({
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    marginTop: '60px'
 })
 
 export const headerMenu = css({
-    color: variables.$color1
+    color: variables.$color1,
+    position: 'absolute',
+    left: '25px',
+    top: '25px'
 })
 
 export const userWrapper = css({
     display: 'flex',
     alignItems: 'center',
-})
-
-export const userPic = css({
-    fontSize: '10px'
+    flexFlow: 'column nowrap'
 })
 
 export const headerDataWrap = css({
     textTransform: 'uppercase',
     color: variables.$color1,
     fontSize: '14px',
-    fontWeight: '700',
+    fontWeight: '700'
 })
 
 export const headerDate = css({
     textTransform: 'uppercase',
     color: variables.$color1,
     fontSize: '14px',
-    fontWeight: '700',
+    fontWeight: '700'
 })
 
 export const headerText = css({
     color: variables.$color2,
     fontSize: '23px',
+    textTransform: 'capitalize',
+    fontWeight: '600'
 })
 
