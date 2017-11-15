@@ -3,6 +3,16 @@ import { shallow, mount } from 'enzyme'
 import { ManageExerciseList } from '../ManageExerciseList'
 import { ExerciseList } from '../ExerciseList'
 
+const exampleExercise = {
+    exerciseKey: '1',
+    restTime: 90,
+    name: 'Push-ups',
+    sets: 5,
+    reps: 20,
+    weight: 0,
+    results: []
+}
+
 const props = {
     sessionKey: '',
     name: '',
@@ -50,12 +60,42 @@ const setup = props => {
 
 describe('ManageExerciseList component', () => {
 
-    describe('When one list have exercises others should return null', () => {
-        it('should render one list and other are empty', () => {
-            const { list } = setup(props)
-            expect(list.at(0).props().list.length).toBe(2)
-            expect(list.at(1).props().list.length).toBe(0)
-            expect(list.at(2).props().list.length).toBe(0)
+    describe('Exercises are present in either of states possible', () => {
+        it('upcoming present, others empty', () => {
+            const { component } = setup({
+                ...props,
+                upcoming: [{...exampleExercise, ...{exerciseKey:'zzz0'}}],
+            })
+            expect(component).toMatchSnapshot()
+        })
+        it('upcoming, completed present, skipped is empty', () => {
+            const { component } = setup({
+                ...props,
+                upcoming: [{...exampleExercise, ...{exerciseKey:'zzz0'}}],
+                completed: [{...exampleExercise, ...{exerciseKey:'zzz1'}}]
+            })
+            expect(component).toMatchSnapshot()
+        })
+
+        it('upcoming, completed, skipped present', () => {
+            const { component } = setup({
+                ...props,
+                upcoming: [{...exampleExercise, ...{exerciseKey:'zzz0'}}],
+                completed: [{...exampleExercise, ...{exerciseKey:'zzz1'}}],
+                skipped: [{...exampleExercise, ...{exerciseKey:'zzz2'}}]
+            })
+            expect(component).toMatchSnapshot()
+        })
+
+    })
+
+    describe('sessionDone case', () => {
+        it('should show session completed message', () => {
+            const { component } = setup({
+                ...props,
+                sessionDone: true
+            })
+            expect(component).toMatchSnapshot()
         })
     })
 
@@ -65,7 +105,6 @@ describe('ManageExerciseList component', () => {
                 ...props,
                 upcoming: []
             })
-
             expect(component).toMatchSnapshot()
         })
     })
