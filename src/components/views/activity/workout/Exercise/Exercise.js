@@ -13,6 +13,7 @@ import {
     exerciseBody,
     exerciseFooter
 } from './Exercise.glamor'
+import { CheckIcon, DumbbellsIcon } from '../../../../common/icon/SvgIcon'
 
 export const RestFor = ({seconds, restTime}) => {
     const isPassedRestTime = seconds > restTime
@@ -101,24 +102,12 @@ export class Exercise extends React.Component {
         return (
             <section {...exerciseSection}>
                 <div {...exerciseHeader}>
-                    <Widget
-                        iconName='dumbbells'
-                        iconColor='red'
-                        dataNumber={weight}
-                        dataUnits='kg'
-                        viewBox='0 0 34 20'
-                        width={34}
-                        height={20}
-                    />
-                    <Widget
-                        iconName='check'
-                        iconColor='red'
-                        dataNumber={reps}
-                        dataUnits='reps'
-                        viewBox='0 0 27 27'
-                        width={23}
-                        height={23}
-                    />
+                    <Widget dataNumber={weight} dataUnits='kg'>
+                        <CheckIcon big />
+                    </Widget>
+                    <Widget dataNumber={reps} dataUnits='reps'>
+                        <DumbbellsIcon big />
+                    </Widget>
                 </div>
                 <div {...exerciseBody}>
                     <CircleProgress
@@ -131,9 +120,7 @@ export class Exercise extends React.Component {
                     </CircleProgress>
 
                 </div>
-                <div {...exerciseFooter}>
-                    results : {JSON.stringify(results, null, 2)}
-                </div>
+                <div {...exerciseFooter} />
             </section>
         )
     }

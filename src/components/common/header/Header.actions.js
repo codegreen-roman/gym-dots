@@ -12,3 +12,8 @@ export const doLogout = () => ({
     type: types.AUTH_VOID_START,
     payload: {}
 })
+
+export const sideMenuToggle = (payload = {}) => ({
+    type: types.UI_SIDEMENU_TOGGLE,
+    payload
+})

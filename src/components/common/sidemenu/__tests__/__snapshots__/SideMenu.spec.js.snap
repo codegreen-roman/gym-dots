@@ -1,0 +1,173 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SideMenu render as expected 1`] = `
+.css-1044hol,
+[data-css-1044hol] {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 200px;
+  height: 100vh;
+  background-color: #fff;
+  transform: translateX(-100%);
+  transition: 0.3s ease-in-out;
+  border-right: 1px solid grey;
+  padding-top: 20px;
+  text-align: center;
+  -webkit-transform: translateX(-100%);
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+}
+
+.css-5sn766,
+[data-css-5sn766] {
+  width: 3rem;
+  border-radius: 2rem;
+}
+
+.css-1yv2jt6,
+[data-css-1yv2jt6] {
+  text-align: center;
+}
+
+.css-1qjkxt,
+[data-css-1qjkxt] {
+  margin-top: 40px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.css-pn5zfs,
+[data-css-pn5zfs] {
+  color: #5E6B7D;
+  font-weight: bold;
+}
+
+<SideMenu
+  image="https://pbs.twimg.com/profile_images/870699319183134720/IOqlC-IM_normal.jpg"
+  isSideMenuOpen={false}
+  logout={[Function]}
+  toggleMenu={[Function]}
+  userDisplayName="Bob"
+>
+  <glamorous(div)
+    toggleOn={false}
+  >
+    <div
+      className="css-1044hol"
+    >
+      <UserImage
+        data-test="with-username"
+        image="https://pbs.twimg.com/profile_images/870699319183134720/IOqlC-IM_normal.jpg"
+        userDisplayName="Bob"
+      >
+        <Aux>
+          <WithUserName
+            data-test="with-username"
+            image="https://pbs.twimg.com/profile_images/870699319183134720/IOqlC-IM_normal.jpg"
+            key="with-username"
+            userDisplayName="Bob"
+          >
+            <Aux>
+              <UserPic
+                data-test="with-username"
+                image="https://pbs.twimg.com/profile_images/870699319183134720/IOqlC-IM_normal.jpg"
+                userDisplayName="Bob"
+              >
+                <glamorous(img)
+                  alt="This is your avatar"
+                  data-test="with-username"
+                  src="https://pbs.twimg.com/profile_images/870699319183134720/IOqlC-IM_normal.jpg"
+                  userDisplayName="Bob"
+                >
+                  <img
+                    alt="This is your avatar"
+                    className="css-5sn766"
+                    data-test="with-username"
+                    src="https://pbs.twimg.com/profile_images/870699319183134720/IOqlC-IM_normal.jpg"
+                  />
+                </glamorous(img)>
+              </UserPic>
+              <UserName
+                data-test="username"
+                userDisplayName="Bob"
+              >
+                <glamorous(div)
+                  data-test="username"
+                >
+                  <div
+                    className="css-1yv2jt6"
+                    data-test="username"
+                  >
+                    Bob
+                     
+                  </div>
+                </glamorous(div)>
+              </UserName>
+            </Aux>
+          </WithUserName>
+        </Aux>
+      </UserImage>
+      <glamorous(div)>
+        <div
+          className="css-1qjkxt"
+        >
+          <glamorous(div)>
+            <div
+              className="css-pn5zfs"
+            >
+              Start
+            </div>
+          </glamorous(div)>
+          <glamorous(div)>
+            <div
+              className="css-pn5zfs"
+            >
+              Profile
+            </div>
+          </glamorous(div)>
+          <glamorous(div)>
+            <div
+              className="css-pn5zfs"
+            >
+              Workouts
+            </div>
+          </glamorous(div)>
+          <glamorous(div)>
+            <div
+              className="css-pn5zfs"
+            >
+              Add Routine
+            </div>
+          </glamorous(div)>
+          <glamorous(div)
+            data-test="close-menu"
+            onClick={[Function]}
+          >
+            <div
+              className="css-pn5zfs"
+              data-test="close-menu"
+              onClick={[Function]}
+            >
+              Close SideMenu
+            </div>
+          </glamorous(div)>
+          <glamorous(div)
+            data-test="logout"
+            onClick={[Function]}
+          >
+            <div
+              className="css-pn5zfs"
+              data-test="logout"
+              onClick={[Function]}
+            >
+              Logout
+            </div>
+          </glamorous(div)>
+        </div>
+      </glamorous(div)>
+    </div>
+  </glamorous(div)>
+</SideMenu>
+`;

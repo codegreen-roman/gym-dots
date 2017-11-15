@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.Aux is auxiliary element returns array without wrapping div 1`] = `
+Array [
+  <div />,
+  <div />,
+]
+`;

@@ -5,6 +5,7 @@ import { auth } from './reducers/auth.reducer'
 import { exercises } from './reducers/exercises.reducer'
 import { currentExercise } from './reducers/currentExercise.reducer'
 import { routerReducer } from 'react-router-redux'
+import { uiReducer } from './reducers/ui.reducer'
 
 export const reducer = combineReducers({
     exercises,
@@ -12,5 +13,6 @@ export const reducer = combineReducers({
     auth,
     i18n,
     currentExercise,
-    router: routerReducer
+    router: routerReducer,
+    ui: uiReducer
 })

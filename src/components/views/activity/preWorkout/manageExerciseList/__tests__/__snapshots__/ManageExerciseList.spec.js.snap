@@ -1,27 +1,138 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ManageExerciseList component Exercises are present in either of states possible upcoming present, others empty 1`] = `
+<div>
+  <Lists
+    completed={Array []}
+    key="lists"
+    name=""
+    onOrderChange={[Function]}
+    saveResults={[Function]}
+    sessionDone={false}
+    sessionKey=""
+    skipped={Array []}
+    upcoming={
+      Array [
+        Object {
+          "exerciseKey": "zzz0",
+          "name": "Push-ups",
+          "reps": 20,
+          "restTime": 90,
+          "results": Array [],
+          "sets": 5,
+          "weight": 0,
+        },
+      ]
+    }
+  />
+</div>
+`;
+
+exports[`ManageExerciseList component Exercises are present in either of states possible upcoming, completed present, skipped is empty 1`] = `
+<div>
+  <Lists
+    completed={
+      Array [
+        Object {
+          "exerciseKey": "zzz1",
+          "name": "Push-ups",
+          "reps": 20,
+          "restTime": 90,
+          "results": Array [],
+          "sets": 5,
+          "weight": 0,
+        },
+      ]
+    }
+    key="lists"
+    name=""
+    onOrderChange={[Function]}
+    saveResults={[Function]}
+    sessionDone={false}
+    sessionKey=""
+    skipped={Array []}
+    upcoming={
+      Array [
+        Object {
+          "exerciseKey": "zzz0",
+          "name": "Push-ups",
+          "reps": 20,
+          "restTime": 90,
+          "results": Array [],
+          "sets": 5,
+          "weight": 0,
+        },
+      ]
+    }
+  />
+</div>
+`;
+
+exports[`ManageExerciseList component Exercises are present in either of states possible upcoming, completed, skipped present 1`] = `
+<div>
+  <Lists
+    completed={
+      Array [
+        Object {
+          "exerciseKey": "zzz1",
+          "name": "Push-ups",
+          "reps": 20,
+          "restTime": 90,
+          "results": Array [],
+          "sets": 5,
+          "weight": 0,
+        },
+      ]
+    }
+    key="lists"
+    name=""
+    onOrderChange={[Function]}
+    saveResults={[Function]}
+    sessionDone={false}
+    sessionKey=""
+    skipped={
+      Array [
+        Object {
+          "exerciseKey": "zzz2",
+          "name": "Push-ups",
+          "reps": 20,
+          "restTime": 90,
+          "results": Array [],
+          "sets": 5,
+          "weight": 0,
+        },
+      ]
+    }
+    upcoming={
+      Array [
+        Object {
+          "exerciseKey": "zzz0",
+          "name": "Push-ups",
+          "reps": 20,
+          "restTime": 90,
+          "results": Array [],
+          "sets": 5,
+          "weight": 0,
+        },
+      ]
+    }
+  />
+</div>
+`;
+
 exports[`ManageExerciseList component No exercises case should show 'You got no exercises yet' 1`] = `
 <div>
   <span>
     You got no exercises yet
   </span>
-  <_ExerciseList
-    key="upcoming"
-    list={Array []}
-    onOrderChangeClick={[Function]}
-    title="upcoming"
-  />
-  <_ExerciseList
-    key="completed"
-    list={Array []}
-    onOrderChangeClick={[Function]}
-    title="completed"
-  />
-  <_ExerciseList
-    key="skipped"
-    list={Array []}
-    onOrderChangeClick={[Function]}
-    title="skipped"
-  />
+</div>
+`;
+
+exports[`ManageExerciseList component sessionDone case should show session completed message 1`] = `
+<div>
+  <h2>
+    Your session 
+     is COMPLETED!
+  </h2>
 </div>
 `;

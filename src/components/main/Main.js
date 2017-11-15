@@ -7,7 +7,7 @@ import { Route, Switch, NavLink } from 'react-router-dom'
 import { Activity } from '../views/activity/Activity'
 import { Overlay } from '@components/common/overlay/Overlay.connect'
 import { Countdown } from '@components/common/overlay/Countdown'
-import { mainStyles } from './Main.glamor'
+import { StyledAppContainer, StyledMain } from './Main.glamor'
 import { Welcome } from '../views/welcome/Welcome.connect'
 
 export const Main = () => {
@@ -15,13 +15,13 @@ export const Main = () => {
     const headerTitle = 'Start Workout'
 
     return (
-        <section className='app-container' {...mainStyles}>
+        <StyledAppContainer>
             <Switch>
                 <Route
                     path='/in'
                     component={({ match }) => {
                         return (
-                            <main>
+                            <StyledMain>
                                 <Header
                                     dateStr={dateStr}
                                     subTitle={headerTitle}
@@ -43,7 +43,7 @@ export const Main = () => {
                                 <Overlay>
                                     <Countdown />
                                 </Overlay>
-                            </main>
+                            </StyledMain>
                         )
                     }}
                 />
@@ -52,6 +52,6 @@ export const Main = () => {
                 />
                 <Route component={() => <section>404 Not Found</section>} />
             </Switch>
-        </section>
+        </StyledAppContainer>
     )
 }
