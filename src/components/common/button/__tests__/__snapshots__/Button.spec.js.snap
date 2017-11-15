@@ -1,0 +1,179 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Link button should render linkbutton wrapping menu icon 1`] = `
+.css-1fazozq,
+[data-css-1fazozq] {
+  display: inline-block;
+  color: black;
+  height: 24px;
+  width: 24px;
+  user-select: none;
+  vertical-align: middle;
+  fill: #5E6B7D;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.css-vbolah,
+[data-css-vbolah] {
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 500;
+  text-align: center;
+  color: #5E6B7D;
+  cursor: pointer;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  height: 40px;
+  justify-content: center;
+  align-items: stretch;
+  border: 0px;
+  background: none;
+  overflow: hidden;
+  text-decoration: none;
+  transition: all 300ms;
+  outline: none;
+  padding: 0px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+}
+
+<glamorous(Button)
+  onClickAction={[Function]}
+>
+  <Button
+    className="css-vbolah"
+    onClickAction={[Function]}
+  >
+    <button
+      className="css-vbolah"
+      onClick={[Function]}
+    >
+      <MenuIcon>
+        <SvgIcon
+          big={false}
+          viewBox="0 0 24 24"
+        >
+          <glamorous(svg)
+            big={false}
+            viewBox="0 0 24 24"
+          >
+            <svg
+              className="css-1fazozq"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M23.881 12c0-.655-.537-1.185-1.2-1.185H6.6c-.663 0-1.2.53-1.2 1.185s.537 1.185 1.2 1.185h16.081c.663 0 1.2-.53 1.2-1.185zm-1.263 5.63H10.2c-.663 0-1.2.53-1.2 1.185C9 19.469 9.537 20 10.2 20h12.418c.662 0 1.2-.53 1.2-1.185s-.538-1.185-1.2-1.185zM22.8 6.37H1.2C.537 6.37 0 5.84 0 5.185 0 4.531.537 4 1.2 4h21.6c.663 0 1.2.53 1.2 1.185s-.537 1.185-1.2 1.185z"
+              />
+            </svg>
+          </glamorous(svg)>
+        </SvgIcon>
+      </MenuIcon>
+    </button>
+  </Button>
+</glamorous(Button)>
+`;
+
+exports[`Button Login button should render login button with icon 1`] = `
+.css-fum0x2,
+[data-css-fum0x2] {
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 500;
+  text-align: center;
+  color: #5E6B7D;
+  cursor: pointer;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  height: 40px;
+  justify-content: center;
+  align-items: stretch;
+  border: none;
+  background: none;
+  overflow: hidden;
+  text-decoration: none;
+  transition: all 300ms;
+  outline: none;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #5E6B7D;
+  border-radius: 2px;
+  padding: 4px 16px 4px 8px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+}
+
+.css-1fazozq,
+[data-css-1fazozq] {
+  display: inline-block;
+  color: black;
+  height: 24px;
+  width: 24px;
+  user-select: none;
+  vertical-align: middle;
+  fill: #5E6B7D;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+<glamorous(Button)
+  onClickAction={[Function]}
+>
+  <Button
+    className="css-fum0x2"
+    onClickAction={[Function]}
+  >
+    <button
+      className="css-fum0x2"
+      onClick={[Function]}
+    >
+      <FacebookIcon>
+        <SvgIcon
+          big={false}
+          viewBox="0 0 24 24"
+        >
+          <glamorous(svg)
+            big={false}
+            viewBox="0 0 24 24"
+          >
+            <svg
+              className="css-1fazozq"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M13.491079,21.9911739 L13.491079,12.8737864 L16.4392523,12.8737864 L16.8810535,9.3168579 L13.491079,9.3168579 L13.491079,7.04854369 C13.491079,6.01588703 13.7629567,5.31862312 15.1903144,5.31862312 L17,5.31862312 L17,2.14121801 C16.6856415,2.09708738 15.606627,2 14.357689,2 C11.7408666,2 9.9566695,3.65931156 9.9566695,6.69549868 L9.9566695,9.3168579 L7,9.3168579 L7,12.8737864 L9.9566695,12.8737864 L9.9566695,22 L13.491079,22 L13.491079,21.9911739 Z"
+              />
+            </svg>
+          </glamorous(svg)>
+        </SvgIcon>
+      </FacebookIcon>
+    </button>
+  </Button>
+</glamorous(Button)>
+`;
+
+exports[`Button should render as expected 1`] = `
+<button
+  onClick={[Function]}
+/>
+`;
