@@ -1,57 +1,122 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Footer component in training status matches the previous snapshot 1`] = `
-.css-1kg5b3n,
-[data-css-1kg5b3n] {
-  outline: none;
-  height: 40px;
-  text-align: center;
-  letter-spacing: 1px;
-  text-shadow: none;
-  border: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  cursor: pointer;
-  min-height: 1em;
-  display: inline-block;
-  background-color: transparent;
-  font-size: 20px;
-  color: #46B4E3;
-}
+exports[`Footer component .conditionalRender should render FooterWorkoutControls 1`] = `
+<FooterWorkoutControls
+  blocked={false}
+  currentResults={
+    Array [
+      true,
+      true,
+      true,
+      true,
+      true,
+    ]
+  }
+  fireCompleteExercise={[Function]}
+  fireStartWorkout={[Function]}
+  hidden={false}
+  loadDefaults={[Function]}
+  nextExercise={
+    Object {
+      "exerciseKey": "thisIsTheUniqueKey",
+    }
+  }
+  onSetDone={[Function]}
+  onSetFailed={[Function]}
+  shouldEndExercise={false}
+  training={true}
+/>
+`;
 
-.css-1dkzhsg,
-[data-css-1dkzhsg] {
+exports[`Footer component .conditionalRender should render FooterWorkoutStart 1`] = `
+<withHandlers(_FooterWorkoutStart)
+  blocked={false}
+  currentResults={
+    Array [
+      true,
+      true,
+      true,
+      true,
+      true,
+    ]
+  }
+  fireCompleteExercise={[Function]}
+  fireStartWorkout={[Function]}
+  hidden={false}
+  loadDefaults={[Function]}
+  nextExercise={
+    Object {
+      "exerciseKey": "thisIsTheUniqueKey",
+    }
+  }
+  onSetDone={[Function]}
+  onSetFailed={[Function]}
+  shouldEndExercise={false}
+  training={false}
+/>
+`;
+
+exports[`Footer component .conditionalRender should render null 1`] = `null`;
+
+exports[`Footer component in training status matches the previous snapshot 1`] = `
+.css-1eaczue,
+[data-css-1eaczue] {
   position: absolute;
   bottom: 0px;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  padding: 1rem;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-family: sans-serif;
-  background: -webkit-linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
-  background: -moz-linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
-  background: linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
-  -webkit-flex-direction: row;
-  -webkit-justify-content: center;
-}
-
-.css-1cqgl9p,
-[data-css-1cqgl9p] {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: sans-serif;
+  background: -webkit-linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
+  background: -moz-linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
+  background: linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
+  padding: 15px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+}
+
+.css-8pmgdu,
+[data-css-8pmgdu] {
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 500;
+  text-align: center;
+  color: #46B4E3;
+  cursor: pointer;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  height: 40px;
+  justify-content: center;
+  align-items: stretch;
+  border: none;
+  background: none;
+  overflow: hidden;
+  text-decoration: none;
+  transition: all 300ms;
+  outline: none;
+  padding: 0px;
+  letter-spacing: 1px;
+  background-color: transparent;
+  margin: 0 10px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
 }
 
 <Footer
@@ -79,177 +144,145 @@ exports[`Footer component in training status matches the previous snapshot 1`] =
   shouldEndExercise={false}
   training={true}
 >
-  <Layout
-    blocked={false}
-    currentResults={
-      Array [
-        true,
-        true,
-        true,
-        true,
-        true,
-      ]
-    }
-    fireCompleteExercise={[Function]}
-    fireStartWorkout={[Function]}
-    hidden={false}
-    loadDefaults={[Function]}
-    nextExercise={
-      Object {
-        "exerciseKey": "thisIsTheUniqueKey",
-      }
-    }
-    onSetDone={[Function]}
-    onSetFailed={[Function]}
-    shouldEndExercise={false}
-    training={true}
-  >
+  <glamorous(footer)>
     <footer
-      data-css-1dkzhsg=""
+      className="css-1eaczue"
     >
-      <glamorous(div)>
-        <div
-          className="css-1cqgl9p"
-        >
-          <_FooterControlsHolder
-            blocked={false}
-            currentResults={
-              Array [
-                true,
-                true,
-                true,
-                true,
-                true,
-              ]
-            }
-            fireCompleteExercise={[Function]}
-            fireStartWorkout={[Function]}
-            hidden={false}
-            loadDefaults={[Function]}
-            nextExercise={
-              Object {
-                "exerciseKey": "thisIsTheUniqueKey",
-              }
-            }
-            onSetDone={[Function]}
-            onSetFailed={[Function]}
-            shouldEndExercise={false}
-            training={true}
+      <FooterWorkoutControls
+        blocked={false}
+        currentResults={
+          Array [
+            true,
+            true,
+            true,
+            true,
+            true,
+          ]
+        }
+        fireCompleteExercise={[Function]}
+        fireStartWorkout={[Function]}
+        hidden={false}
+        key="control-btns"
+        loadDefaults={[Function]}
+        nextExercise={
+          Object {
+            "exerciseKey": "thisIsTheUniqueKey",
+          }
+        }
+        onSetDone={[Function]}
+        onSetFailed={[Function]}
+        shouldEndExercise={false}
+        training={true}
+      >
+        <Aux>
+          <glamorous(Button)
+            data-test="failButton"
+            disabled={false}
+            onClickAction={[Function]}
           >
-            <FooterWorkoutControls
-              blocked={false}
-              currentResults={
-                Array [
-                  true,
-                  true,
-                  true,
-                  true,
-                  true,
-                ]
-              }
-              fireCompleteExercise={[Function]}
-              fireStartWorkout={[Function]}
-              hidden={false}
-              loadDefaults={[Function]}
-              nextExercise={
-                Object {
-                  "exerciseKey": "thisIsTheUniqueKey",
-                }
-              }
-              onSetDone={[Function]}
-              onSetFailed={[Function]}
-              shouldEndExercise={false}
-              training={true}
+            <Button
+              className="css-8pmgdu"
+              data-test="failButton"
+              disabled={false}
+              onClickAction={[Function]}
             >
-              <div>
-                <FooterButton
-                  clickHandler={[Function]}
-                  data-test="failButton"
-                  disabled={false}
-                >
-                  <button
-                    data-css-1kg5b3n=""
-                    disabled={false}
-                    onClick={[Function]}
-                  >
-                    Failed
-                  </button>
-                </FooterButton>
-                <FooterButton
-                  clickHandler={[Function]}
-                  data-test="doneButton"
-                  disabled={false}
-                >
-                  <button
-                    data-css-1kg5b3n=""
-                    disabled={false}
-                    onClick={[Function]}
-                  >
-                    Done
-                  </button>
-                </FooterButton>
-              </div>
-            </FooterWorkoutControls>
-          </_FooterControlsHolder>
-        </div>
-      </glamorous(div)>
+              <button
+                className="css-8pmgdu"
+                data-test="failButton"
+                disabled={false}
+                onClick={[Function]}
+              >
+                Failed
+              </button>
+            </Button>
+          </glamorous(Button)>
+          <glamorous(Button)
+            data-test="doneButton"
+            disabled={false}
+            onClickAction={[Function]}
+          >
+            <Button
+              className="css-8pmgdu"
+              data-test="doneButton"
+              disabled={false}
+              onClickAction={[Function]}
+            >
+              <button
+                className="css-8pmgdu"
+                data-test="doneButton"
+                disabled={false}
+                onClick={[Function]}
+              >
+                Done
+              </button>
+            </Button>
+          </glamorous(Button)>
+        </Aux>
+      </FooterWorkoutControls>
     </footer>
-  </Layout>
+  </glamorous(footer)>
 </Footer>
 `;
 
 exports[`Footer component snapshot blocked matches the previous snapshot 1`] = `
-.css-1kg5b3n,
-[data-css-1kg5b3n] {
-  outline: none;
-  height: 40px;
-  text-align: center;
-  letter-spacing: 1px;
-  text-shadow: none;
-  border: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  cursor: pointer;
-  min-height: 1em;
-  display: inline-block;
-  background-color: transparent;
-  font-size: 20px;
-  color: #46B4E3;
-}
-
-.css-1dkzhsg,
-[data-css-1dkzhsg] {
+.css-1eaczue,
+[data-css-1eaczue] {
   position: absolute;
   bottom: 0px;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  padding: 1rem;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-family: sans-serif;
-  background: -webkit-linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
-  background: -moz-linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
-  background: linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
-  -webkit-flex-direction: row;
-  -webkit-justify-content: center;
-}
-
-.css-1cqgl9p,
-[data-css-1cqgl9p] {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: sans-serif;
+  background: -webkit-linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
+  background: -moz-linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
+  background: linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
+  padding: 15px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+}
+
+.css-8pmgdu,
+[data-css-8pmgdu] {
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 500;
+  text-align: center;
+  color: #46B4E3;
+  cursor: pointer;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  height: 40px;
+  justify-content: center;
+  align-items: stretch;
+  border: none;
+  background: none;
+  overflow: hidden;
+  text-decoration: none;
+  transition: all 300ms;
+  outline: none;
+  padding: 0px;
+  letter-spacing: 1px;
+  background-color: transparent;
+  margin: 0 10px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
 }
 
 <Footer
@@ -277,190 +310,149 @@ exports[`Footer component snapshot blocked matches the previous snapshot 1`] = `
   shouldEndExercise={false}
   training={false}
 >
-  <Layout
-    blocked={true}
-    currentResults={
-      Array [
-        true,
-        true,
-        true,
-        true,
-        true,
-      ]
-    }
-    fireCompleteExercise={[Function]}
-    fireStartWorkout={[Function]}
-    hidden={false}
-    loadDefaults={[Function]}
-    nextExercise={
-      Object {
-        "exerciseKey": "thisIsTheUniqueKey",
-      }
-    }
-    onSetDone={[Function]}
-    onSetFailed={[Function]}
-    shouldEndExercise={false}
-    training={false}
-  >
+  <glamorous(footer)>
     <footer
-      data-css-1dkzhsg=""
+      className="css-1eaczue"
     >
-      <glamorous(div)>
-        <div
-          className="css-1cqgl9p"
+      <withHandlers(_FooterWorkoutStart)
+        blocked={true}
+        currentResults={
+          Array [
+            true,
+            true,
+            true,
+            true,
+            true,
+          ]
+        }
+        fireCompleteExercise={[Function]}
+        fireStartWorkout={[Function]}
+        hidden={false}
+        key="start-btn"
+        loadDefaults={[Function]}
+        nextExercise={
+          Object {
+            "exerciseKey": "thisIsTheUniqueKey",
+          }
+        }
+        onSetDone={[Function]}
+        onSetFailed={[Function]}
+        shouldEndExercise={false}
+        training={false}
+      >
+        <_FooterWorkoutStart
+          blocked={true}
+          currentResults={
+            Array [
+              true,
+              true,
+              true,
+              true,
+              true,
+            ]
+          }
+          fireCompleteExercise={[Function]}
+          fireStartWorkout={[Function]}
+          hidden={false}
+          loadDefaults={[Function]}
+          nextExercise={
+            Object {
+              "exerciseKey": "thisIsTheUniqueKey",
+            }
+          }
+          onSetDone={[Function]}
+          onSetFailed={[Function]}
+          shouldEndExercise={false}
+          startButtonHandler={[Function]}
+          training={false}
         >
-          <_FooterControlsHolder
-            blocked={true}
-            currentResults={
-              Array [
-                true,
-                true,
-                true,
-                true,
-                true,
-              ]
-            }
-            fireCompleteExercise={[Function]}
-            fireStartWorkout={[Function]}
-            hidden={false}
-            loadDefaults={[Function]}
-            nextExercise={
-              Object {
-                "exerciseKey": "thisIsTheUniqueKey",
-              }
-            }
-            onSetDone={[Function]}
-            onSetFailed={[Function]}
-            shouldEndExercise={false}
-            training={false}
+          <glamorous(Button)
+            data-test="startButton"
+            disabled={true}
+            onClickAction={[Function]}
           >
-            <withHandlers(_FooterWorkoutStart)
-              blocked={true}
-              currentResults={
-                Array [
-                  true,
-                  true,
-                  true,
-                  true,
-                  true,
-                ]
-              }
-              fireCompleteExercise={[Function]}
-              fireStartWorkout={[Function]}
-              hidden={false}
-              loadDefaults={[Function]}
-              nextExercise={
-                Object {
-                  "exerciseKey": "thisIsTheUniqueKey",
-                }
-              }
-              onSetDone={[Function]}
-              onSetFailed={[Function]}
-              shouldEndExercise={false}
-              training={false}
+            <Button
+              className="css-8pmgdu"
+              data-test="startButton"
+              disabled={true}
+              onClickAction={[Function]}
             >
-              <_FooterWorkoutStart
-                blocked={true}
-                currentResults={
-                  Array [
-                    true,
-                    true,
-                    true,
-                    true,
-                    true,
-                  ]
-                }
-                fireCompleteExercise={[Function]}
-                fireStartWorkout={[Function]}
-                hidden={false}
-                loadDefaults={[Function]}
-                nextExercise={
-                  Object {
-                    "exerciseKey": "thisIsTheUniqueKey",
-                  }
-                }
-                onSetDone={[Function]}
-                onSetFailed={[Function]}
-                shouldEndExercise={false}
-                startButtonHandler={[Function]}
-                training={false}
+              <button
+                className="css-8pmgdu"
+                data-test="startButton"
+                disabled={true}
+                onClick={[Function]}
               >
-                <div>
-                  <FooterButton
-                    clickHandler={[Function]}
-                    disabled={true}
-                  >
-                    <button
-                      data-css-1kg5b3n=""
-                      disabled={true}
-                      onClick={[Function]}
-                    >
-                      Starting ...
-                    </button>
-                  </FooterButton>
-                </div>
-              </_FooterWorkoutStart>
-            </withHandlers(_FooterWorkoutStart)>
-          </_FooterControlsHolder>
-        </div>
-      </glamorous(div)>
+                Starting ...
+              </button>
+            </Button>
+          </glamorous(Button)>
+        </_FooterWorkoutStart>
+      </withHandlers(_FooterWorkoutStart)>
     </footer>
-  </Layout>
+  </glamorous(footer)>
 </Footer>
 `;
 
 exports[`Footer component snapshot not blocked matches the mounted snapshot 1`] = `
-.css-1kg5b3n,
-[data-css-1kg5b3n] {
-  outline: none;
-  height: 40px;
-  text-align: center;
-  letter-spacing: 1px;
-  text-shadow: none;
-  border: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  cursor: pointer;
-  min-height: 1em;
-  display: inline-block;
-  background-color: transparent;
-  font-size: 20px;
-  color: #46B4E3;
-}
-
-.css-1dkzhsg,
-[data-css-1dkzhsg] {
+.css-1eaczue,
+[data-css-1eaczue] {
   position: absolute;
   bottom: 0px;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  padding: 1rem;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-family: sans-serif;
-  background: -webkit-linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
-  background: -moz-linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
-  background: linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
-  -webkit-flex-direction: row;
-  -webkit-justify-content: center;
-}
-
-.css-1cqgl9p,
-[data-css-1cqgl9p] {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: sans-serif;
+  background: -webkit-linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
+  background: -moz-linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
+  background: linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
+  padding: 15px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+}
+
+.css-8pmgdu,
+[data-css-8pmgdu] {
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 500;
+  text-align: center;
+  color: #46B4E3;
+  cursor: pointer;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  height: 40px;
+  justify-content: center;
+  align-items: stretch;
+  border: none;
+  background: none;
+  overflow: hidden;
+  text-decoration: none;
+  transition: all 300ms;
+  outline: none;
+  padding: 0px;
+  letter-spacing: 1px;
+  background-color: transparent;
+  margin: 0 10px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
 }
 
 <Footer
@@ -488,205 +480,159 @@ exports[`Footer component snapshot not blocked matches the mounted snapshot 1`] 
   shouldEndExercise={false}
   training={false}
 >
-  <Layout
-    blocked={false}
-    currentResults={
-      Array [
-        true,
-        true,
-        true,
-        true,
-        true,
-      ]
-    }
-    fireCompleteExercise={[Function]}
-    fireStartWorkout={[Function]}
-    hidden={false}
-    loadDefaults={[Function]}
-    nextExercise={
-      Object {
-        "exerciseKey": "thisIsTheUniqueKey",
-      }
-    }
-    onSetDone={[Function]}
-    onSetFailed={[Function]}
-    shouldEndExercise={false}
-    training={false}
-  >
+  <glamorous(footer)>
     <footer
-      data-css-1dkzhsg=""
+      className="css-1eaczue"
     >
-      <glamorous(div)>
-        <div
-          className="css-1cqgl9p"
+      <withHandlers(_FooterWorkoutStart)
+        blocked={false}
+        currentResults={
+          Array [
+            true,
+            true,
+            true,
+            true,
+            true,
+          ]
+        }
+        fireCompleteExercise={[Function]}
+        fireStartWorkout={[Function]}
+        hidden={false}
+        key="start-btn"
+        loadDefaults={[Function]}
+        nextExercise={
+          Object {
+            "exerciseKey": "thisIsTheUniqueKey",
+          }
+        }
+        onSetDone={[Function]}
+        onSetFailed={[Function]}
+        shouldEndExercise={false}
+        training={false}
+      >
+        <_FooterWorkoutStart
+          blocked={false}
+          currentResults={
+            Array [
+              true,
+              true,
+              true,
+              true,
+              true,
+            ]
+          }
+          fireCompleteExercise={[Function]}
+          fireStartWorkout={[Function]}
+          hidden={false}
+          loadDefaults={[Function]}
+          nextExercise={
+            Object {
+              "exerciseKey": "thisIsTheUniqueKey",
+            }
+          }
+          onSetDone={[Function]}
+          onSetFailed={[Function]}
+          shouldEndExercise={false}
+          startButtonHandler={[Function]}
+          training={false}
         >
-          <_FooterControlsHolder
-            blocked={false}
-            currentResults={
-              Array [
-                true,
-                true,
-                true,
-                true,
-                true,
-              ]
-            }
-            fireCompleteExercise={[Function]}
-            fireStartWorkout={[Function]}
-            hidden={false}
-            loadDefaults={[Function]}
-            nextExercise={
-              Object {
-                "exerciseKey": "thisIsTheUniqueKey",
-              }
-            }
-            onSetDone={[Function]}
-            onSetFailed={[Function]}
-            shouldEndExercise={false}
-            training={false}
+          <glamorous(Button)
+            data-test="startButton"
+            disabled={false}
+            onClickAction={[Function]}
           >
-            <withHandlers(_FooterWorkoutStart)
-              blocked={false}
-              currentResults={
-                Array [
-                  true,
-                  true,
-                  true,
-                  true,
-                  true,
-                ]
-              }
-              fireCompleteExercise={[Function]}
-              fireStartWorkout={[Function]}
-              hidden={false}
-              loadDefaults={[Function]}
-              nextExercise={
-                Object {
-                  "exerciseKey": "thisIsTheUniqueKey",
-                }
-              }
-              onSetDone={[Function]}
-              onSetFailed={[Function]}
-              shouldEndExercise={false}
-              training={false}
+            <Button
+              className="css-8pmgdu"
+              data-test="startButton"
+              disabled={false}
+              onClickAction={[Function]}
             >
-              <_FooterWorkoutStart
-                blocked={false}
-                currentResults={
-                  Array [
-                    true,
-                    true,
-                    true,
-                    true,
-                    true,
-                  ]
-                }
-                fireCompleteExercise={[Function]}
-                fireStartWorkout={[Function]}
-                hidden={false}
-                loadDefaults={[Function]}
-                nextExercise={
-                  Object {
-                    "exerciseKey": "thisIsTheUniqueKey",
-                  }
-                }
-                onSetDone={[Function]}
-                onSetFailed={[Function]}
-                shouldEndExercise={false}
-                startButtonHandler={[Function]}
-                training={false}
+              <button
+                className="css-8pmgdu"
+                data-test="startButton"
+                disabled={false}
+                onClick={[Function]}
               >
-                <div>
-                  <FooterButton
-                    clickHandler={[Function]}
-                    disabled={false}
-                  >
-                    <button
-                      data-css-1kg5b3n=""
-                      disabled={false}
-                      onClick={[Function]}
-                    >
-                      Start Workout
-                    </button>
-                  </FooterButton>
-                </div>
-              </_FooterWorkoutStart>
-            </withHandlers(_FooterWorkoutStart)>
-          </_FooterControlsHolder>
-        </div>
-      </glamorous(div)>
+                Start Workout
+              </button>
+            </Button>
+          </glamorous(Button)>
+        </_FooterWorkoutStart>
+      </withHandlers(_FooterWorkoutStart)>
     </footer>
-  </Layout>
+  </glamorous(footer)>
 </Footer>
 `;
 
 exports[`Footer component snapshot not blocked matches the rendered snapshot 1`] = `
-.css-1kg5b3n,
-[data-css-1kg5b3n] {
-  outline: none;
-  height: 40px;
-  text-align: center;
-  letter-spacing: 1px;
-  text-shadow: none;
-  border: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  cursor: pointer;
-  min-height: 1em;
-  display: inline-block;
-  background-color: transparent;
-  font-size: 20px;
-  color: #46B4E3;
-}
-
-.css-1dkzhsg,
-[data-css-1dkzhsg] {
+.css-1eaczue,
+[data-css-1eaczue] {
   position: absolute;
   bottom: 0px;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  padding: 1rem;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-family: sans-serif;
-  background: -webkit-linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
-  background: -moz-linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
-  background: linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
-  -webkit-flex-direction: row;
-  -webkit-justify-content: center;
-}
-
-.css-1cqgl9p,
-[data-css-1cqgl9p] {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: sans-serif;
+  background: -webkit-linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
+  background: -moz-linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
+  background: linear-gradient(-180deg, #ECF7FE 0%, #FFFFFF 38%);
+  padding: 15px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+}
+
+.css-8pmgdu,
+[data-css-8pmgdu] {
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 500;
+  text-align: center;
+  color: #46B4E3;
+  cursor: pointer;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  height: 40px;
+  justify-content: center;
+  align-items: stretch;
+  border: none;
+  background: none;
+  overflow: hidden;
+  text-decoration: none;
+  transition: all 300ms;
+  outline: none;
+  padding: 0px;
+  letter-spacing: 1px;
+  background-color: transparent;
+  margin: 0 10px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
 }
 
 <footer
-  data-css-1dkzhsg=""
+  class="css-1eaczue"
 >
-  <div
-    class="css-1cqgl9p"
+  <button
+    class="css-8pmgdu"
+    data-test="startButton"
   >
-    <div>
-      <button
-        data-css-1kg5b3n=""
-      >
-        Start Workout
-      </button>
-    </div>
-  </div>
+    Start Workout
+  </button>
 </footer>
 `;
