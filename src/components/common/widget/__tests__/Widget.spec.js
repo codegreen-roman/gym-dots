@@ -1,24 +1,41 @@
 import React from 'react'
 import { Widget } from '../Widget'
-import { shallow } from 'enzyme'
+import { mount } from 'enzyme'
+import { CheckIcon } from '../../icon/SvgIcon'
+import { findByDataAttr } from '../../../../utils/testUtils'
+
 
 const defaultProps = {
-    iconName: 'facebook',
-    iconColor: 'red',
     dataNumber: 20,
-    dataUnits: 'reps',
-    viewBox: '0 0 23 23',
-    height: 23,
-    width: 23
+    dataUnits: 'reps'
 }
 
 const setup = (props = defaultProps) => {
-    return shallow(<Widget {...props} />)
+    const mountWrapper = mount(<Widget {...props}><CheckIcon data-test='check-icon' /></Widget>)
+    return {
+        mountWrapper,
+        icon: findByDataAttr(mountWrapper, 'check-icon'),
+        data: findByDataAttr(mountWrapper, 'data'),
+        units: findByDataAttr(mountWrapper, 'units')
+    }
 }
 
 describe('Widget', () => {
     test('renders without crashing', () => {
-        const { wrapper } = setup()
-        expect(wrapper).toMatchSnapshot()
+        const { mountWrapper } = setup()
+        expect(mountWrapper).toMatchSnapshot()
+    })
+
+    test('contains all vital elements', () => {
+        const { icon, data, units } = setup()
+        expect(icon.exists()).toBe(true)
+        expect(data.exists()).toBe(true)
+        expect(units.exists()).toBe(true)
+    })
+
+    test('contains data', () => {
+        const { data, units } = setup()
+        expect(data.text()).toMatch(/20/)
+        expect(units.text()).toBe(defaultProps.dataUnits)
     })
 })
