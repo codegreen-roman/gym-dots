@@ -1,107 +1,75 @@
 import React from 'react'
 import { Header } from '../Header'
-import { shallow } from 'enzyme'
-import { merge } from 'ramda'
+import { shallow, mount } from 'enzyme'
 import { shallowToJson } from 'enzyme-to-json'
 import { findByDataAttr } from '@utils/testUtils'
-import { Icon } from '../../icon/Icon'
 
-const defaultProps = {
-    dateStr: 'Saturday, Jul 15th',
-    subTitle: 'Start Workout',
-    exerciseName: '',
-    photoURL: null,
-    userDisplayName: '',
-    logout: jest.fn(),
-}
+const setup = () => {
 
-const setup = (props = defaultProps) => {
-    return shallow(<Header {...props} />)
+    const defaultProps = {
+        dateStr: 'Saturday, Jul 15th',
+        subTitle: 'Start Workout',
+        exerciseName: '',
+        photoURL: null,
+        userDisplayName: '',
+        isSideMenuOpen: false,
+        logout: jest.fn(),
+        toggleMenu: jest.fn()
+    }
+
+    const mountWrapper = mount(<Header {...defaultProps} />)
+    return {
+        defaultProps,
+        mountWrapper,
+        shallowWrapper: shallow(<Header {...defaultProps} />),
+        menuElement: findByDataAttr(mountWrapper, 'menu-btn').first(),
+        dateElement: findByDataAttr(mountWrapper, 'current-date').first(),
+        titleElement: findByDataAttr(mountWrapper, 'current-subtitle').first()
+    }
 }
 
 describe('Header component', () => {
-
-    test('has section type of the root component', () => {
-        const wrapper = setup()
-        expect(wrapper.type()).toBe('header')
+    test('should have section of type header', () => {
+        const { shallowWrapper } = setup()
+        expect(shallowWrapper.type()).toBe('header')
     })
 
-    test('has 2 divs as 1st children', () => {
-        const wrapper = setup()
-        expect(wrapper.find('header > div').length).toBe(2)
+    test('should have menu btn', () => {
+        const { menuElement } = setup()
+        expect(menuElement.length).toBe(1)
     })
 
-    describe('logged in', () => {
-
-        const props = {
-            dateStr: 'Saturday, Jul 15th',
-            subTitle: 'Start Workout',
-            userDisplayName: 'Roman',
-            logout: jest.fn(),
-        }
-
-        let wrapper
-        let User
-
-        beforeEach(() => {
-            wrapper = setup(props)
-            User = wrapper.find('User')
-        })
-
-        it('should have `User` component with prop user eq Roman', () => {
-            expect(User.length).toBe(1)
-            expect(User.props().user).toBe('Roman')
-        })
+    test('should have date set', () => {
+        const { dateElement, defaultProps } = setup()
+        expect(dateElement.text()).toBe(defaultProps.dateStr)
     })
 
-    describe('Left side of the header', () => {
+    test('should have sub title `Start workout`', () => {
+        const { titleElement, defaultProps } = setup()
+        expect(titleElement.text()).toBe(defaultProps.subTitle)
+    })
 
-        let wrapper
-        let menuElement
-        let dateElement
-        let titleElement
-        const currentDate = 'Saturday, Jul 15th'
-
-        beforeAll(() => {
-            wrapper = setup()
-            menuElement = wrapper.find(Icon)
-            dateElement =  findByDataAttr(wrapper, 'date')
-            titleElement =  findByDataAttr(wrapper, 'currently')
-        })
-
-        test('has a menu icon wrapped in a tag', () => {
-            expect(menuElement.length).toBe(1)
-        })
-
-        test('has dateElement with a date value Saturday, Jul 15th', () => {
-            expect(dateElement.text()).toBe(currentDate)
-        })
-
-        test('has titleElement with a value Start Workout', () => {
-            expect(titleElement.text()).toBe('Start Workout')
+    describe('Clicking on menu btn', () => {
+        test('should call toggleMenu', () => {
+            const { mountWrapper, menuElement } = setup()
+            menuElement.simulate('click')
+            expect(mountWrapper.props().toggleMenu).toHaveBeenCalled()
         })
     })
 
     describe('Exercise name exist', () => {
 
-        const props = merge(defaultProps, { exerciseName: 'Pull Up' })
-        let wrapper
-        let titleElement
-
-
-        beforeAll(() => {
-            wrapper = setup(props)
-            titleElement =  findByDataAttr(wrapper, 'currently')
-        })
-
         it('should match the snapshot', () => {
-            expect(wrapper).toMatchSnapshot()
+            const { shallowWrapper } = setup()
+            shallowWrapper.setProps({ exerciseName: 'Pull Up' })
+            expect(shallowWrapper).toMatchSnapshot()
         })
 
         it('should should show title with the exerciseName = Pull Up', () => {
-            expect(titleElement.text()).toBe('Pull Up')
+            const { shallowWrapper } = setup()
+            shallowWrapper.setProps({ exerciseName: 'Pull Up' })
+            expect(findByDataAttr(shallowWrapper, 'current-subtitle').text()).toBe('Pull Up')
         })
-
     })
 
     describe('Shallow snapshot', () => {

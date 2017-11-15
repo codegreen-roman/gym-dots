@@ -1,4 +1,4 @@
-import { selectNameOrUidFromUser, userNameSelector, userPhotoUrlSelector } from '../Header.connect'
+import { selectNameOrUidFromUser, userNameSelector, userPhotoUrlSelector } from '../selectors'
 
 const initAuth = {
     status: 'loggedOut'

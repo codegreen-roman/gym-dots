@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header component Exercise name exist should match the snapshot 1`] = `
-.css-1qqtemn,
-[data-css-1qqtemn] {
-  height: 107px;
+.css-bfrqsb,
+[data-css-bfrqsb] {
+  height: 147px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -20,8 +20,8 @@ exports[`Header component Exercise name exist should match the snapshot 1`] = `
   -webkit-justify-content: space-between;
 }
 
-.css-1ulbvcw,
-[data-css-1ulbvcw] {
+.css-11bhx4m,
+[data-css-11bhx4m] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -32,104 +32,33 @@ exports[`Header component Exercise name exist should match the snapshot 1`] = `
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  margin-top: 60px;
   -webkit-flex-direction: column;
   -webkit-justify-content: space-between;
 }
 
-.css-1bdqo0b,
-[data-css-1bdqo0b] {
+.css-bux5u,
+[data-css-bux5u] {
   color: #919AA7;
+  position: absolute;
+  left: 25px;
+  top: 25px;
 }
 
-.css-1ixk24o,
-[data-css-1ixk24o] {
-  text-transform: uppercase;
-  color: #919AA7;
-  font-size: 14px;
-  font-weight: 700;
-}
-
-.css-1qe4ilz,
-[data-css-1qe4ilz] {
-  color: #5E6B7D;
-  font-size: 23px;
-}
-
-<header
-  data-css-1qqtemn=""
->
-  <div
-    className="left-side"
-    data-css-1ulbvcw=""
-  >
-    <Icon
-      color="red"
-      data-css-1bdqo0b=""
-      height={16}
-      iconName="menu"
-      viewBox="0 0 32 32"
-      width={16}
-    />
-    <div>
-      <div
-        data-css-1ixk24o=""
-        data-test="date"
-      >
-        Saturday, Jul 15th
-      </div>
-      <div
-        data-css-1qe4ilz=""
-        data-test="currently"
-      >
-        Pull Up
-      </div>
-    </div>
-  </div>
-  <div>
-    <RenderNothing />
-  </div>
-</header>
-`;
-
-exports[`Header component Shallow snapshot matches the previous 1`] = `
-.css-1qqtemn,
-[data-css-1qqtemn] {
-  height: 107px;
+.css-u9zkbi,
+[data-css-u9zkbi] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-flow: row wrap;
-  flex-flow: row wrap;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: 20px;
-  padding-left: 40px;
-  -webkit-flex-flow: row wrap;
-  -webkit-justify-content: space-between;
-}
-
-.css-1ulbvcw,
-[data-css-1ulbvcw] {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-flex-direction: column;
-  -webkit-justify-content: space-between;
-}
-
-.css-1bdqo0b,
-[data-css-1bdqo0b] {
-  color: #919AA7;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  -webkit-align-items: center;
+  -webkit-flex-flow: column nowrap;
 }
 
 .css-1ixk24o,
@@ -140,44 +69,55 @@ exports[`Header component Shallow snapshot matches the previous 1`] = `
   font-weight: 700;
 }
 
-.css-1qe4ilz,
-[data-css-1qe4ilz] {
+.css-cqh7yy,
+[data-css-cqh7yy] {
   color: #5E6B7D;
   font-size: 23px;
+  text-transform: capitalize;
+  font-weight: 600;
 }
 
 <header
-  data-css-1qqtemn=""
+  data-css-bfrqsb=""
 >
-  <div
-    className="left-side"
-    data-css-1ulbvcw=""
+  <glamorous(Button)
+    data-css-bux5u=""
+    data-test="menu-btn"
+    onClickAction={[Function]}
   >
-    <Icon
-      color="red"
-      data-css-1bdqo0b=""
-      height={16}
-      iconName="menu"
-      viewBox="0 0 32 32"
-      width={16}
-    />
-    <div>
-      <div
-        data-css-1ixk24o=""
-        data-test="date"
-      >
-        Saturday, Jul 15th
-      </div>
-      <div
-        data-css-1qe4ilz=""
-        data-test="currently"
-      >
-        Start Workout
-      </div>
+    <MenuIcon />
+  </glamorous(Button)>
+  <div
+    data-css-11bhx4m=""
+  >
+    <div
+      data-css-1ixk24o=""
+      data-test="current-date"
+    >
+      Saturday, Jul 15th
+    </div>
+    <div
+      data-css-cqh7yy=""
+      data-test="current-subtitle"
+    >
+      Pull Up
     </div>
   </div>
-  <div>
-    <RenderNothing />
+  <div
+    data-css-u9zkbi=""
+  >
+    <UserImage
+      image={null}
+    />
   </div>
+  <SideMenu
+    image={null}
+    isSideMenuOpen={false}
+    logout={[Function]}
+    toggleMenu={[Function]}
+    userDisplayName=""
+  />
 </header>
 `;
+
+exports[`Header component Shallow snapshot matches the previous 1`] = `null`;
