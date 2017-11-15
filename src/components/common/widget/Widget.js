@@ -1,40 +1,24 @@
 import React from 'react'
-import { number, string } from 'prop-types'
-import { Icon } from '../icon/Icon'
-import {
-    widgetContainer,
-    widgetDataContainer,
-    widgetDataNumber,
-    widgetDataUnits
-} from './Widget.glamor'
+import { number, string, node } from 'prop-types'
+import { widgetContainer, widgetDataContainer, widgetDataNumber, widgetDataUnits } from './Widget.glamor'
 import { pure } from 'recompose'
 
-const _Widget = ({iconName, iconColor, dataNumber, dataUnits, viewBox, width, height }) => {
+const _Widget = ({ dataNumber, dataUnits, children }) => {
     return (
-        <div {...widgetContainer} >
-            <Icon
-                iconName={iconName}
-                color={iconColor}
-                viewBox={viewBox}
-                width={width}
-                height={height}
-            />
+        <div {...widgetContainer}>
+            {children}
             <div {...widgetDataContainer}>
-                <div {...widgetDataNumber}>{dataNumber}</div>
-                <div {...widgetDataUnits}>{dataUnits}</div>
+                <div data-test='data' {...widgetDataNumber}>{dataNumber}</div>
+                <div data-test='units' {...widgetDataUnits}>{dataUnits}</div>
             </div>
         </div>
     )
 }
 
 _Widget.propTypes = {
-    iconName: string.isRequired,
-    iconColor: string.isRequired,
     dataNumber: number.isRequired,
     dataUnits: string.isRequired,
-    width: number.isRequired,
-    height: number.isRequired,
-    viewBox: string.isRequired
+    children: node
 }
 
 export const Widget = pure(_Widget)
