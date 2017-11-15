@@ -1,8 +1,10 @@
 import React from 'react'
 import { string, oneOf } from 'prop-types'
-import { Path } from './Arc.glamor'
 import { pure } from 'recompose'
+import glamorous from 'glamorous'
+import { pathStyles, arcTypes } from './Arc.glamor'
 
+/* Arc, part of CircleProgress */
 const _Arc = ({ d, arcClass }) => {
     return <Path d={d} arcClass={arcClass} />
 }
@@ -18,3 +20,11 @@ _Arc.defaultProps = {
 }
 
 export const Arc = pure(_Arc)
+
+/* Arc Styling logic */
+export const Path = glamorous.path(
+    pathStyles,
+    (props) => ({
+        stroke: arcTypes[props.arcClass]
+    })
+)
